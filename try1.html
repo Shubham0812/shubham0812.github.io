@@ -2,16 +2,9 @@
 <html>
 <head><title>P 1</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $("#but1").click(function(){
-        $("body").toggleClass("night")   ;
-    });
-});
-</script>    
 <style type="text/css">
     
-body{font-size: 1.4em;background-color : orangered;color:cyan;}
+body{font-size: 1.4em;background-color : maroon;color: lightcyan;}
     
 .night{background-color: black;color:#ccff00;}
     
@@ -38,11 +31,33 @@ body{font-size: 1.4em;background-color : orangered;color:cyan;}
 }
 
 </style>
+<script>
+  $(document).ready(function(){
+    $("#but1").click(function(){
+        $("body").toggleClass("night")   ;
+    });
+    $("#btn2").hover(function(){ 
+        $("#box").show();
+        $("#box").animate({height: "300px"});
+        $("#box").animate({width: "400px"});
+        $(".pop").show();
+    });
+    $("#btn2").blur(function(){ 
+        $("#box").animate({height: "100px"});
+        $("#box").animate({width: "100px"});
+        $(".pop").hide();
+        
+    });
+    //$("#btn3").click(function(){
+      //  $("#box").animate({height: "100px"});
+        //  $("#box").animate({width: "100px"}); 
+          //   $(".pop").hide();
+//    });
+});
+</script>    
 </head>
 <body>
-<div id = "toggle">
-<button id="but1">Toggle Colors </button><p style="display:none">Sup?</p>
-</div>
+<button id="but1">Toggle Colors </button>
     <h1>WelCome!</h1>
     <p>These are some text which needs to be changed.</p>
     <div id ="nav">
@@ -52,5 +67,12 @@ body{font-size: 1.4em;background-color : orangered;color:cyan;}
         <li><button>Press 3</button></li>
     </ul>
     </div>
+    <button id="btn2">Animate height</button>
+<button id="btn3">Reset height</button>
+
+<div id="box" style="background:orangered;height:100px;width:100px;margin:6px ;display:none;">
+<p class="pop" style="display:none;">things i love</p>    
+</div>
+
 </body>
 </html>
