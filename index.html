@@ -4,19 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Shubham Kr. Singh</title>
-
 <link rel ="stylesheet" type="text/css" href="style21.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+  $(document).ready(function(){
+    $("#b1").click(function(){
+        $("body").toggleClass("night")   ;
+    });
+});
+    </script>
 </head>
 <body>
+    <button id ="b1" style ="float:right;">Change Colors</button>
         <div id ="page">
       <div id ="header-page">
         <div id ="header">
           <div class ="container">
             <div id ="nav">
               <ul>
+                
+                <li><button onclick="changeText3()"><span id="li3">Info</span></button></li>
                 <li><button onclick="changeText1()"><span id="li1">Skills</span></button></li>
                 <li><button onclick="changeText2()"><span id="li2">About Me</span></button></li>
-                <li><button onclick="changeText3()"><span id="li3">Agenda</span></button></li>
                 <li><button onclick="changeText4()"><span id="li4">Projects</span></button></li>
                 <li><button onclick="changeText5()"><span id="li5">Hobbies</span></button></li>
                 <li><button onclick="changeText6()"><span id="li6">Contact</span></button></li>
@@ -28,71 +37,55 @@
      </div>
   <div id ="banner">
   <h1 id="headerchange">Shubham Kr. Singh</h1>
-    <p id="paragraphchange">Cras pellentesque libero in massa aliquet, eget placerat risus mollis. Suspendisse potenti. In vulputate sapien at velit dictum, a feugiat velit pulvinar. Donec et ipsum lorem. Quisque at ligula accumsan, mollis ex vitae, interdum nibh. Vestibulum nec tempor sem. Praesent sed velit ut odio suscipit placerat vel ut ex. Fusce pharetra aliquet lacus, eget volutpat lectus posuere quis. Donec fermentum commodo neque. Pellentesque sed nunc nec tellus mattis eleifend.</p>
+    <p id="paragraphchange">Coming up Real Soon!.</p>
       </div>
 
     <script id="jsbin-javascript">
 var banner = document.getElementById('banner');
 var para = document.getElementById('paragraphchange');
-
 var header = document.getElementById('headerchange')
-
 function changeText1(){
   header.innerHTML ="SKills";
-  para.innerHTML ="Cras pellentesque libero in massa aliquet, eget placerat risus mollis. Suspendisse potenti. In vulputate sapien at velit dictum, a feugiat velit pulvinar. Donec et ipsum lorem. Quisque at ligula accumsan, mollis ex vitae, interdum nibh. Vestibulum nec tempor sem. Praesent sed velit ut odio suscipit placerat vel ut ex. Fusce pharetra aliquet lacus, eget volutpat lectus posuere quis. Donec fermentum commodo neque. Pellentesque sed nunc nec tellus mattis eleifend.";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#2b2b2b";
   para.style.color ="#0fff9f";
 }
-
-
 function changeText2(){
   header.innerHTML ="About Me";
-  para.innerHTML ="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tortor magna, commodo sit amet volutpat a, feugiat at tellus. Phasellus non pharetra elit. Aenean gravida mauris ac enim posuere pharetra. Praesent id mi at urna convallis accumsan convallis semper leo. Nullam eget nisl eu massa rhoncus tristique. Praesent justo velit, blandit sit amet lectus vel, cursus imperdiet nunc.";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#1CA5FF";
   para.style.color ="#000000";
 }
-
-
-
-
 function changeText3(){
-  header.innerHTML ="Agenda";
-  para.innerHTML ="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tortor magna, commodo sit amet volutpat a, feugiat at tellus. Phasellus non pharetra elit. Aenean gravida mauris ac enim posuere pharetra. Praesent id mi at urna convallis accumsan convallis semper leo. Nullam eget nisl eu massa rhoncus tristique. Praesent justo velit, blandit sit amet lectus vel, cursus imperdiet nunc.";
+  header.innerHTML ="Info";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#FF8732";
   para.style.color ="#000000";
 }
-
-
 function changeText4(){
   header.innerHTML ="Projects";
-  para.innerHTML ="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tortor magna, commodo sit amet volutpat a, feugiat at tellus. Phasellus non pharetra elit. Aenean gravida mauris ac enim posuere pharetra. Praesent id mi at urna convallis accumsan convallis semper leo. Nullam eget nisl eu massa rhoncus tristique. Praesent justo velit, blandit sit amet lectus vel, cursus imperdiet nunc.";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#27B44B";
   para.style.color ="#111111";
 }
-
-
 function changeText5(){
   header.innerHTML ="Hobbies";
-  para.innerHTML ="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tortor magna, commodo sit amet volutpat a, feugiat at tellus. Phasellus non pharetra elit. Aenean gravida mauris ac enim posuere pharetra. Praesent id mi at urna convallis accumsan convallis semper leo. Nullam eget nisl eu massa rhoncus tristique. Praesent justo velit, blandit sit amet lectus vel, cursus imperdiet nunc.";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#E45845";
   para.style.color ="#000000";
 }
-
-
 function changeText6(){
   header.innerHTML ="Contact";
-  para.innerHTML ="Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque tortor magna, commodo sit amet volutpat a, feugiat at tellus. Phasellus non pharetra elit. Aenean gravida mauris ac enim posuere pharetra. Praesent id mi at urna convallis accumsan convallis semper leo. Nullam eget nisl eu massa rhoncus tristique. Praesent justo velit, blandit sit amet lectus vel, cursus imperdiet nunc.";
+  para.innerHTML ="Coming up Real Soon!";
   
   banner.style.background ="#B35BE6";
   para.style.color ="#000000";
 }
-
-
 </script>
 </body>
 </html>

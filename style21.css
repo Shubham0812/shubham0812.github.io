@@ -22,7 +22,7 @@ a{
 
 #nav button{
    border: none;
-   background : #7a291a;
+   background-color: transparent;
    color : #EAEAEA;
    line-height: 3em;
    text-transform: uppercase;
@@ -67,7 +67,13 @@ a{
   letter-spacing : -2px;
     color:#0fff9f;
 }
+.night{background-color: black;}
+.butcha{background-color:black; }
 
+#li1{
+  color: darkblue;
+   
+}
 
 #li2{
   color: #1CA5FF;
