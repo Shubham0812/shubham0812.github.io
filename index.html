@@ -1,89 +1,565 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Shubham Kr. Singh</title>
-<link rel ="stylesheet" type="text/css" href="style21.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script>
-  $(document).ready(function(){
-    $("#b1").click(function(){
-        $("body").toggleClass("night")   ;
-    });
-});
-    </script>
-</head>
-<body>
-    <button id ="b1" style ="float:right;">Change Colors</button>
-        <div id ="page">
-      <div id ="header-page">
-        <div id ="header">
-          <div class ="container">
-            <div id ="nav">
-              <ul>
-                <li><button onclick="changeText3()"><span id="li3">Info</span></button></li>
-                <li><button onclick="changeText1()"><span id="li1">Skills</span></button></li>
-                <li><button onclick="changeText2()"><span id="li2">About Me</span></button></li>
-                <li><button onclick="changeText4()"><span id="li4">Projects</span></button></li>
-                <li><button onclick="changeText5()"><span id="li5">Hobbies</span></button></li>
-                <li><button onclick="changeText6()"><span id="li6">Contact</span></button></li>
-              </ul>
-            </div>
-            </div>
-          </div>
-        </div>
-     </div>
-  <div id ="banner">
-  <h1 id="headerchange">Shubham Kr. Singh</h1>
-    <p id="paragraphchange">Coming up Real Soon!.</p>
-      </div>
+    <head>
+        <title>My Portfolio</title>
 
-    <script id="javascript" type="text/javascript">
-var banner = document.getElementById('banner');
-var para = document.getElementById('paragraphchange');
-var header = document.getElementById('headerchange')
-function changeText1(){
-  header.innerHTML ="SKills";
-  para.innerHTML ="Coming up Real Soon!";
-  
-  banner.style.background ="darkblue";
-  para.style.color ="#0fff9f";
-}
-function changeText2(){
-  header.innerHTML ="About Me";
-  para.innerHTML ="Coming up Real Soon!";
-  
-  banner.style.background ="#1CA5FF";
-  para.style.color ="#000000";
-}
-function changeText3(){
-  header.innerHTML ="Info";
-  para.innerHTML ="Coming up Real Soon!";
-  banner.style.background ="#FF8732";
-  para.style.color ="#000000";
-}
-function changeText4(){
-  header.innerHTML ="Projects";
-  para.innerHTML ="Coming up Real Soon!";
-  
-  banner.style.background ="#27B44B";
-  para.style.color ="#111111";
-}
-function changeText5(){
-  header.innerHTML ="Hobbies";
-  para.innerHTML ="Coming up Real Soon!";
-  
-  banner.style.background ="#E45845";
-  para.style.color ="#000000";
-}
-function changeText6(){
-  header.innerHTML ="Contact";
-  para.innerHTML ="Coming up Real Soon!";
-  
-  banner.style.background ="#B35BE6";
-  para.style.color ="#000000";
-}
-</script>
-</body>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel = "stylesheet" type="text/css" href = "css/superslides.css">
+        <link rel = "stylesheet" type="text/css" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+        <link rel = "stylesheet" type="text/css" href="css/style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/jquery.superslides.min.js"></script>
+        <script src="js/countUp.js"></script>
+        <script src="js/countUp-jquery.js"></script>
+        <script src ="js/jquery.easypiechart.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/typed.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js">
+        </script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="js/script.js"></script>
+        </body>
+    </head>
+    <body>
+
+
+        <div class = "loader">
+
+            <div class="inner">
+
+            </div>
+        </div>
+
+        <div id="slides">
+            <div class="overlay"></div>
+            <div class="slides-container">
+                <img src="images/slide1.jpg" alt="">
+                <img src="images/slide2.jpg" alt="">
+                <img src="images/slide3.jpg" alt="">
+            </div>
+
+            <div class="titleMessage">
+                <div class="heading">
+                    <p class="main">SHUBHAM SINGH</p>
+                    <p class="sub typed"></p>
+                </div>
+            </div>
+
+            <nav class="slides-navigation">
+                <a href="#" class="next"></a>
+                <a href="#" class="prev"></a>
+            </nav>
+        </div>
+
+        <nav id = "navigation" class="navbar navbar-expand-lg">
+            <div class  = "brand">
+                <a class="navbar-brand" href="#slides">Shubham Singh</a>
+            </div>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stats">Stats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li> 
+                </ul>
+            </div>
+        </nav>
+
+        <div id="about" class="section">
+
+            <div class="container">
+                
+                <div class="row">
+                    
+                    <div class="col-md-5">
+                        
+                        <img class="aboutImage" src="images/about.jpg">
+
+                    </div>
+                    
+                    <div class="col-md-7">
+
+                        <h4>My name is Shubham Singh</h4>
+
+                        <p>
+                            Hi there! I'm Shubham Singh from Bangalore,India. I currently work as a Systems Engineer at Infosys Ltd. I work as an iOS developer and have experience in creating iOS apps both for myself and the project which I am working on. I have experience programming in many different programming languages such as C++,Java,C#,Swift,however some of my favorite projects involve working in Python for machine Learning.
+                        </p>
+                        <p>
+                            I graduated from NMIT in Bangalore, India with first class distinction(9.09 GPA) in Computer Science and also spent a year currently working for Infosys Ltd, Bangalore.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+	    <div id="skills" class="skillsSection section">
+
+		    <div class="container">
+
+			    <div class="row">
+
+				    <div class="col-md-12 text-center">
+					    <h2>TECHNICAL SKILLS</h2>
+					    <p>A representation of my proficiency in each skill</p>
+				    </div>
+
+				    <div class="owl-carousel owl-theme">
+
+                        <div class="skill">
+
+                            <span class="chart" data-percent = "67">
+
+                                <span class="percent">67</span>
+                                <canvas height="152" width="152"></canvas>
+                            </span>
+                            <h4>Python</h4>
+                            <p>Used in most of task automating scripts</p>
+                        </div>
+
+                        <div class="skill">
+
+                            <span class="chart" data-percent = "70">
+    
+                                <span class="percent">70</span>
+                                <canvas height="152" width="152"></canvas>
+                            </span>
+                            <h4>Java</h4>
+                            <p>Mostly used for solving coding problems</p>
+                        </div>
+
+                        <div class="skill">
+
+                            <span class="chart" data-percent = "82">
+    
+                                <span class="percent">82</span>
+                                <canvas height="152" width="152"></canvas>
+                            </span>
+                            <h4>MySQL</h4>
+                            <p>Used for managing the back-end of the projects.</p>
+                        </div>
+
+                        <div class="skill">
+
+                            <span class="chart" data-percent = "75">
+    
+                                <span class="percent">75</span>
+                                <canvas height="152" width="152"></canvas>
+                            </span>
+                            <h4>Swift</h4>
+                            <p>Used for creating iOS applications</p>
+                        </div>
+
+				    </div>
+
+			    </div>
+
+		    </div>
+
+        </div>    
+        
+        <div id="stats" class="statsSection section">
+            
+            <div class="container">
+        
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <div class="squareItem">
+
+                            <div class="squareInnerContainer">
+
+                                <div class="squareIcon">
+                                    <i class="fa fa-clock"></i>
+
+                                </div>
+
+                                <div class="squareContent">
+
+                                    <h2 class ="counter">1</h2>
+                                    <h3>Years of experience</h3>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <div class="squareItem">
+    
+                            <div class="squareInnerContainer">
+    
+                                <div class="squareIcon">
+                                    <i class="fas fa-project-diagram"></i>
+    
+                                </div>
+    
+                                <div class="squareContent">
+    
+                                    <h2 class ="counter">20</h2> 
+                                    <h3>Projects</h3>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+
+                            <div class="squareItem">
+    
+                                <div class="squareInnerContainer">
+    
+                                    <div class="squareIcon">
+                                        <i class="fa fa-clock"></i>
+    
+                                    </div>
+    
+                                    <div class="squareContent">
+    
+                                        <h2 class ="counter">10</h2>
+                                        <h3>Programming Languages</h3>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+    
+                        </div>
+
+
+                    <div class="col-md-3 col-sm-6">
+
+                            <div class="squareItem">
+    
+                                <div class="squareInnerContainer">
+    
+                                    <div class="squareIcon">
+                                        <i class="fas fa-rocket"></i>
+    
+                                    </div>
+    
+                                    <div class="squareContent">
+    
+                                        <h2 class ="counter">6</h2>
+                                        <h3>Apps</h3>
+    
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+    
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>    
+
+        <div id="contact" class="contactSection section">
+
+            <div class="col-md-12 text-center">
+
+                <p class="subheading">Like what you see?</p>
+                <h2>I'd love to hear from you!</h2>
+                <a href="mailTo:singh.shubham0812@gmail.com" class="contactButton">GET IN TOUCH!</a>
+
+
+            </div>
+
+        </div>
+
+        <div id="portfolio" class="section">
+
+            <div class="container">
+                    
+                <div class="row">
+                        
+                    <div class="heading">
+
+                        <h2>PORTFOLIO</h2>
+
+                    </div>
+
+                    <div class="filter">
+
+                        <ul id="filters">
+
+                            <li><a href="#" data-filter="*" class="current">ALL</a></li>
+                            <li><a href="#" data-filter=".apps">APPS</a></li>
+                            <li><a href="#" data-filter=".projects">PROJECTS</a></li>
+                            <li><a href="#" data-filter=".me">ME</a></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="itemsContainer">
+
+                        <ul class="items">
+        
+                            <li onclick ="" class="projects col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+                                <div class="item">
+        
+                                    <img src="images/portfolio/thumbnails/olx.thumb.png">
+
+                                    <div class="icons">
+
+                                        <a href="images/portfolio/olx.png" title="View image" class="openButton" data-fancybox data-caption = "A console based implementation of OLX where you can buy and sell items.">
+
+                                            <i class="fa fa-search"></i>
+
+                                        </a>
+
+                                        <a href="" target="_blank" class="projectLink">
+
+                                            <i class="fa fa-link"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                    <div class ="imageOverlay">
+
+                                    </div>
+
+        
+                                </div>
+        
+        
+                            </li>
+
+                            <li onclick ="" class="projects col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+        
+                                <div class="item">
+            
+                                    <img src="images/portfolio/thumbnails/cns_thumb.png">
+    
+                                    <div class="icons">
+    
+                                        <a href="images/portfolio/cns.jpg" title="View image" class="openButton" data-fancybox data-caption = "Console based application create with C which implements various types of Encryption an Decryption techniques.">
+    
+                                            <i class="fa fa-search"></i>
+    
+                                        </a>
+    
+                                        <a href="" target="_blank" class="projectLink">
+    
+                                            <i class="fa fa-link"></i>
+    
+                                        </a>
+    
+                                    </div>
+
+                                    <div class ="imageOverlay">
+
+                                        </div>
+    
+            
+                                </div>
+            
+            
+                                </li>
+
+
+                                <li onclick ="" class="projects col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+        
+                                    <div class="item">
+                
+                                        <img src="images/portfolio/thumbnails/r3_thumb.jpg">
+        
+                                        <div class="icons">
+        
+                                            <a href="images/portfolio/r3.jpg" title="View image" class="openButton" data-fancybox data-caption = "Website which proviews review,rating and ranking of different products.">
+        
+                                                <i class="fa fa-search"></i>
+        
+                                            </a>
+        
+                                            <a href="" target="_blank" class="projectLink">
+        
+                                                <i class="fa fa-link"></i>
+                                                        
+                                            </a>
+        
+        
+                                        </div>
+
+                                        <div class ="imageOverlay">
+
+                                            </div>
+        
+                
+                                    </div>
+                
+                
+                                </li>
+
+                                <li onclick ="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+        
+                                        <div class="item">
+                    
+                                            <img src="images/portfolio/thumbnails/home_page_thumb.jpg">
+            
+                                            <div class="icons">
+            
+                                                <a href="images/portfolio/home_page.jpg" title="View image" class="openButton" data-fancybox data-caption = "Application to convert color codes from Hex to RGB and vice-versa.">
+            
+                                                    <i class="fa fa-search"></i>
+            
+                                                </a>
+            
+                                                <a href="" target="_blank" class="projectLink">
+            
+                                                    <i class="fa fa-link"></i>
+                                                                
+                                                </a>
+            
+            
+                                            </div>
+
+                                            <div class ="imageOverlay">
+
+                                        
+
+                                                </div>
+            
+                    
+                                        </div>
+                    
+                    
+                                    </li>
+
+                                    <li onclick =""class="projects col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+        
+                                        <div class="item">
+                        
+                                            <img src="images/portfolio/thumbnails/evaluator_thumb.jpg">
+                
+                                            <div class="icons">
+                
+                                                <a href="images/portfolio/evaluator.jpg" title="View image" class="openButton" data-fancybox data-caption = "Java based application to take exams on different programming languages.">
+                
+                                                    <i class="fa fa-search"></i>
+                
+                                                </a>
+                
+                                                <a href="" target="_blank" class="projectLink">
+                
+                                                    <i class="fa fa-link"></i>
+                
+                                                </a>
+                
+            
+                                            </div>
+
+                                            <div class ="imageOverlay">
+
+                                        
+
+                                                </div>
+                
+                                        </div>
+                        
+                        
+                                    </li>
+
+                                    <li onclick ="" class="me col-xs-6 col-sm-4 col-md-3 col-lg-3">
+        
+        
+                                        <div class="item">
+                            
+                                            <img src="images/portfolio/thumbnails/nandi_thumb.jpg">
+                    
+                                                <div class="icons">
+                    
+                                                    <a href="images/portfolio/nandi.jpg"View image" class="openButton" data-fancybox data-caption = "Trip with friends to Nandi Hills, Bengaluru.">
+                    
+                                                        <i class="fa fa-search"></i>
+                                                                            
+                                                    </a>
+                    
+                                                    <a href="" target="_blank" class="projectLink">
+                    
+                                                        <i class="fa fa-link"></i>
+                    
+                                                    </a>
+                    
+                    
+                                                </div>
+
+                                                <div class ="imageOverlay">
+
+                                        
+
+                                                    </div>
+                    
+                            
+                                            </div>
+                            
+                            
+                                        </li>
+        
+                        </ul>
+
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+
+        <div class="copyrightSection">
+
+            <div class="col-md-12 text-center">
+                <p>&copy; Copyright Shubham Singh|2019</p>
+            </div>
+
+        </div>
+
 </html>
