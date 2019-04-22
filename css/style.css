@@ -10,7 +10,7 @@ body {
 	height: 100%;
 	position: absolute;
 	z-index: 3;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 .slides-navigation {
@@ -68,6 +68,10 @@ body {
 	max-width: 100%;
 }
 
+.highlight{
+    color: #e74c3c;
+}
+
 .skillsSection,
 .contactSection {
 	background-color: #e74c3c;
@@ -106,6 +110,11 @@ body {
 
 .chart .percent:after {
 	content: '%';
+}
+
+
+.statsSection h2{
+    color: #e74c3c;
 }
 
 
@@ -324,7 +333,7 @@ body {
 .copyrightSection{
     background-color: #000;
     color: #fff;
-    padding: 30px 5px;
+    padding: 35px 5px;
 }
 
 .copyrightSection p{
@@ -333,7 +342,7 @@ body {
 
 #navigation {
     background-color: #e74c3c;
-    padding: 20px 10px;
+    padding: 8px 10px;
     z-index: 100;
     width: 100%;
 }
