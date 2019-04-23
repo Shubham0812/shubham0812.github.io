@@ -99,6 +99,20 @@ body {
 	max-width: 100%;
 }
 
+
+@media only screen and (max-width: 767px) {
+
+    .aboutSection .aboutInfo h4 {
+        padding-left: 10px;
+        padding-top: 15px;
+    }
+    .aboutSection .aboutInfo p {
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+}
+
+
 .highlight{
     color: #e74c3c;
 }
@@ -354,6 +368,7 @@ body {
     margin-top: 20px;
     border: 1px solid #fff;
     border-radius: 2px;
+    transition: all 0.5s;
 }
 
 .contactButton:hover {
@@ -388,8 +403,13 @@ body {
     color: #fff;
 }
 
-.navbar-brand,
-.navbar-brand:hover {
+#navigation  a:hover{
+    transition: all 0.5s;
+    color: #333333;
+}
+
+
+.navbar-brand{
     color: #fff;
 }
 
@@ -404,6 +424,7 @@ body {
     top: 0;
 
 }
+
 
 
 .loader{
