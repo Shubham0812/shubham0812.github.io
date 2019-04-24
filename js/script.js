@@ -144,10 +144,11 @@ $(document).ready(function() {
     const nav = $("#navigation");
     const navTop = nav.offset().top;
 
-    $(window).on("scroll",stickNavigation);
+	$(window).on("scroll",stickNavigation);
+    $(window).on("scroll",enterSection);
+	
     
     function stickNavigation(){
-       
         var body = $("body");
 
         if($(window).scrollTop() >= navTop){
@@ -160,7 +161,69 @@ $(document).ready(function() {
 
         }
         
-    }
+	}
+
+	var current = navTop;
+	const aboutTop = $("#about").offset().top;
+	const skillsTop = $("#skills").offset().top;
+	const statsTop = $("#stats").offset().top;
+	const portfolioTop = $("#portfolio").offset().top;
+	const contactTop = $("#contact").offset().top;
+
+
+	function enterSection(){
+		if($(window).scrollTop() < navTop){
+			$(".brand").addClass("active");
+			$(".item0").removeClass("active");
+			$(".item1").removeClass("active");
+			$(".item2").removeClass("active");
+			$(".item3").removeClass("active");
+			$(".item4").removeClass("active");
+		}
+		else if ($(window).scrollTop() <= aboutTop){
+			$(".item0").addClass("active");
+			$(".brand").removeClass("active");
+			$(".item1").removeClass("active");
+			$(".item2").removeClass("active");
+			$(".item3").removeClass("active");
+			$(".item4").removeClass("active");
+		}
+		else if ($(window).scrollTop() > aboutTop + 600 && $(window).scrollTop() < skillsTop  ){
+			$(".item1").addClass("active");
+			$(".brand").removeClass("active");
+			$(".item0").removeClass("active");
+			$(".item2").removeClass("active");
+			$(".item3").removeClass("active");
+			$(".item4").removeClass("active");
+		}
+		else if ($(window).scrollTop() > skillsTop + 500 && $(window).scrollTop() < statsTop  ){
+			$(".item2").addClass("active");
+			$(".brand").removeClass("active");
+			$(".item1").removeClass("active");
+			$(".item0").removeClass("active");
+			$(".item3").removeClass("active");
+			$(".item4").removeClass("active");
+		}
+		else if ($(window).scrollTop() > statsTop + 300 && $(window).scrollTop() < portfolioTop  ){
+			$(".item3").addClass("active");
+			$(".brand").removeClass("active");
+			$(".item1").removeClass("active");
+			$(".item2").removeClass("active");
+			$(".item0").removeClass("active");
+			$(".item4").removeClass("active");
+		}
+		else if ($(window).scrollTop() > portfolioTop + 800 && $(window).scrollTop() < contactTop  ){
+			$(".item4").addClass("active");
+			$(".brand").removeClass("active");
+			$(".item1").removeClass("active");
+			$(".item2").removeClass("active");
+			$(".item3").removeClass("active");
+			$(".item0").removeClass("active");
+		}
+	}
+	
+
+
 });
 
 

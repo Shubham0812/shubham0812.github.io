@@ -363,12 +363,17 @@ body {
 
 .contactButton {
 	color: #fff;
-    padding: 15px 20px;
+    padding: 15px 30px 15px 10px;
     display: inline-block;
     margin-top: 20px;
     border: 1px solid #fff;
     border-radius: 2px;
-    transition: all 0.5s;
+    transition: all 0.6s;
+}
+
+.contactButton i{
+    padding: 0px 15px;
+    font-size: 18px;
 }
 
 .contactButton:hover {
@@ -401,11 +406,16 @@ body {
 
 #navigation li a{
     color: #fff;
+    transition: all 0.5s;
 }
 
 #navigation  a:hover{
     transition: all 0.5s;
     color: #333333;
+}
+
+#navigation .active a{
+    color: #333333;  
 }
 
 
