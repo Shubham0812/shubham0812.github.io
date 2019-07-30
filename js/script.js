@@ -28,8 +28,19 @@ $(document).ready(function() {
 		typeSpeed: 70,
 		loop: true,
 		startDelay: 1000,
-		showCursor: false
-	});
+    showCursor: false,
+  });
+  
+  var skillInfo = new Typed(".skillInfo", {
+		strings: ["Scroll to see more skills..."],
+    typeSpeed: 50,
+    loop: true,
+    startDelay: 1000,
+    showCursor: false,
+    fadeOut: true
+
+
+  })
 
 	$('.owl-carousel').owlCarousel({
 	    loop:true,

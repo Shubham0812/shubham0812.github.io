@@ -3,6 +3,11 @@ body {
     color: #333;
     background-color: #fff;
     letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  font-family: 'Oswald', sans-serif;
 }
 
 .overlay {
@@ -43,6 +48,7 @@ body {
     z-index: 5;
     text-align: center;
     margin-top: -125px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .titleMessage .heading p {
@@ -99,6 +105,9 @@ body {
 	max-width: 100%;
 }
 
+.aboutInfo{
+  font-weight: 600
+}
 
 @media only screen and (max-width: 767px) {
 
@@ -114,6 +123,7 @@ body {
 
 
 .highlight{
+  font-weight: 600;
     color: #e74c3c;
 }
 
@@ -129,7 +139,31 @@ body {
 }
 
 .skill h4{
-    margin-top: 5px;
+    margin-top: 20px;
+}
+
+.techSkillsInfo{
+  margin-bottom: 20px;
+}
+
+.skillNavigation{
+  background: none;
+  display: inline-flex;
+  border: none;
+  outline: none;
+}
+
+.skillNavigation:hover{
+  outline: none;
+}
+
+.skillRow{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#typed {
+  display: inline;
 }
 
 .chart {
