@@ -24,7 +24,7 @@ $(document).ready(function() {
 	});
 
 	var typed = new Typed(".typed", {
-		strings: ["iOS Developer.", "Machine Learning Enthusiast.", "Competitive Coder."],
+		strings: ["Full Stack Developer", "iOS Developer.", "Competitive Coder."],
 		typeSpeed: 70,
 		loop: true,
 		startDelay: 1000,
