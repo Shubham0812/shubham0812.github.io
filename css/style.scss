@@ -124,7 +124,7 @@ h2 {
 @media only screen and (max-width: 767px) {
   .aboutSection .aboutInfo h4 {
     padding-left: 10px;
-    padding-top: 15px;
+    padding-top: 25px;
   }
   .aboutSection .aboutInfo p {
     padding-top: 15px;
@@ -217,6 +217,7 @@ h2 {
 .squareItem {
   margin-top: 30px;
   position: relative;
+  opacity: 0;
 }
 
 .squareInnerContainer {
@@ -225,6 +226,12 @@ h2 {
   text-align: center;
   border: 2px solid #444;
   border-top: none;
+  @media only screen and (max-width: 999px) {
+    height: 200px;
+  }
+  @media only screen and (max-width: 769px) {
+    height: auto;
+  }
 }
 
 .squareInnerContainer:before,
@@ -322,6 +329,11 @@ h2 {
   @media only screen and (max-width: 994px) {
     height: 200px;
   }
+
+  @media only screen and (max-width: 575px) {
+    height: 250px;
+    width: 100%;
+  }
 }
 
 .items .item {
@@ -354,7 +366,7 @@ h2 {
   position: relative;
   display: inline-block;
 
-  -transition: all 0.2s linear, 0.2s;
+  transition: all 0.2s linear, 0.2s;
 }
 
 .items .imageOverlay {
@@ -375,27 +387,27 @@ h2 {
 .items .openButton {
   float: left;
   left: -200px;
+  opacity: 0;
 }
 
 .items .projectLink {
   float: right;
   right: -200px;
+  opacity: 0;
 }
 
 .items .item:hover .openButton {
   left: 0px;
+  opacity: 1;
 }
 
 .items .item:hover .projectLink {
   right: 0px;
+  opacity: 1;
 }
 
 .items .item:hover img {
-  -webkit-transform: scale(1.05, 1.05);
-  -ms-transform: scale(1.05, 1.05);
-  -moz-transform: scale(1.05, 1.05);
-  -o-transform: scale(1.05, 1.05);
-  -transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 
 .items {
@@ -470,6 +482,7 @@ h2 {
 .fixedNav #navigation {
   position: fixed;
   top: 0;
+  transition: 0.4s;
 }
 
 .loader {
@@ -593,4 +606,89 @@ h2 {
   100% {
     height: 0%;
   }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translatex(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+.in-left {
+  animation-name: fadeInLeft;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInLeftDouble {
+  from {
+    opacity: 0;
+    transform: translatex(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+
+.in-left-double {
+  animation-name: fadeInLeftDouble;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translatex(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+.in-right {
+  animation-name: fadeInRight;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  transition-delay: 5s;
+}
+
+
+@keyframes fadeInRightDouble {
+  from {
+    opacity: 0;
+    transform: translatex(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+
+.in-right-double {
+  animation-name: fadeInRightDouble;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translatey(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+.in-up {
+  animation-name: fadeInUp;
+  animation-fill-mode: both;
+  animation-duration: 1s;
 }
