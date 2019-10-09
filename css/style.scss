@@ -48,7 +48,9 @@ h2 {
   z-index: 5;
   text-align: center;
   margin-top: -125px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 
 .titleMessage .heading p {
@@ -73,6 +75,7 @@ h2 {
   width: 100%;
   animation: fade 1s linear 1;
 } */
+
 .titleMessage .heading .sub {
   font-size: 23px;
 }
@@ -86,6 +89,7 @@ h2 {
     text-align: center;
     margin-bottom: -30px;
 } */
+
 /* .viewWorkButton {
     color: #fff;
     position: relative;
@@ -97,12 +101,14 @@ h2 {
     cursor: pointer;
     transition: all 0.5s;
 } */
+
 /* .viewWorkButton:hover {
     text-decoration: none;
     color: #fff;
     background-color: #e74c3c;
     border-color: #e74c3c;
 } */
+
 .section {
   padding: 100px 0;
 }
@@ -120,12 +126,12 @@ h2 {
     padding-left: 10px;
     padding-top: 15px;
   }
-
   .aboutSection .aboutInfo p {
     padding-top: 15px;
     padding-left: 10px;
   }
 }
+
 .highlight {
   font-weight: 600;
   color: #e74c3c;
@@ -165,11 +171,10 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
   height: 40px;
-}
-@media only screen and (max-width: 573px) {
-  .skillRow {
+
+    @media only screen and (max-width: 573px) {
     margin-right: 32px;
-  }
+}
 }
 
 #typed {
@@ -263,7 +268,7 @@ h2 {
   color: #444;
 }
 
-#filters {
+#filters{
   padding-left: 0;
 }
 
@@ -313,9 +318,8 @@ h2 {
 .items .item > img {
   width: 400px;
   height: 250px;
-}
-@media only screen and (max-width: 994px) {
-  .items .item > img {
+
+  @media only screen and (max-width: 994px) {
     height: 200px;
   }
 }
@@ -349,6 +353,7 @@ h2 {
   background-color: #e74c3c;
   position: relative;
   display: inline-block;
+
   -transition: all 0.2s linear, 0.2s;
 }
 
@@ -487,17 +492,19 @@ h2 {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 348px) {
-  .icon-wrap > a:nth-child(4) {
+.icon-wrap > a:nth-child(4){
+    @media only screen and (max-width: 348px) {
     margin-top: 15px;
   }
 }
 
-@media only screen and (max-width: 430px) {
-  .icon-wrap > a:nth-child(5) {
+.icon-wrap > a:nth-child(5){
+    @media only screen and (max-width: 430px) {
     margin-top: 15px;
   }
 }
+
+
 
 .copyrightSection .icon-wrap .icon {
   overflow: hidden;
@@ -526,5 +533,3 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
 }
-
-/*# sourceMappingURL=style.css.map */
