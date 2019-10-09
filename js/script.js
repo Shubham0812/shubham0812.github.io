@@ -146,6 +146,46 @@ $(document).ready(function () {
 
 	$(window).on("scroll", stickNavigation);
 	$(window).on("scroll", enterSection);
+	$(window).on("scroll", function () {
+		// console.log($(window))
+		if (isScrolledIntoView($stats_title, $window)) {
+			$stats_title.addClass("in-right")
+		}
+	});
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($portfolio_title, $window)) {
+			$portfolio_title.addClass("in-left")
+		}
+	});
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($tech_title, $window)) {
+			$tech_title.addClass("in-left")
+		}
+	});
+
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($skill_caro, $window)) {
+			$skill_caro.addClass("in-left-double")
+		}
+	});
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($portfolio_items, $window)) {
+			$portfolio_items.addClass("in-right-double")
+		}
+	});
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($contact_section, $window)) {
+			$contact_section.addClass("in-up")
+		}
+	});
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($contact_desc, $window)) {
+			$contact_desc.addClass("in-up")
+		}
+	});
+
+
+	
 
 
 	function stickNavigation() {
@@ -221,6 +261,32 @@ $(document).ready(function () {
 			$(".item0").removeClass("active");
 		}
 	}
+
+
+
+	var $window = $(window);
+	var $portfolio_title = $("#portfolio-title")
+	var $stats_title = $("#stats-title")
+	var $tech_title = $("#technical-title")
+	var $skill_caro = $(".left-double")
+	var $portfolio_items = $(".squareItem")
+	var $contact_section = $("#contact-me")
+	var $contact_desc = $("#contact-desc")
+
+
+
+	
+
+	function isScrolledIntoView($elem, $window) {
+		var docViewTop = $window.scrollTop();
+		var docViewBottom = docViewTop + $window.height();
+
+		var elemTop = $elem.offset().top;
+		var elemBottom = elemTop + $elem.height();
+
+		return ((elemBottom <= docViewBottom - 50) && (elemTop >= docViewTop + 50));
+	}
+
 
 
 
