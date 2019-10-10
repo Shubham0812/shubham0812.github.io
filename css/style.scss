@@ -10,47 +10,96 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
-.overlay {
+// .overlay {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   z-index: 3;
+//   background-color: rgba(0, 0, 0, 0.6);
+// }
+
+// .slides-navigation {
+//   z-index: 6;
+// }
+
+// .slides-navigation .prev,
+// .slides-navigation .next {
+//   width: 47px;
+//   height: 47px;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
+
+// .slides-navigation a.prev {
+//   left: 20px;
+//   background-image: url(../images/icons/prev.png);
+// }
+
+// .slides-navigation a.next {
+//   right: 20px;
+//   background-image: url(../images/icons/next.png);
+// }
+
+.bg-overlay {
+  background: rgba(231, 76, 60, 1);
+  height: 300px;
   width: 100%;
-  height: 100%;
-  position: absolute;
+  transform: skewY(8deg);
   z-index: 3;
-  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: -200px;
 }
 
-.slides-navigation {
-  z-index: 6;
-}
-
-.slides-navigation .prev,
-.slides-navigation .next {
-  width: 47px;
-  height: 47px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.slides-navigation a.prev {
-  left: 20px;
-  background-image: url(../images/icons/prev.png);
-}
-
-.slides-navigation a.next {
-  right: 20px;
-  background-image: url(../images/icons/next.png);
+.cont {
+  height: 200px;
+  background: rgba(231, 76, 60, 1);
+  display: flex;
 }
 
 .titleMessage {
-  position: absolute;
-  width: 100%;
-  height: 250px;
-  top: 50%;
+  height: 220px;
   z-index: 5;
+  margin-top: -145px;
   text-align: center;
-  margin-top: -125px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  position: relative;
+}
+
+.main::before {
+  background: white;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  animation: fade 1.1s linear 1 ;
+}
+
+.main::after {
+  background: white;
+  content: "";
+  display: block;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fade 1.1s linear 1;
+}
+
+.sub {
+  margin-top: 80px;
+  z-index: 5;
+  transform: translate3d(10px, 10px, 10px);
+  font-weight: 300;
 }
 
 .titleMessage .heading p {
@@ -58,6 +107,11 @@ h2 {
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   font-weight: 100;
   letter-spacing: 7px;
+}
+
+.intro-section {
+  height: 620px;
+  background: #000;
 }
 
 .titleMessage .heading .main {
@@ -178,7 +232,7 @@ h2 {
 }
 
 #typed {
-  display: inline;
+  display: block;
 }
 
 .owl-carousel {
@@ -305,7 +359,6 @@ h2 {
 .section .heading {
   text-align: center;
   padding-bottom: 40px;
-  width: 100%;
 }
 
 .items li {
@@ -468,6 +521,7 @@ h2 {
 
 #navigation .active a {
   color: #333333;
+  font-weight: 900;
 }
 
 .navbar-brand {
@@ -483,6 +537,7 @@ h2 {
   position: fixed;
   top: 0;
   transition: 0.4s;
+  box-shadow: -1rem 0 1rem #e74c3c;
 }
 
 .loader {
@@ -658,7 +713,6 @@ h2 {
   transition-delay: 5s;
 }
 
-
 @keyframes fadeInRightDouble {
   from {
     opacity: 0;
@@ -676,7 +730,6 @@ h2 {
   animation-duration: 1s;
 }
 
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -691,4 +744,15 @@ h2 {
   animation-name: fadeInUp;
   animation-fill-mode: both;
   animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }

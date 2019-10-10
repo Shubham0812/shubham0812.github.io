@@ -1,7 +1,6 @@
 $(window).on("load", function () {
 	$(".loader-wrapper").fadeOut(500, function () {
 	});
-
 	$(".items").isotope({
 		filter: '*',
 		animationOptions: {
@@ -13,7 +12,6 @@ $(window).on("load", function () {
 
 });
 
-
 $(document).ready(function () {
 
 	$('#slides').superslides({
@@ -22,22 +20,20 @@ $(document).ready(function () {
 		pagination: false
 	});
 
-	var typed = new Typed(".typed", {
-		strings: ["Full Stack Developer", "iOS Developer.", "Competitive Coder."],
+	new Typed(".typed", {
+		strings: ["Full Stack Developer", "iOS Developer", "Competitive Coder"],
 		typeSpeed: 70,
 		loop: true,
-		startDelay: 1000,
+		startDelay: 1400,
 		showCursor: false,
 	});
 
-	var skillInfo = new Typed(".skillInfo", {
-		strings: ["Drag to see more skills.."],
+	new Typed(".skillInfo", {
+		strings: ["Swipe Horizontally to see more of my skills.."],
 		typeSpeed: 50,
 		loop: true,
-		startDelay: 1000,
+		startDelay: 500,
 		showCursor: false,
-
-
 	})
 
 	$('.owl-carousel').owlCarousel({
@@ -61,49 +57,19 @@ $(document).ready(function () {
 
 
 
-
-
-	var skillsTopOffset = $(".skillsSection").offset().top;
-	var statsTopOffset = $(".statsSection").offset().top;
 	var countUpFinished = false;
-	$(window).scroll(function () {
-
-		if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
-
-			$('.chart').easyPieChart({
-				easing: 'easeInOut',
-				barColor: '#fff',
-				trackColor: false,
-				scaleColor: false,
-				lineWidth: 4,
-				size: 152,
-				onStep: function (from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent));
-				}
-			});
-
-
-		}
-
-
-		if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
-			$(".counter").each(function () {
-				var element = $(this);
-				var endVal = parseInt(element.text());
-
-				element.countup(endVal);
-			})
-
-			countUpFinished = true;
-
-		}
-
-
-	});
+	var $window = $(window);
+	var $portfolio_title = $("#portfolio-title")
+	var $stats_title = $("#stats-title")
+	var $tech_title = $("#technical-title")
+	var $skill_caro = $(".left-double")
+	var $portfolio_items = $(".squareItem")
+	var $contact_section = $("#contact-me")
+	var $contact_desc = $("#contact-desc")
+	var $skills_show = $(".skill-showcase")
 
 
 	$("[data-fancybox]").fancybox();
-
 
 	$("#filters a").click(function () {
 
@@ -153,8 +119,16 @@ $(document).ready(function () {
 		}
 	});
 	$(window).on("scroll", function () {
-		if (isScrolledIntoView($portfolio_title, $window)) {
+		if (isScrolledIntoView($portfolio_title, $window) && countUpFinished === true) {
 			$portfolio_title.addClass("in-left")
+			$(".counter").each(function () {
+				var element = $(this);
+				var endVal = parseInt(element.text());
+				element.countup(endVal);
+			})
+
+			countUpFinished = true;
+
 		}
 	});
 	$(window).on("scroll", function () {
@@ -184,8 +158,26 @@ $(document).ready(function () {
 		}
 	});
 
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($skills_show, $window)) {
+			$skills_show.addClass("in-left-double")
 
-	
+			$('.chart').easyPieChart({
+				easing: 'easeInOut',
+				barColor: '#fff',
+				trackColor: false,
+				scaleColor: false,
+				lineWidth: 4,
+				size: 152,
+				onStep: function (from, to, percent) {
+					$(this.el).find('.percent').text(Math.round(percent));
+				}
+			});
+
+		}
+	});
+
+
 
 
 	function stickNavigation() {
@@ -262,34 +254,13 @@ $(document).ready(function () {
 		}
 	}
 
-
-
-	var $window = $(window);
-	var $portfolio_title = $("#portfolio-title")
-	var $stats_title = $("#stats-title")
-	var $tech_title = $("#technical-title")
-	var $skill_caro = $(".left-double")
-	var $portfolio_items = $(".squareItem")
-	var $contact_section = $("#contact-me")
-	var $contact_desc = $("#contact-desc")
-
-
-
-	
-
 	function isScrolledIntoView($elem, $window) {
 		var docViewTop = $window.scrollTop();
 		var docViewBottom = docViewTop + $window.height();
-
 		var elemTop = $elem.offset().top;
 		var elemBottom = elemTop + $elem.height();
-
 		return ((elemBottom <= docViewBottom - 50) && (elemTop >= docViewTop + 50));
 	}
-
-
-
-
 });
 
 
