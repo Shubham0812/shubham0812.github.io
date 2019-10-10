@@ -108,7 +108,6 @@ h2 {
     background-color: #e74c3c;
     border-color: #e74c3c;
 } */
-
 .section {
   padding: 100px 0;
 }
@@ -178,7 +177,7 @@ h2 {
 }
 
 #typed {
-  display: inline;
+  display: block;
 }
 
 .owl-carousel {
@@ -305,7 +304,6 @@ h2 {
 .section .heading {
   text-align: center;
   padding-bottom: 40px;
-  width: 100%;
 }
 
 .items li {
@@ -468,6 +466,7 @@ h2 {
 
 #navigation .active a {
   color: #333333;
+  font-weight: 900;
 }
 
 .navbar-brand {
@@ -483,6 +482,7 @@ h2 {
   position: fixed;
   top: 0;
   transition: 0.4s;
+  box-shadow: -1rem 0 1rem #e74c3c;
 }
 
 .loader {
@@ -658,7 +658,6 @@ h2 {
   transition-delay: 5s;
 }
 
-
 @keyframes fadeInRightDouble {
   from {
     opacity: 0;
@@ -676,7 +675,6 @@ h2 {
   animation-duration: 1s;
 }
 
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -691,4 +689,15 @@ h2 {
   animation-name: fadeInUp;
   animation-fill-mode: both;
   animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }
