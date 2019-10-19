@@ -67,6 +67,8 @@ $(document).ready(function () {
 	var $contact_section = $("#contact-me")
 	var $contact_desc = $("#contact-desc")
 	var $skills_show = $(".skill-showcase")
+	var $filters = $(".filter")
+	var $portfolio_container = $("#items-left-double")
 
 
 	$("[data-fancybox]").fancybox();
@@ -119,15 +121,8 @@ $(document).ready(function () {
 		}
 	});
 	$(window).on("scroll", function () {
-		if (isScrolledIntoView($portfolio_title, $window) && countUpFinished === true) {
+		if (isScrolledIntoView($portfolio_title, $window)) {
 			$portfolio_title.addClass("in-left")
-			$(".counter").each(function () {
-				var element = $(this);
-				var endVal = parseInt(element.text());
-				element.countup(endVal);
-			})
-
-			countUpFinished = true;
 
 		}
 	});
@@ -159,7 +154,7 @@ $(document).ready(function () {
 	});
 
 	$(window).on("scroll", function () {
-		if (isScrolledIntoView($skills_show, $window)) {
+		if (isScrolledIntoView($skills_show, $window, -150)) {
 			$skills_show.addClass("in-left-double")
 
 			$('.chart').easyPieChart({
@@ -176,6 +171,16 @@ $(document).ready(function () {
 
 		}
 	});
+
+	$(window).on("scroll", function () {
+		if (isScrolledIntoView($filters, $window)) {
+			$filters.addClass("in-left")
+		}
+		if (isScrolledIntoView($filters, $window, 500)) {
+			$portfolio_container.addClass("in-left")
+		}
+	});
+
 
 
 
@@ -254,11 +259,11 @@ $(document).ready(function () {
 		}
 	}
 
-	function isScrolledIntoView($elem, $window) {
+	function isScrolledIntoView($elem, $window, $value = 0) {
 		var docViewTop = $window.scrollTop();
 		var docViewBottom = docViewTop + $window.height();
 		var elemTop = $elem.offset().top;
 		var elemBottom = elemTop + $elem.height();
-		return ((elemBottom <= docViewBottom - 50) && (elemTop >= docViewTop + 50));
+		return ((elemBottom + $value <= docViewBottom - 50) && (elemTop + $value >= docViewTop + 50));
 	}
 });
