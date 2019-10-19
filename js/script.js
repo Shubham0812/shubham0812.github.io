@@ -176,7 +176,7 @@ $(document).ready(function () {
 		if (isScrolledIntoView($filters, $window)) {
 			$filters.addClass("in-left")
 		}
-		if (isScrolledIntoView($filters, $window, 500)) {
+		if (isScrolledIntoView($filters, $window, 200)) {
 			$portfolio_container.addClass("in-left")
 		}
 	});
