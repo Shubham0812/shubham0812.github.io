@@ -138,8 +138,17 @@ $(document).ready(function () {
 		}
 	});
 	$(window).on("scroll", function () {
-		if (isScrolledIntoView($portfolio_items, $window)) {
+		if (isScrolledIntoView($portfolio_items, $window) && !countUpFinished) {
 			$portfolio_items.addClass("in-right-double")
+			$(".counter").each(function () {
+				var element = $(this);
+				var endVal = parseInt(element.text());
+
+				element.countup(endVal);
+			})
+
+			countUpFinished = true;
+
 		}
 	});
 	$(window).on("scroll", function () {
