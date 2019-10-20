@@ -169,6 +169,7 @@ h2 {
 @media only screen and (max-width: 573px) {
   .skillRow {
     margin-right: 32px;
+    margin-left: 32px;
   }
 }
 
