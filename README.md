@@ -12,8 +12,10 @@ You can find it [here](https://shubham0812.github.io/).
 - JavaScript
 
 
-## Code Sample
+## Code Example
 
+    // Moves the view to the starting of the page
+    
     $("#navigation .brand a").click(function (e) {
 	    e.preventDefault();
 	    var targetElement = $(this).attr("href");
