@@ -8,7 +8,7 @@ You can find the same here [here](https://shubham0812.github.io/).
 
 ## Technologies Used
 - HTML5
-- CSS
+- CSS3
 - JavaScript
 
 
