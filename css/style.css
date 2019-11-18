@@ -164,6 +164,12 @@ h2 {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
+  opacity: 0.95;
+  transition: 0.2s ease-in-out;
+}
+
+.skill:hover {
+  opacity: 1;
 }
 
 .dev-skills {
@@ -172,7 +178,6 @@ h2 {
   font-size: 3rem;
   margin-bottom: 0;
   margin-top: 0;
-  text-align: center;
 }
 
 .techSkillsInfo {

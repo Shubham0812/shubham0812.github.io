@@ -88,14 +88,18 @@ $(document).ready(function () {
 	$("#navigation .brand a").click(function (e) {
 		e.preventDefault();
 		var targetElement = $(this).attr("href");
-		var targetPosition = $(targetElement).offset().top;
 		$("html,body").animate({ scrollTop: 0 }, "slow");
 	});
 
 	$("#navigation li a").click(function (e) {
 		e.preventDefault();
 		var targetElement = $(this).attr("href");
-		var targetPosition = $(targetElement).offset().top;
+		console.log(e.currentTarget.innerHTML.toLowerCase() )
+		if (e.currentTarget.innerHTML.toLowerCase() === 'skills') {
+			var targetPosition = $(targetElement).offset().top + 80;
+		} else {
+			var targetPosition = $(targetElement).offset().top;
+		}
 		$("html,body").animate({ scrollTop: targetPosition - 50 }, "slow");
 	});
 
