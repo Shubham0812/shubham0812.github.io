@@ -78,6 +78,7 @@ h2 {
 
 .titleMessage .heading .sub {
   font-size: 23px;
+  height: 75px;
 }
 
 /* .gotoContent{
@@ -108,6 +109,28 @@ h2 {
     background-color: #e74c3c;
     border-color: #e74c3c;
 } */
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .location-text {
+    letter-spacing: 1.2px !important;
+    font-size: 1.4em;
+    margin: 0 !important;
+    margin-left: 4px;
+    opacity: 0.6;
+  }
+
+  .location-icon{
+    color: #fff;
+    font-size: 32px;
+    opacity: 0.4;
+    margin-right: 4px;
+  }
+}
+
 .section {
   padding: 100px 0;
 }
