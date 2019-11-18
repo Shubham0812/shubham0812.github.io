@@ -126,7 +126,7 @@ h2 {
     font-family: "Montserrat";
   }
 
-  .location-icon{
+  .location-icon {
     color: #fff;
     font-size: 32px;
     opacity: 0.4;
@@ -169,25 +169,27 @@ h2 {
 }
 
 .skill {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    opacity: 0.95;
-    transition: 0.2s ease-in-out;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+  transition: 0.2s ease-in-out;
 }
 
-.skill:hover{
-  opacity: 1.0;
+.skill:hover {
+  opacity: 1;
 }
-
 
 .dev-skills {
-    padding-left: 0;
-    list-style: none;
-    font-size: 3rem;
-    margin-bottom: 0;
-    margin-top: 0;
-    // text-align: center;
+  padding-left: 0;
+  list-style: none;
+  font-size: 3rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  // text-align: center;
+  @media only screen and (max-width: 768px) {
+    font-size: 2.2rem;
+  }
 }
 
 .techSkillsInfo {
@@ -206,12 +208,25 @@ h2 {
   outline: none;
 }
 
-.skill-showcase{
+.skill-showcase {
   display: flex;
-  img{
+  flex-wrap: wrap;
+  img {
     width: 55%;
     height: 400px;
+    @media only screen and (max-width: 1199px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 991px) {
+      width: 100%;
+    }
   }
+}
+
+.skills-container{
+      @media only screen and (max-width: 620px) {
+      margin-left: 32px;
+}
 }
 
 .skillRow {
@@ -757,7 +772,7 @@ $size-m: 16px;
 $size-l: 24px;
 $size-xl: 32px;
 
-// utilities 
+// utilities
 
 .margin-left-xs {
   margin-left: $size-xs !important;
