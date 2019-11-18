@@ -114,6 +114,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 16px;
+  margin-right: 8px;
 
   .location-text {
     letter-spacing: 1.2px !important;
@@ -121,6 +123,7 @@ h2 {
     margin: 0 !important;
     margin-left: 4px;
     opacity: 0.6;
+    font-family: "Montserrat";
   }
 
   .location-icon{
@@ -166,16 +169,23 @@ h2 {
 }
 
 .skill {
-  text-align: center;
-  margin-left: 10px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
-.skill h4 {
-  margin-top: 20px;
+.dev-skills {
+    padding-left: 0;
+    list-style: none;
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
 }
 
 .techSkillsInfo {
-  margin-bottom: 20px;
+  margin-top: 24px;
+  // margin-bottom: 24px;
 }
 
 .skillNavigation {
@@ -187,6 +197,14 @@ h2 {
 
 .skillNavigation:hover {
   outline: none;
+}
+
+.skill-showcase{
+  display: flex;
+  img{
+    width: 55%;
+    height: 400px;
+  }
 }
 
 .skillRow {
@@ -494,6 +512,7 @@ h2 {
 
 .navbar-brand {
   color: #fff;
+  margin-left: 24px;
 }
 
 .navbar-toggler-icon {
@@ -723,4 +742,73 @@ h2 {
     width: 100%;
     opacity: 1;
   }
+}
+
+$size-xs: 8px;
+$size-s: 12px;
+$size-m: 16px;
+$size-l: 24px;
+$size-xl: 32px;
+
+// utilities 
+
+.margin-left-xs {
+  margin-left: $size-xs !important;
+}
+.margin-left-s {
+  margin-left: $size-s !important;
+}
+.margin-left-m {
+  margin-left: $size-m !important;
+}
+.margin-left-l {
+  margin-left: $size-l !important;
+}
+.margin-left-xl {
+  margin-left: $size-xl !important;
+}
+.margin-bottom-xs {
+  margin-bottom: $size-xs !important;
+}
+.margin-bottom-s {
+  margin-bottom: $size-s !important;
+}
+.margin-bottom-m {
+  margin-bottom: $size-m !important;
+}
+.margin-bottom-l {
+  margin-bottom: $size-l !important;
+}
+.margin-bottom-xl {
+  margin-bottom: $size-xl !important;
+}
+.margin-top-xs {
+  margin-top: $size-xs !important;
+}
+.margin-top-s {
+  margin-top: $size-s !important;
+}
+.margin-top-m {
+  margin-top: $size-m !important;
+}
+.margin-top-l {
+  margin-top: $size-l !important;
+}
+.margin-top-xl {
+  margin-top: $size-xl !important;
+}
+.margin-right-xs {
+  margin-right: $size-xs !important;
+}
+.margin-right-s {
+  margin-right: $size-s !important;
+}
+.margin-right-m {
+  margin-right: $size-m !important;
+}
+.margin-right-l {
+  margin-right: $size-l !important;
+}
+.margin-right-xl {
+  margin-right: $size-xl !important;
 }

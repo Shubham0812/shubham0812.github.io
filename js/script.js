@@ -26,14 +26,6 @@ $(document).ready(function () {
 		loop: true,
 		startDelay: 1400,
 		showCursor: false,
-	});
-
-	new Typed(".skillInfo", {
-		strings: ["Swipe Horizontally to see more of my skills.."],
-		typeSpeed: 50,
-		loop: true,
-		startDelay: 500,
-		showCursor: false,
 	})
 
 	$('.owl-carousel').owlCarousel({
@@ -162,24 +154,24 @@ $(document).ready(function () {
 		}
 	});
 
-	$(window).on("scroll", function () {
-		if (isScrolledIntoView($skills_show, $window, -150)) {
-			$skills_show.addClass("in-left-double")
+	// $(window).on("scroll", function () {
+	// 	if (isScrolledIntoView($skills_show, $window, -150)) {
+	// 		$skills_show.addClass("in-left-double")
 
-			$('.chart').easyPieChart({
-				easing: 'easeInOut',
-				barColor: '#fff',
-				trackColor: false,
-				scaleColor: false,
-				lineWidth: 4,
-				size: 152,
-				onStep: function (from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent));
-				}
-			});
+	// 		$('.chart').easyPieChart({
+	// 			easing: 'easeInOut',
+	// 			barColor: '#fff',
+	// 			trackColor: false,
+	// 			scaleColor: false,
+	// 			lineWidth: 4,
+	// 			size: 152,
+	// 			onStep: function (from, to, percent) {
+	// 				$(this.el).find('.percent').text(Math.round(percent));
+	// 			}
+	// 		});
 
-		}
-	});
+	// 	}
+	// });
 
 	$(window).on("scroll", function () {
 		if (isScrolledIntoView($filters, $window)) {
