@@ -10,6 +10,7 @@ You can find the same [here](https://shubham0812.github.io/).
 - HTML5
 - CSS3
 - JavaScript
+- SCSS
 
 
 ## Code Example
