@@ -21,7 +21,7 @@ $(document).ready(function () {
 	});
 
 	new Typed(".typed", {
-		strings: ["Full Stack Developer", "iOS Developer", "Competitive Coder"],
+		strings: ["iOS Developer", "Web Developer", "Competitive Coder"],
 		typeSpeed: 70,
 		loop: true,
 		startDelay: 1400,
