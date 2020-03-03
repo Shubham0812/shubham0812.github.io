@@ -127,11 +127,16 @@ h2 {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 120px 0;
+}
+
+.section-small{
+  padding: 90px;
 }
 
 .aboutImage {
-  max-width: 100%;
+  max-width: 95%;
+  border-radius: 50%;
 }
 
 .aboutInfo {
@@ -207,6 +212,11 @@ h2 {
 .skill-showcase img {
   width: 55%;
   height: 400px;
+}
+
+.skills-container{
+  margin-left: auto;
+  margin-right: auto;
 }
 @media only screen and (max-width: 1199px) {
   .skill-showcase img {
@@ -293,7 +303,7 @@ h2 {
 }
 @media only screen and (max-width: 769px) {
   .squareInnerContainer {
-    height: auto;
+    height: 176px;
   }
 }
 
@@ -501,7 +511,7 @@ h2 {
 .copyrightSection {
   background-color: #000;
   color: #fff;
-  padding: 35px 5px;
+  padding: 55px 5px;
 }
 
 .copyrightSection p {
