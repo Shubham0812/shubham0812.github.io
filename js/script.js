@@ -21,10 +21,10 @@ $(document).ready(function () {
 	});
 
 	new Typed(".typed", {
-		strings: ["iOS Developer", "Web Developer", "Competitive Coder"],
-		typeSpeed: 70,
+		strings: ["iOS Developer", "Web Developer"],
+		typeSpeed: 100,
 		loop: true,
-		startDelay: 1400,
+		startDelay: 800,
 		showCursor: false,
 	})
 
