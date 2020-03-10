@@ -4,6 +4,7 @@ body {
   background-color: #fff;
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -60,6 +61,7 @@ h2 {
 
 .titleMessage .heading .main {
   font-size: 50px;
+  font-weight: 200;
 }
 
 /* .titleMessage .heading .main::before {
@@ -116,13 +118,13 @@ h2 {
   font-size: 1.4em;
   margin: 0 !important;
   margin-left: 4px;
-  opacity: 0.4;
+  opacity: 0.6;
   font-family: "Montserrat";
 }
 .location .location-icon {
   color: #fff;
   font-size: 32px;
-  opacity: 0.3;
+  opacity: 0.6;
   margin-right: 4px;
 }
 
@@ -132,6 +134,23 @@ h2 {
 
 .section-small{
   padding: 90px;
+}
+
+.aboutSection{
+  position: relative;
+}
+
+.aboutSection::before{
+  content: "Who is this guy?";
+  font-weight: 500;
+  opacity: 0.15;
+  font-size: 4.7em;
+  color: #232323;
+  position: absolute;
+  transform: rotate(270deg);
+  top: 275px;
+  left: -250px;
+  letter-spacing: 4px;
 }
 
 .aboutImage {
@@ -163,6 +182,7 @@ h2 {
 .contactSection {
   background-color: #e74c3c;
   color: #fff;
+  position: relative;
 }
 
 .skill {
@@ -514,6 +534,7 @@ h2 {
   padding: 55px 5px;
 }
 
+
 .copyrightSection p {
   margin: 35px;
 }
@@ -541,7 +562,7 @@ h2 {
 
 #navigation .active a {
   color: #333333;
-  font-weight: 900;
+  font-weight: bolder;
 }
 
 .navbar-brand {
