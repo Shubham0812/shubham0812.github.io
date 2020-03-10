@@ -87,7 +87,6 @@ $(document).ready(function () {
 
 	$("#navigation .brand a").click(function (e) {
 		e.preventDefault();
-		var targetElement = $(this).attr("href");
 		$("html,body").animate({ scrollTop: 0 }, "slow");
 	});
 
