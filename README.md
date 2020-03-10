@@ -27,5 +27,5 @@ You can find the same [here](https://shubham0812.github.io/).
 
 ## Credits
 
-**©** **Shubham Kumar Singh** | *2019*
+**©** **Shubham Kumar Singh** | *2020*
 
