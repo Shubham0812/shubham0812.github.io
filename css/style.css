@@ -162,6 +162,18 @@ h2 {
   font-weight: 600;
 }
 
+@media only screen and (max-width: 1166px) {
+  .aboutSection::before{
+    font-weight: 500;
+    opacity: 0.15;
+    font-size: 4em;
+    color: #232323;
+    top: 275px;
+    left: -220px;
+    letter-spacing: 4px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .aboutSection .aboutInfo h4 {
     padding-left: 10px;
@@ -173,6 +185,37 @@ h2 {
     padding-left: 10px;
   }
 }
+
+@media only screen and (max-width: 670px) {
+  .aboutSection::before{
+    font-weight: 500;
+    opacity: 0.15;
+    font-size: 4em;
+    color: #232323;
+    transform: rotate(0deg);
+    top: 20px;
+    text-align: center;
+    left: 8%;
+    letter-spacing: 4px;
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .aboutSection::before{
+    font-weight: 500;
+    opacity: 0.15;
+    font-size: 3.2em;
+    color: #232323;
+    transform: rotate(0deg);
+    top: 40px;
+    text-align: center;
+    left: 4%;
+    letter-spacing: 4px;
+  }
+}
+
+
+
 .highlight {
   font-weight: 600;
   color: #e74c3c;
