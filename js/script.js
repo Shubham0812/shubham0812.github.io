@@ -47,7 +47,7 @@ $(document).ready(function () {
 		}
 	});
 
-
+	$('[data-toggle="tooltip"]').tooltip();
 
 	var countUpFinished = false;
 	var $window = $(window);
