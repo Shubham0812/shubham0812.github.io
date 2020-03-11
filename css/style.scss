@@ -1,4 +1,4 @@
-@import "utility.css"; 
+@import "utility.css";
 
 $size-xs: 8px;
 $size-s: 12px;
@@ -174,21 +174,32 @@ h2 {
     left: -220px;
   }
   @media only screen and (max-width: 670px) {
-      transform: rotate(0deg);
-      top: 20px;
-      left: 8%;
+    transform: rotate(0deg);
+    top: 20px;
+    left: 50%;
+    margin-left: -16.5rem;
   }
-  
+
   @media only screen and (max-width: 590px) {
-      font-size: 3.2em;
-      top: 40px;
-      left: 4%;
+    font-size: 3.2em;
+    top: 40px;
+    margin-left: -13rem;
   }
-  
+
   @media only screen and (max-width: 454px) {
-      font-size: 2.8em;
-      top: 40px;
-      left: 4%;
+    font-size: 2.8em;
+    top: 40px;
+    margin-left: -12rem;
+  }
+  @media only screen and (max-width: 405px) {
+    font-size: 2.2em;
+    top: 40px;
+    margin-left: -10rem;
+  }
+  @media only screen and (max-width: 338px) {
+    font-size: 1.6em;
+    top: 40px;
+    margin-left: -8rem;
   }
 }
 
@@ -279,10 +290,14 @@ h2 {
   }
 }
 
-.skills-container{
-      @media only screen and (max-width: 620px) {
-      margin-left: 32px;
-}
+.skills-container {
+
+  h6{
+    font-weight: 800;
+  }
+  @media only screen and (max-width: 620px) {
+    margin-left: 32px;
+  }
 }
 
 .skillRow {
@@ -402,6 +417,7 @@ h2 {
   border: 1px solid #bdc3c7;
   padding: 10px 18px;
   display: block;
+  border-radius: 6px;
 }
 
 .filter li {
@@ -537,7 +553,7 @@ h2 {
   display: inline-block;
   margin-top: 20px;
   border: 1px solid #fff;
-  border-radius: 2px;
+  border-radius: 8px;
   transition: all 0.6s;
 }
 
@@ -624,8 +640,15 @@ h2 {
   text-decoration: none;
 }
 
-.icon-wrap > a:nth-child(4), .icon-wrap > a:nth-child(5) {
-  @media only screen and (max-width: 348px) {
+.icon-wrap > a:nth-child(4),
+.icon-wrap > a:nth-child(5) {
+  @media only screen and (max-width: 349px) {
+    margin-top: 15px;
+  }
+}
+
+.icon-wrap > a:nth-child(5) {
+  @media only screen and (max-width: 364px) {
     margin-top: 15px;
   }
 }
@@ -643,6 +666,17 @@ h2 {
   transition: all 0.5s;
   background: #333333;
   font-size: 18pt;
+  border-radius: 4px;
+
+  @media only screen and (max-width: 434px) {
+    margin: 0 12px;
+  }
+  @media only screen and (max-width: 405px) {
+    margin: 0 8px;
+  }
+  @media only screen and (max-width: 364px) {
+    margin: 0 15px;
+  }
 }
 
 .copyrightSection .icon-wrap .icon:hover {
