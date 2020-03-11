@@ -1,9 +1,18 @@
+@import "utility.css"; 
+
+$size-xs: 8px;
+$size-s: 12px;
+$size-m: 16px;
+$size-l: 24px;
+$size-xl: 32px;
+
 body {
   font-size: 14px;
   color: #333;
   background-color: #fff;
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
 }
 
 h2 {
@@ -62,6 +71,7 @@ h2 {
 
 .titleMessage .heading .main {
   font-size: 50px;
+  font-weight: 200;
 }
 
 /* .titleMessage .heading .main::before {
@@ -129,17 +139,62 @@ h2 {
   .location-icon {
     color: #fff;
     font-size: 32px;
-    opacity: 0.4;
+    opacity: 0.6;
     margin-right: 4px;
   }
 }
 
 .section {
-  padding: 100px 0;
+  padding: 120px 0;
+}
+
+.section-small {
+  padding: 90px 12px;
+}
+
+.aboutSection {
+  position: relative;
+}
+
+.aboutSection::before {
+  content: "Who is this guy?";
+  font-weight: 500;
+  opacity: 0.15;
+  font-size: 4.7em;
+  color: #232323;
+  position: absolute;
+  transform: rotate(270deg);
+  top: 275px;
+  left: -250px;
+  letter-spacing: 4px;
+
+  @media only screen and (max-width: 1166px) {
+    font-size: 4em;
+    top: 275px;
+    left: -220px;
+  }
+  @media only screen and (max-width: 670px) {
+      transform: rotate(0deg);
+      top: 20px;
+      left: 8%;
+  }
+  
+  @media only screen and (max-width: 590px) {
+      font-size: 3.2em;
+      top: 40px;
+      left: 4%;
+  }
+  
+  @media only screen and (max-width: 454px) {
+      font-size: 2.8em;
+      top: 40px;
+      left: 4%;
+  }
 }
 
 .aboutImage {
-  max-width: 100%;
+  max-width: 95%;
+  border-radius: 50%;
 }
 
 .aboutInfo {
@@ -165,6 +220,7 @@ h2 {
 .skillsSection,
 .contactSection {
   background-color: #e74c3c;
+  position: relative;
   color: #fff;
 }
 
@@ -292,7 +348,7 @@ h2 {
     height: 200px;
   }
   @media only screen and (max-width: 769px) {
-    height: auto;
+    height: 176px;
   }
 }
 
@@ -401,6 +457,7 @@ h2 {
   position: relative;
   display: block;
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .items .icons {
@@ -426,7 +483,6 @@ h2 {
   background-color: #e74c3c;
   position: relative;
   display: inline-block;
-
   transition: all 0.2s linear, 0.2s;
 }
 
@@ -499,7 +555,7 @@ h2 {
 .copyrightSection {
   background-color: #000;
   color: #fff;
-  padding: 35px 5px;
+  padding: 55px 5px;
 }
 
 .copyrightSection p {
@@ -511,15 +567,14 @@ h2 {
   padding: 8px 10px;
   z-index: 100;
   width: 100%;
-}
 
-#navigation li {
-  padding: 0 10px;
-}
-
-#navigation li a {
-  color: #fff;
-  transition: all 0.5s;
+  li {
+    padding: 0 10px;
+    a {
+      color: #fff;
+      transition: all 0.5s;
+    }
+  }
 }
 
 #navigation a:hover {
@@ -569,14 +624,8 @@ h2 {
   text-decoration: none;
 }
 
-.icon-wrap > a:nth-child(4) {
+.icon-wrap > a:nth-child(4), .icon-wrap > a:nth-child(5) {
   @media only screen and (max-width: 348px) {
-    margin-top: 15px;
-  }
-}
-
-.icon-wrap > a:nth-child(5) {
-  @media only screen and (max-width: 430px) {
     margin-top: 15px;
   }
 }
@@ -615,7 +664,7 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(244, 244, 244, 1);
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   z-index: 1000;
@@ -764,73 +813,4 @@ h2 {
     width: 100%;
     opacity: 1;
   }
-}
-
-$size-xs: 8px;
-$size-s: 12px;
-$size-m: 16px;
-$size-l: 24px;
-$size-xl: 32px;
-
-// utilities
-
-.margin-left-xs {
-  margin-left: $size-xs !important;
-}
-.margin-left-s {
-  margin-left: $size-s !important;
-}
-.margin-left-m {
-  margin-left: $size-m !important;
-}
-.margin-left-l {
-  margin-left: $size-l !important;
-}
-.margin-left-xl {
-  margin-left: $size-xl !important;
-}
-.margin-bottom-xs {
-  margin-bottom: $size-xs !important;
-}
-.margin-bottom-s {
-  margin-bottom: $size-s !important;
-}
-.margin-bottom-m {
-  margin-bottom: $size-m !important;
-}
-.margin-bottom-l {
-  margin-bottom: $size-l !important;
-}
-.margin-bottom-xl {
-  margin-bottom: $size-xl !important;
-}
-.margin-top-xs {
-  margin-top: $size-xs !important;
-}
-.margin-top-s {
-  margin-top: $size-s !important;
-}
-.margin-top-m {
-  margin-top: $size-m !important;
-}
-.margin-top-l {
-  margin-top: $size-l !important;
-}
-.margin-top-xl {
-  margin-top: $size-xl !important;
-}
-.margin-right-xs {
-  margin-right: $size-xs !important;
-}
-.margin-right-s {
-  margin-right: $size-s !important;
-}
-.margin-right-m {
-  margin-right: $size-m !important;
-}
-.margin-right-l {
-  margin-right: $size-l !important;
-}
-.margin-right-xl {
-  margin-right: $size-xl !important;
 }
