@@ -104,8 +104,8 @@ h2 {
 /* .viewWorkButton:hover {
     text-decoration: none;
     color: #fff;
-    background-color: #e74c3c;
-    border-color: #e74c3c;
+    background-color: $color-primary;
+    border-color: $color-primary;
 } */
 .location {
   display: flex;
@@ -458,7 +458,6 @@ h2 {
 }
 
 .items .item > img {
-  width: 400px;
   height: 250px;
 }
 @media only screen and (max-width: 994px) {
@@ -477,7 +476,7 @@ h2 {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .items .icons {
@@ -485,21 +484,62 @@ h2 {
   width: 90px;
   height: 40px;
   left: 50%;
-  top: 50%;
+  bottom: 12%;
   margin: -20px auto 0 -47px;
   text-align: center;
   z-index: 3;
 }
 
+.items .portfolio-info {
+  position: absolute;
+  width: auto;
+  height: 40px;
+  top: 12%;
+  margin: -20px 4px 0 10px;
+  text-align: center;
+  z-index: 3;
+  display: block;
+  text-align: center;
+  justify-content: flex-start;
+}
+@media only screen and (min-width: 1200px) {
+  .items .portfolio-info {
+    margin: -20px 4px 0 16px;
+  }
+}
+
+.portfolio-info {
+  bottom: 80%;
+  cursor: default;
+  opacity: 0;
+}
+.portfolio-info h3 {
+  font-size: 1.32rem;
+  color: white;
+}
+.portfolio-info p {
+  font-size: 1.095rem;
+  color: #e74c3c;
+}
+
+.items .icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  text-decoration: none;
+}
+
 .items .icons i {
   color: #fff;
-  font-size: 20px;
-  margin-top: 9px;
+  font-size: 22px;
+  margin-left: 2px;
 }
 
 .items a {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   background-color: #e74c3c;
   position: relative;
   display: inline-block;
@@ -509,12 +549,12 @@ h2 {
 .items .imageOverlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   left: 0px;
   top: 0px;
   opacity: 0;
-  -transition: all 0.2s linear, 1s;
+  -transition: all 0.25s linear, 1s;
 }
 
 .items .item:hover .imageOverlay {
@@ -523,28 +563,33 @@ h2 {
 
 .items .openButton {
   float: left;
-  left: -200px;
+  bottom: -200px;
   opacity: 0;
 }
 
 .items .projectLink {
   float: right;
-  right: -200px;
+  bottom: -200px;
   opacity: 0;
 }
 
 .items .item:hover .openButton {
-  left: 0px;
+  bottom: 0px;
   opacity: 1;
 }
 
 .items .item:hover .projectLink {
-  right: 0px;
+  bottom: 0px;
+  opacity: 1;
+}
+
+.items .item:hover .portfolio-info {
+  bottom: 0px;
   opacity: 1;
 }
 
 .items .item:hover img {
-  transform: scale(1.05, 1.05);
+  background: #000;
 }
 
 .items {
