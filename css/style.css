@@ -144,7 +144,7 @@ h2 {
 .aboutSection::before {
   content: "Who is this guy?";
   font-weight: 500;
-  opacity: 0.15;
+  opacity: 0.35;
   font-size: 4.7em;
   color: #232323;
   position: absolute;
