@@ -144,7 +144,7 @@ h2 {
 .aboutSection::before {
   content: "Who is this guy?";
   font-weight: 500;
-  opacity: 0.35;
+  opacity: 0.15;
   font-size: 4.7em;
   color: #232323;
   position: absolute;
@@ -227,6 +227,11 @@ h2 {
   background-color: #e74c3c;
   position: relative;
   color: #fff;
+}
+
+.skillsSection p {
+  font-size: 1.1rem;
+  padding-bottom: 12px;
 }
 
 .skill {
@@ -618,9 +623,14 @@ h2 {
 }
 
 .copyrightSection {
-  background-color: #000;
+  background-color: #060606;
   color: #fff;
   padding: 55px 5px;
+}
+
+.copyrightSection h3 {
+  text-align: center;
+  padding-bottom: 24px;
 }
 
 .copyrightSection p {

@@ -238,6 +238,11 @@ h2 {
   color: #fff;
 }
 
+.skillsSection p {
+  font-size: 1.1rem;
+  padding-bottom: 12px;
+}
+
 .skill {
   display: inline-block;
   margin-right: 20px;
@@ -624,9 +629,14 @@ cursor: default;
 }
 
 .copyrightSection {
-  background-color: #000;
+  background-color: #060606;
   color: #fff;
   padding: 55px 5px;
+}
+
+.copyrightSection h3 {
+  text-align: center;;
+  padding-bottom: 24px;
 }
 
 .copyrightSection p {
