@@ -399,8 +399,8 @@ h2, h3 {
 }
 
 .squareContent h3 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -450,7 +450,7 @@ h2, h3 {
 
 .items li {
   display: inline-block;
-  padding: 5px;
+  padding: 9px;
 }
 
 .itemsContainer {
@@ -463,7 +463,7 @@ h2, h3 {
 }
 
 .items .item > img {
-  height: 250px;
+  height: 480px;
 }
 @media only screen and (max-width: 994px) {
   .items .item > img {
@@ -497,19 +497,18 @@ h2, h3 {
 
 .items .portfolio-info {
   position: absolute;
-  width: auto;
+  width: 100%;
   height: 40px;
   top: 12%;
-  margin: -20px 4px 0 10px;
-  text-align: center;
+  margin: -20px 4px 0px 4px;
   z-index: 3;
-  display: block;
-  text-align: center;
-  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media only screen and (min-width: 1200px) {
   .items .portfolio-info {
-    margin: -20px 4px 0 16px;
+    margin: -20px 4px 0 4px;
   }
 }
 
@@ -521,6 +520,8 @@ h2, h3 {
 .portfolio-info h3 {
   font-size: 1.32rem;
   color: white;
+  padding: 0 8px;
+  text-align: center;
 }
 .portfolio-info p {
   font-size: 1.095rem;
