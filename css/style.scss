@@ -8,7 +8,6 @@ $size-xl: 32px;
 
 $color-primary: #e74c3c;
 
-
 body {
   font-size: 14px;
   color: #333;
@@ -16,9 +15,11 @@ body {
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+  animation-duration: 0.2s;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: "Oswald", sans-serif;
 }
 
@@ -227,7 +228,7 @@ h2, h3 {
 }
 
 .highlight {
-  font-weight: 600;
+  font-weight: 700;
   color: $color-primary;
 }
 
@@ -267,6 +268,107 @@ h2, h3 {
   }
 }
 
+//services
+
+.services-header {
+  padding-top: 18px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  // letter-spacing: 4px;
+  font-size: 1.65rem;
+  letter-spacing: 0.5px;
+}
+
+.services {
+  display: grid;
+  margin-top: 32px;
+  grid-template-columns: 0.5fr 0.5fr;
+}
+
+.grid-data{
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr 0.2fr;
+  justify-items: center;
+  height: 200px;
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+}
+
+.hex-wrap {
+  display: inline-block;
+  height: 80px;
+  position: relative;
+  text-align: center;
+  width: 80px;
+}
+
+.hexagon:before {
+  background-color: inherit;
+  content: "";
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
+  transform: rotateZ(60deg);
+  width: inherit;
+}
+
+.hexagon {
+  background-color: $color-primary;
+  display: inline-block;
+  height: 100%;
+  width: calc(100% * 0.57735);
+}
+
+.hexagon:after {
+  background-color: inherit;
+  content: "";
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
+  transform: rotateZ(-60deg);
+  width: inherit;
+}
+
+.hexagon i {
+  color: #fff;
+  font-size: 42px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  z-index: 1;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.service-information {
+  text-align: center;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: $color-primary;
+  @media only screen and (max-width: 999px) {
+    margin-top: 12px;
+    font-size: 1.18rem;
+
+  }
+  @media only screen and (max-width: 899px) {
+  }
+}
+
 .techSkillsInfo {
   margin-top: 24px;
   // margin-bottom: 24px;
@@ -299,8 +401,7 @@ h2, h3 {
 }
 
 .skills-container {
-
-  h6{
+  h6 {
     font-weight: 800;
   }
   @media only screen and (max-width: 620px) {
@@ -439,6 +540,8 @@ h2, h3 {
   color: #fff;
 }
 
+
+
 .filter {
   text-align: center;
   width: 100%;
@@ -465,8 +568,7 @@ h2, h3 {
 
 .items .item > img {
   // width: 400px;
-  height: 480px;
-
+  height: 320px;
   @media only screen and (max-width: 994px) {
     height: 200px;
   }
@@ -477,11 +579,26 @@ h2, h3 {
   }
 }
 
+.large {
+  img{
+  height: 520px !important;
+  @media only screen and (max-width: 994px) {
+    height: 200px;
+  }
+
+  @media only screen and (max-width: 575px) {
+    height: 250px;
+    width: 100%;
+  }
+}
+}
+
 .items .item {
   position: relative;
   display: block;
   overflow: hidden;
   border-radius: 12px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
 
 .items .icons {
@@ -495,7 +612,7 @@ h2, h3 {
   z-index: 3;
 }
 
-.items .portfolio-info{
+.items .portfolio-info {
   position: absolute;
   width: 100%;
   height: 40px;
@@ -505,7 +622,7 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-    // justify-content: flex-start;
+  // justify-content: flex-start;
 
   @media only screen and (min-width: 1200px) {
     margin: -20px 4px 0 4px;
@@ -513,8 +630,8 @@ h2, h3 {
 }
 
 .portfolio-info {
-bottom: 80%;
-cursor: default;
+  bottom: 80%;
+  cursor: default;
   opacity: 0;
   h3 {
     font-size: 1.32rem;
@@ -523,9 +640,10 @@ cursor: default;
     text-align: center;
   }
 
-  p{
+  p {
     font-size: 1.095rem;
     color: $color-primary;
+    text-align:  center;
   }
 }
 
@@ -535,7 +653,6 @@ cursor: default;
   align-items: center;
   outline: none;
   text-decoration: none;
-
 }
 
 .items .icons i {
@@ -595,7 +712,7 @@ cursor: default;
   opacity: 1;
 }
 
-.items .item:hover .portfolio-info{
+.items .item:hover .portfolio-info {
   bottom: 0px;
   opacity: 1;
 }
@@ -637,8 +754,8 @@ cursor: default;
 }
 
 .copyrightSection h3 {
-  text-align: center;;
-  padding-bottom: 24px;
+  text-align: center;
+  // padding-bottom: 24px;
 }
 
 .copyrightSection p {
