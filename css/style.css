@@ -22,6 +22,29 @@ h3 {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.check-out-header {
+  padding: 8px 0;
+  background: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.check-out-header p {
+  color: #64ffda;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.check-out-header p:hover {
+  color: #1DE9B6;
+  transition: 250ms color ease-in-out;
+}
+.check-out-header a, .check-out-header a:active, .check-out-header a:visited, .check-out-header a:hover {
+  text-decoration: none;
+}
+
 .slides-navigation {
   z-index: 6;
 }
