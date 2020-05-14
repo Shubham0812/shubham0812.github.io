@@ -8,7 +8,6 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="-1" />
 
-
     <link rel="stylesheet" type="text/css" href="css/superslides.css" />
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
     <link
@@ -34,8 +33,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=PT+Sans+Caption&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel= "apple-touch-icon" href = “favicon.ico”>
+    <link rel="apple-touch-icon" href="“favicon.ico”" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -59,6 +62,7 @@
     <script src="js/jquery.easypiechart.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/typed.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -90,20 +94,19 @@
     <div id="slides">
       <div class="overlay"></div>
       <div class="slides-container">
-        <img src="/images/keyboard.jpg" alt="" />
-        <img src="/images/slide2.jpg" alt="" />
-        <img src="/images/person.jpg" alt="" />
+        <img src="/images/mac.jpg" alt="" />
+        <!-- <img src="/images/slide2.jpg" alt="" /> -->
+        <!-- <img src="/images/person.jpg" alt="" /> -->
       </div>
 
       <div class="titleMessage">
         <div class="heading">
           <p class="main">SHUBHAM SINGH</p>
           <p class="sub typed"></p>
-          <div class="location">
-            <i class="material-icons location-icon">
-              room
-            </i>
-            <p class="location-text">Bengaluru</p>
+          <p class="alternate-job"></p>
+          <div class="location-box margin-top-xl">
+            <i class="fas fa-map-pin"></i>
+            <p class="location-text margin-remove-bottom"></p>
           </div>
         </div>
       </div>
@@ -146,7 +149,7 @@
             <a class="nav-link" href="#stats">STATS</a>
           </li>
           <li class="nav-item item3">
-            <a class="nav-link" href="#portfolio">PORTFOLIO</a>
+            <a class="nav-link" href="#portfolio">PROJECTS</a>
           </li>
           <li class="nav-item item4">
             <a class="nav-link" href="#contact">CONTACT</a>
@@ -159,33 +162,27 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <img class="aboutImage" src="images/shubham.png" />
+            <img
+              class="aboutImage dark-theme-shadow"
+              src="images/shubham.png"
+            />
           </div>
 
           <div class="col-md-7 aboutInfo">
-            <h4>My name is <span class="highlight">Shubham Singh</span></h4>
+            <h5 id="work"></h5>
+            <div class="my-details">
+              <h5 class="text-large office-text"></h5>
+              <h5 class="text-large spare-text"></h5>
+              <h5 class="text-large language-text"></h5>
+              <h5 class="text-large hobby-text"></h5>
+              <h5 class="text-large game-text"></h5>
+              <h5 class="margin-top-m text-large contribution-text"></h5>
+              <p class="margin-top-l">
+                <span class="highlight text-medium motto"></span>
+              </p>
+            </div>
 
-            <p>
-              Hi there! I'm from Bengaluru, India. I currently work as an iOS
-              Developer at <span class="highlight">Space Basic Inc.</span> I
-              have been consistently working for a product called Space Basic.
-              It's an iOS application for student communications, housing,
-              networking and management. I am a technology enthusiast and I love
-              solving problems through code. I have a good amount of experience
-              in developing web applications and Ontegrating them with Backend
-              Services . Some of my favorite work involves creating iOS
-              applications and my hobbies are Riding, Football and MOBA's.
-            </p>
-            <p>
-              I graduated from NMIT Bengaluru in 2018 with first class
-              distinction(9.15 CGPA) in Computer Science.
-            </p>
-            <p>
-              <span class="highlight"
-                >Let's make something that makes a difference.</span
-              >
-            </p>
-            <h5 class="services-header">What can I do for you?</h5>
+            <h5 class="services-header margin-top-l">What all can I do?</h5>
             <div class="services">
               <div class="grid-data">
                 <div class="hex-wrap" data-animation="flip-in-x">
@@ -194,9 +191,9 @@
                   </div>
                 </div>
                 <div class="label text-center">iOS Development</div>
-                <div class="description text-center">
-                  Reponsive & adaptive applications with Easy to Use UI.
-                </div>
+                <!-- <div class="description text-center">
+                 I have been coding for iOS since some time and I a
+                </div> -->
               </div>
               <div class="grid-data">
                 <div class="hex-wrap" data-animation="flip-in-x">
@@ -205,9 +202,9 @@
                   </div>
                 </div>
                 <div class="label text-center">Web Development</div>
-                <div class="description text-center">
+                <!-- <div class="description text-center">
                   Scalable and responsive Web applications with intuitive UX.
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -226,7 +223,10 @@
           </div>
           <!-- <button class="prev skillNavigation"><i class="fa fa-chevron-left"></i>Previous</button> -->
           <div class="skill-showcase">
-            <img src="./images/dev.svg" />
+            <img
+              src="./images/dev.svg"
+              class="dark-theme-shadow margin-right-xs"
+            />
             <div class="margin-top-xl skills-container">
               <div>
                 <h6>Programming Languages</h6>
@@ -279,24 +279,20 @@
                 </ul>
               </div>
               <div class="margin-top-s">
-                <h6>Loves To</h6>
+                <h6>Utility Skills</h6>
                 <ul class="dev-skills">
-                  <li class="skill" data-toggle="tooltip" title="Code">
-                    <i class="fas fa-laptop-code"></i>
+                  <li class="skill" data-toggle="tooltip" title="Github">
+                    <i class="fab fa-github"></i>
                   </li>
                   <li
                     class="skill"
                     data-toggle="tooltip"
-                    title="Develop iOS applications"
+                    title="Stripe Integration"
                   >
-                    <i class="fas fa-mobile"></i>
+                    <i class="fab fa-cc-stripe"></i>
                   </li>
-                  <li
-                    class="skill"
-                    data-toggle="tooltip"
-                    title="Play & Watch Football"
-                  >
-                    <i class="far fa-futbol"></i>
+                  <li class="skill" data-toggle="tooltip" title="Jira">
+                    <i class="fab fa-jira"></i>
                   </li>
                   <!-- <li class="skill"><i class="fas fa-mug-hot"></i></li> -->
                 </ul>
@@ -319,12 +315,26 @@
             <div class="squareItem">
               <div class="squareInnerContainer">
                 <div class="squareIcon">
-                  <i class="fas fa-project-diagram"></i>
+                  <i class="fas fa-pen"></i>
                 </div>
 
                 <div class="squareContent">
-                  <h2 class="counter">12</h2>
-                  <h3>Projects</h3>
+                  <h2 class="counter">5</h2>
+                  <h3>iOS Articles</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 margin-top-xl">
+            <div class="squareItem">
+              <div class="squareInnerContainer">
+                <div class="squareIcon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+
+                <div class="squareContent">
+                  <h2 class="counter">4</h2>
+                  <h3>Apps</h3>
                 </div>
               </div>
             </div>
@@ -343,22 +353,6 @@
               </div>
             </div>
           </div>
-
-          <div class="col-md-3 col-sm-6 margin-top-xl">
-            <div class="squareItem">
-              <div class="squareInnerContainer">
-                <div class="squareIcon">
-                  <i class="fas fa-rocket"></i>
-                </div>
-
-                <div class="squareContent">
-                  <h2 class="counter">4</h2>
-                  <h3>Apps</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="col-md-3 col-sm-6 margin-top-xl">
             <div class="squareItem">
               <div class="squareInnerContainer">
@@ -381,14 +375,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center" style="padding-bottom: 16px;">
-            <h2 id="portfolio-title" style="opacity: 0;">PORTFOLIO</h2>
+            <h2 id="portfolio-title" style="opacity: 0;">PROJECTS</h2>
           </div>
 
           <div class="filter" style="opacity: 0;">
             <ul id="filters">
               <li><a href="#" data-filter="*">ALL</a></li>
               <li><a href="#" data-filter=".ios" class="current">IOS</a></li>
-              <li><a href="#" data-filter=".web">WEB APP</a></li>
+              <li><a href="#" data-filter=".web">WEB</a></li>
               <!-- <li><a href="#" data-filter=".me">ME</a></li> -->
             </ul>
           </div>
@@ -419,7 +413,9 @@
                     </a>
                   </div>
                   <div class="portfolio-info">
-                    <h3>Color.Dev - Solving Color Problems</h3>
+                    <h3>
+                      Color.Dev - Solving Color related problems for Developers
+                    </h3>
                     <p>Swift 5, RxSwift</p>
                   </div>
                   <div class="imageOverlay"></div>
@@ -670,7 +666,7 @@
 
     <div id="contact" class="contactSection section">
       <div class="col-md-12 text-center">
-        <p class="subheading" id="contact-desc" style="opacity: 0;">
+        <p class="subheading text-medium" id="contact-desc" style="opacity: 0;">
           Like what you see?
         </p>
         <h2 id="contact-me" style="opacity: 0;">I'd love to hear from you!</h2>
@@ -684,6 +680,12 @@
     <div class="copyrightSection">
       <h3>Connect with me on</h3>
       <div class="icon-wrap flex text-center" style="height: 105px;">
+        <a href="https://www.instagram.com/shubham_iosdev/" target="_blank">
+          <div class="flex icon" id="icon-5">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+
         <a href="https://medium.com/@singh.shubham0812" target="_blank">
           <div class="flex icon" id="icon-3">
             <i class="fab fa-medium-m"></i>
@@ -699,12 +701,6 @@
         <a href="https://github.com/Shubham0812" target="_blank">
           <div class="flex icon" id="icon-5">
             <i class="fab fa-github"></i>
-          </div>
-        </a>
-
-        <a href="https://www.instagram.com/shubham_iosdev/" target="_blank">
-          <div class="flex icon" id="icon-5">
-            <i class="fab fa-instagram"></i>
           </div>
         </a>
 
