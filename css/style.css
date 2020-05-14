@@ -1,17 +1,23 @@
 @import "utility.css";
 body {
   font-size: 14px;
-  color: #333;
-  background-color: #fff;
+  color: #fff;
+  background-color: #121212;
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
   animation-duration: 0.2s;
 }
 
-h2,
-h3 {
-  font-family: "Oswald", sans-serif;
+a,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+h2 {
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .overlay {
@@ -38,10 +44,13 @@ h3 {
   cursor: pointer;
 }
 .check-out-header p:hover {
-  color: #1DE9B6;
+  color: #1de9b6;
   transition: 250ms color ease-in-out;
 }
-.check-out-header a, .check-out-header a:active, .check-out-header a:visited, .check-out-header a:hover {
+.check-out-header a,
+.check-out-header a:active,
+.check-out-header a:visited,
+.check-out-header a:hover {
   text-decoration: none;
 }
 
@@ -75,77 +84,58 @@ h3 {
   z-index: 5;
   text-align: center;
   margin-top: -125px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Nanum Gothic Coding", monospace;
 }
 
 .titleMessage .heading p {
-  color: #fff;
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
   font-weight: 100;
   letter-spacing: 7px;
+  font-size: 26px;
 }
 
 .titleMessage .heading .main {
-  font-size: 50px;
+  font-size: 72px;
   font-weight: 200;
 }
 
-/* .titleMessage .heading .main::before {
-  background: white;
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  animation: fade 1s linear 1;
-} */
-.titleMessage .heading .sub {
-  font-size: 23px;
-  height: 75px;
+.location-box {
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+}
+.location-box i {
+  color: #ff1f1f;
+  font-size: 26px;
+  opacity: 0;
+  transition: 200ms all linear;
 }
 
-/* .gotoContent{
-    position: absolute;
-    width: 100%;
-    /* height: 250px; */
-/* bottom: 30%;
-    z-index: 5;
-    text-align: center;
-    margin-bottom: -30px;
-} */
-/* .viewWorkButton {
-    color: #fff;
-    position: relative;
-    padding: 15px 20px;
-    display: inline-block;
-    margin-top: 20px;
-    border: 1px solid #fff;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.5s;
-} */
-/* .viewWorkButton:hover {
-    text-decoration: none;
-    color: #fff;
-    background-color: $color-primary;
-    border-color: $color-primary;
-} */
+.location-text {
+  margin-left: 12px;
+  letter-spacing: 1.2px !important;
+  color: #fff !important;
+  font-size: 22px !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+.alternate-job {
+  color: #6addfe;
+  height: 43px;
+}
+
+.titleMessage .heading .sub {
+  color: #6addfe;
+  height: 40px;
+}
+
 .location {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 16px;
   margin-right: 8px;
-}
-.location .location-text {
-  letter-spacing: 1.2px !important;
-  font-size: 1.4em;
-  margin: 0 !important;
-  margin-left: 4px;
-  opacity: 0.6;
-  font-family: "Montserrat";
 }
 .location .location-icon {
   color: #fff;
@@ -160,21 +150,25 @@ h3 {
 
 .section-small {
   padding: 90px 12px;
+  background: #000;
 }
 
 .aboutSection {
   position: relative;
 }
+.aboutSection .aboutInfoDetails h5 {
+  height: 24px;
+}
 
 .aboutSection::before {
   content: "Who is this guy?";
   font-weight: 500;
-  opacity: 0.15;
+  opacity: 0.1;
   font-size: 4.7em;
-  color: #232323;
+  color: #fff;
   position: absolute;
   transform: rotate(270deg);
-  top: 275px;
+  top: 300px;
   left: -250px;
   letter-spacing: 4px;
 }
@@ -231,6 +225,10 @@ h3 {
   font-weight: 600;
 }
 
+.aboutInfoDetails {
+  display: flex;
+}
+
 @media only screen and (max-width: 767px) {
   .aboutSection .aboutInfo h4 {
     padding-left: 10px;
@@ -244,14 +242,20 @@ h3 {
 }
 .highlight {
   font-weight: 700;
-  color: #e74c3c;
+  color: #ff1f1f;
 }
 
-.skillsSection,
-.contactSection {
-  background-color: #e74c3c;
+.my-details {
+  height: 320px;
+}
+
+.skillsSection {
+  background-color: #000;
   position: relative;
   color: #fff;
+}
+.skillsSection h2 {
+  color: #ff1f1f;
 }
 
 .skillsSection p {
@@ -288,7 +292,7 @@ h3 {
   padding-top: 18px;
   font-weight: 700;
   text-align: center;
-  font-family: "Oswald", sans-serif;
+  font-family: "Nanum Gothic Coding", monospace;
   font-size: 1.65rem;
   letter-spacing: 0.5px;
 }
@@ -301,7 +305,7 @@ h3 {
 
 .grid-data {
   display: grid;
-  grid-template-rows: 0.8fr 0.2fr 0.2fr;
+  grid-template-rows: 0.5fr 0.2fr;
   justify-items: center;
   height: 200px;
 }
@@ -334,7 +338,7 @@ h3 {
 }
 
 .hexagon {
-  background-color: #e74c3c;
+  background-color: #ff1f1f;
   display: inline-block;
   height: 100%;
   width: calc(100% * 0.57735);
@@ -372,7 +376,7 @@ h3 {
 .label {
   font-size: 1.2rem;
   margin-bottom: 12px;
-  color: #e74c3c;
+  color: #ff1f1f;
 }
 @media only screen and (max-width: 999px) {
   .label {
@@ -436,6 +440,7 @@ h3 {
 
 #typed {
   display: block;
+  color: #f97d6e;
 }
 
 .owl-carousel {
@@ -468,7 +473,7 @@ h3 {
 }
 
 .statsSection h2 {
-  color: #e74c3c;
+  color: #ff1f1f;
 }
 
 .squareItem {
@@ -516,7 +521,7 @@ h3 {
   font-size: 56px;
   margin-bottom: 10px;
   font-weight: 400;
-  color: #e74c3c;
+  color: #ff1f1f;
 }
 
 .squareContent h3 {
@@ -533,7 +538,7 @@ h3 {
   height: 60px;
   font-size: 45px;
   margin-left: -20%;
-  color: #444;
+  color: #999;
 }
 
 #filters {
@@ -554,8 +559,8 @@ h3 {
 }
 
 .filter .current {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #ff1f1f;
+  border-color: #ff1f1f;
   color: #fff;
 }
 
@@ -599,7 +604,7 @@ h3 {
 }
 
 .large img {
-  height: 520px !important;
+  height: 560px !important;
 }
 @media only screen and (max-width: 994px) {
   .large img {
@@ -662,7 +667,7 @@ h3 {
 }
 .portfolio-info p {
   font-size: 1.095rem;
-  color: #e74c3c;
+  color: #ff1f1f;
   text-align: center;
 }
 
@@ -684,7 +689,7 @@ h3 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e74c3c;
+  background-color: #ff1f1f;
   position: relative;
   display: inline-block;
   transition: all 0.2s linear, 0.2s;
@@ -757,7 +762,7 @@ h3 {
 
 .contactButton:hover {
   text-decoration: none;
-  color: #e74c3c;
+  color: #ff1f1f;
   background-color: #fff;
 }
 
@@ -776,10 +781,12 @@ h3 {
 }
 
 #navigation {
-  background-color: #e74c3c;
+  background-color: #000;
   padding: 8px 10px;
   z-index: 100;
   width: 100%;
+  font-family: "Nanum Gothic Coding", monospace;
+  font-size: 1.09rem;
 }
 #navigation li {
   padding: 0 10px;
@@ -791,17 +798,18 @@ h3 {
 
 #navigation a:hover {
   transition: all 0.5s;
-  color: #333333;
+  color: #ff1f1f;
 }
 
 #navigation .active a {
-  color: #333333;
+  color: #ff1f1f;
   font-weight: 900;
 }
 
 .navbar-brand {
   color: #fff;
   margin-left: 24px;
+  font-size: 1.5rem;
 }
 
 .navbar-toggler-icon {
@@ -813,7 +821,7 @@ h3 {
   position: fixed;
   top: 0;
   transition: 0.4s;
-  box-shadow: -1rem 0 1rem #e74c3c;
+  box-shadow: -1rem 0 1rem #060606;
 }
 
 .loader {
@@ -881,8 +889,8 @@ h3 {
 }
 
 .copyrightSection .icon-wrap .icon:hover {
-  background-color: #e74c3c;
-  border-color: #e74c3c;
+  background-color: #ff1f1f;
+  border-color: #ff1f1f;
 }
 
 .flex {
@@ -899,7 +907,7 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #f4f4f4;
+  background-color: #121212;
   display: flex;
   justify-content: center;
   z-index: 1000;
@@ -912,7 +920,8 @@ h3 {
   width: 30px;
   height: 30px;
   position: relative;
-  border: 4px solid #e74c3c;
+  background: #121212;
+  border: 4px solid #ff1f1f;
   animation: loader 2s infinite ease;
 }
 
@@ -920,8 +929,17 @@ h3 {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: #e74c3c;
+  background-color: #ff1f1f;
   animation: loader-inner 2s infinite ease-in;
+}
+
+.text-medium {
+  font-size: 1.06rem;
+}
+
+.text-large {
+  font-size: 1.18rem;
+  margin-bottom: 14px;
 }
 
 @keyframes loader {
@@ -1048,6 +1066,45 @@ h3 {
     width: 100%;
     opacity: 1;
   }
+}
+.margin-remove-bottom {
+  margin-bottom: 0 !important;
+}
+
+.show {
+  opacity: 1 !important;
+}
+
+.dark-theme-shadow {
+  box-shadow: 0 -2px 10px black, 0 2px 10px black, 2px 0 10px black, -2px 0 10px black;
+}
+
+.color-primary {
+  color: #ff1f1f;
+}
+
+.color-palatte-1 {
+  color: #71b5a8;
+}
+
+.color-palatte-2 {
+  color: #d8c87b;
+}
+
+.color-palatte-3 {
+  color: #d9baff !important;
+}
+
+.color-palatte-4 {
+  color: #fe7bb1 !important;
+}
+
+.color-palatte-5 {
+  color: #f97d6e;
+}
+
+.color-palatte-6 {
+  color: #536dfe;
 }
 
 /*# sourceMappingURL=style.css.map */
