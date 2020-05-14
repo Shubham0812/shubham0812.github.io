@@ -10,19 +10,41 @@ $(window).on("load", function () {
   });
 });
 
+var aboutSectionEntered = false;
+
 $(document).ready(function () {
   $("#slides").superslides({
     animation: "fade",
-    play: 3000,
+    play: 0,
     pagination: false,
   });
 
   new Typed(".typed", {
-    strings: ["iOS Developer", "Web Developer"],
-    typeSpeed: 100,
-    loop: true,
+    strings: ["iOS Developer"],
+    typeSpeed: 60,
+    loop: false,
     startDelay: 800,
     showCursor: false,
+    onComplete: function () {
+      console.log("finished babt");
+      new Typed(".alternate-job", {
+        strings: ["Freelancer"],
+        typeSpeed: 60,
+        loop: false,
+        startDelay: 0,
+        showCursor: false,
+        onComplete: function () {
+          new Typed(".location-text", {
+            strings: ["Bengaluru, India"],
+            typeSpeed: 60,
+            loop: false,
+            startDelay: 0,
+            showCursor: false,
+          });
+          $(".location-box > i").addClass("show");
+        },
+      });
+    },
   });
 
   $(".owl-carousel").owlCarousel({
@@ -208,6 +230,7 @@ $(document).ready(function () {
     } else if ($(window).scrollTop() <= aboutTop) {
       $(".active").removeClass("active");
       $(".item0").addClass("active");
+      showAboutIntroductionTexts();
     } else if (
       $(window).scrollTop() > aboutTop + 600 &&
       $(window).scrollTop() < skillsTop
@@ -246,3 +269,92 @@ $(document).ready(function () {
     );
   }
 });
+
+function showAboutIntroductionTexts() {
+  if (!aboutSectionEntered) {
+    new Typed("#work", {
+      strings: ["Currently working @ <span class = 'color-primary'>Spacebasic Inc.</span>"],
+      typeSpeed: 30,
+      loop: false,
+      startDelay: 0,
+      showCursor: false,
+          onComplete: function () {
+            new Typed(".office-text", {
+              strings: [
+                "Devoting office hours into developing the <span class = 'color-primary'>Spacebasic</span> app.",
+              ],
+              typeSpeed: 20,
+              loop: false,
+              startDelay: 0,
+              showCursor: false,
+              onComplete: function () {
+                new Typed(".spare-text", {
+                  strings: [
+                    "In my spare time, I <span class = 'color-palatte-2'>develop</span> iOS apps and <span class = 'color-palatte-2'>explore</span> tech.",
+                  ],
+                  typeSpeed: 20,
+                  loop: false,
+                  startDelay: 0,
+                  showCursor: false,
+                  onComplete: function () {
+                    new Typed(".language-text", {
+                      strings: [
+                        "I code in <span class = 'color-palatte-1'>Swift</span>, <span class = 'color-palatte-1'>HTML</span>, <span class = 'color-palatte-1'>CSS</span>, <span class = 'color-palatte-1'>Javascript </span>, and <span class = 'color-palatte-1'>Python</span>.",
+                      ],
+                      typeSpeed: 20,
+                      loop: false,
+                      startDelay: 0,
+                      showCursor: false,
+                      onComplete: function () {
+                        new Typed(".hobby-text", {
+                          strings: ["I <span class = 'color-primary'>love</span> to talk about <span class = 'color-palatte-5'>iOS</span>, <span class = 'color-palatte-5'>technology</span> and <span class = 'color-palatte-5'>life</span>."],
+                          typeSpeed: 20,
+                          loop: false,
+                          startDelay: 0,
+                          showCursor: false,
+                          onComplete: function () {
+                            new Typed(".game-text", {
+                              strings: [
+                                "I also enjoy occasional gaming, my favorites being <span class = 'color-palatte-6'>DOTA</span> and <span class = 'color-palatte-6'>CS: GO</span>",
+                              ],
+                              typeSpeed: 15,
+                              loop: false,
+                              startDelay: 0,
+                              showCursor: false,
+                              onComplete: function () {
+                                new Typed(".contribution-text", {
+                                  strings: [
+                                    "I've recently created an <a href='https://www.instagram.com/shubham_iosdev/' target='_blank'><span class = 'color-palatte-4'> Instagram</span></a> handle to share my knowledge, connect with awesome people, and help other developers with iOS dev.",
+                                  ],
+                                  typeSpeed: 20,
+                                  loop: false,
+                                  startDelay: 0,
+                                  showCursor: false,
+                                  onComplete: function () {
+                                    new Typed(".motto", {
+                                      strings: [
+                                        "My long term goal is to create or do something that makes a difference.",
+                                      ],
+                                      typeSpeed: 20,
+                                      loop: false,
+                                      startDelay: 0,
+                                      showCursor: false,
+                                    });
+                                  },
+                                });
+                              },
+                            });
+                          },
+                        });
+                      },
+                    });
+                  },
+                });
+              },
+            });
+          },
+        });
+    aboutSectionEntered = true;
+  }
+}
+
