@@ -13,6 +13,19 @@ $(window).on("load", function () {
 var aboutSectionEntered = false;
 
 $(document).ready(function () {
+  var countUpFinished = false;
+  var $window = $(window);
+  var $portfolio_title = $("#portfolio-title");
+  var $stats_title = $("#stats-title");
+  var $tech_title = $("#technical-title");
+  var $skill_caro = $(".left-double");
+  var $portfolio_items = $(".squareItem");
+  var $contact_section = $("#contact-me");
+  var $contact_desc = $("#contact-desc");
+  var $skills_show = $(".skill-showcase");
+  var $filters = $(".filter");
+  var $portfolio_container = $("#items-left-double");
+
   $("#slides").superslides({
     animation: "fade",
     play: 0,
@@ -23,7 +36,7 @@ $(document).ready(function () {
     strings: ["iOS Developer"],
     typeSpeed: 60,
     loop: false,
-    startDelay: 1200,
+    startDelay: 800,
     showCursor: false,
     onComplete: function () {
       console.log("finished babt");
@@ -67,19 +80,6 @@ $(document).ready(function () {
   });
 
   $('[data-toggle="tooltip"]').tooltip();
-
-  var countUpFinished = false;
-  var $window = $(window);
-  var $portfolio_title = $("#portfolio-title");
-  var $stats_title = $("#stats-title");
-  var $tech_title = $("#technical-title");
-  var $skill_caro = $(".left-double");
-  var $portfolio_items = $(".squareItem");
-  var $contact_section = $("#contact-me");
-  var $contact_desc = $("#contact-desc");
-  var $skills_show = $(".skill-showcase");
-  var $filters = $(".filter");
-  var $portfolio_container = $("#items-left-double");
 
   $("[data-fancybox]").fancybox();
 
@@ -175,25 +175,6 @@ $(document).ready(function () {
       $contact_desc.addClass("in-up");
     }
   });
-
-  // $(window).on("scroll", function () {
-  // 	if (isScrolledIntoView($skills_show, $window, -150)) {
-  // 		$skills_show.addClass("in-left-double")
-
-  // 		$('.chart').easyPieChart({
-  // 			easing: 'easeInOut',
-  // 			barColor: '#fff',
-  // 			trackColor: false,
-  // 			scaleColor: false,
-  // 			lineWidth: 4,
-  // 			size: 152,
-  // 			onStep: function (from, to, percent) {
-  // 				$(this.el).find('.percent').text(Math.round(percent));
-  // 			}
-  // 		});
-
-  // 	}
-  // });
 
   $(window).on("scroll", function () {
     if (isScrolledIntoView($filters, $window)) {
