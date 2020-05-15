@@ -273,7 +273,7 @@ $(document).ready(function () {
 function showAboutIntroductionTexts() {
   if (!aboutSectionEntered) {
     new Typed("#work", {
-      strings: ["Currently working @ <span class = 'color-primary'>Spacebasic Inc.</span>"],
+      strings: ["Currently working @ <span class = 'color-primary'>Spacebasic Inc, ex-Infosys</span>"],
       typeSpeed: 20,
       loop: false,
       startDelay: 0,
@@ -333,7 +333,7 @@ function showAboutIntroductionTexts() {
                                   onComplete: function () {
                                     new Typed(".motto", {
                                       strings: [
-                                        "My long term goal is to create or do something that makes a difference.",
+                                        "My long term goal is to create and do something that makes a difference.",
                                       ],
                                       typeSpeed: 18,
                                       loop: false,
