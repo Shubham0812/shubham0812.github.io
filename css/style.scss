@@ -250,36 +250,35 @@ h2 {
   color: $color-primary;
 }
 
-#work{
-
+#work {
   @media only screen and (max-width: 746px) {
     margin-top: 12px;
-      }
+  }
 }
 
 .my-details {
   height: 320px;
 
   @media only screen and (max-width: 1200px) {
-height: 360px;
+    height: 360px;
   }
 
   @media only screen and (max-width: 994px) {
     height: 420px;
-      }
+  }
 
-      @media only screen and (max-width: 746px) {
-        height: 420px;
-          }
+  @media only screen and (max-width: 746px) {
+    height: 420px;
+  }
 
-          @media only screen and (max-width: 482px) {
-            margin-top: 8px;
-            height: 440px;
-          }
-          @media only screen and (max-width: 398px) {
-            margin-top: 8px;
-            height: 460px;
-          }
+  @media only screen and (max-width: 482px) {
+    margin-top: 8px;
+    height: 440px;
+  }
+  @media only screen and (max-width: 398px) {
+    margin-top: 8px;
+    height: 460px;
+  }
 }
 
 .skillsSection {
@@ -974,7 +973,6 @@ height: 360px;
   @media only screen and (max-width: 398px) {
     font-size: 1.05rem;
   }
-
 }
 
 @keyframes loader {
@@ -1062,7 +1060,7 @@ height: 360px;
   transition-delay: 5s;
 }
 
-.flip-in-x{
+.flip-in-x {
   animation-name: flipX;
   animation-fill-mode: forwards;
   animation-duration: 1s;
