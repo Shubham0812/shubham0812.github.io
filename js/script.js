@@ -23,7 +23,7 @@ $(document).ready(function () {
     strings: ["iOS Developer"],
     typeSpeed: 60,
     loop: false,
-    startDelay: 800,
+    startDelay: 1200,
     showCursor: false,
     onComplete: function () {
       console.log("finished babt");
