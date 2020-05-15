@@ -274,7 +274,7 @@ function showAboutIntroductionTexts() {
   if (!aboutSectionEntered) {
     new Typed("#work", {
       strings: ["Currently working @ <span class = 'color-primary'>Spacebasic Inc.</span>"],
-      typeSpeed: 30,
+      typeSpeed: 20,
       loop: false,
       startDelay: 0,
       showCursor: false,
@@ -283,16 +283,16 @@ function showAboutIntroductionTexts() {
               strings: [
                 "Devoting office hours into developing the <span class = 'color-primary'>Spacebasic</span> app.",
               ],
-              typeSpeed: 20,
+              typeSpeed: 18,
               loop: false,
               startDelay: 0,
               showCursor: false,
               onComplete: function () {
                 new Typed(".spare-text", {
                   strings: [
-                    "In my spare time, I <span class = 'color-palatte-2'>develop</span> iOS apps and <span class = 'color-palatte-2'>explore</span> tech.",
+                    "In my spare time, I <span class = 'color-primary'>develop</span> iOS apps and <span class = 'color-primary'>explore</span> tech.",
                   ],
-                  typeSpeed: 20,
+                  typeSpeed: 18,
                   loop: false,
                   startDelay: 0,
                   showCursor: false,
@@ -301,23 +301,23 @@ function showAboutIntroductionTexts() {
                       strings: [
                         "I code in <span class = 'color-palatte-1'>Swift</span>, <span class = 'color-palatte-1'>HTML</span>, <span class = 'color-palatte-1'>CSS</span>, <span class = 'color-palatte-1'>Javascript </span>, and <span class = 'color-palatte-1'>Python</span>.",
                       ],
-                      typeSpeed: 20,
+                      typeSpeed: 18,
                       loop: false,
                       startDelay: 0,
                       showCursor: false,
                       onComplete: function () {
                         new Typed(".hobby-text", {
-                          strings: ["I <span class = 'color-primary'>love</span> to talk about <span class = 'color-palatte-5'>iOS</span>, <span class = 'color-palatte-5'>technology</span> and <span class = 'color-palatte-5'>life</span>."],
-                          typeSpeed: 20,
+                          strings: ["I <span class = 'color-primary'>love</span> to talk about <span class = 'color-primary'>iOS</span>, <span class = 'color-primary'>technology</span> and <span class = 'color-primary'>life</span>."],
+                          typeSpeed: 12,
                           loop: false,
                           startDelay: 0,
                           showCursor: false,
                           onComplete: function () {
                             new Typed(".game-text", {
                               strings: [
-                                "I also enjoy occasional gaming, my favorites being <span class = 'color-palatte-6'>DOTA</span> and <span class = 'color-palatte-6'>CS: GO</span>",
+                                "I also enjoy occasional gaming, my favorites being <span class = 'color-palatte-5'>DOTA</span> and <span class = 'color-palatte-5'>CS: GO</span>",
                               ],
-                              typeSpeed: 15,
+                              typeSpeed: 18,
                               loop: false,
                               startDelay: 0,
                               showCursor: false,
@@ -326,7 +326,7 @@ function showAboutIntroductionTexts() {
                                   strings: [
                                     "I've recently created an <a href='https://www.instagram.com/shubham_iosdev/' target='_blank'><span class = 'color-palatte-4'> Instagram</span></a> handle to share my knowledge, connect with awesome people, and help other developers with iOS dev.",
                                   ],
-                                  typeSpeed: 20,
+                                  typeSpeed: 18,
                                   loop: false,
                                   startDelay: 0,
                                   showCursor: false,
@@ -335,10 +335,14 @@ function showAboutIntroductionTexts() {
                                       strings: [
                                         "My long term goal is to create or do something that makes a difference.",
                                       ],
-                                      typeSpeed: 20,
+                                      typeSpeed: 18,
                                       loop: false,
                                       startDelay: 0,
                                       showCursor: false,
+                                      onComplete: function () {
+                                        $(".grid-data").addClass("flip-in-x")
+                                        $(".services-header ").addClass("flip-in-x")
+                                      }
                                     });
                                   },
                                 });
