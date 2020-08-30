@@ -255,7 +255,7 @@ function showAboutIntroductionTexts() {
   if (!aboutSectionEntered) {
     new Typed("#work", {
       strings: [
-        "Currently working @ <span class = 'color-primary'>Spacebasic Inc, ex-Infosys</span>",
+        "Currently working @ <span class = 'color-primary'>Dailyrounds/Marrow, ex-Spacebasic Inc., ex-Infosys</span>",
       ],
       typeSpeed: 20,
       loop: false,
@@ -264,7 +264,7 @@ function showAboutIntroductionTexts() {
       onComplete: function () {
         new Typed(".office-text", {
           strings: [
-            "Devoting office hours into developing the <span class = 'color-primary'>Spacebasic</span> app.",
+            "Devoting office hours into developing the <span class = 'color-primary'>Marrow</span> app.",
           ],
           typeSpeed: 18,
           loop: false,
