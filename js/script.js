@@ -264,9 +264,9 @@ function showAboutIntroductionTexts() {
       onComplete: function () {
         new Typed(".office-text", {
           strings: [
-            "Devoting office hours into developing the <span class = 'color-primary'>Marrow</span> app.",
+            "Devoting office hours into developing the Marrow app.",
           ],
-          typeSpeed: 18,
+          typeSpeed: 30,
           loop: false,
           startDelay: 0,
           showCursor: false,
@@ -275,16 +275,16 @@ function showAboutIntroductionTexts() {
               strings: [
                 "In my spare time, I <span class = 'color-primary'>develop</span> iOS apps and <span class = 'color-primary'>explore</span> tech.",
               ],
-              typeSpeed: 18,
+              typeSpeed: 30,
               loop: false,
               startDelay: 0,
               showCursor: false,
               onComplete: function () {
                 new Typed(".language-text", {
                   strings: [
-                    "I code in <span class = 'color-palatte-1'>Swift</span>, <span class = 'color-palatte-1'>HTML</span>, <span class = 'color-palatte-1'>CSS</span>, <span class = 'color-palatte-1'>Javascript </span>, and <span class = 'color-palatte-1'>Python</span>.",
+                    "I code in Swift, HTML, CSS, Javascript , and Python",
                   ],
-                  typeSpeed: 18,
+                  typeSpeed: 30,
                   loop: false,
                   startDelay: 0,
                   showCursor: false,
@@ -293,16 +293,16 @@ function showAboutIntroductionTexts() {
                       strings: [
                         "I <span class = 'color-primary'>love</span> to talk about <span class = 'color-primary'>iOS</span>, <span class = 'color-primary'>technology</span> and <span class = 'color-primary'>life</span>.",
                       ],
-                      typeSpeed: 12,
+                      typeSpeed: 30,
                       loop: false,
                       startDelay: 0,
                       showCursor: false,
                       onComplete: function () {
                         new Typed(".game-text", {
                           strings: [
-                            "I also enjoy occasional gaming, my favorites being <span class = 'color-palatte-5'>DOTA</span> and <span class = 'color-palatte-5'>CS: GO</span>",
+                            "I also enjoy occasional gaming, my favorites being DOTA 2 and Fortnite",
                           ],
-                          typeSpeed: 18,
+                          typeSpeed: 30,
                           loop: false,
                           startDelay: 0,
                           showCursor: false,
@@ -311,16 +311,16 @@ function showAboutIntroductionTexts() {
                               strings: [
                                 "I've recently created an <a href='https://www.instagram.com/shubham_iosdev/' target='_blank'><span class = 'color-palatte-4'> Instagram</span></a> handle to share my knowledge, connect with awesome people, and help other developers with iOS dev.",
                               ],
-                              typeSpeed: 18,
+                              typeSpeed: 30,
                               loop: false,
                               startDelay: 0,
                               showCursor: false,
                               onComplete: function () {
                                 new Typed(".motto", {
                                   strings: [
-                                    "My long term goal is to create and do something that makes a difference.",
+                                    "My long term goal is to develop something that makes a difference in people's life.",
                                   ],
-                                  typeSpeed: 18,
+                                  typeSpeed: 30,
                                   loop: false,
                                   startDelay: 0,
                                   showCursor: false,
