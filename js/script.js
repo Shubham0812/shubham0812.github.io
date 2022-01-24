@@ -282,7 +282,7 @@ function showAboutIntroductionTexts() {
               onComplete: function () {
                 new Typed(".language-text", {
                   strings: [
-                    "I code in Swift, HTML, CSS, Javascript , and Python",
+                    "I code in Swift, and Python",
                   ],
                   typeSpeed: 30,
                   loop: false,
@@ -300,7 +300,7 @@ function showAboutIntroductionTexts() {
                       onComplete: function () {
                         new Typed(".game-text", {
                           strings: [
-                            "I also enjoy occasional gaming, my favorites being DOTA 2 and Fortnite",
+                            "I",
                           ],
                           typeSpeed: 30,
                           loop: false,
