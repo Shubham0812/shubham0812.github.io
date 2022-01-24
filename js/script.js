@@ -266,7 +266,7 @@ function showAboutIntroductionTexts() {
           strings: [
             "Devoting office hours into developing the Marrow app.",
           ],
-          typeSpeed: 30,
+          typeSpeed: 50,
           loop: false,
           startDelay: 0,
           showCursor: false,
@@ -275,7 +275,7 @@ function showAboutIntroductionTexts() {
               strings: [
                 "In my spare time, I <span class = 'color-primary'>develop</span> iOS apps and <span class = 'color-primary'>explore</span> tech.",
               ],
-              typeSpeed: 30,
+              typeSpeed: 50,
               loop: false,
               startDelay: 0,
               showCursor: false,
@@ -284,7 +284,7 @@ function showAboutIntroductionTexts() {
                   strings: [
                     "I code in Swift, and Python",
                   ],
-                  typeSpeed: 30,
+                  typeSpeed: 50,
                   loop: false,
                   startDelay: 0,
                   showCursor: false,
@@ -293,16 +293,16 @@ function showAboutIntroductionTexts() {
                       strings: [
                         "I <span class = 'color-primary'>love</span> to talk about <span class = 'color-primary'>iOS</span>, <span class = 'color-primary'>technology</span> and <span class = 'color-primary'>life</span>.",
                       ],
-                      typeSpeed: 30,
+                      typeSpeed: 50,
                       loop: false,
                       startDelay: 0,
                       showCursor: false,
                       onComplete: function () {
                         new Typed(".game-text", {
                           strings: [
-                            "I",
+                            "",
                           ],
-                          typeSpeed: 30,
+                          typeSpeed: 50,
                           loop: false,
                           startDelay: 0,
                           showCursor: false,
@@ -320,7 +320,7 @@ function showAboutIntroductionTexts() {
                                   strings: [
                                     "My long term goal is to develop something that makes a difference in people's life.",
                                   ],
-                                  typeSpeed: 30,
+                                  typeSpeed: 50,
                                   loop: false,
                                   startDelay: 0,
                                   showCursor: false,
