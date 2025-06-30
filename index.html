@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SwiftUI Workshop Feedback</title>
   <!-- Firebase SDKs -->
   <script type="module">
@@ -11,6 +11,7 @@
       getFirestore,
       collection,
       addDoc,
+      deleteDoc,
       query,
       orderBy,
       onSnapshot,
@@ -51,14 +52,13 @@
     };
 
     window.votePost = async (postId, delta) => {
-      const user = localStorage.getItem('ws_username');
-      if (!user) return;
+      const user = localStorage.getItem('ws_username'); if (!user) return;
       const postDocRef = doc(db, 'posts', postId);
       await runTransaction(db, async tx => {
         const snap = await tx.get(postDocRef);
         if (!snap.exists()) throw 'Not found';
         const data = snap.data();
-        if (data.user === user) return; // cannot vote own
+        if (data.user === user) return;
         const current = data.votesMap?.[user] || 0;
         const newVote = current === delta ? 0 : delta;
         const voteChange = newVote - current;
@@ -71,95 +71,264 @@
     };
 
     window.markAsRead = async postId => {
-      const user = localStorage.getItem('ws_username');
-      if (user !== MASTER_USER) return;
+      const user = localStorage.getItem('ws_username'); if (user !== MASTER_USER) return;
       const postDocRef = doc(db, 'posts', postId);
       await updateDoc(postDocRef, { read: true });
     };
+
+    window.deletePost = async postId => {
+      const user = localStorage.getItem('ws_username'); if (user !== MASTER_USER) return;
+      const postDocRef = doc(db, 'posts', postId);
+      await deleteDoc(postDocRef);
+    };
   </script>
-  <!-- Font Awesome -->
+
+  <!-- Font & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family:'Segoe UI',sans-serif;
-      background-color:#121212;
-      color:#e0e0e0;
-      padding:20px;
-      background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='1' fill='%23333333'/%3E%3C/svg%3E");
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #252525, #1a1a1a);
+      color: #f0f0f0;
+      min-height: 100vh;
+      padding: 20px;
     }
-    h1 { text-align:center; margin-bottom:20px; }
-    #overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000; }
-    #name-modal { background:#1e1e1e; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; }
-    #name-modal h2 { margin-bottom:10px; color:#fff; }
-    #name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #444; border-radius:4px; background:#2e2e2e; color:#fff; }
-    #name-modal button { margin-top:15px; padding:10px 20px; background:#6200ee; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-    #post-form { background:#1e1e1e; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; }
-    #post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #444; border-radius:4px; background:#2e2e2e; color:#fff; }
-    #post-form button { background:#03dac6; color:#000; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }
-    #posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
-    .post { background:#1e1e1e; padding:20px; border-radius:8px; display:flex; flex-direction:column; position:relative; border:2px solid transparent; }
-    .post.read { opacity:0.6; }
-    .post.read .info strong { text-decoration:line-through; }
-    .post header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-    .info strong { font-size:1.1rem; color:#bb86fc; }
-    .meta { font-size:0.85rem; color:#aaa; }
-    .vote-icons { display:flex; flex-direction:column; gap:8px; }
-    .vote-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
-    .upvote { color:#555; }
-    .downvote { color:#555; }
-    .voted-up .upvote { color:#00ff00; }
-    .voted-down .downvote { color:#ff0000; }
-    .description { flex:1; margin-bottom:15px; position:relative; padding-right:40px; }
-    .bottom-icons { position:absolute; right:0; bottom:0; display:flex; flex-direction:column; gap:8px; }
-    .bottom-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
-    .mark-read { background:#bb86fc; color:#000; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.85rem; }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #ffdd57;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    /* Overlay */
+    #overlay {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    #name-modal {
+      background: #2a2a2a;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%; max-width: 360px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    #name-modal h2 { margin-bottom: 15px; font-size: 1.5rem; }
+    #name-modal input {
+      width: 100%; padding: 12px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      background: #3a3a3a;
+      color: #f0f0f0;
+    }
+    #name-modal button {
+      padding: 12px 25px;
+      background: #ffdd57;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #name-modal button:hover { background: #e6c84f; }
+
+    /* Form */
+    #post-form {
+      background: #2a2a2a;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      display: grid;
+      grid-gap: 15px;
+    }
+    #post-form input, #post-form textarea {
+      width: 100%; padding: 14px;
+      border: none;
+      border-radius: 6px;
+      background: #3a3a3a;
+      color: #f0f0f0;
+      font-size: 1rem;
+    }
+    #post-form button {
+      justify-self: end;
+      padding: 12px 30px;
+      background: #ffdd57;
+      color: #1a1a1a;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #post-form button:hover { background: #e6c84f; }
+
+    /* Posts Grid */
+    #posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .post {
+      background: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+    .post:hover { transform: translateY(-5px); }
+    .post.read {
+      opacity: 0.5;
+    }
+    .post.read .info strong {
+      text-decoration: line-through;
+      color: #888;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+    }
+    .info strong {
+      font-size: 1.2rem;
+      color: #ffdd57;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-top: 4px;
+    }
+    .vote-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .vote-icons button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .vote-icons button:disabled {
+      cursor: default;
+      opacity: 0.4;
+    }
+    .post.voted-up .vote-icons .fa-chevron-up,
+    .post.voted-up .vote-icons .fa-thumbs-up {
+      color: #4caf50;
+    }
+    .post.voted-down .vote-icons .fa-chevron-down,
+    .post.voted-down .vote-icons .fa-thumbs-down {
+      color: #f44336;
+    }
+    .description {
+      flex: 1;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+    .bottom-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    .bottom-icons button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #bbb;
+      transition: color 0.2s;
+    }
+    .mark-read {
+      background: #03dac6;
+      color: #1a1a1a;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .mark-read:hover { background: #02c5b2; }
+    .delete-btn {
+      background: #f44336;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-left: 8px;
+    }
+    .delete-btn:hover { background: #d32f2f; }
   </style>
 </head>
 <body>
   <h1>Spot the SwiftUI Mistakes</h1>
-  <div id="overlay" style="display:none;">
+  <div id="overlay" style="display: none;">
     <div id="name-modal">
       <h2>Welcome</h2>
       <p>Please enter your name:</p>
-      <input id="name-input" placeholder="Your name" />
+      <input id="name-input" placeholder="Your name">
       <button id="save-name">Start</button>
     </div>
   </div>
   <div id="post-form">
-    <input id="title" placeholder="Error title" />
-    <input id="filename" placeholder="File name" />
+    <input id="title" placeholder="Error title">
+    <input id="filename" placeholder="File name">
     <textarea id="description" rows="3" placeholder="Describe the mistake"></textarea>
     <button id="add-post">Add Post</button>
   </div>
   <div id="posts"></div>
+
   <script>
     let username = localStorage.getItem('ws_username');
-    if(!username) document.getElementById('overlay').style.display='flex';
-    document.getElementById('save-name').onclick=()=>{
-      const n=document.getElementById('name-input').value.trim(); if(!n) return;
-      localStorage.setItem('ws_username',n); username=n;
-      document.getElementById('overlay').style.display='none';
+    if (!username) document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('save-name').onclick = () => {
+      const n = document.getElementById('name-input').value.trim(); if (!n) return;
+      localStorage.setItem('ws_username', n); username = n;
+      document.getElementById('overlay').style.display = 'none';
     };
-    document.getElementById('add-post').onclick=async()=>{
-      if(!username){document.getElementById('overlay').style.display='flex';return;}
-      const t=document.getElementById('title').value.trim();
-      const f=document.getElementById('filename').value.trim();
-      const d=document.getElementById('description').value.trim();
-      if(!t||!f||!d) return;
-      await window.addPostToFirestore({ title:t, filename:f, description:d, user:username });
-      ['title','filename','description'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('add-post').onclick = async () => {
+      if (!username) { document.getElementById('overlay').style.display = 'flex'; return; }
+      const t = document.getElementById('title').value.trim();
+      const f = document.getElementById('filename').value.trim();
+      const d = document.getElementById('description').value.trim();
+      if (!t || !f || !d) return;
+      await window.addPostToFirestore({ title: t, filename: f, description: d, user: username });
+      ['title','filename','description'].forEach(id => document.getElementById(id).value = '');
     };
-    window.renderPosts=posts=>{
-      const c=document.getElementById('posts'); c.innerHTML='';
-      posts.forEach(p=>{
-        const card=document.createElement('div');
-        card.className='post';
-        if(p.read) card.classList.add('read');
-        const userVote = p.votesMap?.[username]||0;
-        if(userVote===1) card.classList.add('voted-up');
-        if(userVote===-1) card.classList.add('voted-down');
-        card.innerHTML=`
+    window.renderPosts = posts => {
+      const c = document.getElementById('posts'); c.innerHTML = '';
+      posts.forEach(p => {
+        const card = document.createElement('div'); card.className = 'post';
+        if (p.read) card.classList.add('read');
+        const userVote = p.votesMap?.[username] || 0;
+        if (userVote === 1) card.classList.add('voted-up');
+        if (userVote === -1) card.classList.add('voted-down');
+        const disableOwn = p.user === username;
+        card.innerHTML = `
           <header>
             <div class="info">
               <strong>${p.title}</strong>
@@ -167,18 +336,16 @@
             </div>
             <div>
               <div class="vote-icons">
-                <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up upvote" ${p.user===username?'disabled':''}></i></button>
-                <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down downvote" ${p.user===username?'disabled':''}></i></button>
+                <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up"></i></button>
+                <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down"></i></button>
               </div>
-              ${username===MASTER_USER?`<button class="mark-read" onclick="markAsRead('${p.id}')">Mark as Read</button>`:''}
+              ${username === MASTER_USER ? `<button class="mark-read" onclick="markAsRead('${p.id}')">Mark as Read</button><button class="delete-btn" onclick="deletePost('${p.id}')">Delete</button>` : ''}
             </div>
           </header>
-          <div class="description">
-            ${p.description}
-            <div class="bottom-icons">
-              <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up" ${p.user===username?'disabled':''}></i></button>
-              <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down" ${p.user===username?'disabled':''}></i></button>
-            </div>
+          <div class="description">${p.description}</div>
+          <div class="bottom-icons">
+            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up"></i></button>
+            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down"></i></button>
           </div>
         `;
         c.appendChild(card);
