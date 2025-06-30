@@ -1,741 +1,168 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Shubham Singh - iOS Developer</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftUI Workshop Feedback</title>
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      query,
+      orderBy,
+      onSnapshot,
+      updateDoc,
+      doc,
+      runTransaction,
+      Timestamp
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="-1" />
+    // Replace with your config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const postsRef = collection(db, 'posts');
 
-    <link rel="stylesheet" type="text/css" href="css/superslides.css" />
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=PT+Sans+Caption&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="apple-touch-icon" href="“favicon.ico”" />
+    // Listen and render
+    onSnapshot(query(postsRef, orderBy('votes', 'asc')), snapshot => {
+      const posts = [];
+      snapshot.forEach(d => posts.push({ id: d.id, ...d.data() }));
+      window.renderPosts(posts);
+    });
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-159990970-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
+    // Add new post
+    window.addPostToFirestore = async post => {
+      await addDoc(postsRef, {
+        ...post,
+        votes: 0,
+        votesMap: {},
+        timestamp: Timestamp.now()
+      });
+    };
+
+    // Transactional vote to prevent spamming
+    window.votePost = async (postId, delta) => {
+      const postDocRef = doc(db, 'posts', postId);
+      const user = localStorage.getItem('ws_username');
+      if (!user) return;
+      try {
+        await runTransaction(db, async tx => {
+          const postSnap = await tx.get(postDocRef);
+          if (!postSnap.exists()) throw 'Post not found';
+          const data = postSnap.data();
+          const current = data.votesMap?.[user] || 0;
+          const newVote = current === delta ? 0 : delta;
+          const voteChange = newVote - current;
+          const updatedMap = { ...data.votesMap, [user]: newVote };
+          tx.update(postDocRef, {
+            votes: data.votes + voteChange,
+            votesMap: updatedMap
+          });
+        });
+      } catch (e) {
+        console.error('Vote failed:', e);
       }
-      gtag("js", new Date());
-
-      gtag("config", "UA-159990970-1");
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/jquery.superslides.min.js"></script>
-    <script src="js/countUp.js"></script>
-    <script src="js/countUp-jquery.js"></script>
-    <script src="js/jquery.easypiechart.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/typed.min.js"></script>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="js/script.js"></script>
-  </head>
-  <body>
-    <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
+    };
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI',sans-serif; background:#f4f7f9; color:#333; padding:20px; }
+    h1 { text-align:center; color:#2c3e50; margin-bottom:20px; }
+    #overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:1000; }
+    #name-modal { background:#fff; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    #name-modal h2 { margin-bottom:10px; color:#34495e; }
+    #name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #ccc; border-radius:4px; }
+    #name-modal button { margin-top:15px; padding:10px 20px; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    #post-form { background:#fff; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    #post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px; }
+    #post-form button { background:#27ae60; color:#fff; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }
+    #posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .post { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; flex-direction:column; position:relative; }
+    .post header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .info strong { font-size:1.1rem; color:#2c3e50; }
+    .meta { font-size:0.85rem; color:#7f8c8d; }
+    .vote-icons { display:flex; flex-direction:column; gap:8px; }
+    .vote-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
+    .upvote { color:#3498db; } .downvote { color:#e74c3c; }
+    .description { flex:1; margin-bottom:15px; position:relative; padding-right:40px; }
+    .bottom-icons { position:absolute; right:0; bottom:0; display:flex; flex-direction:column; gap:8px; }
+    .bottom-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <h1>Spot the SwiftUI Mistakes</h1>
+  <div id="overlay" style="display:none;">
+    <div id="name-modal">
+      <h2>Welcome</h2>
+      <p>Please enter your name:</p>
+      <input id="name-input" placeholder="Your name" />
+      <button id="save-name">Start</button>
     </div>
-
-    <div class="check-out-header">
-<!--       <a href="https://medium.com/@singh.shubham0812" target="_blank"
-        ><p>📃 Check out my articles on iOS Development in Medium</p>
-      </a> -->
-    </div>
-
-    <div id="slides">
-      <div class="overlay"></div>
-      <div class="slides-container">
-<!--         <img src="/images/mac.jpg" alt="" /> -->
-      </div>
-
-      <div class="titleMessage">
-        <div class="heading">
-          <p class="main">SHUBHAM SINGH</p>
-          <p class="sub typed"></p>
-          <p class="alternate-job"></p>
-          <div class="location-box margin-top-xl">
-            <i class="fas fa-map-pin"></i>
-            <p class="location-text margin-remove-bottom"></p>
-          </div>
-        </div>
-      </div>
-
-<!--       <nav class="slides-navigation">
-        <a href="#" class="next"></a>
-        <a href="#" class="prev"></a>
-      </nav> -->
-    </div>
-
-    <nav id="navigation" class="navbar navbar-expand-lg">
-      <div class="brand">
-        <a class="navbar-brand" href="#slides">HOME</a>
-      </div>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item item0">
-            <a class="nav-link" href="#about">ABOUT</a>
-          </li>
-          <li class="nav-item item1">
-            <a class="nav-link" href="#skills">SKILLS</a>
-          </li>
-          <li class="nav-item item2">
-            <a class="nav-link" href="#stats">STATS</a>
-          </li>
-          <li class="nav-item item3">
-            <a class="nav-link" href="#portfolio">PROJECTS</a>
-          </li>
-          <li class="nav-item item4">
-            <a class="nav-link" href="#contact">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div id="about" class="section aboutSection">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5">
-            <img
-              class="aboutImage dark-theme-shadow"
-              src="images/shubham.png"
-            />
-          </div>
-
-          <div class="col-md-7 aboutInfo">
-            <h5 id="work"></h5>
-            <div class="my-details">
-              <h5 class="text-large office-text"></h5>
-              <h5 class="text-large spare-text"></h5>
-              <h5 class="text-large language-text"></h5>
-              <h5 class="text-large hobby-text"></h5>
-              <h5 class="text-large game-text"></h5>
-              <h5 class="margin-top-m text-large contribution-text"></h5>
-              <p class="margin-top-l">
-                <span class="highlight text-medium motto"></span>
-              </p>
+  </div>
+  <div id="post-form">
+    <input id="title" placeholder="Error title" />
+    <input id="filename" placeholder="File name" />
+    <textarea id="description" rows="3" placeholder="Describe the mistake"></textarea>
+    <button id="add-post">Add Post</button>
+  </div>
+  <div id="posts"></div>
+  <script>
+    let username = localStorage.getItem('ws_username');
+    const overlay=document.getElementById('overlay');
+    if(!username) overlay.style.display='flex';
+    document.getElementById('save-name').onclick=()=>{
+      const n=document.getElementById('name-input').value.trim();
+      if(!n) return;
+      username=n; localStorage.setItem('ws_username',n);
+      overlay.style.display='none';
+    };
+    document.getElementById('add-post').onclick=async()=>{
+      if(!username){overlay.style.display='flex';return;}
+      const t=document.getElementById('title').value.trim();
+      const f=document.getElementById('filename').value.trim();
+      const d=document.getElementById('description').value.trim();
+      if(!t||!f||!d) return;
+      await window.addPostToFirestore({ title:t, filename:f, description:d, user:username });
+      ['title','filename','description'].forEach(id=>document.getElementById(id).value='');
+    };
+    window.renderPosts=(posts)=>{
+      const c=document.getElementById('posts'); c.innerHTML='';
+      posts.forEach(p=>{
+        const card=document.createElement('div');card.className='post';
+        card.innerHTML=`
+          <header>
+            <div class="info">
+              <strong>${p.title}</strong>
+              <div class="meta">by ${p.user} in ${p.filename} — ${p.votes} votes</div>
             </div>
-
-            <h5 class="services-header margin-top-l">What can I do?</h5>
-            <div class="services">
-              <div class="grid-data">
-                <div class="hex-wrap">
-                  <div class="hexagon">
-                    <i class="fab fa-app-store-ios"></i>
-                  </div>
-                </div>
-                <div class="label text-center">iOS Development</div>
-              </div>
-              <div class="grid-data">
-                <div class="hex-wrap">
-                  <div class="hexagon">
-                    <i class="material-icons location-icon">web</i>
-                  </div>
-                </div>
-                <div class="label text-center">Web Development</div>
-              </div>
+            <div class="vote-icons">
+              <button class="upvote" onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up"></i></button>
+              <button class="downvote" onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+          </header>
+          <div class="description">
+            ${p.description}
+            <div class="bottom-icons">
+              <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up"></i></button>
+              <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down"></i></button>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="skills" class="skillsSection section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 style="opacity: 0;" id="technical-title">TECHNICAL SKILLS</h2>
-            <p class="techSkillsInfo left-double" style="opacity: 0;">
-              What I like to do and what my superpowers are
-            </p>
-          </div>
-          <div class="skill-showcase">
-            <img
-              src="./images/dev.svg"
-              class="dark-theme-shadow margin-right-xs"
-            />
-            <div class="margin-top-xl skills-container">
-              <div>
-                <h6>Programming Languages</h6>
-                <ul class="dev-skills">
-                  <li class="skill" data-toggle="tooltip" title="Swift 5">
-                    <i class="fab fa-swift" title="swift"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Python 3">
-                    <i class="fab fa-python"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Javascript">
-                    <i class="fab fa-js"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="HTML 5">
-                    <i class="fab fa-html5"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="CSSv3">
-                    <i class="fab fa-css3-alt"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Java">
-                    <i class="fab fa-java"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="margin-top-s">
-                <h6>Tech Skills</h6>
-                <ul class="dev-skills">
-                  <li
-                    class="skill"
-                    data-toggle="tooltip"
-                    title="iOS Development"
-                  >
-                    <i class="fab fa-app-store"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Angular 8">
-                    <i class="fab fa-angular"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Node.js">
-                    <i class="fab fa-node"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Npm">
-                    <i class="fab fa-npm"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Git">
-                    <i class="fab fa-git"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Gulp">
-                    <i class="fab fa-gulp"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="margin-top-s">
-                <h6>Utility Skills</h6>
-                <ul class="dev-skills">
-                  <li class="skill" data-toggle="tooltip" title="Github">
-                    <i class="fab fa-github"></i>
-                  </li>
-                  <li
-                    class="skill"
-                    data-toggle="tooltip"
-                    title="Stripe Integration"
-                  >
-                    <i class="fab fa-cc-stripe"></i>
-                  </li>
-                  <li class="skill" data-toggle="tooltip" title="Jira">
-                    <i class="fab fa-jira"></i>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="stats" class="statsSection section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h2 style="opacity: 0;" id="stats-title">STATS</h2>
-          </div>
-
-          <div class="col-md-3 col-sm-6 margin-top-xl">
-            <div class="squareItem">
-              <div class="squareInnerContainer">
-                <div class="squareIcon">
-                  <i class="fas fa-pen"></i>
-                </div>
-
-                <div class="squareContent">
-                  <h2 class="counter">7</h2>
-                  <h3>iOS Articles</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 margin-top-xl">
-            <div class="squareItem">
-              <div class="squareInnerContainer">
-                <div class="squareIcon">
-                  <i class="fas fa-rocket"></i>
-                </div>
-
-                <div class="squareContent">
-                  <h2 class="counter">6</h2>
-                  <h3>Apps</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 margin-top-xl">
-            <div class="squareItem">
-              <div class="squareInnerContainer">
-                <div class="squareIcon">
-                  <i class="far fa-file"></i>
-                </div>
-
-                <div class="squareContent">
-                  <h2 class="counter">4</h2>
-                  <h3>Web Pages</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6 margin-top-xl">
-            <div class="squareItem">
-              <div class="squareInnerContainer">
-                <div class="squareIcon">
-                  <i class="fa fa-clock"></i>
-                </div>
-
-                <div class="squareContent">
-                  <h2 class="counter">6</h2>
-                  <h3>Freelancing projects</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="portfolio" class="section-small">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center" style="padding-bottom: 16px;">
-            <h2 id="portfolio-title" style="opacity: 0;">PROJECTS</h2>
-          </div>
-
-          <div class="filter" style="opacity: 0;">
-            <ul id="filters">
-              <li><a href="#" data-filter="*">ALL</a></li>
-              <li><a href="#" data-filter=".ios" class="current">IOS</a></li>
-              <li><a href="#" data-filter=".web">WEB</a></li>
-            </ul>
-          </div>
-
-          <div
-            class="itemsContainer"
-            id="items-left-double"
-            style="opacity: 0;"
-          >
-            <ul class="items margin-top-xl large">
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/color.dev.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/color.dev.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Applications to help developers with color problems."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>
-                      Color.Dev - Solving Color related problems for Developers
-                    </h3>
-                    <p>Swift 5, RxSwift</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/tic-tac.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/tic-tac.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="iOS application for Tic-tac-toe Game."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>
-                      Tic-tac-toe - Game
-                    </h3>
-                    <p>Swift 5, RxSwift</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio//wikiGuess.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/wikiGuess.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="iOS game to test your vocabulary and improve your english"
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a href="" target="_blank" class="projectLink">
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>WikiGuess - Can you guess the words?</h3>
-                    <p>Swift 5, Alamofire</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/spacebasic.png" />
-                  ̉
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/spacebasic.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Spacebasic is a student communication and housing application."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://apps.apple.com/ng/app/spacebasic/id1217386342"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Spacebasic (Company)</h3>
-                    <p>
-                      Swift 5, Alamofire, AlamofireImage, Crashlytics, Firebase,
-                      Freshchat
-                    </p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/wingspan.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/wingspan.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Infosys Wingspan is an iOS based learning application by Infosys so that companies will be able to help their employees learn new skills and master existing ones."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://apps.apple.com/us/app/infosys-wingspan/id1447120631"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Infosys Wingspan (Company)</h3>
-                    <p>Swift 5, Alamofire, SwiftyJSON, Cryptoswift</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-              <li onclick="" class="ios col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/lex.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/lex.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Infosys Lex is an iOS based learning application for the employees of Infosys to upskill and refactor themselves, the application is based on the Learn on the Model and it supports viewing of content offline along with other exiciting features such as Leaderboards and much more.ˀ"
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://apps.apple.com/us/app/infosys-lex/id1372091347"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Infosys Lex (Company)</h3>
-                    <p>
-                      Swift 5, Alamofire, SwiftyJSON, Cryptoswift, HaishinKit
-                    </p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-              <li onclick="" class="web col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/searchX.png" />
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/searchX.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Web based application created with Angular where the user can search for content and save them into their personalized list."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://shubham0812.github.io/SearchX/"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>SearchX - Search anything</h3>
-                    <p>Angular 8</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li onclick="" class="web col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/jobshunt.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/jobshunt.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Web based application created with Angular, A job search portal where the user can search for jobs and using differnt filters and apply"
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://shubham0812.github.io/JobsHunt/home"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Jobs Hunt - Job Portal</h3>
-                    <p>Angular 8</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li onclick="" class="web col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/joker.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/joker.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Web page created with HTML5 & SCSS, A tribute to the 2019 Joker movie."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://shubham0812.github.io/Joker"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Joker - Tribute Page</h3>
-                    <p>HTML 5, CSS 3 & JS</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-
-              <li onclick="" class="web col-xs-6 col-sm-6 col-md-5 col-lg-4">
-                <div class="item">
-                  <img src="images/portfolio/thumbnails/color-guesser.png" />
-
-                  <div class="icons">
-                    <a
-                      href="images/portfolio/color-guesser.png"
-                      title="View image"
-                      class="openButton"
-                      data-fancybox
-                      data-caption="Web which gives a RGB value and you have to guess the correct color."
-                    >
-                      <i class="fa fa-info-circle"></i>
-                    </a>
-
-                    <a
-                      href="https://shubham0812.github.io/Color-Guesser/"
-                      target="_blank"
-                      class="projectLink"
-                    >
-                      <i class="fa fa-link"></i>
-                    </a>
-                  </div>
-                  <div class="portfolio-info">
-                    <h3>Color Guesser - Can you guess it?</h3>
-                    <p>HTML5 , CSS3 & JS</p>
-                  </div>
-                  <div class="imageOverlay"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="contact" class="contactSection section">
-      <div class="col-md-12 text-center">
-        <p class="subheading text-medium" id="contact-desc" style="opacity: 0;">
-          Like what you see?
-        </p>
-        <h2 id="contact-me" style="opacity: 0;">I'd love to hear from you!</h2>
-        <a href="mailTo:singh.shubham0812@gmail.com" class="contactButton"
-          ><i class="fas fa-paper-plane"></i
-          ><span style="font-weight: 700;"> GET IN TOUCH!</span></a
-        >
-      </div>
-    </div>
-
-    <div class="copyrightSection">
-      <h3>Connect with me on</h3>
-      <div class="icon-wrap flex text-center" style="height: 105px;">
-        <a href="https://www.instagram.com/shubham_iosdev/" target="_blank">
-          <div class="flex icon" id="icon-5">
-            <i class="fab fa-instagram"></i>
-          </div>
-        </a>
-
-        <a href="https://medium.com/@singh.shubham0812" target="_blank">
-          <div class="flex icon" id="icon-3">
-            <i class="fab fa-medium-m"></i>
-          </div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/shubham0812/" target="_blank">
-          <div class="flex icon" id="icon-2">
-            <i class="fab fa-linkedin-in"></i>
-          </div>
-        </a>
-
-        <a href="https://github.com/Shubham0812" target="_blank">
-          <div class="flex icon" id="icon-5">
-            <i class="fab fa-github"></i>
-          </div>
-        </a>
-
-        <a
-          href="https://stackoverflow.com/users/10242680/shubham"
-          target="_blank"
-        >
-          <div class="flex icon" id="icon-5">
-            <i class="fab fa-stack-overflow"></i>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-12 text-center">
-        <p>SHUBHAM SINGH <span class="highlight">&copy;2020</span></p>
-      </div>
-    </div>
-  </body>
+        `;
+        c.appendChild(card);
+      });
+    };
+  </script>
+</body>
 </html>
