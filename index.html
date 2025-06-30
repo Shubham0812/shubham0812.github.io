@@ -20,7 +20,8 @@
       Timestamp
     } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-      const firebaseConfig = {
+    const MASTER_USER = 'shubham_iosdev';
+    const firebaseConfig = {
         apiKey: "AIzaSyDdlYRyjzx0_fcERTJWr2xu6zMRyCOPVwo",
         authDomain: "swiftui-workshop.firebaseapp.com",
         projectId: "swiftui-workshop",
@@ -29,77 +30,90 @@
         appId: "1:735159428862:web:6927fda64fd5d00d1aa7af",
         measurementId: "G-99CZ83HCK5"
       };
-      
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const postsRef = collection(db, 'posts');
 
-    // Listen and render
     onSnapshot(query(postsRef, orderBy('votes', 'asc')), snapshot => {
       const posts = [];
       snapshot.forEach(d => posts.push({ id: d.id, ...d.data() }));
       window.renderPosts(posts);
     });
 
-    // Add new post
     window.addPostToFirestore = async post => {
       await addDoc(postsRef, {
         ...post,
         votes: 0,
         votesMap: {},
+        read: false,
         timestamp: Timestamp.now()
       });
     };
 
-    // Transactional vote to prevent spamming
     window.votePost = async (postId, delta) => {
-      const postDocRef = doc(db, 'posts', postId);
       const user = localStorage.getItem('ws_username');
       if (!user) return;
-      try {
-        await runTransaction(db, async tx => {
-          const postSnap = await tx.get(postDocRef);
-          if (!postSnap.exists()) throw 'Post not found';
-          const data = postSnap.data();
-          const current = data.votesMap?.[user] || 0;
-          const newVote = current === delta ? 0 : delta;
-          const voteChange = newVote - current;
-          const updatedMap = { ...data.votesMap, [user]: newVote };
-          tx.update(postDocRef, {
-            votes: data.votes + voteChange,
-            votesMap: updatedMap
-          });
+      const postDocRef = doc(db, 'posts', postId);
+      await runTransaction(db, async tx => {
+        const snap = await tx.get(postDocRef);
+        if (!snap.exists()) throw 'Not found';
+        const data = snap.data();
+        if (data.user === user) return; // cannot vote own
+        const current = data.votesMap?.[user] || 0;
+        const newVote = current === delta ? 0 : delta;
+        const voteChange = newVote - current;
+        const updatedMap = { ...data.votesMap, [user]: newVote };
+        tx.update(postDocRef, {
+          votes: data.votes + voteChange,
+          votesMap: updatedMap
         });
-      } catch (e) {
-        console.error('Vote failed:', e);
-      }
+      });
+    };
+
+    window.markAsRead = async postId => {
+      const user = localStorage.getItem('ws_username');
+      if (user !== MASTER_USER) return;
+      const postDocRef = doc(db, 'posts', postId);
+      await updateDoc(postDocRef, { read: true });
     };
   </script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Segoe UI',sans-serif; background:#f4f7f9; color:#333; padding:20px; }
-    h1 { text-align:center; color:#2c3e50; margin-bottom:20px; }
-    #overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:1000; }
-    #name-modal { background:#fff; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-    #name-modal h2 { margin-bottom:10px; color:#34495e; }
-    #name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #ccc; border-radius:4px; }
-    #name-modal button { margin-top:15px; padding:10px 20px; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; }
-    #post-form { background:#fff; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    #post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px; }
-    #post-form button { background:#27ae60; color:#fff; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }
+    body {
+      font-family:'Segoe UI',sans-serif;
+      background-color:#121212;
+      color:#e0e0e0;
+      padding:20px;
+      background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='1' fill='%23333333'/%3E%3C/svg%3E");
+    }
+    h1 { text-align:center; margin-bottom:20px; }
+    #overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index:1000; }
+    #name-modal { background:#1e1e1e; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; }
+    #name-modal h2 { margin-bottom:10px; color:#fff; }
+    #name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #444; border-radius:4px; background:#2e2e2e; color:#fff; }
+    #name-modal button { margin-top:15px; padding:10px 20px; background:#6200ee; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    #post-form { background:#1e1e1e; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; }
+    #post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #444; border-radius:4px; background:#2e2e2e; color:#fff; }
+    #post-form button { background:#03dac6; color:#000; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }
     #posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
-    .post { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; flex-direction:column; position:relative; }
+    .post { background:#1e1e1e; padding:20px; border-radius:8px; display:flex; flex-direction:column; position:relative; border:2px solid transparent; }
+    .post.read { opacity:0.6; }
+    .post.read .info strong { text-decoration:line-through; }
     .post header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-    .info strong { font-size:1.1rem; color:#2c3e50; }
-    .meta { font-size:0.85rem; color:#7f8c8d; }
+    .info strong { font-size:1.1rem; color:#bb86fc; }
+    .meta { font-size:0.85rem; color:#aaa; }
     .vote-icons { display:flex; flex-direction:column; gap:8px; }
     .vote-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
-    .upvote { color:#3498db; } .downvote { color:#e74c3c; }
+    .upvote { color:#555; }
+    .downvote { color:#555; }
+    .voted-up .upvote { color:#00ff00; }
+    .voted-down .downvote { color:#ff0000; }
     .description { flex:1; margin-bottom:15px; position:relative; padding-right:40px; }
     .bottom-icons { position:absolute; right:0; bottom:0; display:flex; flex-direction:column; gap:8px; }
     .bottom-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
+    .mark-read { background:#bb86fc; color:#000; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.85rem; }
   </style>
 </head>
 <body>
@@ -121,16 +135,14 @@
   <div id="posts"></div>
   <script>
     let username = localStorage.getItem('ws_username');
-    const overlay=document.getElementById('overlay');
-    if(!username) overlay.style.display='flex';
+    if(!username) document.getElementById('overlay').style.display='flex';
     document.getElementById('save-name').onclick=()=>{
-      const n=document.getElementById('name-input').value.trim();
-      if(!n) return;
-      username=n; localStorage.setItem('ws_username',n);
-      overlay.style.display='none';
+      const n=document.getElementById('name-input').value.trim(); if(!n) return;
+      localStorage.setItem('ws_username',n); username=n;
+      document.getElementById('overlay').style.display='none';
     };
     document.getElementById('add-post').onclick=async()=>{
-      if(!username){overlay.style.display='flex';return;}
+      if(!username){document.getElementById('overlay').style.display='flex';return;}
       const t=document.getElementById('title').value.trim();
       const f=document.getElementById('filename').value.trim();
       const d=document.getElementById('description').value.trim();
@@ -138,26 +150,34 @@
       await window.addPostToFirestore({ title:t, filename:f, description:d, user:username });
       ['title','filename','description'].forEach(id=>document.getElementById(id).value='');
     };
-    window.renderPosts=(posts)=>{
+    window.renderPosts=posts=>{
       const c=document.getElementById('posts'); c.innerHTML='';
       posts.forEach(p=>{
-        const card=document.createElement('div');card.className='post';
+        const card=document.createElement('div');
+        card.className='post';
+        if(p.read) card.classList.add('read');
+        const userVote = p.votesMap?.[username]||0;
+        if(userVote===1) card.classList.add('voted-up');
+        if(userVote===-1) card.classList.add('voted-down');
         card.innerHTML=`
           <header>
             <div class="info">
               <strong>${p.title}</strong>
               <div class="meta">by ${p.user} in ${p.filename} — ${p.votes} votes</div>
             </div>
-            <div class="vote-icons">
-              <button class="upvote" onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up"></i></button>
-              <button class="downvote" onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down"></i></button>
+            <div>
+              <div class="vote-icons">
+                <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up upvote" ${p.user===username?'disabled':''}></i></button>
+                <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down downvote" ${p.user===username?'disabled':''}></i></button>
+              </div>
+              ${username===MASTER_USER?`<button class="mark-read" onclick="markAsRead('${p.id}')">Mark as Read</button>`:''}
             </div>
           </header>
           <div class="description">
             ${p.description}
             <div class="bottom-icons">
-              <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up"></i></button>
-              <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down"></i></button>
+              <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up" ${p.user===username?'disabled':''}></i></button>
+              <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down" ${p.user===username?'disabled':''}></i></button>
             </div>
           </div>
         `;
