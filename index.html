@@ -35,7 +35,7 @@
     });
 
     window.addPostToFirestore = async p => {
-      await addDoc(postsRef, { ...p, votes: 0, votesMap: {}, read: false, timestamp: Timestamp.now() });
+      await addDoc(postsRef, { ...p, votes: 1, votesMap: {}, read: false, timestamp: Timestamp.now() });
     };
 
     window.votePost = async (id, delta) => {
