@@ -20,15 +20,16 @@
       Timestamp
     } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    // Replace with your config
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
-    };
+      const firebaseConfig = {
+        apiKey: "AIzaSyDdlYRyjzx0_fcERTJWr2xu6zMRyCOPVwo",
+        authDomain: "swiftui-workshop.firebaseapp.com",
+        projectId: "swiftui-workshop",
+        storageBucket: "swiftui-workshop.firebasestorage.app",
+        messagingSenderId: "735159428862",
+        appId: "1:735159428862:web:6927fda64fd5d00d1aa7af",
+        measurementId: "G-99CZ83HCK5"
+      };
+      
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const postsRef = collection(db, 'posts');
