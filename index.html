@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -63,248 +64,640 @@
       await deleteDoc(doc(db, 'posts', id));
     };
   </script>
-  <script>
-    // This MUST be defined before Firestore calls renderPosts
-    window.renderPosts = function(posts) {
-      const container = document.getElementById('posts');
-      container.innerHTML = '';
-      const username = localStorage.getItem('ws_username');
-
-      posts.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'post';
-        if (p.read) div.classList.add('read');
-
-        const voteState = p.votesMap?.[username] || 0;
-        if (voteState === 1) div.classList.add('voted-up');
-        if (voteState === -1) div.classList.add('voted-down');
-
-        const titleText = p.read ? `<del>${p.title}</del>` : p.title;
-
-        div.innerHTML = `
-          <div class="vote-container">
-            <button onclick="votePost('${p.id}', 1)"><i class="fas fa-chevron-up"></i></button>
-            <div class="vote-count">${p.votes}</div>
-            <button onclick="votePost('${p.id}', -1)"><i class="fas fa-chevron-down"></i></button>
-          </div>
-          <div class="content">
-            <div class="info"><strong>${titleText}</strong> <span class="meta">by ${p.user} — ${p.filename}</span></div>
-            <div class="description">${p.description}</div>
-            <div class="actions">
-              ${username === window.MASTER_USER ? `<button class="mark-read" onclick="markAsRead('${p.id}')">Mark Read</button>` : ''}
-              ${username === window.MASTER_USER ? `<button class="delete-btn" onclick="deletePost('${p.id}')">Delete</button>` : ''}
-            </div>
-          </div>
-        `;
-        container.appendChild(div);
-      });
-    }
-  </script>
-</head>
-<body>
 
   <!-- Font & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Material Dark Theme */
-    :root {
-      --bg: #121212;
-      --surface: #1E1E1E;
-      --on-surface: #E0E0E0;
-      --primary: #BB86FC;
-      --secondary: #03DAC6;
-      --error: #CF6679;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
-      background: var(--bg);
-      color: var(--on-surface);
-      font-family: 'Google Sans', sans-serif;
-      padding: 24px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding: 2rem;
     }
+
+    /* Animated background particles */
+    .bg-particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(99, 102, 241, 0.6);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+    }
+
+    /* Header */
     h1 {
+      position: relative;
+      z-index: 10;
       text-align: center;
-      font-size: 2.25rem;
-      margin-bottom: 32px;
-      color: var(--primary);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 3rem;
+      background: linear-gradient(45deg, #ffffff, #a855f7, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
     }
-    /* Modal */
+
+    /* Modal Styles */
     #overlay {
-      position: fixed; inset:0;
-      background: rgba(0,0,0,0.6);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 100;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
     }
+
     #name-modal {
-      background: var(--surface);
-      padding: 32px;
-      border-radius: 8px;
-      width: 320px;
-      display: flex; flex-direction: column; gap:16px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: modalSlideIn 0.5s ease-out;
     }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    #name-modal h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
     #name-modal input {
-      background: var(--bg);
-      border: 1px solid #333;
-      color: var(--on-surface);
-      padding: 12px;
-      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
     }
+
+    #name-modal input:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    #name-modal input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
     #name-modal button {
-      background: var(--primary);
-      color: var(--bg);
+      background: linear-gradient(45deg, #6366f1, #a855f7);
+      color: white;
       border: none;
-      padding: 12px;
-      border-radius: 4px;
-      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background .2s;
+      transition: all 0.3s ease;
     }
-    #name-modal button:hover { background: #9A6AFF; }
-    /* Form */
+
+    #name-modal button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Form Styles */
     #post-form {
-      background: var(--surface);
-      padding: 24px;
-      border-radius: 8px;
-      max-width: 600px;
-      margin: 0 auto 32px;
-      display: grid; grid-gap:16px;
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2.5rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      display: grid;
+      gap: 1.5rem;
+      animation: fadeInUp 1s ease-out 0.2s both;
     }
-    #post-form input, #post-form textarea {
-      background: var(--bg);
-      border: 1px solid #333;
-      color: var(--on-surface);
-      padding: 12px;
-      border-radius: 4px;
+
+    #post-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
     }
+
+    #post-form input,
+    #post-form textarea {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      resize: vertical;
+    }
+
+    #post-form input:focus,
+    #post-form textarea:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    #post-form input::placeholder,
+    #post-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
     #post-form button {
-      background: var(--secondary);
-      color: var(--bg);
+      background: linear-gradient(45deg, #6366f1, #a855f7);
+      color: white;
       border: none;
-      padding: 12px;
-      border-radius: 4px;
-      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1.1rem;
       cursor: pointer;
       justify-self: end;
-      transition: background .2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
     }
-    #post-form button:hover { background: #00C4B4; }
-    /* Posts */
+
+    #post-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Posts Container */
     #posts {
-      display: flex; flex-direction: column; gap:24px;
-      max-width: 600px; margin: 0 auto;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: 0 auto;
     }
+
+    /* Post Card Styles */
     .post {
-      background: var(--surface);
-      border-radius: 8px;
-      display: flex; padding: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
       align-items: flex-start;
+      gap: 1.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .post.read { opacity: 0.6; }
 
+    .post::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
+      transition: all 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .post:hover::before {
+      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.8), transparent);
+    }
+
+    .post.read {
+      opacity: 0.6;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .post.read .info strong {
+      text-decoration: line-through;
+    }
+
+    /* Vote Container */
     .vote-container {
-      display: flex; flex-direction: column; align-items: center;
-      margin-right: 16px;
-    }
-    .vote-container button {
-      background: none; border: none;
-      color: var(--on-surface);
-      font-size: 1.8rem; cursor: pointer;
-    }
-    .post.voted-up .vote-container .fa-chevron-up { color: #4CAF50; }
-    .post.voted-down .vote-container .fa-chevron-down { color: #CF6679; }
-    .vote-count {
-      color: var(--primary);
-      font-size: 1.5rem; font-weight: 500;
-      margin: 4px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 60px;
     }
 
+    .vote-container button {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .vote-container button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .vote-container button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .vote-container button:disabled:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .post.voted-up .vote-container button:first-child {
+      background: linear-gradient(45deg, #10b981, #34d399);
+      color: white;
+    }
+
+    .post.voted-down .vote-container button:last-child {
+      background: linear-gradient(45deg, #ef4444, #f87171);
+      color: white;
+    }
+
+    .vote-count {
+      color: #6366f1;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      min-height: 1.5rem;
+    }
+
+    /* Content Styles */
     .content {
       flex: 1;
-      display: flex; flex-direction: column;
-      gap: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
-    .info strong { font-size: 1.125rem; color: var(--primary); }
-    .meta { font-size: 0.875rem; color: #BBBBBB; }
-    .description { font-size: 0.95rem; color: var(--on-surface); margin: 8px 0; }
+
+    .info strong {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin: 0.5rem 0;
+    }
+
+    /* Actions */
     .actions {
-      display: flex; gap:8px; margin-top: auto;
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
     }
-    .mark-read {
-      background: var(--secondary); color: var(--bg);
-      padding: 8px 12px; border-radius:4px; border:none;
-      cursor: pointer;
-    }
+
+    .mark-read,
     .delete-btn {
-      background: var(--error); color: #fff;
-      padding:8px 12px; border-radius:4px; border:none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 500;
+      font-size: 0.9rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mark-read {
+      background: linear-gradient(45deg, #10b981, #34d399);
+      color: white;
+    }
+
+    .mark-read:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .delete-btn {
+      background: linear-gradient(45deg, #ef4444, #f87171);
+      color: white;
+    }
+
+    .delete-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .post {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .post:nth-child(1) { animation-delay: 0.1s; }
+    .post:nth-child(2) { animation-delay: 0.2s; }
+    .post:nth-child(3) { animation-delay: 0.3s; }
+    .post:nth-child(4) { animation-delay: 0.4s; }
+    .post:nth-child(5) { animation-delay: 0.5s; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      #post-form,
+      #posts {
+        max-width: 100%;
+      }
+
+      #post-form {
+        padding: 1.5rem;
+      }
+
+      .post {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .vote-container {
+        flex-direction: row;
+        justify-content: center;
+        order: 2;
+        margin-top: 1rem;
+      }
+
+      .content {
+        order: 1;
+      }
+
+      #name-modal {
+        width: 90%;
+        max-width: 400px;
+        margin: 1rem;
+      }
+    }
+
+    /* Loading animation for real-time updates */
+    .post.new-post {
+      animation: newPostGlow 2s ease-out;
+    }
+
+    @keyframes newPostGlow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Spot the SwiftUI Mistakes</h1>
+  <div class="bg-particles" id="particles"></div>
+
+  <h1>🔍 Spot the SwiftUI Mistakes</h1>
+
   <div id="overlay" style="display:none;">
     <div id="name-modal">
-      <h2>Welcome</h2>
-      <input id="name-input" placeholder="Your name">
-      <button id="save-name">Start</button>
+      <h2>Welcome to the Workshop! 👋</h2>
+      <input id="name-input" placeholder="Enter your name to get started">
+      <button id="save-name">Start Finding Bugs ✨</button>
     </div>
   </div>
+
   <div id="post-form">
-    <input id="title" placeholder="Error title">
-    <input id="filename" placeholder="File name">
-    <textarea id="description" rows="3" placeholder="Describe the mistake"></textarea>
-    <button id="add-post">Add Post</button>
+    <input id="title" placeholder="🚨 Error title (e.g., 'Missing @State wrapper')">
+    <input id="filename" placeholder="📁 File name (e.g., 'ContentView.swift')">
+    <textarea id="description" rows="4" placeholder="📝 Describe the mistake and how to fix it..."></textarea>
+    <button id="add-post">🚀 Add Post</button>
   </div>
+
   <div id="posts"></div>
 
   <script>
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 30;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles when page loads
+    window.addEventListener('load', createParticles);
+
+    // Username handling
     let username = localStorage.getItem('ws_username');
     if (!username) document.getElementById('overlay').style.display = 'flex';
+
     document.getElementById('save-name').onclick = () => {
-      const n = document.getElementById('name-input').value.trim(); if (!n) return;
-      localStorage.setItem('ws_username', n); username = n;
+      const n = document.getElementById('name-input').value.trim();
+      if (!n) return;
+      localStorage.setItem('ws_username', n);
+      username = n;
       document.getElementById('overlay').style.display = 'none';
     };
+
+    // Allow Enter key to save name
+    document.getElementById('name-input').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        document.getElementById('save-name').click();
+      }
+    });
+
+    // Post creation
     document.getElementById('add-post').onclick = async () => {
-      if (!username) { document.getElementById('overlay').style.display = 'flex'; return; }
+      if (!username) {
+        document.getElementById('overlay').style.display = 'flex';
+        return;
+      }
       const t = document.getElementById('title').value.trim();
       const f = document.getElementById('filename').value.trim();
       const d = document.getElementById('description').value.trim();
       if (!t || !f || !d) return;
-      await window.addPostToFirestore({ title: t, filename: f, description: d, user: username });
-      ['title','filename','description'].forEach(id => document.getElementById(id).value = '');
+
+      // Add loading state
+      const button = document.getElementById('add-post');
+      const originalText = button.textContent;
+      button.textContent = '🔄 Adding...';
+      button.disabled = true;
+
+      try {
+        await window.addPostToFirestore({ title: t, filename: f, description: d, user: username });
+        ['title', 'filename', 'description'].forEach(id => document.getElementById(id).value = '');
+        button.textContent = '✅ Added!';
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 1000);
+      } catch (error) {
+        button.textContent = '❌ Error';
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.disabled = false;
+        }, 2000);
+      }
     };
+
+    // Render posts function
     window.renderPosts = posts => {
-      const c = document.getElementById('posts'); c.innerHTML = '';
-      posts.forEach(p => {
-        const card = document.createElement('div'); card.className = 'post';
+      const c = document.getElementById('posts');
+      c.innerHTML = '';
+      
+      posts.forEach((p, index) => {
+        const card = document.createElement('div');
+        card.className = 'post';
         if (p.read) card.classList.add('read');
+        
         const userVote = p.votesMap?.[username] || 0;
         if (userVote === 1) card.classList.add('voted-up');
         if (userVote === -1) card.classList.add('voted-down');
+        
         const disableOwn = p.user === username;
+        const titleText = p.read ? p.title : p.title;
+        
         card.innerHTML = `
           <div class="vote-container">
-            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up"></i></button>
+            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',1)" title="Upvote">
+              <i class="fa-solid fa-chevron-up"></i>
+            </button>
             <div class="vote-count">${p.votes}</div>
-            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down"></i></button>
+            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',-1)" title="Downvote">
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
           </div>
           <div class="content">
-            <div class="info"><strong>${p.title}</strong></div>
-            <div class="meta">by ${p.user} in ${p.filename}</div>
+            <div class="info">
+              <strong>${titleText}</strong>
+            </div>
+            <div class="meta">🧑‍💻 by ${p.user} • 📁 ${p.filename}</div>
             <div class="description">${p.description}</div>
             <div class="actions">
-              ${username === window.MASTER_USER ? `<button class="mark-read" onclick="markAsRead('${p.id}')">Mark as Read</button><button class="delete-btn" onclick="deletePost('${p.id}')">Delete</button>` : ''}
+              ${username === window.MASTER_USER ? `
+                <button class="mark-read" onclick="markAsRead('${p.id}')" title="Mark as resolved">
+                  ✅ Mark as Read
+                </button>
+                <button class="delete-btn" onclick="deletePost('${p.id}')" title="Delete this post">
+                  🗑️ Delete
+                </button>
+              ` : ''}
             </div>
           </div>
         `;
+        
+        // Add staggered animation delay
+        card.style.animationDelay = `${index * 0.1}s`;
         c.appendChild(card);
       });
+
+      // Add empty state if no posts
+      if (posts.length === 0) {
+        c.innerHTML = `
+          <div style="text-align: center; padding: 4rem 2rem; color: rgba(255,255,255,0.6);">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+            <h3 style="margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">No mistakes found yet!</h3>
+            <p>Be the first to spot a SwiftUI bug and help the community learn.</p>
+          </div>
+        `;
+      }
     };
   </script>
 </body>
 </html>
-
