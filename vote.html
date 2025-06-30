@@ -1,184 +1,168 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftUI Workshop Feedback</title>
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      query,
+      orderBy,
+      onSnapshot,
+      updateDoc,
+      doc,
+      runTransaction,
+      Timestamp
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+    // Replace with your config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const postsRef = collection(db, 'posts');
+
+    // Listen and render
+    onSnapshot(query(postsRef, orderBy('votes', 'asc')), snapshot => {
+      const posts = [];
+      snapshot.forEach(d => posts.push({ id: d.id, ...d.data() }));
+      window.renderPosts(posts);
+    });
+
+    // Add new post
+    window.addPostToFirestore = async post => {
+      await addDoc(postsRef, {
+        ...post,
+        votes: 0,
+        votesMap: {},
+        timestamp: Timestamp.now()
+      });
+    };
+
+    // Transactional vote to prevent spamming
+    window.votePost = async (postId, delta) => {
+      const postDocRef = doc(db, 'posts', postId);
+      const user = localStorage.getItem('ws_username');
+      if (!user) return;
+      try {
+        await runTransaction(db, async tx => {
+          const postSnap = await tx.get(postDocRef);
+          if (!postSnap.exists()) throw 'Post not found';
+          const data = postSnap.data();
+          const current = data.votesMap?.[user] || 0;
+          const newVote = current === delta ? 0 : delta;
+          const voteChange = newVote - current;
+          const updatedMap = { ...data.votesMap, [user]: newVote };
+          tx.update(postDocRef, {
+            votes: data.votes + voteChange,
+            votesMap: updatedMap
+          });
+        });
+      } catch (e) {
+        console.error('Vote failed:', e);
+      }
+    };
+  </script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Segoe UI',sans-serif; background:#f4f7f9; color:#333; padding:20px; }
+    h1 { text-align:center; color:#2c3e50; margin-bottom:20px; }
+    #overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:1000; }
+    #name-modal { background:#fff; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+    #name-modal h2 { margin-bottom:10px; color:#34495e; }
+    #name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #ccc; border-radius:4px; }
+    #name-modal button { margin-top:15px; padding:10px 20px; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; }
+    #post-form { background:#fff; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    #post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px; }
+    #post-form button { background:#27ae60; color:#fff; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }
+    #posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+    .post { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; flex-direction:column; position:relative; }
+    .post header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .info strong { font-size:1.1rem; color:#2c3e50; }
+    .meta { font-size:0.85rem; color:#7f8c8d; }
+    .vote-icons { display:flex; flex-direction:column; gap:8px; }
+    .vote-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
+    .upvote { color:#3498db; } .downvote { color:#e74c3c; }
+    .description { flex:1; margin-bottom:15px; position:relative; padding-right:40px; }
+    .bottom-icons { position:absolute; right:0; bottom:0; display:flex; flex-direction:column; gap:8px; }
+    .bottom-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;SwiftUI Workshop Feedback&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Firebase SDKs --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script type="module"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";</p>
-<p class="p1"><span class="Apple-converted-space">    </span>import {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>getFirestore,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>collection,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>addDoc,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>query,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>orderBy,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>onSnapshot,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>updateDoc,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>doc,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>runTransaction,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>Timestamp</p>
-<p class="p1"><span class="Apple-converted-space">    </span>} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Replace with your config</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const firebaseConfig = {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>apiKey: "YOUR_API_KEY",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>authDomain: "YOUR_PROJECT_ID.firebaseapp.com",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>projectId: "YOUR_PROJECT_ID",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>storageBucket: "YOUR_PROJECT_ID.appspot.com",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>messagingSenderId: "SENDER_ID",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>appId: "APP_ID"</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const app = initializeApp(firebaseConfig);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const db = getFirestore(app);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const postsRef = collection(db, 'posts');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Listen and render</p>
-<p class="p1"><span class="Apple-converted-space">    </span>onSnapshot(query(postsRef, orderBy('votes', 'asc')), snapshot =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const posts = [];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>snapshot.forEach(d =&gt; posts.push({ id: d.id, ...d.data() }));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.renderPosts(posts);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Add new post</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.addPostToFirestore = async post =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>await addDoc(postsRef, {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>...post,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>votes: 0,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>votesMap: {},</p>
-<p class="p1"><span class="Apple-converted-space">        </span>timestamp: Timestamp.now()</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>// Transactional vote to prevent spamming</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.votePost = async (postId, delta) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const postDocRef = doc(db, 'posts', postId);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const user = localStorage.getItem('ws_username');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!user) return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>await runTransaction(db, async tx =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const postSnap = await tx.get(postDocRef);</p>
-<p class="p1"><span class="Apple-converted-space">          </span>if (!postSnap.exists()) throw 'Post not found';</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const data = postSnap.data();</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const current = data.votesMap?.[user] || 0;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const newVote = current === delta ? 0 : delta;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const voteChange = newVote - current;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>const updatedMap = { ...data.votesMap, [user]: newVote };</p>
-<p class="p1"><span class="Apple-converted-space">          </span>tx.update(postDocRef, {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>votes: data.votes + voteChange,</p>
-<p class="p1"><span class="Apple-converted-space">            </span>votesMap: updatedMap</p>
-<p class="p1"><span class="Apple-converted-space">          </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">      </span>} catch (e) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>console.error('Vote failed:', e);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Font Awesome --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>* { margin:0; padding:0; box-sizing:border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body { font-family:'Segoe UI',sans-serif; background:#f4f7f9; color:#333; padding:20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1 { text-align:center; color:#2c3e50; margin-bottom:20px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); display:flex; justify-content:center; align-items:center; z-index:1000; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#name-modal { background:#fff; padding:30px; border-radius:8px; width:90%; max-width:350px; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.15); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#name-modal h2 { margin-bottom:10px; color:#34495e; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#name-modal input { width:100%; padding:10px; margin-top:10px; border:1px solid #ccc; border-radius:4px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#name-modal button { margin-top:15px; padding:10px 20px; background:#3498db; color:#fff; border:none; border-radius:4px; cursor:pointer; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#post-form { background:#fff; max-width:800px; margin:0 auto 20px; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#post-form input, #post-form textarea { width:100%; padding:12px; margin-bottom:15px; border:1px solid #ccc; border-radius:4px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#post-form button { background:#27ae60; color:#fff; border:none; padding:12px 30px; border-radius:4px; cursor:pointer; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#posts { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.post { background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); display:flex; flex-direction:column; position:relative; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.post header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.info strong { font-size:1.1rem; color:#2c3e50; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.meta { font-size:0.85rem; color:#7f8c8d; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.vote-icons { display:flex; flex-direction:column; gap:8px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.vote-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.upvote { color:#3498db; } .downvote { color:#e74c3c; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.description { flex:1; margin-bottom:15px; position:relative; padding-right:40px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.bottom-icons { position:absolute; right:0; bottom:0; display:flex; flex-direction:column; gap:8px; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.bottom-icons button { background:none; border:none; font-size:1.2rem; cursor:pointer; }</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Spot the SwiftUI Mistakes&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="overlay" style="display:none;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="name-modal"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Welcome&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Please enter your name:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;input id="name-input" placeholder="Your name" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="save-name"&gt;Start&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="post-form"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="title" placeholder="Error title" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;input id="filename" placeholder="File name" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;textarea id="description" rows="3" placeholder="Describe the mistake"&gt;&lt;/textarea&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;button id="add-post"&gt;Add Post&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="posts"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>let username = localStorage.getItem('ws_username');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const overlay=document.getElementById('overlay');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if(!username) overlay.style.display='flex';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('save-name').onclick=()=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const n=document.getElementById('name-input').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(!n) return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>username=n; localStorage.setItem('ws_username',n);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overlay.style.display='none';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('add-post').onclick=async()=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(!username){overlay.style.display='flex';return;}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const t=document.getElementById('title').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const f=document.getElementById('filename').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const d=document.getElementById('description').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if(!t||!f||!d) return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>await window.addPostToFirestore({ title:t, filename:f, description:d, user:username });</p>
-<p class="p1"><span class="Apple-converted-space">      </span>['title','filename','description'].forEach(id=&gt;document.getElementById(id).value='');</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">    </span>window.renderPosts=(posts)=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const c=document.getElementById('posts'); c.innerHTML='';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>posts.forEach(p=&gt;{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const card=document.createElement('div');card.className='post';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>card.innerHTML=`</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;strong&gt;${p.title}&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="meta"&gt;by ${p.user} in ${p.filename} — ${p.votes} votes&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="vote-icons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;button class="upvote" onclick="votePost('${p.id}',1)"&gt;&lt;i class="fa-solid fa-chevron-up"&gt;&lt;/i&gt;&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;button class="downvote" onclick="votePost('${p.id}',-1)"&gt;&lt;i class="fa-solid fa-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="description"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>${p.description}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bottom-icons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;button onclick="votePost('${p.id}',1)"&gt;&lt;i class="fa-solid fa-thumbs-up"&gt;&lt;/i&gt;&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;button onclick="votePost('${p.id}',-1)"&gt;&lt;i class="fa-solid fa-thumbs-down"&gt;&lt;/i&gt;&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>c.appendChild(card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p1"><span class="Apple-converted-space">    </span>};</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>Spot the SwiftUI Mistakes</h1>
+  <div id="overlay" style="display:none;">
+    <div id="name-modal">
+      <h2>Welcome</h2>
+      <p>Please enter your name:</p>
+      <input id="name-input" placeholder="Your name" />
+      <button id="save-name">Start</button>
+    </div>
+  </div>
+  <div id="post-form">
+    <input id="title" placeholder="Error title" />
+    <input id="filename" placeholder="File name" />
+    <textarea id="description" rows="3" placeholder="Describe the mistake"></textarea>
+    <button id="add-post">Add Post</button>
+  </div>
+  <div id="posts"></div>
+  <script>
+    let username = localStorage.getItem('ws_username');
+    const overlay=document.getElementById('overlay');
+    if(!username) overlay.style.display='flex';
+    document.getElementById('save-name').onclick=()=>{
+      const n=document.getElementById('name-input').value.trim();
+      if(!n) return;
+      username=n; localStorage.setItem('ws_username',n);
+      overlay.style.display='none';
+    };
+    document.getElementById('add-post').onclick=async()=>{
+      if(!username){overlay.style.display='flex';return;}
+      const t=document.getElementById('title').value.trim();
+      const f=document.getElementById('filename').value.trim();
+      const d=document.getElementById('description').value.trim();
+      if(!t||!f||!d) return;
+      await window.addPostToFirestore({ title:t, filename:f, description:d, user:username });
+      ['title','filename','description'].forEach(id=>document.getElementById(id).value='');
+    };
+    window.renderPosts=(posts)=>{
+      const c=document.getElementById('posts'); c.innerHTML='';
+      posts.forEach(p=>{
+        const card=document.createElement('div');card.className='post';
+        card.innerHTML=`
+          <header>
+            <div class="info">
+              <strong>${p.title}</strong>
+              <div class="meta">by ${p.user} in ${p.filename} — ${p.votes} votes</div>
+            </div>
+            <div class="vote-icons">
+              <button class="upvote" onclick="votePost('${p.id}',1)"><i class="fa-solid fa-chevron-up"></i></button>
+              <button class="downvote" onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
+          </header>
+          <div class="description">
+            ${p.description}
+            <div class="bottom-icons">
+              <button onclick="votePost('${p.id}',1)"><i class="fa-solid fa-thumbs-up"></i></button>
+              <button onclick="votePost('${p.id}',-1)"><i class="fa-solid fa-thumbs-down"></i></button>
+            </div>
+          </div>
+        `;
+        c.appendChild(card);
+      });
+    };
+  </script>
 </body>
 </html>
