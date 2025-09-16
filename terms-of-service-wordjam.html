@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordJam - Terms of Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000000;
+            color: #e2e8f0;
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: radial-gradient(circle at 25% 25%, #64748b 2px, transparent 2px),
+                              radial-gradient(circle at 75% 75%, #64748b 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .app-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.4)); }
+            to { filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.6)); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #64748b;
+            background: rgba(20, 20, 20, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(71, 85, 105, 0.5);
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #60a5fa;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #60a5fa;
+            margin: 2.5rem 0 1rem 0;
+            font-weight: 700;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        h2:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #60a5fa, #3b82f6);
+            border-radius: 2px;
+        }
+
+        h2:first-of-type {
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            color: #cbd5e1;
+            padding-left: 1.5rem;
+        }
+
+        li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: rgba(30, 30, 30, 0.8);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(96, 165, 250, 0.4);
+            margin: 1.5rem 0;
+        }
+
+        .contact-section {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-email {
+            font-size: 1.1rem;
+            color: #34d399;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .footer {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 16px;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #93c5fd;
+        }
+
+        .muted {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #93c5fd;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6, #1e40af);
+            transition: width 0.3s ease;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .app-title {
+                font-size: 2.5rem;
+            }
+            
+            .content {
+                padding: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-elements::before {
+            top: 20%;
+            right: -10%;
+            animation-delay: 0s;
+        }
+
+        .floating-elements::after {
+            bottom: 10%;
+            left: -10%;
+            animation-delay: 10s;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <div class="bg-pattern"></div>
+    <div class="floating-elements"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="app-title">WordJam</h1>
+            <div class="subtitle">Terms of Service</div>
+            <div class="last-updated">Last updated: <strong>[Insert Date]</strong></div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                Welcome to WordJam. These Terms of Service explain how you may use the app and its features. WordJam is designed for lighthearted fun and friendly competition.
+            </div>
+
+            <h2>1. Who can use WordJam</h2>
+            <ul>
+                <li>WordJam is intended for players aged 13 and above.</li>
+                <li>Use the app for personal, non-commercial purposes.</li>
+            </ul>
+
+            <h2>2. Gameplay and community vibe</h2>
+            <ul>
+                <li>Play fair and be kind. WordJam is meant to be fun.</li>
+                <li>You may invite friends to matches. Please avoid spammy behavior and offensive or misleading names.</li>
+                <li>Multiplayer features use Apple's Game Center. Your Game Center settings and Apple's policies apply to those features.</li>
+            </ul>
+
+            <h2>3. Accounts and sign-in</h2>
+            <ul>
+                <li>WordJam does not require custom accounts. Multiplayer uses Game Center. You manage Game Center credentials through Apple.</li>
+            </ul>
+
+            <h2>4. Game data and progress</h2>
+            <ul>
+                <li>Your gameplay progress such as points and level progression may be stored to enable a consistent experience across sessions.</li>
+                <li>Match identifiers are used to help you find and play matches with friends.</li>
+            </ul>
+
+            <h2>5. Screenshots and sharing</h2>
+            <ul>
+                <li>You are welcome to post screenshots and screen recordings of your gameplay on social media and with friends.</li>
+            </ul>
+
+            <h2>6. Third-party services</h2>
+            <ul>
+                <li>Multiplayer is powered by Apple Game Center.</li>
+                <li>WordJam may use Google Firebase for analytics and storage of gameplay progress.</li>
+                <li>Some in-app icons or animations may be provided by sources such as Apple SF Symbols and Lottie, as permitted by their respective licenses.</li>
+            </ul>
+
+            <h2>7. Content and intellectual property</h2>
+            <ul>
+                <li>WordJam includes assets, artwork, and code owned by us and licensed from third parties. These are provided for use within the app.</li>
+                <li>Apple SF Symbols, Lottie animations, and other third-party resources remain the property of their respective owners and are used in accordance with their licenses.</li>
+            </ul>
+
+            <h2>8. Updates and availability</h2>
+            <ul>
+                <li>We may update WordJam or these Terms over time to improve the experience or reflect changes to the app.</li>
+                <li>Some features may depend on Game Center availability and your device or OS version.</li>
+            </ul>
+
+            <h2>9. Contact</h2>
+            <div class="contact-section">
+                <p>If you have questions about these Terms, contact us at:</p>
+                <a href="mailto:[your-email]" class="contact-email">
+                    📧 [your-email]
+                </a>
+            </div>
+
+            <div class="footer">
+                <p><strong>By using WordJam, you agree to these Terms of Service.</strong></p>
+                <p>For details on information we collect, see the <a href="[link-to-privacy-policy]">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight;
+            const winHeight = window.innerHeight;
+            const scrollPercent = scrollTop / (docHeight - winHeight);
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            scrollIndicator.style.width = (scrollPercent * 100) + '%';
+        });
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('h2, p, ul, .highlight, .contact-section, .footer').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
