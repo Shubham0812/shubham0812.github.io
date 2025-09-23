@@ -1,6 +1,6 @@
 
 {
-    "version": 1,
+    "version": 2,
     "dayOne": [
         {
             "id": "check-in",
@@ -128,7 +128,7 @@
         },
         {
             "id": "day-1-industry-panel",
-            "title": "Industry Panel - Swiggy + PhonePe + Zoho",
+            "title": "Industry Panel - PhonePe + Zoho",
             "description": "",
             "startTime": 1758883800,
             "durationMinutes": 70,
