@@ -138,6 +138,16 @@
     ],
     "dayTwo": [
         {
+            "id": "day-2-registrations",
+            "title": "Registration & Breakfast 🥤🕒",
+            "description": null,
+            "startTime": 1758943800,
+            "durationMinutes": 40,
+            "type": "others",
+            "subtype": "Break",
+            "speakerId": null
+        },
+        {
             "id": "curt-clifton",
             "title": "Curt Clifton",
             "description": "",
