@@ -1,244 +1,245 @@
 
 {
-  "dayOne": [
-    {
-      "id": "check-in",
-      "title": "Check-In and Breakfast 🥯☕📝",
-      "description": null,
-      "startTime": 1758857400,
-      "durationMinutes": 45,
-      "type": "others",
-      "subtype": "Check-In/Breakfast",
-      "speakerId": null
-    },
-    {
-      "id": "organisers-kick-off",
-      "title": "Organisers Kick-off",
-      "description": null,
-      "startTime": 1758860100,
-      "durationMinutes": 10,
-      "type": "others",
-      "subtype": "Kick-off",
-      "speakerId": null
-    },
-    {
-      "id": "paul-hudson",
-      "title": "Paul Hudson",
-      "description": "",
-      "startTime": 1758860700,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "paul-hudson"
-    },
-    {
-      "id": "kamal-kumar",
-      "title": "Kamal Kumar",
-      "description": "",
-      "startTime": 1758863100,
-      "durationMinutes": 35,
-      "type": "talk",
-      "speakerId": "kamal-kumar"
-    },
-    {
-      "id": "day-1-break",
-      "title": "Break 🥤🕒",
-      "description": null,
-      "startTime": 1758865200,
-      "durationMinutes": 25,
-      "type": "others",
-      "subtype": "Break",
-      "speakerId": null
-    },
-    {
-      "id": "arima-jain",
-      "title": "Arima Jain",
-      "description": "",
-      "startTime": 1758866700,
-      "durationMinutes": 30,
-      "type": "talk",
-      "speakerId": "arima-jain"
-    },
-    {
-      "id": "logitch-lightning-panel",
-      "title": "Logitech Lightning Panel ⚡✨",
-      "description": null,
-      "startTime": 1758868500,
-      "durationMinutes": 35,
-      "type": "panel",
-      "speakerId": null
-    },
-    {
-      "id": "day-1-group-photo",
-      "title": "Group Photo Session 👥📸",
-      "description": null,
-      "startTime": 1758870600,
-      "durationMinutes": 10,
-      "type": "others",
-      "subtype": "Photo",
-      "speakerId": null
-    },
-    {
-      "id": "day-1-lunch",
-      "title": "Lunch 🍽️ 🍱 🥢",
-      "description": null,
-      "startTime": 1758871800,
-      "durationMinutes": 90,
-      "type": "others",
-      "subtype": "Lunch",
-      "speakerId": null
-    },
-    {
-      "id": "danijela-vrzan",
-      "title": "Danijela Vrzan",
-      "description": "",
-      "startTime": 1758877200,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "danijela-vrzan"
-    },
-    {
-      "id": "charlie-chapman",
-      "title": "Charlie Chapman",
-      "description": "",
-      "startTime": 1758879600,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "charlie-chapman"
-    },
-    {
-      "id": "day-1-break-two",
-      "title": "Break",
-      "description": null,
-      "startTime": 1758882000,
-      "durationMinutes": 15,
-      "type": "others",
-      "subtype": "Break",
-      "speakerId": null
-    },
-    {
-      "id": "day-1-conference-quiz",
-      "title": "Conference Quiz ❓🎯",
-      "description": null,
-      "startTime": 1758882900,
-      "durationMinutes": 15,
-      "type": "others",
-      "subtype": "Quiz",
-      "speakerId": null
-    },
-    {
-      "id": "day-1-industry-panel",
-      "title": "Industry Panel - Swiggy + PhonePe + Zoho",
-      "description": "",
-      "startTime": 1758883800,
-      "durationMinutes": 70,
-      "type": "panel",
-      "speakerId": null
-    }
-  ],
-  "dayTwo": [
-    {
-      "id": "curt-clifton",
-      "title": "Curt Clifton",
-      "description": "",
-      "startTime": 1758946500,
-      "durationMinutes": 45,
-      "type": "talk",
-      "speakerId": "curt-clifton"
-    },
-    {
-      "id": "krzysztof-zablocki",
-      "title": "Krzysztof Zabłocki",
-      "description": "",
-      "startTime": 1758949200,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "krzysztof-zablocki"
-    },
-    {
-      "id": "day-2-break",
-      "title": "Break 🥤🕒",
-      "description": null,
-      "startTime": 1758951600,
-      "durationMinutes": 25,
-      "type": "others",
-      "subtype": "Break",
-      "speakerId": null
-    },
-    {
-      "id": "garima-bothra",
-      "title": "Garima Bothra",
-      "description": "",
-      "startTime": 1758953100,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "garima-bothra"
-    },
-    {
-      "id": "josh-holtz",
-      "title": "Josh Holtz",
-      "description": "",
-      "startTime": 1758955500,
-      "durationMinutes": 40,
-      "type": "talk",
-      "speakerId": "josh-holtz"
-    },
-    {
-      "id": "day-2-lunch",
-      "title": "Lunch 🍽️🥗",
-      "description": null,
-      "startTime": 1758958200,
-      "durationMinutes": 90,
-      "type": "others",
-      "subtype": "Lunch",
-      "speakerId": null
-    },
-    {
-      "id": "harshil-talk",
-      "title": "Harshil",
-      "description": "",
-      "startTime": 1758963600,
-      "durationMinutes": 40,
-      "type": "others",
-      "subtype": "Talk",
-      "speakerId": "harshil"
-    },
-    {
-      "id": "day-2-podcase",
-      "title": "Podcast - Sandeep Ranade + Raja Vijayaraman",
-      "description": "",
-      "startTime": 1758966000,
-      "durationMinutes": 75,
-      "type": "panel",
-      "speakerId": null
-    },
-    {
-      "id": "day-2-break-two",
-      "title": "Break",
-      "description": null,
-      "startTime": 1758970500,
-      "durationMinutes": 25,
-      "type": "others",
-      "subtype": "Break",
-      "speakerId": null
-    },
-    {
-      "id": "peter-steinberger",
-      "title": "Peter Steinberger",
-      "description": "",
-      "startTime": 1758972000,
-      "durationMinutes": 45,
-      "type": "talk",
-      "speakerId": "peter-steinberger"
-    },
-    {
-      "id": "day-2-closing",
-      "title": "Conference Closing - Organisers",
-      "description": "",
-      "startTime": 1758974700,
-      "durationMinutes": 15,
-      "type": "others",
-      "subtype": "Closing",
-      "speakerId": null
-    }
-  ]
+    "version": 1,
+    "dayOne": [
+        {
+            "id": "check-in",
+            "title": "Check-In and Breakfast 🥯☕📝",
+            "description": null,
+            "startTime": 1758857400,
+            "durationMinutes": 45,
+            "type": "others",
+            "subtype": "Check-In/Breakfast",
+            "speakerId": null
+        },
+        {
+            "id": "organisers-kick-off",
+            "title": "Organisers Kick-off",
+            "description": null,
+            "startTime": 1758860100,
+            "durationMinutes": 10,
+            "type": "others",
+            "subtype": "Kick-off",
+            "speakerId": null
+        },
+        {
+            "id": "paul-hudson",
+            "title": "Paul Hudson",
+            "description": "",
+            "startTime": 1758860700,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "paul-hudson"
+        },
+        {
+            "id": "kamal-kumar",
+            "title": "Kamal Kumar",
+            "description": "",
+            "startTime": 1758863100,
+            "durationMinutes": 35,
+            "type": "talk",
+            "speakerId": "kamal-kumar"
+        },
+        {
+            "id": "day-1-break",
+            "title": "Break 🥤🕒",
+            "description": null,
+            "startTime": 1758865200,
+            "durationMinutes": 25,
+            "type": "others",
+            "subtype": "Break",
+            "speakerId": null
+        },
+        {
+            "id": "arima-jain",
+            "title": "Arima Jain",
+            "description": "",
+            "startTime": 1758866700,
+            "durationMinutes": 30,
+            "type": "talk",
+            "speakerId": "arima-jain"
+        },
+        {
+            "id": "logitch-lightning-panel",
+            "title": "Logitech Lightning Panel ⚡✨",
+            "description": null,
+            "startTime": 1758868500,
+            "durationMinutes": 35,
+            "type": "panel",
+            "speakerId": null
+        },
+        {
+            "id": "day-1-group-photo",
+            "title": "Group Photo Session 👥📸",
+            "description": null,
+            "startTime": 1758870600,
+            "durationMinutes": 10,
+            "type": "others",
+            "subtype": "Photo",
+            "speakerId": null
+        },
+        {
+            "id": "day-1-lunch",
+            "title": "Lunch 🍽️ 🍱 🥢",
+            "description": null,
+            "startTime": 1758871800,
+            "durationMinutes": 90,
+            "type": "others",
+            "subtype": "Lunch",
+            "speakerId": null
+        },
+        {
+            "id": "danijela-vrzan",
+            "title": "Danijela Vrzan",
+            "description": "",
+            "startTime": 1758877200,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "danijela-vrzan"
+        },
+        {
+            "id": "charlie-chapman",
+            "title": "Charlie Chapman",
+            "description": "",
+            "startTime": 1758879600,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "charlie-chapman"
+        },
+        {
+            "id": "day-1-break-two",
+            "title": "Break",
+            "description": null,
+            "startTime": 1758882000,
+            "durationMinutes": 15,
+            "type": "others",
+            "subtype": "Break",
+            "speakerId": null
+        },
+        {
+            "id": "day-1-conference-quiz",
+            "title": "Conference Quiz ❓🎯",
+            "description": null,
+            "startTime": 1758882900,
+            "durationMinutes": 15,
+            "type": "others",
+            "subtype": "Quiz",
+            "speakerId": null
+        },
+        {
+            "id": "day-1-industry-panel",
+            "title": "Industry Panel - Swiggy + PhonePe + Zoho",
+            "description": "",
+            "startTime": 1758883800,
+            "durationMinutes": 70,
+            "type": "panel",
+            "speakerId": null
+        }
+    ],
+    "dayTwo": [
+        {
+            "id": "curt-clifton",
+            "title": "Curt Clifton",
+            "description": "",
+            "startTime": 1758946500,
+            "durationMinutes": 45,
+            "type": "talk",
+            "speakerId": "curt-clifton"
+        },
+        {
+            "id": "krzysztof-zablocki",
+            "title": "Krzysztof Zabłocki",
+            "description": "",
+            "startTime": 1758949200,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "krzysztof-zablocki"
+        },
+        {
+            "id": "day-2-break",
+            "title": "Break 🥤🕒",
+            "description": null,
+            "startTime": 1758951600,
+            "durationMinutes": 25,
+            "type": "others",
+            "subtype": "Break",
+            "speakerId": null
+        },
+        {
+            "id": "garima-bothra",
+            "title": "Garima Bothra",
+            "description": "",
+            "startTime": 1758953100,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "garima-bothra"
+        },
+        {
+            "id": "josh-holtz",
+            "title": "Josh Holtz",
+            "description": "",
+            "startTime": 1758955500,
+            "durationMinutes": 40,
+            "type": "talk",
+            "speakerId": "josh-holtz"
+        },
+        {
+            "id": "day-2-lunch",
+            "title": "Lunch 🍽️🥗",
+            "description": null,
+            "startTime": 1758958200,
+            "durationMinutes": 90,
+            "type": "others",
+            "subtype": "Lunch",
+            "speakerId": null
+        },
+        {
+            "id": "harshil-talk",
+            "title": "Harshil",
+            "description": "",
+            "startTime": 1758963600,
+            "durationMinutes": 40,
+            "type": "others",
+            "subtype": "Talk",
+            "speakerId": "harshil"
+        },
+        {
+            "id": "day-2-podcase",
+            "title": "Podcast - Sandeep Ranade + Raja Vijayaraman",
+            "description": "",
+            "startTime": 1758966000,
+            "durationMinutes": 75,
+            "type": "panel",
+            "speakerId": null
+        },
+        {
+            "id": "day-2-break-two",
+            "title": "Break",
+            "description": null,
+            "startTime": 1758970500,
+            "durationMinutes": 25,
+            "type": "others",
+            "subtype": "Break",
+            "speakerId": null
+        },
+        {
+            "id": "peter-steinberger",
+            "title": "Peter Steinberger",
+            "description": "",
+            "startTime": 1758972000,
+            "durationMinutes": 45,
+            "type": "talk",
+            "speakerId": "peter-steinberger"
+        },
+        {
+            "id": "day-2-closing",
+            "title": "Conference Closing - Organisers",
+            "description": "",
+            "startTime": 1758974700,
+            "durationMinutes": 15,
+            "type": "others",
+            "subtype": "Closing",
+            "speakerId": null
+        }
+    ]
 }
