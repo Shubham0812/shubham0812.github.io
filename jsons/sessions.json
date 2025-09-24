@@ -1,10 +1,10 @@
 
 {
-    "version": 2,
+    "version": 1,
     "dayOne": [
         {
             "id": "check-in",
-            "title": "Check-In and Breakfast 🥯☕📝",
+            "title": "Registrations and Breakfast 🥯☕📝",
             "description": null,
             "startTime": 1758857400,
             "durationMinutes": 45,
@@ -14,7 +14,7 @@
         },
         {
             "id": "organisers-kick-off",
-            "title": "Organisers Kick-off",
+            "title": "Organisers - Welcome Talk",
             "description": null,
             "startTime": 1758860100,
             "durationMinutes": 10,
@@ -24,7 +24,7 @@
         },
         {
             "id": "paul-hudson",
-            "title": "Paul Hudson",
+            "title": "Opening Keynote",
             "description": "",
             "startTime": 1758860700,
             "durationMinutes": 40,
@@ -33,7 +33,7 @@
         },
         {
             "id": "kamal-kumar",
-            "title": "Kamal Kumar",
+            "title": "The 1px War",
             "description": "",
             "startTime": 1758863100,
             "durationMinutes": 35,
@@ -52,7 +52,7 @@
         },
         {
             "id": "arima-jain",
-            "title": "Arima Jain",
+            "title": "From doodles to developer",
             "description": "",
             "startTime": 1758866700,
             "durationMinutes": 30,
@@ -61,7 +61,7 @@
         },
         {
             "id": "logitch-lightning-panel",
-            "title": "Logitech Lightning Panel ⚡✨",
+            "title": "Logitech Panel - Chiraayu & Hariom ⚡",
             "description": null,
             "startTime": 1758868500,
             "durationMinutes": 35,
@@ -90,7 +90,7 @@
         },
         {
             "id": "danijela-vrzan",
-            "title": "Danijela Vrzan",
+            "title": "10 Skills to Level Up Your Career",
             "description": "",
             "startTime": 1758877200,
             "durationMinutes": 40,
@@ -128,7 +128,7 @@
         },
         {
             "id": "day-1-industry-panel",
-            "title": "Industry Panel - PhonePe + Zoho",
+            "title": "Expert Panel",
             "description": "",
             "startTime": 1758883800,
             "durationMinutes": 70,
@@ -149,7 +149,7 @@
         },
         {
             "id": "curt-clifton",
-            "title": "Curt Clifton",
+            "title": "Create a custom control with SwiftUI",
             "description": "",
             "startTime": 1758946500,
             "durationMinutes": 45,
@@ -158,7 +158,7 @@
         },
         {
             "id": "krzysztof-zablocki",
-            "title": "Krzysztof Zabłocki",
+            "title": "What people get wrong about testing?",
             "description": "",
             "startTime": 1758949200,
             "durationMinutes": 40,
@@ -177,7 +177,7 @@
         },
         {
             "id": "garima-bothra",
-            "title": "Garima Bothra",
+            "title": "Does SwiftUI work in production?",
             "description": "",
             "startTime": 1758953100,
             "durationMinutes": 40,
@@ -186,7 +186,7 @@
         },
         {
             "id": "josh-holtz",
-            "title": "Josh Holtz",
+            "title": "A Swift Drive into DSLs",
             "description": "",
             "startTime": 1758955500,
             "durationMinutes": 40,
@@ -205,7 +205,7 @@
         },
         {
             "id": "harshil-talk",
-            "title": "Harshil",
+            "title": "Shipping Solo",
             "description": "",
             "startTime": 1758963600,
             "durationMinutes": 40,
@@ -215,7 +215,7 @@
         },
         {
             "id": "day-2-podcase",
-            "title": "Podcast - Sandeep Ranade + Raja Vijayaraman",
+            "title": "Launched Podcast - Raja V & Sandeep Ranade",
             "description": "",
             "startTime": 1758966000,
             "durationMinutes": 75,
@@ -234,7 +234,7 @@
         },
         {
             "id": "peter-steinberger",
-            "title": "Peter Steinberger",
+            "title": "Closing Keynote",
             "description": "",
             "startTime": 1758972000,
             "durationMinutes": 45,
@@ -243,7 +243,7 @@
         },
         {
             "id": "day-2-closing",
-            "title": "Conference Closing - Organisers",
+            "title": "Closing Remarks - Organisers",
             "description": "",
             "startTime": 1758974700,
             "durationMinutes": 15,
