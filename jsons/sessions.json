@@ -1,6 +1,6 @@
 
 {
-    "version": 1,
+    "version": 2,
     "dayOne": [
         {
             "id": "check-in",
@@ -128,8 +128,8 @@
         },
         {
             "id": "day-1-industry-panel",
-            "title": "Expert Panel",
-            "description": "Expert Panel brings together a curated group of distinguished voices from across the Swift, iOS, and tech ecosystem—leaders in development, design, community, and innovation.\n\nThis collective of thinkers, makers, and strategists will discuss emerging trends, challenges, and high-impact insights in app development.\n\nExpect a lively and illuminating conversation as they pool diverse experiences to inspire, provoke thought, and redefine what’s possible.",
+            "title": "Surprise Speakers ✨🎤",
+            "description": "Surprise Speakers add an element of excitement and curiosity to Swift Bharat.\n\nCarefully chosen from among some of the most inspiring voices in the iOS and tech community, they’ll take the stage unannounced to share fresh ideas, unique stories, and unexpected insights.\n\nGet ready for moments that surprise, delight, and stay with you long after the event.",
             "startTime": 1758883800,
             "durationMinutes": 70,
             "type": "panel",
