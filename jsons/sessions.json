@@ -1,6 +1,6 @@
 
 {
-    "version": 3,
+    "version": 4,
     "dayOne": [
         {
             "id": "check-in",
@@ -99,7 +99,7 @@
         },
         {
             "id": "charlie-chapman",
-            "title": "App Marketing (from an engineers perspective)",
+            "title": "App Marketing(from an engineers perspective)",
             "description": "Charlie Chapman is an app developer, designer, podcaster, and Developer Advocate at RevenueCat.\n\nHe’s best known for creating the iOS app Dark Noise and hosting the interview podcast Launched.\n\nWith a passion for blending clean design, audio, and developer advocacy, Charlie brings a unique voice to the Swift Bharat stage.",
             "startTime": 1758879600,
             "durationMinutes": 40,
