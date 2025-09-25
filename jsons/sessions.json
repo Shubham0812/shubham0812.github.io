@@ -25,7 +25,12 @@
         {
             "id": "paul-hudson",
             "title": "Opening Keynote",
-            "description": "",
+            "description": "       Paul Hudson is the force behind Hacking with Swift, the go-to resource for millions of iOS developers.
+                                                                                             
+                                                                                             He has a knack for turning tricky Swift concepts into easy, practical lessons — and if you’ve ever searched for a coding fix, chances are Paul already saved your day.
+                                                                                                                                                                                ‎
+                                                                                                                                                                                He’s also a conference favorite around the world, known for bringing both depth and fun to his talks. More than just a teacher, Paul’s passion for sharing knowledge has made him a mentor and inspiration for developers everywhere. 
+                                                                                                                                                                                  At Swift Bharat, you’ll get to see why the Swift community holds him in such high regard.",
             "startTime": 1758860700,
             "durationMinutes": 40,
             "type": "talk",
