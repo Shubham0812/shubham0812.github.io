@@ -4,7 +4,7 @@
     "dayOne": [
         {
             "id": "check-in",
-            "title": "Registrations and Breakfast 🥯☕📝",
+            "title": "Registrations and Light Snacks 🥯☕📝",
             "description": null,
             "startTime": 1758857400,
             "durationMinutes": 45,
@@ -61,7 +61,7 @@
         },
         {
             "id": "logitch-lightning-panel",
-            "title": "Logitech Panel - Chiraayu & Hariom ⚡",
+            "title": "Redefining Developer Experience: MX in the Apple Ecosystem - Chiraayu & Hariom ⚡",
             "description": null,
             "startTime": 1758868500,
             "durationMinutes": 35,
@@ -99,7 +99,7 @@
         },
         {
             "id": "charlie-chapman",
-            "title": "Charlie Chapman",
+            "title": "App Marketing(from an engineers perspective)",
             "description": "",
             "startTime": 1758879600,
             "durationMinutes": 40,
@@ -139,7 +139,7 @@
     "dayTwo": [
         {
             "id": "day-2-registrations",
-            "title": "Registration & Breakfast 🥤🕒",
+            "title": "Registration & Light Snacks 🥤🕒",
             "description": null,
             "startTime": 1758943800,
             "durationMinutes": 40,
