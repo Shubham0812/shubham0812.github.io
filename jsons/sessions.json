@@ -25,12 +25,7 @@
         {
             "id": "paul-hudson",
             "title": "Opening Keynote",
-            "description": "       Paul Hudson is the force behind Hacking with Swift, the go-to resource for millions of iOS developers.
-                                                                                             
-                                                                                             He has a knack for turning tricky Swift concepts into easy, practical lessons — and if you’ve ever searched for a coding fix, chances are Paul already saved your day.
-                                                                                                                                                                                ‎
-                                                                                                                                                                                He’s also a conference favorite around the world, known for bringing both depth and fun to his talks. More than just a teacher, Paul’s passion for sharing knowledge has made him a mentor and inspiration for developers everywhere. 
-                                                                                                                                                                                  At Swift Bharat, you’ll get to see why the Swift community holds him in such high regard.",
+            "description": "Paul Hudson is the force behind Hacking with Swift, the go-to resource for millions of iOS developers.\n\nHe has a knack for turning tricky Swift concepts into easy, practical lessons — and if you’ve ever searched for a coding fix, chances are Paul already saved your day.\n\nHe’s also a conference favorite around the world, known for bringing both depth and fun to his talks. More than just a teacher, Paul’s passion for sharing knowledge has made him a mentor and inspiration for developers everywhere.\n\nAt Swift Bharat, you’ll get to see why the Swift community holds him in such high regard.",
             "startTime": 1758860700,
             "durationMinutes": 40,
             "type": "talk",
@@ -39,7 +34,7 @@
         {
             "id": "kamal-kumar",
             "title": "The 1px War",
-            "description": "",
+            "description": "Kamal Kumar Lakshmanan is the co-founder and lead engineer behind Box Box, a premier Formula 1 fan app featuring real-time stats, widgets, and community tools.\n\nHe also launched Go Club, a habit-tracking / wellness app (notably featured as “App of the Day” on iOS). Based in Bengaluru, Kamal draws on over a decade of experience in iOS across domains like healthcare, defense, fintech, and e-commerce.\n\nHis dual ventures reflect a passion for blending elegant technology with deep user engagement.",
             "startTime": 1758863100,
             "durationMinutes": 35,
             "type": "talk",
@@ -58,7 +53,7 @@
         {
             "id": "arima-jain",
             "title": "From doodles to developer",
-            "description": "",
+            "description": "Arima Jain is a young and dynamic iOS developer, indie maker, and speaker who combines her passion for design and coding to build educational and creative apps.\n\nAt just 20 years old, she is the founder and CEO of Lil Artist, and has also worked on FunKey, guiding her journey with accolades like being a WWDC ’22 Scholar and an Apple Entrepreneur Camp alumna.\n\nShe brings energy, innovation, and a fresh perspective to the Swift Swift Bharat stage.",
             "startTime": 1758866700,
             "durationMinutes": 30,
             "type": "talk",
@@ -67,11 +62,11 @@
         {
             "id": "logitch-lightning-panel",
             "title": "Redefining Developer Experience: MX in the Apple Ecosystem - Chiraayu & Hariom ⚡",
-            "description": null,
+            "description": "Chiraayu Pandya is a senior technology leader at Logitech, bringing over 25 years of experience leading engineering and product teams across global brands.\n\nHe’s known for driving innovation in hardware, software, and connectivity, and for guiding Logitech’s efforts in blending user experience with technical excellence.\n\n\nHariom Palkar works at Swiggy as a product & engineering leader, previously co-founding ventures like RAW and Popcorn.\n\nHe’s deeply involved in building AI-driven products and scaling engineering systems, while bridging the gap between technology and real-world use cases.",
             "startTime": 1758868500,
             "durationMinutes": 35,
             "type": "panel",
-            "speakerId": null
+            "speakerIds": ["chiraayu", "hariom"]
         },
         {
             "id": "day-1-group-photo",
@@ -96,7 +91,7 @@
         {
             "id": "danijela-vrzan",
             "title": "10 Skills to Level Up Your Career",
-            "description": "",
+            "description": "Danijela Vrzan is a passionate iOS developer, writer, mentor, and keynote speaker who blends technical expertise with real-world insight.\n\nOriginally a civil engineer, she made a bold pivot into software, teaching herself to code and later earning a computer science degree.\n\nNow based in Toronto, Canada, she works across Swift, SwiftUI, localization, app architecture, and developer tools.\n\nOutside coding, she enjoys hiking, running, playing video games, and exploring new restaurants.",
             "startTime": 1758877200,
             "durationMinutes": 40,
             "type": "talk",
@@ -105,7 +100,7 @@
         {
             "id": "charlie-chapman",
             "title": "App Marketing(from an engineers perspective)",
-            "description": "",
+            "description": "Charlie Chapman is an app developer, designer, podcaster, and Developer Advocate at RevenueCat.\n\nHe’s best known for creating the iOS app Dark Noise and hosting the interview podcast Launched.\n\nWith a passion for blending clean design, audio, and developer advocacy, Charlie brings a unique voice to the Swift Bharat stage.",
             "startTime": 1758879600,
             "durationMinutes": 40,
             "type": "talk",
@@ -134,7 +129,7 @@
         {
             "id": "day-1-industry-panel",
             "title": "Expert Panel",
-            "description": "",
+            "description": "Expert Panel brings together a curated group of distinguished voices from across the Swift, iOS, and tech ecosystem—leaders in development, design, community, and innovation.\n\nThis collective of thinkers, makers, and strategists will discuss emerging trends, challenges, and high-impact insights in app development.\n\nExpect a lively and illuminating conversation as they pool diverse experiences to inspire, provoke thought, and redefine what’s possible.",
             "startTime": 1758883800,
             "durationMinutes": 70,
             "type": "panel",
@@ -155,7 +150,7 @@
         {
             "id": "curt-clifton",
             "title": "Create a custom control with SwiftUI",
-            "description": "",
+            "description": "Curt Clifton is an App Technologies Evangelist at Apple, specializing in SwiftUI and helping bridge the gap between framework engineers and the developer community.\n\nBefore this, he spent years as a SwiftUI frameworks engineer, and earlier still worked on macOS/iOS software at Omni Group.\n\nHis academic roots run deep, he once served as a tenured professor and earned a PhD in Computer Science.\n\nToday he combines that depth of knowledge with a passion for teaching, speaking, and enabling developers to build better apps.",
             "startTime": 1758946500,
             "durationMinutes": 45,
             "type": "talk",
@@ -164,7 +159,7 @@
         {
             "id": "krzysztof-zablocki",
             "title": "What people get wrong about testing?",
-            "description": "",
+            "description": "Krzysztof Zabłocki is a renowned Swift engineer, creator, and open-source innovator whose work powers tens of thousands of apps.\n\nHe’s best known for founding Sourcery, a metaprogramming tool that reduces boilerplate in Swift, and for his focus on architecture, efficiency, and developer experience.\n\nOver his career, he’s led iOS teams at The New York Times, built indie apps, and recently turned his efforts toward consulting and teaching through his course SwiftyStack.",
             "startTime": 1758949200,
             "durationMinutes": 40,
             "type": "talk",
@@ -183,7 +178,7 @@
         {
             "id": "garima-bothra",
             "title": "Does SwiftUI work in production?",
-            "description": "",
+            "description": "Garima Bothra is a rising iOS engineer currently at Swiggy (SDE-2 iOS) and one of India’s 2021 Swift Student Challenge winners.\n\nShe’s passionate about SwiftUI, custom UI work, and sharing what she learns—with writing and teaching being part of her craft.\n\nHer journey is marked by a drive to turn complex ideas into delightful, practical apps, and she brings fresh energy and insight to the Swift Bharat stage.",
             "startTime": 1758953100,
             "durationMinutes": 40,
             "type": "talk",
@@ -192,7 +187,7 @@
         {
             "id": "josh-holtz",
             "title": "A Swift Drive into DSLs",
-            "description": "",
+            "description": "Josh Holtz is a prolific software engineer, open-source advocate, and community builder.\n\nHe is the lead maintainer of fastlane, the automation toolchain used by hundreds of mobile development teams, and works as a software engineer at RevenueCat.\n\nHe’s also the founder of the Deep Dish Swift conference, and curates the newsletter Indie Dev Monday, while building projects like ConnectKit and An Otter RSS",
             "startTime": 1758955500,
             "durationMinutes": 40,
             "type": "talk",
@@ -211,7 +206,7 @@
         {
             "id": "harshil-talk",
             "title": "Shipping Solo",
-            "description": "",
+            "description": "Harshil Shah is an independent iOS engineer based in Mumbai, India.\n\nHe builds apps like Peak, a fitness dashboard for iPhone, iPad, and Apple Watch, and Pause, a Mac app to remind you to rest.\n\nPreviously, he’s worked at Riff and Stopwatch, and continues to explore elegant app design, health/fitness tech, and Swift-centric development.",
             "startTime": 1758963600,
             "durationMinutes": 40,
             "type": "others",
@@ -221,11 +216,11 @@
         {
             "id": "day-2-podcase",
             "title": "Launched Podcast - Raja V & Sandeep Ranade",
-            "description": "",
+            "description": "Raja V (Raja Vijayaraman) is the indie creator behind Lumy, a beautifully designed app that helps users track sunlight, golden hour, moon phases, and plan outdoor routines.\n\nHis journey into app development sprung from a love of photography and light, and over time Lumy has grown into a globally loved tool, earning recognition such as “Apple Watch App of the Year 2024.\n\n\nSandeep Ranade is a musician-software engineer hybrid whose passion for Indian classical music meets technology.\n\nHe’s the creator of NaadSadhana, an AI-powered app for practicing and creating music, which won an Apple Design Award in 2021.\n\nTrained in both computer science and Hindustani classical vocal traditions, he builds tools that bring accessibility, rigor, and beauty to musical practice.”",
             "startTime": 1758966000,
             "durationMinutes": 75,
             "type": "panel",
-            "speakerId": null
+            "speakerIds": ["raja-v", "sandeep-ranade"]
         },
         {
             "id": "day-2-break-two",
@@ -240,7 +235,7 @@
         {
             "id": "peter-steinberger",
             "title": "Closing Keynote",
-            "description": "",
+            "description": "Peter Steinberger (aka “steipete”) is a veteran iOS architect turned serial builder and open-source evangelist.\n\nHe founded PSPDFKit, a powerful PDF framework used across platforms, bootstrapped its growth, and eventually exited the company.\n\nNow based between Vienna and London, he experiments at the intersection of Swift, AI, and web tech, building tools like Peekaboo and Poltergeist.\n\nHe also spends time speaking around the world about code, resilience, and developer craftsmanship",
             "startTime": 1758972000,
             "durationMinutes": 45,
             "type": "talk",
