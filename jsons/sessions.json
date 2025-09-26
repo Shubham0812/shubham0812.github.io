@@ -1,6 +1,6 @@
 
 {
-    "version": 4,
+    "version": 5,
     "dayOne": [
         {
             "id": "check-in",
@@ -117,20 +117,10 @@
             "speakerId": null
         },
         {
-            "id": "day-1-conference-quiz",
-            "title": "Conference Quiz ❓🎯",
-            "description": null,
-            "startTime": 1758882900,
-            "durationMinutes": 15,
-            "type": "others",
-            "subtype": "Quiz",
-            "speakerId": null
-        },
-        {
             "id": "day-1-industry-panel",
             "title": "Surprise Speakers ✨🎤",
             "description": "Surprise Speakers add an element of excitement and curiosity to Swift Bharat.\n\nCarefully chosen from among some of the most inspiring voices in the iOS and tech community, they’ll take the stage unannounced to share fresh ideas, unique stories, and unexpected insights.\n\nGet ready for moments that surprise, delight, and stay with you long after the event.",
-            "startTime": 1758883800,
+            "startTime": 1758840900,
             "durationMinutes": 70,
             "type": "panel",
             "speakerId": null
