@@ -36,7 +36,10 @@
             "O",
             "N",
             "S",
-            "T"
+            "T",
+            "A",
+            "H",
+            
           ],
           "correctWord": "NEURON"
         },
@@ -52,7 +55,9 @@
             "U",
             "L",
             "A",
-            "E"
+            "E",
+            "P",
+            "K"
           ],
           "correctWord": "FORMULA"
         },
@@ -68,7 +73,9 @@
             "O",
             "P",
             "E",
-            "S"
+            "S",
+            "A",
+            "Q"
           ],
           "correctWord": "ISOTOPE"
         },
@@ -84,7 +91,9 @@
             "O",
             "A",
             "T",
-            "R"
+            "R",
+            "K",
+            "E"
           ],
           "correctWord": "LABCOAT"
         },
@@ -100,7 +109,9 @@
             "A",
             "R",
             "E",
-            "D"
+            "D",
+            "N",
+            "M"
           ],
           "correctWord": "QUASAR"
         },
@@ -116,7 +127,9 @@
             "T",
             "I",
             "C",
-            "S"
+            "S",
+            "F",
+            "A"
           ],
           "correctWord": "GENETIC"
         },
@@ -132,7 +145,9 @@
             "M",
             "A",
             "N",
-            "O"
+            "O",
+            "E",
+            "H"
           ],
           "correctWord": "PLASMA"
         },
@@ -148,7 +163,9 @@
             "U",
             "I",
             "T",
-            "S"
+            "S",
+            "E",
+            "H"
           ],
           "correctWord": "CIRCUIT"
         },
@@ -164,7 +181,9 @@
             "O",
             "G",
             "Y",
-            "S"
+            "S",
+            "A",
+            "E"
           ],
           "correctWord": "BIOLOGY"
         },
@@ -180,7 +199,9 @@
             "I",
             "T",
             "Y",
-            "E"
+            "E",
+            "C",
+            "H"
           ],
           "correctWord": "GRAVITY"
         }
