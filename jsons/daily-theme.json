@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "force": true,
+    "force": false,
     "entries": [
         {
             "id": "theme-2024-11-30",
