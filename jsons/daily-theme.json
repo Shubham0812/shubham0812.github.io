@@ -2,12 +2,12 @@
   "version": "1",
   "entries": [
     {
-      "id": "theme-2024-11-29",
+      "id": "theme-2024-11-30",
       "title": "Theme Game",
       "subtitle": "Find the correct word that fits the hint",
       "availableOn": {
         "month": 11,
-        "day": 29
+        "day": 30
       },
       "theme": {
         "name": "Science",
