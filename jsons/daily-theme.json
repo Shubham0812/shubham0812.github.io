@@ -3,12 +3,12 @@
     "force": true,
     "entries": [
         {
-            "id": "theme-2025-12-11",
+            "id": "theme-2025-12-12",
             "title": "Theme Game",
             "subtitle": "Find the correct word that fits the hint",
             "availableOn": {
                 "month": 12,
-                "day": 11
+                "day": 12
             },
             "theme": {
                 "name": "Science",
