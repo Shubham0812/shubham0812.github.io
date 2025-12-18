@@ -1,5 +1,7 @@
 {
-  "appSettings": {},
+  "appSettings": {
+    "appLaunchDate": 1766077415
+  },
   "leaderboard": {
     "startDate": "2025-12-10",
     "endDate": "2025-12-20",
