@@ -200,6 +200,205 @@
           }
         ],
         "requiredWordCount": 10
+      },
+       {
+      "id": "word-2025-12-19",
+      "title": "Words Game",
+      "subtitle": "Make words with the characters",
+      "challengeNumber": 1,
+      "availableOn": {
+        "month": 12,
+        "day": 19
+      },
+      "gamePreset": {
+        "rounds": 1,
+        "timeLimit": 90,
+        "numberOfHints": 3,
+        "difficulty": "medium",
+        "showIntro": true,
+        "handHoldingMode": false,
+        "maximumHandHoldingCounter": 3
+      },
+      "round": {
+        "characters": [
+          "s",
+          "t",
+          "a",
+          "r",
+          "e",
+          "l",
+          "o",
+          "p",
+          "i",
+          "n"
+        ],
+        "possibleWords": [
+          {
+            "word": "sat",
+            "hint": "Did sit"
+          },
+          {
+            "word": "rat",
+            "hint": "A small rodent"
+          },
+          {
+            "word": "tar",
+            "hint": "Sticky black substance"
+          },
+          {
+            "word": "pen",
+            "hint": "Writing tool"
+          },
+          {
+            "word": "pin",
+            "hint": "Small metal fastener"
+          },
+          {
+            "word": "lip",
+            "hint": "Edge of the mouth"
+          },
+          {
+            "word": "lap",
+            "hint": "Top of the legs when sitting"
+          },
+          {
+            "word": "sip",
+            "hint": "Small drink"
+          },
+          {
+            "word": "rip",
+            "hint": "Tear apart"
+          },
+          {
+            "word": "tip",
+            "hint": "End part of something"
+          },
+          {
+            "word": "ape",
+            "hint": "Primate animal"
+          },
+          {
+            "word": "ear",
+            "hint": "Hearing organ"
+          },
+          {
+            "word": "oil",
+            "hint": "Liquid used for cooking or fuel"
+          },
+          {
+            "word": "tin",
+            "hint": "Type of metal"
+          },
+          {
+            "word": "son",
+            "hint": "Male child"
+          },
+          {
+            "word": "star",
+            "hint": "Bright object in the sky"
+          },
+          {
+            "word": "tale",
+            "hint": "Story"
+          },
+          {
+            "word": "pine",
+            "hint": "Type of tree"
+          },
+          {
+            "word": "note",
+            "hint": "Written message"
+          },
+          {
+            "word": "rope",
+            "hint": "Strong cord"
+          },
+          {
+            "word": "salt",
+            "hint": "White seasoning"
+          },
+          {
+            "word": "line",
+            "hint": "Long narrow mark"
+          },
+          {
+            "word": "slip",
+            "hint": "Lose balance"
+          },
+          {
+            "word": "role",
+            "hint": "Actor's part"
+          },
+          {
+            "word": "tile",
+            "hint": "Flat ceramic piece"
+          },
+          {
+            "word": "alert",
+            "hint": "Quick to notice"
+          },
+          {
+            "word": "stare",
+            "hint": "Look intently"
+          },
+          {
+            "word": "paste",
+            "hint": "Thick adhesive"
+          },
+          {
+            "word": "solar",
+            "hint": "Relating to the sun"
+          },
+          {
+            "word": "trail",
+            "hint": "Path behind something"
+          },
+          {
+            "word": "train",
+            "hint": "Connected railway vehicles"
+          },
+          {
+            "word": "spoil",
+            "hint": "Ruin or damage"
+          },
+          {
+            "word": "taper",
+            "hint": "Become narrower"
+          },
+          {
+            "word": "risen",
+            "hint": "Moved upward"
+          },
+          {
+            "word": "pairs",
+            "hint": "Two matching items"
+          },
+          {
+            "word": "planet",
+            "hint": "A celestial body in orbit"
+          },
+          {
+            "word": "retail",
+            "hint": "Sell directly to customers"
+          },
+          {
+            "word": "reason",
+            "hint": "Explanation or cause"
+          },
+          {
+            "word": "senior",
+            "hint": "Older in rank or age"
+          },
+          {
+            "word": "linear",
+            "hint": "Arranged in a line"
+          },
+          {
+            "word": "poster",
+            "hint": "Printed notice"
+          }
+        ],
+        "requiredWordCount": 10
       }
     }
   ]
