@@ -20,7 +20,7 @@
                 "timeLimit": 180,
                 "numberOfHints": 10,
                 "difficulty": "easy",
-                "showIntro": true,
+                "showIntro": false,
                 "handHoldingMode": false,
                 "maximumHandHoldingCounter": 0
             },
