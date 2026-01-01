@@ -8,8 +8,8 @@
             "subtitle": "Make words with the characters",
             "challengeNumber": 1,
             "availableOn": {
-                "month": 01,
-                "day": 01
+                "month": 1,
+                "day": 1
             },
             "gamePreset": {
                 "rounds": 1,
