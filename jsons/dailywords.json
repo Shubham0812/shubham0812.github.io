@@ -3,13 +3,13 @@
     "force": true,
     "entries": [
         {
-            "id": "word-2026-01-7",
+            "id": "word-2026-01-8",
             "title": "Words Game",
             "subtitle": "Make words with the characters",
             "challengeNumber": 1,
             "availableOn": {
                 "month": 1,
-                "day": 7
+                "day": 8
             },
             "gamePreset": {
                 "rounds": 1,
