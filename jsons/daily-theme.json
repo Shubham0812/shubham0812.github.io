@@ -6,6 +6,7 @@
             "id": "theme-2026-01-17",
             "title": "Theme Game",
             "subtitle": "Find the correct word that fits the hint",
+            "challengeNumber": 1,
             "availableOn": {
                 "month": 1,
                 "day": 17
