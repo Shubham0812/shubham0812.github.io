@@ -3,13 +3,13 @@
     "force": true,
     "entries": [
         {
-            "id": "theme-2026-01-20",
+            "id": "theme-2026-01-22",
             "title": "Theme Game",
             "subtitle": "Find the correct word that fits the hint",
             "challengeNumber": 1,
             "availableOn": {
                 "month": 1,
-                "day": 20
+                "day": 22
             },
             "theme": {
                 "name": "Science",
