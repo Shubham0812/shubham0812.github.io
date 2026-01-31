@@ -1,15 +1,15 @@
 {
-    "version": 6,
+    "version": 7,
     "force": true,
     "entries": [
         {
-            "id": "theme-2026-01-29",
+            "id": "theme-2026-01-31",
             "title": "Theme Game",
             "subtitle": "Find the correct word that fits the hint",
-            "challengeNumber": 7,
+            "challengeNumber": 8,
             "availableOn": {
                 "month": 1,
-                "day": 29
+                "day": 31
             },
             "theme": {
                 "name": "Science",
