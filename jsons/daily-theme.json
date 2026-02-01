@@ -1,5 +1,5 @@
 {
-    "version": 9,
+    "version": 10,
     "force": true,
     "entries": [
         {
@@ -8,7 +8,7 @@
             "subtitle": "Find the correct word that fits the hint",
             "challengeNumber": 2,
             "availableOn": {
-                "month": 1,
+                "month": 2,
                 "day": 2
             },
             "theme": {
