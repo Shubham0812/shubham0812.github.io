@@ -1,5 +1,5 @@
 {
-    "version": 10,
+    "version": 11,
     "force": true,
     "entries": [
         {
@@ -12,7 +12,7 @@
                 "day": 2
             },
             "theme": {
-                "name": "Science",
+                "name": "Science Words",
                 "icon": "lightbulb.max",
                 "cardColor": "#4EC5FF"
             },
