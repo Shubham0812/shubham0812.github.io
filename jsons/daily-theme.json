@@ -1,212 +1,212 @@
 {
-    "version": 11,
-    "force": true,
-    "entries": [
-        {
-            "id": "theme-2026-01-02",
-            "title": "Theme Game",
-            "subtitle": "Find the correct word that fits the hint",
-            "challengeNumber": 2,
-            "availableOn": {
-                "month": 2,
-                "day": 2
+   "version":12,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-02-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":4,
+         "availableOn":{
+            "month":2,
+            "day": 4
+         },
+         "theme":{
+            "name":"Movie Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit":180,
+            "numberOfHints":10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds":[
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A hacker discovers reality is an artificial simulation.",
+               "characters":[
+                  "M",
+                  "A",
+                  "T",
+                  "R",
+                  "I",
+                  "X",
+                  "E",
+                  "O",
+                  "N",
+                  "S"
+               ],
+               "correctWord":"MATRIX"
             },
-            "theme": {
-                "name": "Science Words",
-                "icon": "lightbulb.max",
-                "cardColor": "#4EC5FF"
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A deadly extraterrestrial stalks a spaceship crew.",
+               "characters":[
+                  "A",
+                  "L",
+                  "I",
+                  "E",
+                  "N",
+                  "R",
+                  "S",
+                  "T",
+                  "O",
+                  "M"
+               ],
+               "correctWord":"ALIEN"
             },
-            "gamePreset": {
-                "rounds": 10,
-                "timeLimit": 180,
-                "numberOfHints": 10,
-                "difficulty": "easy",
-                "showIntro": false,
-                "handHoldingMode": false,
-                "maximumHandHoldingCounter": 0
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A troubled man descends into violence and chaos.",
+               "characters":[
+                  "J",
+                  "O",
+                  "K",
+                  "E",
+                  "R",
+                  "A",
+                  "N",
+                  "S",
+                  "E",
+                  "L"
+               ],
+               "correctWord":"JOKER"
             },
-            "rounds": [
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Basic nerve cell that transmits electrical signals.",
-                    "characters": [
-                        "N",
-                        "E",
-                        "U",
-                        "R",
-                        "O",
-                        "N",
-                        "S",
-                        "T",
-                        "A",
-                        "H"
-                    ],
-                    "correctWord": "NEURON"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Mathematical recipe that relates measured variables.",
-                    "characters": [
-                        "F",
-                        "O",
-                        "R",
-                        "M",
-                        "U",
-                        "L",
-                        "A",
-                        "E",
-                        "P",
-                        "K"
-                    ],
-                    "correctWord": "FORMULA"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Atoms of the same element with different neutron counts.",
-                    "characters": [
-                        "I",
-                        "S",
-                        "O",
-                        "T",
-                        "O",
-                        "P",
-                        "E",
-                        "S",
-                        "A",
-                        "Q"
-                    ],
-                    "correctWord": "ISOTOPE"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Protective garment chemists wear at the bench.",
-                    "characters": [
-                        "L",
-                        "A",
-                        "B",
-                        "C",
-                        "O",
-                        "A",
-                        "T",
-                        "R",
-                        "K",
-                        "E"
-                    ],
-                    "correctWord": "LABCOAT"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Distant radio-bright object powered by a black hole.",
-                    "characters": [
-                        "Q",
-                        "U",
-                        "A",
-                        "S",
-                        "A",
-                        "R",
-                        "E",
-                        "D",
-                        "N",
-                        "M"
-                    ],
-                    "correctWord": "QUASAR"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Relating to inherited DNA traits and variation.",
-                    "characters": [
-                        "G",
-                        "E",
-                        "N",
-                        "E",
-                        "T",
-                        "I",
-                        "C",
-                        "S",
-                        "F",
-                        "A"
-                    ],
-                    "correctWord": "GENETIC"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "The ionized gas state found in stars and neon tubes.",
-                    "characters": [
-                        "P",
-                        "L",
-                        "A",
-                        "S",
-                        "M",
-                        "A",
-                        "N",
-                        "O",
-                        "E",
-                        "H"
-                    ],
-                    "correctWord": "PLASMA"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Closed loop of components that directs electricity.",
-                    "characters": [
-                        "C",
-                        "I",
-                        "R",
-                        "C",
-                        "U",
-                        "I",
-                        "T",
-                        "S",
-                        "E",
-                        "H"
-                    ],
-                    "correctWord": "CIRCUIT"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Branch that studies life at molecular to ecosystem scales.",
-                    "characters": [
-                        "B",
-                        "I",
-                        "O",
-                        "L",
-                        "O",
-                        "G",
-                        "Y",
-                        "S",
-                        "A",
-                        "E"
-                    ],
-                    "correctWord": "BIOLOGY"
-                },
-                {
-                    "theme": "science",
-                    "ageRange": "adults",
-                    "hint": "Force that pulls masses toward one another.",
-                    "characters": [
-                        "G",
-                        "R",
-                        "A",
-                        "V",
-                        "I",
-                        "T",
-                        "Y",
-                        "E",
-                        "C",
-                        "H"
-                    ],
-                    "correctWord": "GRAVITY"
-                }
-            ]
-        },
-    ]
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A legendary ocean liner meets a tragic fate.",
+               "characters":[
+                  "T",
+                  "I",
+                  "T",
+                  "A",
+                  "N",
+                  "I",
+                  "C",
+                  "R",
+                  "O",
+                  "S"
+               ],
+               "correctWord":"TITANIC"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"Humans clash with natives on a distant alien moon.",
+               "characters":[
+                  "A",
+                  "V",
+                  "A",
+                  "T",
+                  "A",
+                  "R",
+                  "L",
+                  "N",
+                  "E",
+                  "S"
+               ],
+               "correctWord":"AVATAR"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A serial killer is tracked through cryptic clues.",
+               "characters":[
+                  "Z",
+                  "O",
+                  "D",
+                  "I",
+                  "A",
+                  "C",
+                  "L",
+                  "N",
+                  "E",
+                  "T"
+               ],
+               "correctWord":"ZODIAC"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A savage future where survival means everything.",
+               "characters":[
+                  "M",
+                  "A",
+                  "D",
+                  "M",
+                  "A",
+                  "X",
+                  "R",
+                  "E",
+                  "A",
+                  "L"
+               ],
+               "correctWord":"MADMAX"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"Murders are committed based on the seven deadly sins.",
+               "characters":[
+                  "S",
+                  "E",
+                  "7",
+                  "E",
+                  "N",
+                  "S",
+                  "I",
+                  "N",
+                  "D",
+                  "O"
+               ],
+               "correctWord":"SE7EN"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"A ruthless gangster rises to power in Miami.",
+               "characters":[
+                  "S",
+                  "C",
+                  "A",
+                  "R",
+                  "F",
+                  "A",
+                  "C",
+                  "E",
+                  "L",
+                  "N"
+               ],
+               "correctWord":"SCARFACE"
+            },
+            {
+               "theme":"movies",
+               "ageRange":"adults",
+               "hint":"Two rival magicians are consumed by obsession.",
+               "characters":[
+                  "P",
+                  "R",
+                  "E",
+                  "S",
+                  "T",
+                  "I",
+                  "G",
+                  "E",
+                  "A",
+                  "L"
+               ],
+               "correctWord":"PRESTIGE"
+            }
+         ]
+      }
+   ]
 }
