@@ -3,12 +3,12 @@
     "appLaunchDate": 1768921266
   },
   "leaderboard": {
-    "startDate": "2026-1-20",
-    "endDate": "2026-2-04",
-    "challengeNumber": 2,
+    "startDate": "2026-2-04",
+    "endDate": "2026-2-11",
+    "challengeNumber": 3,
     "copy": "",
     "force": true
   },
-  "version": 5,
+  "version": 6,
   "force": true
 }
