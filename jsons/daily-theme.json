@@ -1,15 +1,15 @@
 {
-   "version":12,
+   "version":13,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-04",
+         "id":"theme-2026-02-06",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":4,
+         "challengeNumber":5,
          "availableOn":{
             "month":2,
-            "day": 4
+            "day": 6
          },
          "theme":{
             "name":"Movie Names",
@@ -26,187 +26,187 @@
             "maximumHandHoldingCounter":0
          },
          "rounds":[
-            {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A hacker discovers reality is an artificial simulation.",
-               "characters":[
-                  "M",
-                  "A",
-                  "T",
-                  "R",
-                  "I",
-                  "X",
-                  "E",
-                  "O",
-                  "N",
-                  "S"
-               ],
-               "correctWord":"MATRIX"
+{
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Striped jungle cat.",
+                "characters": [
+                    "T",
+                    "I",
+                    "G",
+                    "E",
+                    "R",
+                    "A",
+                    "L",
+                    "M",
+                    "O",
+                    "N"
+                ],
+                "correctWord": "TIGER"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A deadly extraterrestrial stalks a spaceship crew.",
-               "characters":[
-                  "A",
-                  "L",
-                  "I",
-                  "E",
-                  "N",
-                  "R",
-                  "S",
-                  "T",
-                  "O",
-                  "M"
-               ],
-               "correctWord":"ALIEN"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Black and white bamboo eater.",
+                "characters": [
+                    "P",
+                    "A",
+                    "N",
+                    "D",
+                    "A",
+                    "S",
+                    "L",
+                    "E",
+                    "O",
+                    "R"
+                ],
+                "correctWord": "PANDA"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A troubled man descends into violence and chaos.",
-               "characters":[
-                  "J",
-                  "O",
-                  "K",
-                  "E",
-                  "R",
-                  "A",
-                  "N",
-                  "S",
-                  "E",
-                  "L"
-               ],
-               "correctWord":"JOKER"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Striped African horse.",
+                "characters": [
+                    "Z",
+                    "E",
+                    "B",
+                    "R",
+                    "A",
+                    "T",
+                    "O",
+                    "L",
+                    "S",
+                    "N"
+                ],
+                "correctWord": "ZEBRA"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A legendary ocean liner meets a tragic fate.",
-               "characters":[
-                  "T",
-                  "I",
-                  "T",
-                  "A",
-                  "N",
-                  "I",
-                  "C",
-                  "R",
-                  "O",
-                  "S"
-               ],
-               "correctWord":"TITANIC"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Desert animal with humps.",
+                "characters": [
+                    "C",
+                    "A",
+                    "M",
+                    "E",
+                    "L",
+                    "R",
+                    "T",
+                    "I",
+                    "S",
+                    "O"
+                ],
+                "correctWord": "CAMEL"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"Humans clash with natives on a distant alien moon.",
-               "characters":[
-                  "A",
-                  "V",
-                  "A",
-                  "T",
-                  "A",
-                  "R",
-                  "L",
-                  "N",
-                  "E",
-                  "S"
-               ],
-               "correctWord":"AVATAR"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Woolly animal from the Andes.",
+                "characters": [
+                    "L",
+                    "L",
+                    "A",
+                    "M",
+                    "A",
+                    "E",
+                    "R",
+                    "S",
+                    "T",
+                    "N"
+                ],
+                "correctWord": "LLAMA"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A serial killer is tracked through cryptic clues.",
-               "characters":[
-                  "Z",
-                  "O",
-                  "D",
-                  "I",
-                  "A",
-                  "C",
-                  "L",
-                  "N",
-                  "E",
-                  "T"
-               ],
-               "correctWord":"ZODIAC"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Playful river swimmer.",
+                "characters": [
+                    "O",
+                    "T",
+                    "T",
+                    "E",
+                    "R",
+                    "A",
+                    "L",
+                    "S",
+                    "M",
+                    "N"
+                ],
+                "correctWord": "OTTER"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A savage future where survival means everything.",
-               "characters":[
-                  "M",
-                  "A",
-                  "D",
-                  "M",
-                  "A",
-                  "X",
-                  "R",
-                  "E",
-                  "A",
-                  "L"
-               ],
-               "correctWord":"MADMAX"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Ridden by knights and cowboys.",
+                "characters": [
+                    "H",
+                    "O",
+                    "R",
+                    "S",
+                    "E",
+                    "A",
+                    "L",
+                    "T",
+                    "M",
+                    "N"
+                ],
+                "correctWord": "HORSE"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"Murders are committed based on the seven deadly sins.",
-               "characters":[
-                  "S",
-                  "E",
-                  "7",
-                  "E",
-                  "N",
-                  "S",
-                  "I",
-                  "N",
-                  "D",
-                  "O"
-               ],
-               "correctWord":"SE7EN"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Ocean predator with a fin.",
+                "characters": [
+                    "S",
+                    "H",
+                    "A",
+                    "R",
+                    "K",
+                    "L",
+                    "O",
+                    "T",
+                    "M",
+                    "N"
+                ],
+                "correctWord": "SHARK"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"A ruthless gangster rises to power in Miami.",
-               "characters":[
-                  "S",
-                  "C",
-                  "A",
-                  "R",
-                  "F",
-                  "A",
-                  "C",
-                  "E",
-                  "L",
-                  "N"
-               ],
-               "correctWord":"SCARFACE"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Large bird with sharp eyes.",
+                "characters": [
+                    "E",
+                    "A",
+                    "G",
+                    "L",
+                    "E",
+                    "S",
+                    "T",
+                    "R",
+                    "O",
+                    "N"
+                ],
+                "correctWord": "EAGLE"
             },
             {
-               "theme":"movies",
-               "ageRange":"adults",
-               "hint":"Two rival magicians are consumed by obsession.",
-               "characters":[
-                  "P",
-                  "R",
-                  "E",
-                  "S",
-                  "T",
-                  "I",
-                  "G",
-                  "E",
-                  "A",
-                  "L"
-               ],
-               "correctWord":"PRESTIGE"
+                "theme": "animals",
+                "ageRange": "all",
+                "hint": "Northern deer with broad antlers.",
+                "characters": [
+                    "M",
+                    "O",
+                    "O",
+                    "S",
+                    "E",
+                    "L",
+                    "A",
+                    "R",
+                    "T",
+                    "N"
+                ],
+                "correctWord": "MOOSE"
             }
-         ]
+        ]
       }
    ]
 }
