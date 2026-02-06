@@ -1,5 +1,5 @@
 {
-   "version":13,
+   "version":14,
    "force":true,
    "entries":[
       {
@@ -12,7 +12,7 @@
             "day": 6
          },
          "theme":{
-            "name":"Movie Names",
+            "name":"Animal Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -29,7 +29,7 @@
 {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Striped jungle cat.",
+                "hint": "Striped jungle cat",
                 "characters": [
                     "T",
                     "I",
@@ -47,7 +47,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Black and white bamboo eater.",
+                "hint": "Black and white bamboo eater",
                 "characters": [
                     "P",
                     "A",
@@ -65,7 +65,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Striped African horse.",
+                "hint": "Striped African horse",
                 "characters": [
                     "Z",
                     "E",
@@ -83,7 +83,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Desert animal with humps.",
+                "hint": "Desert animal with humps",
                 "characters": [
                     "C",
                     "A",
@@ -101,7 +101,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Woolly animal from the Andes.",
+                "hint": "Woolly animal from the Andes",
                 "characters": [
                     "L",
                     "L",
@@ -119,7 +119,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Playful river swimmer.",
+                "hint": "Playful river swimmer",
                 "characters": [
                     "O",
                     "T",
@@ -137,7 +137,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Ridden by knights and cowboys.",
+                "hint": "Ridden by knights and cowboys",
                 "characters": [
                     "H",
                     "O",
@@ -155,7 +155,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Ocean predator with a fin.",
+                "hint": "Ocean predator with a fin",
                 "characters": [
                     "S",
                     "H",
@@ -173,7 +173,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Large bird with sharp eyes.",
+                "hint": "Large bird with sharp eyes",
                 "characters": [
                     "E",
                     "A",
@@ -191,7 +191,7 @@
             {
                 "theme": "animals",
                 "ageRange": "all",
-                "hint": "Northern deer with broad antlers.",
+                "hint": "Northern deer with broad antlers",
                 "characters": [
                     "M",
                     "O",
