@@ -1,210 +1,210 @@
 {
-   "version": 16,
+   "version": 17,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-08",
+         "id":"theme-2026-02-10",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":7,
+         "challengeNumber":9,
          "availableOn":{
             "month":2,
-            "day": 8,
+            "day": 10,
          },
          "theme":{
-            "name":"Animal Names",
+            "name":"Anime Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
          "gamePreset":{
             "rounds":10,
-            "timeLimit":180,
-            "numberOfHints":10,
+            "timeLimit": 120,
+            "numberOfHints": 10,
             "difficulty":"easy",
             "showIntro":false,
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
          "rounds":[
-{
-                "theme": "animals",
+            {
+                "theme": "anime",
                 "ageRange": "all",
-                "hint": "Striped jungle cat",
+                "hint": "Ninja who dreams of becoming a leader",
                 "characters": [
+                    "N",
+                    "A",
+                    "R",
+                    "U",
                     "T",
-                    "I",
-                    "G",
+                    "O",
+                    "L",
+                    "S",
                     "E",
+                    "I"
+                ],
+                "correctWord": "NARUTO"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Soul reapers and continuous hollow battles",
+                "characters": [
+                    "B",
+                    "L",
+                    "E",
+                    "A",
+                    "C",
+                    "H",
+                    "S",
+                    "T",
+                    "R",
+                    "O"
+                ],
+                "correctWord": "BLEACH"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Classic cyberpunk film set in Neo Tokyo",
+                "characters": [
+                    "A",
+                    "K",
+                    "I",
                     "R",
                     "A",
                     "L",
-                    "M",
-                    "O",
-                    "N"
+                    "S",
+                    "T",
+                    "N",
+                    "O"
                 ],
-                "correctWord": "TIGER"
+                "correctWord": "AKIRA"
             },
             {
-                "theme": "animals",
+                "theme": "anime",
                 "ageRange": "all",
-                "hint": "Black and white bamboo eater",
+                "hint": "Giant robots in space wars",
                 "characters": [
-                    "P",
-                    "A",
+                    "G",
+                    "U",
                     "N",
                     "D",
                     "A",
+                    "M",
                     "S",
-                    "L",
-                    "E",
-                    "O",
-                    "R"
+                    "T",
+                    "R",
+                    "O"
                 ],
-                "correctWord": "PANDA"
+                "correctWord": "GUNDAM"
             },
             {
-                "theme": "animals",
+                "theme": "anime",
                 "ageRange": "all",
-                "hint": "Striped African horse",
+                "hint": "High-flying volleyball, relentless teamwork, and never-give-up energy",
                 "characters": [
-                    "Z",
+                    "A",
+                    "H",
+                    "I",
+                    "K",
+                    "Y",
+                    "U",
+                    "U",
+                    "S",
+                    "N",
+                    "E"
+                ],
+                "correctWord": "HAIKYUU"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Half demon adventures in feudal Japan",
+                "characters": [
+                    "I",
+                    "N",
+                    "U",
+                    "Y",
+                    "A",
+                    "S",
+                    "H",
+                    "A",
+                    "L",
+                    "R"
+                ],
+                "correctWord": "INUYASHA"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Pocket monsters and their trainers on a long journey",
+                "characters": [
+                    "P",
+                    "O",
+                    "K",
+                    "E",
+                    "M",
+                    "O",
+                    "N",
+                    "S",
+                    "T",
+                    "R"
+                ],
+                "correctWord": "POKEMON"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Digital monsters from another world",
+                "characters": [
+                    "D",
+                    "I",
+                    "G",
+                    "I",
+                    "M",
+                    "O",
+                    "N",
+                    "L",
+                    "S",
+                    "T"
+                ],
+                "correctWord": "DIGIMON"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "Pirate crew searching for a treasure",
+                "characters": [
+                    "O",
+                    "N",
+                    "E",
+                    "P",
+                    "I",
+                    "E",
+                    "C",
+                    "E",
+                    "L",
+                    "S"
+                ],
+                "correctWord": "ONEPIECE"
+            },
+            {
+                "theme": "anime",
+                "ageRange": "all",
+                "hint": "A brutal tale of rage, and surviving a world that never forgives",
+                "characters": [
                     "E",
                     "B",
                     "R",
-                    "A",
-                    "T",
-                    "O",
-                    "L",
-                    "S",
-                    "N"
-                ],
-                "correctWord": "ZEBRA"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Desert animal with humps",
-                "characters": [
-                    "C",
-                    "A",
-                    "M",
-                    "E",
-                    "L",
-                    "R",
-                    "T",
-                    "I",
-                    "S",
-                    "O"
-                ],
-                "correctWord": "CAMEL"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Woolly animal from the Andes",
-                "characters": [
-                    "L",
-                    "L",
-                    "A",
-                    "M",
-                    "A",
-                    "E",
-                    "R",
-                    "S",
-                    "T",
-                    "N"
-                ],
-                "correctWord": "LLAMA"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Playful river swimmer",
-                "characters": [
-                    "O",
-                    "T",
-                    "T",
-                    "E",
-                    "R",
-                    "A",
-                    "L",
-                    "S",
-                    "M",
-                    "N"
-                ],
-                "correctWord": "OTTER"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Ridden by knights and cowboys",
-                "characters": [
-                    "H",
-                    "O",
-                    "R",
                     "S",
                     "E",
-                    "A",
-                    "L",
-                    "T",
-                    "M",
-                    "N"
-                ],
-                "correctWord": "HORSE"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Ocean predator with a fin",
-                "characters": [
-                    "S",
-                    "H",
-                    "A",
                     "R",
                     "K",
-                    "L",
-                    "O",
-                    "T",
-                    "M",
-                    "N"
-                ],
-                "correctWord": "SHARK"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Large bird with sharp eyes",
-                "characters": [
-                    "E",
                     "A",
-                    "G",
-                    "L",
-                    "E",
-                    "S",
-                    "T",
-                    "R",
-                    "O",
-                    "N"
+                    "I",
+                    "L"
                 ],
-                "correctWord": "EAGLE"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Northern deer with broad antlers",
-                "characters": [
-                    "M",
-                    "O",
-                    "O",
-                    "S",
-                    "E",
-                    "L",
-                    "A",
-                    "R",
-                    "T",
-                    "N"
-                ],
-                "correctWord": "MOOSE"
+                "correctWord": "BERSERK"
             }
         ]
       }
