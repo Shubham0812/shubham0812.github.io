@@ -1,165 +1,68 @@
 {
-   "version": 11,
+   "version": 12,
    "force": true,
    "entries": [
       {
-         "id":"word-2026-02-07",
+         "id":"word-2026-02-09",
          "title":"Words Game",
          "subtitle":"Make words with the characters",
-         "challengeNumber": 6,
+         "challengeNumber": 8,
          "availableOn":{
             "month": 2,
-            "day": 7
+            "day": 9
          },
          "gamePreset": {
             "rounds": 1,
-            "timeLimit": 90,
-            "numberOfHints": 3,
+            "timeLimit": 70,
+            "numberOfHints": 4,
             "difficulty":"medium",
             "showIntro":false,
             "handHoldingMode":false,
             "maximumHandHoldingCounter":3
          },
          "round":{
-            "characters":[
-               "c",
-               "a",
-               "t",
-               "e",
-               "g",
-               "o",
-               "r",
-               "i",
-               "n",
-               "s"
-            ],
-            "possibleWords":[
-               {
-                  "word":"cat",
-                  "hint":"A small domesticated animal"
-               },
-               {
-                  "word":"car",
-                  "hint":"Road vehicle"
-               },
-               {
-                  "word":"can",
-                  "hint":"Be able to"
-               },
-               {
-                  "word":"cog",
-                  "hint":"A tooth on a gear"
-               },
-               {
-                  "word":"get",
-                  "hint":"Obtain or receive"
-               },
-               {
-                  "word":"son",
-                  "hint":"Male child"
-               },
-               {
-                  "word":"sin",
-                  "hint":"An immoral act"
-               },
-               {
-                  "word":"ran",
-                  "hint":"Moved quickly on foot"
-               },
-               {
-                  "word":"tin",
-                  "hint":"A type of metal"
-               },
-               {
-                  "word":"set",
-                  "hint":"Put something in place"
-               },
-               {
-                  "word":"care",
-                  "hint":"Serious attention or concern"
-               },
-               {
-                  "word":"gain",
-                  "hint":"Increase or obtain"
-               },
-               {
-                  "word":"seat",
-                  "hint":"Place to sit"
-               },
-               {
-                  "word":"ring",
-                  "hint":"Circular band"
-               },
-               {
-                  "word":"coat",
-                  "hint":"Outer garment"
-               },
-               {
-                  "word":"iron",
-                  "hint":"Strong metal"
-               },
-               {
-                  "word":"song",
-                  "hint":"Musical composition"
-               },
-               {
-                  "word":"tore",
-                  "hint":"Ripped apart"
-               },
-               {
-                  "word":"nice",
-                  "hint":"Pleasant or kind"
-               },
-               {
-                  "word":"earn",
-                  "hint":"Receive as payment"
-               },
-               {
-                  "word":"stone",
-                  "hint":"A piece of rock"
-               },
-               {
-                  "word":"grain",
-                  "hint":"Seed used as food"
-               },
-               {
-                  "word":"ratio",
-                  "hint":"Relationship between numbers"
-               },
-               {
-                  "word":"singe",
-                  "hint":"Burn lightly"
-               },
-               {
-                  "word":"react",
-                  "hint":"Respond to something"
-               },
-               {
-                  "word":"organ",
-                  "hint":"Body part or musical instrument"
-               },
-               {
-                  "word":"notes",
-                  "hint":"Written or musical symbols"
-               },
-               {
-                  "word":"cater",
-                  "hint":"Provide food for events"
-               },
-               {
-                  "word":"creation",
-                  "hint":"Something that has been made"
-               },
-               {
-                  "word":"reacting",
-                  "hint":"Responding to a stimulus"
-               },
-               {
-                  "word":"organics",
-                  "hint":"Natural or carbon-based materials"
-               }
-            ],
-            "requiredWordCount":10
+  "characters": [
+    "b",
+    "r",
+    "a",
+    "i",
+    "n",
+    "s",
+    "t",
+    "o",
+    "u",
+    "e"
+  ],
+  "possibleWords": [
+    { "word": "bat", "hint": "A flying mammal" },
+    { "word": "bar", "hint": "Long rigid piece of metal or wood" },
+    { "word": "bin", "hint": "Container for storage or waste" },
+    { "word": "bit", "hint": "A small piece" },
+    { "word": "sun", "hint": "Star at the center of our solar system" },
+    { "word": "son", "hint": "Male child" },
+    { "word": "run", "hint": "Move quickly on foot" },
+    { "word": "tin", "hint": "A soft metal element" },
+    { "word": "toe", "hint": "Digit of the foot" },
+    { "word": "ear", "hint": "Organ used for hearing" },
+
+    { "word": "barn", "hint": "Farm building for animals or crops" },
+    { "word": "bait", "hint": "Food used to lure animals" },
+    { "word": "born", "hint": "Brought into life" },
+    { "word": "rain", "hint": "Water falling from clouds" },
+    { "word": "seat", "hint": "Place to sit" },
+    { "word": "tone", "hint": "Quality of a sound" },
+    { "word": "site", "hint": "Location or place" },
+    { "word": "tour", "hint": "Journey for pleasure" },
+    { "word": "nest", "hint": "Bird’s home" },
+    { "word": "rust", "hint": "Reddish coating on metal" },
+
+    { "word": "brain", "hint": "Organ that controls thought" },
+    { "word": "strain", "hint": "Exert effort or pressure" },
+    { "word": "train", "hint": "Railway transport vehicle" },
+    { "word": "urbane", "hint": "Polite and refined" },
+    { "word": "obtain", "hint": "Get or acquire something" }
+  ],
+  "requiredWordCount": 10
          }
       }
    ]
