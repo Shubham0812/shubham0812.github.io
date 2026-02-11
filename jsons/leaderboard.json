@@ -4,11 +4,11 @@
   },
   "leaderboard": {
     "startDate": "2026-2-04",
-    "endDate": "2026-2-11",
+    "endDate": "2026-3-1",
     "challengeNumber": 3,
     "copy": "",
     "force": true
   },
-  "version": 6,
+  "version": 7,
   "force": true
 }
