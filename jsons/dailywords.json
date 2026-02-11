@@ -1,15 +1,15 @@
 {
-   "version": 12,
+   "version": 13,
    "force": true,
    "entries": [
       {
-         "id":"word-2026-02-09",
+         "id":"word-2026-02-11",
          "title":"Words Game",
          "subtitle":"Make words with the characters",
-         "challengeNumber": 8,
+         "challengeNumber": 10,
          "availableOn":{
             "month": 2,
-            "day": 9
+            "day": 11
          },
          "gamePreset": {
             "rounds": 1,
@@ -22,48 +22,49 @@
          },
          "round":{
   "characters": [
-    "b",
-    "r",
+    "m",
     "a",
-    "i",
-    "n",
-    "s",
+    "r",
+    "k",
+    "e",
     "t",
-    "o",
-    "u",
-    "e"
+    "s",
+    "l",
+    "i",
+    "o"
   ],
   "possibleWords": [
-    { "word": "bat", "hint": "A flying mammal" },
-    { "word": "bar", "hint": "Long rigid piece of metal or wood" },
-    { "word": "bin", "hint": "Container for storage or waste" },
-    { "word": "bit", "hint": "A small piece" },
-    { "word": "sun", "hint": "Star at the center of our solar system" },
-    { "word": "son", "hint": "Male child" },
-    { "word": "run", "hint": "Move quickly on foot" },
-    { "word": "tin", "hint": "A soft metal element" },
-    { "word": "toe", "hint": "Digit of the foot" },
+    { "word": "arm", "hint": "Upper limb of the body" },
     { "word": "ear", "hint": "Organ used for hearing" },
+    { "word": "eat", "hint": "Consume food" },
+    { "word": "oil", "hint": "Liquid used for cooking or fuel" },
+    { "word": "ram", "hint": "Male sheep" },
+    { "word": "rat", "hint": "Small rodent" },
+    { "word": "rim", "hint": "Outer edge of something circular" },
+    { "word": "set", "hint": "Put in a specified place" },
+    { "word": "sit", "hint": "Rest on a seat" },
+    { "word": "toe", "hint": "Digit of the foot" },
 
-    { "word": "barn", "hint": "Farm building for animals or crops" },
-    { "word": "bait", "hint": "Food used to lure animals" },
-    { "word": "born", "hint": "Brought into life" },
-    { "word": "rain", "hint": "Water falling from clouds" },
-    { "word": "seat", "hint": "Place to sit" },
-    { "word": "tone", "hint": "Quality of a sound" },
-    { "word": "site", "hint": "Location or place" },
-    { "word": "tour", "hint": "Journey for pleasure" },
-    { "word": "nest", "hint": "Bird’s home" },
-    { "word": "rust", "hint": "Reddish coating on metal" },
+    { "word": "also", "hint": "In addition" },
+    { "word": "atom", "hint": "Smallest unit of matter" },
+    { "word": "item", "hint": "An individual article" },
+    { "word": "kite", "hint": "Toy flown in the wind" },
+    { "word": "lake", "hint": "Large body of inland water" },
+    { "word": "lime", "hint": "Green citrus fruit" },
+    { "word": "mark", "hint": "Visible sign or symbol" },
+    { "word": "mile", "hint": "Unit of distance" },
+    { "word": "role", "hint": "Function or character played" },
+    { "word": "time", "hint": "Measured duration" },
 
-    { "word": "brain", "hint": "Organ that controls thought" },
-    { "word": "strain", "hint": "Exert effort or pressure" },
-    { "word": "train", "hint": "Railway transport vehicle" },
-    { "word": "urbane", "hint": "Polite and refined" },
-    { "word": "obtain", "hint": "Get or acquire something" }
+    { "word": "market", "hint": "Place where goods are bought and sold" },
+    { "word": "stream", "hint": "Small flowing river" },
+    { "word": "retail", "hint": "Sell goods directly to customers" },
+    { "word": "master", "hint": "Person in control or highly skilled" },
+    { "word": "almost", "hint": "Very nearly" },
+    { "word": "storm", "hint": "Violent weather condition" }
   ],
   "requiredWordCount": 10
-         }
+}
       }
    ]
 }
