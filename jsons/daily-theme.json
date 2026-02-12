@@ -1,15 +1,15 @@
 {
-   "version": 17,
+   "version": 18,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-10",
+         "id":"theme-2026-02-12",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":9,
+         "challengeNumber":11,
          "availableOn":{
             "month":2,
-            "day": 10,
+            "day": 12,
          },
          "theme":{
             "name":"Anime Names",
@@ -25,186 +25,186 @@
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds":[
+         "rounds": [
             {
-                "theme": "anime",
+                "theme": "superheroes",
                 "ageRange": "all",
-                "hint": "Ninja who dreams of becoming a leader",
-                "characters": [
-                    "N",
-                    "A",
-                    "R",
-                    "U",
-                    "T",
-                    "O",
-                    "L",
-                    "S",
-                    "E",
-                    "I"
-                ],
-                "correctWord": "NARUTO"
-            },
-            {
-                "theme": "anime",
-                "ageRange": "all",
-                "hint": "Soul reapers and continuous hollow battles",
+                "hint": "Dark Knight of Gotham.",
                 "characters": [
                     "B",
-                    "L",
-                    "E",
                     "A",
-                    "C",
-                    "H",
-                    "S",
                     "T",
-                    "R",
-                    "O"
-                ],
-                "correctWord": "BLEACH"
-            },
-            {
-                "theme": "anime",
-                "ageRange": "all",
-                "hint": "Classic cyberpunk film set in Neo Tokyo",
-                "characters": [
-                    "A",
-                    "K",
-                    "I",
-                    "R",
-                    "A",
-                    "L",
-                    "S",
-                    "T",
-                    "N",
-                    "O"
-                ],
-                "correctWord": "AKIRA"
-            },
-            {
-                "theme": "anime",
-                "ageRange": "all",
-                "hint": "Giant robots in space wars",
-                "characters": [
-                    "G",
-                    "U",
-                    "N",
-                    "D",
-                    "A",
                     "M",
+                    "A",
+                    "N",
+                    "L",
                     "S",
                     "T",
-                    "R",
-                    "O"
-                ],
-                "correctWord": "GUNDAM"
-            },
-            {
-                "theme": "anime",
-                "ageRange": "all",
-                "hint": "High-flying volleyball, relentless teamwork, and never-give-up energy",
-                "characters": [
-                    "A",
-                    "H",
-                    "I",
-                    "K",
-                    "Y",
-                    "U",
-                    "U",
-                    "S",
-                    "N",
-                    "E"
-                ],
-                "correctWord": "HAIKYUU"
-            },
-            {
-                "theme": "anime",
-                "ageRange": "all",
-                "hint": "Half demon adventures in feudal Japan",
-                "characters": [
-                    "I",
-                    "N",
-                    "U",
-                    "Y",
-                    "A",
-                    "S",
-                    "H",
-                    "A",
-                    "L",
                     "R"
                 ],
-                "correctWord": "INUYASHA"
+                "correctWord": "BATMAN"
             },
             {
-                "theme": "anime",
+                "theme": "superheroes",
                 "ageRange": "all",
-                "hint": "Pocket monsters and their trainers on a long journey",
+                "hint": "Man of Steel from Krypton.",
                 "characters": [
+                    "S",
+                    "U",
                     "P",
-                    "O",
-                    "K",
                     "E",
+                    "R",
                     "M",
-                    "O",
+                    "A",
                     "N",
-                    "S",
-                    "T",
-                    "R"
+                    "L",
+                    "T"
                 ],
-                "correctWord": "POKEMON"
+                "correctWord": "SUPERMAN"
             },
             {
-                "theme": "anime",
+                "theme": "superheroes",
                 "ageRange": "all",
-                "hint": "Digital monsters from another world",
+                "hint": "Genius in powered armor.",
                 "characters": [
-                    "D",
                     "I",
-                    "G",
-                    "I",
-                    "M",
+                    "R",
                     "O",
+                    "N",
+                    "M",
+                    "A",
                     "N",
                     "L",
                     "S",
                     "T"
                 ],
-                "correctWord": "DIGIMON"
+                "correctWord": "IRONMAN"
             },
             {
-                "theme": "anime",
+                "theme": "superheroes",
                 "ageRange": "all",
-                "hint": "Pirate crew searching for a treasure",
+                "hint": "God of thunder.",
                 "characters": [
+                    "T",
+                    "H",
                     "O",
-                    "N",
-                    "E",
-                    "P",
-                    "I",
-                    "E",
-                    "C",
-                    "E",
+                    "R",
+                    "A",
                     "L",
-                    "S"
+                    "S",
+                    "T",
+                    "N",
+                    "E"
                 ],
-                "correctWord": "ONEPIECE"
+                "correctWord": "THOR"
             },
             {
-                "theme": "anime",
+                "theme": "superheroes",
                 "ageRange": "all",
-                "hint": "A brutal tale of rage, and surviving a world that never forgives",
+                "hint": "Green powerhouse with rage.",
                 "characters": [
-                    "E",
-                    "B",
-                    "R",
-                    "S",
-                    "E",
-                    "R",
+                    "H",
+                    "U",
+                    "L",
                     "K",
                     "A",
-                    "I",
-                    "L"
+                    "R",
+                    "T",
+                    "S",
+                    "N",
+                    "E"
                 ],
-                "correctWord": "BERSERK"
+                "correctWord": "HULK"
+            },
+            {
+                "theme": "superheroes",
+                "ageRange": "all",
+                "hint": "Fastest man alive.",
+                "characters": [
+                    "F",
+                    "L",
+                    "A",
+                    "S",
+                    "H",
+                    "R",
+                    "T",
+                    "N",
+                    "E",
+                    "O"
+                ],
+                "correctWord": "FLASH"
+            },
+            {
+                "theme": "superheroes",
+                "ageRange": "all",
+                "hint": "Atlantis ruler with a trident.",
+                "characters": [
+                    "A",
+                    "Q",
+                    "U",
+                    "A",
+                    "M",
+                    "A",
+                    "N",
+                    "L",
+                    "S",
+                    "T"
+                ],
+                "correctWord": "AQUAMAN"
+            },
+            {
+                "theme": "superheroes",
+                "ageRange": "all",
+                "hint": "Android hero with a mind stone.",
+                "characters": [
+                    "V",
+                    "I",
+                    "S",
+                    "I",
+                    "O",
+                    "N",
+                    "L",
+                    "S",
+                    "T",
+                    "R"
+                ],
+                "correctWord": "VISION"
+            },
+            {
+                "theme": "superheroes",
+                "ageRange": "all",
+                "hint": "Weather controlling mutant.",
+                "characters": [
+                    "S",
+                    "T",
+                    "O",
+                    "R",
+                    "M",
+                    "A",
+                    "L",
+                    "N",
+                    "E",
+                    "I"
+                ],
+                "correctWord": "STORM"
+            },
+            {
+                "theme": "superheroes",
+                "ageRange": "all",
+                "hint": "Young hero who teams with Batman.",
+                "characters": [
+                    "R",
+                    "O",
+                    "B",
+                    "I",
+                    "N",
+                    "A",
+                    "L",
+                    "T",
+                    "S",
+                    "E"
+                ],
+                "correctWord": "ROBIN"
             }
         ]
       }
