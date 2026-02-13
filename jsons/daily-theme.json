@@ -1,15 +1,15 @@
 {
-   "version": 18,
+   "version": 19,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-12",
+         "id":"theme-2026-02-13",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":11,
+         "challengeNumber":12,
          "availableOn":{
             "month":2,
-            "day": 12,
+            "day": 13,
          },
          "theme":{
             "name":"Anime Names",
@@ -18,193 +18,193 @@
          },
          "gamePreset":{
             "rounds":10,
-            "timeLimit": 120,
+            "timeLimit": 180,
             "numberOfHints": 10,
             "difficulty":"easy",
             "showIntro":false,
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds": [
+         "rounds":  [
             {
-                "theme": "superheroes",
+                "theme": "movies",
                 "ageRange": "all",
-                "hint": "Dark Knight of Gotham.",
+                "hint": "A desert world and a rising heir",
                 "characters": [
-                    "B",
-                    "A",
-                    "T",
-                    "M",
-                    "A",
+                    "D",
+                    "U",
                     "N",
+                    "E",
+                    "A",
                     "L",
-                    "S",
+                    "R",
                     "T",
-                    "R"
+                    "S",
+                    "O"
                 ],
-                "correctWord": "BATMAN"
+                "correctWord": "DUNE"
             },
             {
-                "theme": "superheroes",
+                "theme": "movies",
                 "ageRange": "all",
-                "hint": "Man of Steel from Krypton.",
+                "hint": "Young girl journeys through a magic land",
                 "characters": [
+                    "M",
+                    "O",
+                    "A",
+                    "N",
+                    "A",
+                    "L",
+                    "R",
+                    "T",
                     "S",
-                    "U",
-                    "P",
+                    "E"
+                ],
+                "correctWord": "MOANA"
+            },
+            {
+                "theme": "movies",
+                "ageRange": "all",
+                "hint": "A clown criminal rises in Gotham",
+                "characters": [
+                    "J",
+                    "O",
+                    "K",
                     "E",
                     "R",
-                    "M",
                     "A",
-                    "N",
                     "L",
-                    "T"
+                    "T",
+                    "S",
+                    "N"
                 ],
-                "correctWord": "SUPERMAN"
+                "correctWord": "JOKER"
             },
             {
-                "theme": "superheroes",
+                "theme": "movies",
                 "ageRange": "all",
-                "hint": "Genius in powered armor.",
+                "hint": "Princess competes for her own hand",
+                "characters": [
+                    "B",
+                    "R",
+                    "A",
+                    "V",
+                    "E",
+                    "L",
+                    "S",
+                    "T",
+                    "N",
+                    "O"
+                ],
+                "correctWord": "BRAVE"
+            },
+            {
+                "theme": "movies",
+                "ageRange": "all",
+                "hint": "A boy interested in music visits the Land of the Dead",
+                "characters": [
+                    "C",
+                    "O",
+                    "C",
+                    "O",
+                    "I",
+                    "N",
+                    "S",
+                    "I",
+                    "D",
+                    "E"
+                ],
+                "correctWord": "COCO"
+            },
+            {
+                "theme": "movies",
+                "ageRange": "all",
+                "hint": "Rival magicians sabotage each other",
                 "characters": [
                     "I",
+                    "P",
                     "R",
-                    "O",
-                    "N",
-                    "M",
-                    "A",
-                    "N",
-                    "L",
-                    "S",
-                    "T"
-                ],
-                "correctWord": "IRONMAN"
-            },
-            {
-                "theme": "superheroes",
-                "ageRange": "all",
-                "hint": "God of thunder.",
-                "characters": [
-                    "T",
-                    "H",
-                    "O",
-                    "R",
-                    "A",
-                    "L",
+                    "E",
                     "S",
                     "T",
+                    "G",
+                    "E",
                     "N",
                     "E"
                 ],
-                "correctWord": "THOR"
+                "correctWord": "PRESTIGE"
             },
             {
-                "theme": "superheroes",
+                "theme": "movies",
                 "ageRange": "all",
-                "hint": "Green powerhouse with rage.",
+                "hint": "A haunted motel and a dark twist.",
                 "characters": [
+                    "P",
+                    "S",
+                    "Y",
+                    "C",
                     "H",
-                    "U",
+                    "O",
                     "L",
+                    "T",
+                    "R",
+                    "A"
+                ],
+                "correctWord": "PSYCHO"
+            },
+            {
+                "theme": "movies",
+                "ageRange": "all",
+                "hint": "Bond faces his past when loyalty is tested and MI6 comes under fire",
+                "characters": [
+                    "C",
+                    "S",
                     "K",
+                    "Y",
+                    "F",
                     "A",
+                    "L",
+                    "L",
                     "R",
-                    "T",
-                    "S",
-                    "N",
                     "E"
                 ],
-                "correctWord": "HULK"
+                "correctWord": "SKYFALL"
             },
             {
-                "theme": "superheroes",
+                "theme": "movies",
                 "ageRange": "all",
-                "hint": "Fastest man alive.",
+                "hint": "Animated toys come to life",
                 "characters": [
-                    "F",
-                    "L",
-                    "A",
+                    "T",
+                    "O",
+                    "Y",
                     "S",
-                    "H",
+                    "T",
+                    "O",
+                    "R",
+                    "Y",
+                    "L",
+                    "A"
+                ],
+                "correctWord": "TOYSTORY"
+            },
+            {
+                "theme": "movies",
+                "ageRange": "all",
+                "hint": "Upward adventure in a flying house",
+                "characters": [
+                    "U",
+                    "P",
+                    "A",
+                    "L",
                     "R",
                     "T",
+                    "S",
                     "N",
                     "E",
                     "O"
                 ],
-                "correctWord": "FLASH"
-            },
-            {
-                "theme": "superheroes",
-                "ageRange": "all",
-                "hint": "Atlantis ruler with a trident.",
-                "characters": [
-                    "A",
-                    "Q",
-                    "U",
-                    "A",
-                    "M",
-                    "A",
-                    "N",
-                    "L",
-                    "S",
-                    "T"
-                ],
-                "correctWord": "AQUAMAN"
-            },
-            {
-                "theme": "superheroes",
-                "ageRange": "all",
-                "hint": "Android hero with a mind stone.",
-                "characters": [
-                    "V",
-                    "I",
-                    "S",
-                    "I",
-                    "O",
-                    "N",
-                    "L",
-                    "S",
-                    "T",
-                    "R"
-                ],
-                "correctWord": "VISION"
-            },
-            {
-                "theme": "superheroes",
-                "ageRange": "all",
-                "hint": "Weather controlling mutant.",
-                "characters": [
-                    "S",
-                    "T",
-                    "O",
-                    "R",
-                    "M",
-                    "A",
-                    "L",
-                    "N",
-                    "E",
-                    "I"
-                ],
-                "correctWord": "STORM"
-            },
-            {
-                "theme": "superheroes",
-                "ageRange": "all",
-                "hint": "Young hero who teams with Batman.",
-                "characters": [
-                    "R",
-                    "O",
-                    "B",
-                    "I",
-                    "N",
-                    "A",
-                    "L",
-                    "T",
-                    "S",
-                    "E"
-                ],
-                "correctWord": "ROBIN"
+                "correctWord": "UP"
             }
         ]
       }
