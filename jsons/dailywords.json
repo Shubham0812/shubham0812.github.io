@@ -1,15 +1,15 @@
 {
-   "version": 13,
+   "version": 14,
    "force": true,
    "entries": [
       {
-         "id":"word-2026-02-11",
+         "id":"word-2026-02-14",
          "title":"Words Game",
          "subtitle":"Make words with the characters",
-         "challengeNumber": 10,
+         "challengeNumber": 13,
          "availableOn":{
             "month": 2,
-            "day": 11
+            "day": 14
          },
          "gamePreset": {
             "rounds": 1,
@@ -22,46 +22,46 @@
          },
          "round":{
   "characters": [
-    "m",
-    "a",
-    "r",
-    "k",
-    "e",
-    "t",
-    "s",
+    "f",
     "l",
-    "i",
-    "o"
+    "o",
+    "w",
+    "e",
+    "r",
+    "s",
+    "t",
+    "a",
+    "n"
   ],
   "possibleWords": [
-    { "word": "arm", "hint": "Upper limb of the body" },
-    { "word": "ear", "hint": "Organ used for hearing" },
-    { "word": "eat", "hint": "Consume food" },
-    { "word": "oil", "hint": "Liquid used for cooking or fuel" },
-    { "word": "ram", "hint": "Male sheep" },
-    { "word": "rat", "hint": "Small rodent" },
-    { "word": "rim", "hint": "Outer edge of something circular" },
-    { "word": "set", "hint": "Put in a specified place" },
-    { "word": "sit", "hint": "Rest on a seat" },
-    { "word": "toe", "hint": "Digit of the foot" },
+    { "word": "far", "hint": "At a great distance" },
+    { "word": "fan", "hint": "Device that moves air" },
+    { "word": "war", "hint": "Armed conflict" },
+    { "word": "was", "hint": "Past form of is" },
+    { "word": "wet", "hint": "Covered with liquid" },
+    { "word": "own", "hint": "Belonging to oneself" },
+    { "word": "one", "hint": "The number after zero" },
+    { "word": "son", "hint": "Male child" },
+    { "word": "set", "hint": "Put in place" },
+    { "word": "ten", "hint": "Number after nine" },
 
-    { "word": "also", "hint": "In addition" },
-    { "word": "atom", "hint": "Smallest unit of matter" },
-    { "word": "item", "hint": "An individual article" },
-    { "word": "kite", "hint": "Toy flown in the wind" },
-    { "word": "lake", "hint": "Large body of inland water" },
-    { "word": "lime", "hint": "Green citrus fruit" },
-    { "word": "mark", "hint": "Visible sign or symbol" },
-    { "word": "mile", "hint": "Unit of distance" },
-    { "word": "role", "hint": "Function or character played" },
-    { "word": "time", "hint": "Measured duration" },
+    { "word": "flow", "hint": "Move smoothly in a stream" },
+    { "word": "wolf", "hint": "Wild canine animal" },
+    { "word": "loan", "hint": "Borrowed money" },
+    { "word": "tone", "hint": "Quality of sound" },
+    { "word": "near", "hint": "Close in distance" },
+    { "word": "earn", "hint": "Receive for work" },
+    { "word": "seat", "hint": "Place to sit" },
+    { "word": "star", "hint": "Bright object in the sky" },
+    { "word": "slow", "hint": "Not fast" },
+    { "word": "warn", "hint": "Give notice of danger" },
 
-    { "word": "market", "hint": "Place where goods are bought and sold" },
-    { "word": "stream", "hint": "Small flowing river" },
-    { "word": "retail", "hint": "Sell goods directly to customers" },
-    { "word": "master", "hint": "Person in control or highly skilled" },
-    { "word": "almost", "hint": "Very nearly" },
-    { "word": "storm", "hint": "Violent weather condition" }
+    { "word": "flower", "hint": "Blooming part of a plant" },
+    { "word": "forest", "hint": "Large area covered with trees" },
+    { "word": "owner", "hint": "Person who possesses something" },
+    { "word": "water", "hint": "Clear liquid essential for life" },
+    { "word": "answer", "hint": "Response to a question" },
+    { "word": "later", "hint": "After a period of time" }
   ],
   "requiredWordCount": 10
 }
