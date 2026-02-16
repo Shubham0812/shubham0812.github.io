@@ -1,5 +1,5 @@
 {
-   "version": 21,
+   "version": 22,
    "force":true,
    "entries":[
       {
@@ -12,7 +12,7 @@
             "day": 16,
          },
          "theme":{
-            "name":"Country Names",
+            "name":"Animal Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
