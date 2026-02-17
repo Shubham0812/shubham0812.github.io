@@ -1,703 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SwiftUI Workshop Feedback</title>
-  <script>window.MASTER_USER = 'shubham_iosdev';</script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import {
-      getFirestore, collection, addDoc, deleteDoc,
-      query, orderBy, onSnapshot, updateDoc,
-      doc, runTransaction, Timestamp
-    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
-      const firebaseConfig = {
-          apiKey: "AIzaSyDdlYRyjzx0_fcERTJWr2xu6zMRyCOPVwo",
-          authDomain: "swiftui-workshop.firebaseapp.com",
-          projectId: "swiftui-workshop",
-          storageBucket: "swiftui-workshop.firebasestorage.app",
-          messagingSenderId: "735159428862",
-          appId: "1:735159428862:web:6927fda64fd5d00d1aa7af",
-          measurementId: "G-99CZ83HCK5"
-        };
-
-    initializeApp(firebaseConfig);
-    const db = getFirestore();
-    const postsRef = collection(db, 'posts');
-
-    onSnapshot(query(postsRef, orderBy('votes', 'desc')), snap => {
-      const posts = [];
-      snap.forEach(d => posts.push({ id: d.id, ...d.data() }));
-      if (typeof window.renderPosts === 'function') {
-        window.renderPosts(posts);
-      }
-    });
-
-    window.addPostToFirestore = async p => {
-      await addDoc(postsRef, { ...p, votes: 1, votesMap: {}, read: false, timestamp: Timestamp.now() });
-    };
-
-    window.votePost = async (id, delta) => {
-      const user = localStorage.getItem('ws_username'); if (!user) return;
-      const ref = doc(db, 'posts', id);
-      await runTransaction(db, async tx => {
-        const snap = await tx.get(ref);
-        if (!snap.exists()) return;
-        const data = snap.data(); if (data.user === user) return;
-        const cur = data.votesMap?.[user] || 0;
-        const nw = cur === delta ? 0 : delta;
-        const change = nw - cur;
-        const map = { ...data.votesMap, [user]: nw };
-        tx.update(ref, { votes: data.votes + change, votesMap: map });
-      });
-    };
-
-    window.markAsRead = async id => {
-      if (localStorage.getItem('ws_username') !== window.MASTER_USER) return;
-      await updateDoc(doc(db, 'posts', id), { read: true });
-    };
-
-    window.deletePost = async id => {
-      if (localStorage.getItem('ws_username') !== window.MASTER_USER) return;
-      await deleteDoc(doc(db, 'posts', id));
-    };
-  </script>
-
-  <!-- Font & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-      color: #ffffff;
-      overflow-x: hidden;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-
-    /* Animated background particles */
-    .bg-particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: rgba(99, 102, 241, 0.6);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
-      50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
-    }
-
-    /* Header */
-    h1 {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      margin-bottom: 3rem;
-      background: linear-gradient(45deg, #ffffff, #a855f7, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    /* Modal Styles */
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(20px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    #name-modal {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      width: 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      animation: modalSlideIn 0.5s ease-out;
-    }
-
-    @keyframes modalSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(50px) scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    #name-modal h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    #name-modal input {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      padding: 1rem;
-      border-radius: 12px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    #name-modal input:focus {
-      outline: none;
-      border-color: #6366f1;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-    }
-
-    #name-modal input::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    #name-modal button {
-      background: linear-gradient(45deg, #6366f1, #a855f7);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    #name-modal button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
-    }
-
-    /* Form Styles */
-    #post-form {
-      position: relative;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2.5rem;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      display: grid;
-      gap: 1.5rem;
-      animation: fadeInUp 1s ease-out 0.2s both;
-    }
-
-    #post-form::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), transparent);
-    }
-
-    #post-form input,
-    #post-form textarea {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #ffffff;
-      padding: 1rem;
-      border-radius: 12px;
-      font-size: 1rem;
-      font-family: inherit;
-      transition: all 0.3s ease;
-      resize: vertical;
-    }
-
-    #post-form input:focus,
-    #post-form textarea:focus {
-      outline: none;
-      border-color: #6366f1;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    #post-form input::placeholder,
-    #post-form textarea::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    #post-form button {
-      background: linear-gradient(45deg, #6366f1, #a855f7);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      justify-self: end;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
-    }
-
-    #post-form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.3);
-    }
-
-    /* Posts Container */
-    #posts {
-      position: relative;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    /* Post Card Styles */
-    .post {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .post::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.3), transparent);
-      transition: all 0.3s ease;
-    }
-
-    .post:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      border-color: rgba(99, 102, 241, 0.3);
-    }
-
-    .post:hover::before {
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.8), transparent);
-    }
-
-    .post.read {
-      opacity: 0.6;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .post.read .info strong {
-      text-decoration: line-through;
-    }
-
-    /* Vote Container */
-    .vote-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      min-width: 60px;
-    }
-
-    .vote-container button {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 1.2rem;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .vote-container button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .vote-container button:disabled {
-      opacity: 0.3;
-      cursor: not-allowed;
-    }
-
-    .vote-container button:disabled:hover {
-      transform: none;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .post.voted-up .vote-container button:first-child {
-      background: linear-gradient(45deg, #10b981, #34d399);
-      color: white;
-    }
-
-    .post.voted-down .vote-container button:last-child {
-      background: linear-gradient(45deg, #ef4444, #f87171);
-      color: white;
-    }
-
-    .vote-count {
-      color: #6366f1;
-      font-size: 1.3rem;
-      font-weight: 700;
-      text-align: center;
-      min-height: 1.5rem;
-    }
-
-    /* Content Styles */
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .info strong {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #ffffff;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .meta {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 500;
-    }
-
-    .description {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.6;
-      margin: 0.5rem 0;
-    }
-
-    /* Actions */
-    .actions {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-
-    .mark-read,
-    .delete-btn {
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 500;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .mark-read {
-      background: linear-gradient(45deg, #10b981, #34d399);
-      color: white;
-    }
-
-    .mark-read:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
-    }
-
-    .delete-btn {
-      background: linear-gradient(45deg, #ef4444, #f87171);
-      color: white;
-    }
-
-    .delete-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .post {
-      animation: fadeInUp 0.6s ease-out both;
-    }
-
-    .post:nth-child(1) { animation-delay: 0.1s; }
-    .post:nth-child(2) { animation-delay: 0.2s; }
-    .post:nth-child(3) { animation-delay: 0.3s; }
-    .post:nth-child(4) { animation-delay: 0.4s; }
-    .post:nth-child(5) { animation-delay: 0.5s; }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      body {
-        padding: 1rem;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-      }
-
-      #post-form,
-      #posts {
-        max-width: 100%;
-      }
-
-      #post-form {
-        padding: 1.5rem;
-      }
-
-      .post {
-        padding: 1.5rem;
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .vote-container {
-        flex-direction: row;
-        justify-content: center;
-        order: 2;
-        margin-top: 1rem;
-      }
-
-      .content {
-        order: 1;
-      }
-
-      #name-modal {
-        width: 90%;
-        max-width: 400px;
-        margin: 1rem;
-      }
-    }
-
-    /* Loading animation for real-time updates */
-    .post.new-post {
-      animation: newPostGlow 2s ease-out;
-    }
-
-    @keyframes newPostGlow {
-      0% {
-        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
-      }
-      50% {
-        box-shadow: 0 0 20px 5px rgba(99, 102, 241, 0.3);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="bg-particles" id="particles"></div>
-
-  <h1>🔍 SwiftUI Workshop</h1>
-
-  <div id="overlay" style="display:none;">
-    <div id="name-modal">
-      <h2>Welcome to the Workshop! 👋</h2>
-      <input id="name-input" placeholder="Enter your name to get started">
-      <button id="save-name">Start Finding Bugs ✨</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="WordFlux delivers fun, fast-paced word gameplay that keeps your mind sharp, whether you want a calm daily habit or leaderboard competition."
+    />
+    <meta name="apple-itunes-app" content="app-id=6757514622, app-argument=https://apps.apple.com/us/app/wordflux-word-puzzles/id6757514622" />
+
+    <meta property="og:title" content="WordFlux - Fast Word Gameplay That Makes You Smarter" />
+    <meta
+      property="og:description"
+      content="Fun, fast-paced word gameplay that makes you smarter over time. Play calm daily sessions or compete on leaderboards."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/wordflux" />
+    <meta property="og:image" content="https://example.com/wordflux/assets/og-event.jpg" />
+
+    <link rel="canonical" href="https://example.com/wordflux" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Sora:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <title>WordFlux - Fast Word Gameplay That Makes You Smarter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="WordFlux home">
+          <img src="assets/app-icon.png" alt="WordFlux app icon" width="40" height="40" />
+          <span>WordFlux</span>
+        </a>
+        <nav class="top-nav" aria-label="Primary">
+          <a href="#value">Why WordFlux</a>
+          <a href="#experience">Game Modes</a>
+          <a href="#media">Media</a>
+          <a href="#download">Download</a>
+        </nav>
+        <!-- <button class="btn btn-small btn-primary js-app-cta" type="button">Download on the App Store</button> -->
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="hero reveal">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 id="app-name">WordFlux: Word Puzzles</h1>
+            <!-- <p class="eyebrow">Now on the App Store</p> -->
+            <h2>Fun, and relaxing Word Game that makes you smarter over time.</h2>
+            <p class="hero-subhead">
+              Form words from limited letters before the timer runs out. Keep it calm as a daily habit, or switch into competitive modes when you want
+              leaderboard pressure.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary js-app-cta" type="button">Download on the App Store</button>
+              <a class="btn btn-ghost" href="#media">See Gameplay</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="WordFlux gameplay preview">
+            <div id="hero-video-wrap" class="hero-video-frame is-hidden">
+              <video
+                id="hero-video"
+                muted
+                loop
+                autoplay
+                playsinline
+                preload="metadata"
+                poster="assets/screenshots/word-game.png"
+                aria-label="WordFlux gameplay preview video"
+              ></video>
+            </div>
+
+            <div id="hero-fallback-stack" class="showcase-stack">
+              <figure class="showcase-card showcase-card-left">
+                <img id="hero-fallback-left-image" src="assets/screenshots/adventure-mode-levels.png" alt="" width="563" height="1150" fetchpriority="high" decoding="async" />
+              </figure>
+              <figure class="showcase-card showcase-card-center">
+                <img id="hero-fallback-center-image" src="assets/screenshots/word-game.png" alt="" width="563" height="1150" fetchpriority="high" decoding="async" />
+              </figure>
+              <figure class="showcase-card showcase-card-right">
+                <img id="hero-fallback-right-image" src="assets/screenshots/theme-game-landing.png" alt="" width="563" height="1150" fetchpriority="high" decoding="async" />
+              </figure>
+            </div>
+          </div>
+
+          <ul class="value-strip hero-benefits" aria-label="Top benefits">
+            <li>Fast-Paced Rounds</li>
+            <li>Smarter Over Time</li>
+            <li>Calm or Competitive</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="value" class="section section-muted reveal">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Why WordFlux</p>
+            <h2>Simple to start. Deep enough to keep improving.</h2>
+          </div>
+          <div class="value-grid" role="list">
+            <article class="value-card" role="listitem">
+              <h3>Modern UI with Liquid Glass</h3>
+              <p>A clean, distraction-free interface that keeps you focused on the game.</p>
+            </article>
+            <article class="value-card" role="listitem">
+              <h3>Timer-Based Word Play</h3>
+              <p>Form words from limited letters before the timer runs out.</p>
+            </article>
+            <article class="value-card" role="listitem">
+              <h3>Word Journey Tracking</h3>
+              <p>Every discovered word is saved so your vocabulary growth is visible over time.</p>
+            </article>
+            <article class="value-card" role="listitem">
+              <h3>Content That Lasts</h3>
+              <p>100 Adventure levels, 12 themes, and unlimited Practice and Multiplayer.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section reveal">
+        <div class="container">
+          <div class="section-head experience-head">
+            <p class="eyebrow">Game Modes</p>
+            <h2>Four ways to play WordFlux</h2>
+          </div>
+          <div class="play-layout">
+            <figure class="play-preview">
+              <img id="play-preview-image" src="" alt="" width="563" height="1150" loading="lazy" decoding="async" />
+            </figure>
+            <div id="play-selector" class="play-selector" role="list" aria-label="Select WordFlux game mode"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="media" class="section section-muted reveal">
+        <div class="container">
+          <div class="section-head media-head">
+            <p class="eyebrow">Media</p>
+            <h2>Gameplay at a glance</h2>
+          </div>
+
+          <div id="featured-media-wrap" class="featured-media-wrap">
+            <div class="featured-media-layout">
+              <figure class="featured-media-card">
+                <video
+                  id="featured-media-video"
+                  class="featured-media-video"
+                  muted
+                  loop
+                  autoplay
+                  playsinline
+                  preload="metadata"
+                  poster="assets/screenshots/word-game.png"
+                  aria-label="Word game gameplay spotlight"
+                ></video>
+                <img
+                  id="featured-media-fallback"
+                  class="featured-media-fallback is-hidden"
+                  src="assets/screenshots/word-game.png"
+                  alt="Word game mode preview"
+                  width="563"
+                  height="1150"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <div class="featured-media-copy">
+                <p id="featured-media-label" class="eyebrow">Word Game</p>
+                <h3 id="featured-media-title">Fast rounds. Clean focus.</h3>
+                <p id="featured-media-text">
+                  Solve clue-driven rounds before time runs out.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="video-wrap" class="video-wrap is-hidden">
+            <div id="video-grid" class="video-grid"></div>
+          </div>
+
+          <h3 class="rail-title">More gameplay screens</h3>
+          <div id="screenshot-rail" class="shot-rail-wrap" aria-label="WordFlux gameplay screenshots">
+            <div id="screenshot-grid" class="screenshot-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="section section-cta reveal">
+        <div class="container convert-shell">
+          <div class="cta-panel">
+            <h2>So, ready to dive into WordFlux?</h2>
+            <p>Download on the App Store and get started.</p>
+            <button class="btn btn-primary js-app-cta" type="button">Download on the App Store</button>
+          </div>
+
+          <div class="access-note" aria-label="Content and access details">
+            <p class="access-title">Content &amp; Access</p>
+            <ul>
+              <li>100 structured levels in Adventure Mode</li>
+              <li>12 curated themes with multiple levels each</li>
+              <li>Unlimited Practice and Multiplayer games</li>
+              <li>Currently available in English</li>
+            </ul>
+            <p class="access-pricing">First 25 Adventure levels and first 5 themes are free. Unlock additional content with a one-time purchase.</p>
+          </div>
+
+          <div class="faq-shell">
+            <h3>Before you download</h3>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>How much can I play for free before I buy?</summary>
+                <p>The first 25 Adventure levels and first 5 themes are free. The rest is unlocked with a one-time purchase.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Is it only timer pressure?</summary>
+                <p>No. Practice Mode gives you hints and no time pressure, so you can learn mechanics before jumping into faster rounds.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What do I get as I progress?</summary>
+                <p>You unlock structured Adventure progression, deeper themed challenges, and ongoing Word Journey tracking of discovered words.</p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <nav aria-label="Legal links" class="footer-links">
+          <a id="privacy-link" href="privacy.html">Privacy Policy</a>
+          <a id="terms-link" href="terms-of-service.html">Terms of Service</a>
+        </nav>
+        <p>&copy; <span id="year"></span> Shubham Singh. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-install-bar" aria-label="Quick App Store install">
+      <p>Download and play in minutes.</p>
+      <button class="btn btn-primary js-app-cta" type="button">Open in App Store</button>
     </div>
-  </div>
 
-  <div id="post-form">
-    <input id="title" placeholder="🚨 Error title (e.g., 'Missing @State wrapper')">
-    <input id="filename" placeholder="📁 File name (e.g., 'ContentView.swift')">
-    <textarea id="description" rows="4" placeholder="📝 Describe your findings and how should we fix it?"></textarea>
-    <button id="add-post">🚀 Add Post</button>
-  </div>
-
-  <div id="posts"></div>
-
-  <script>
-    // Create floating particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = 30;
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-
-    // Initialize particles when page loads
-    window.addEventListener('load', createParticles);
-
-    // Username handling
-    let username = localStorage.getItem('ws_username');
-    if (!username) document.getElementById('overlay').style.display = 'flex';
-
-    document.getElementById('save-name').onclick = () => {
-      const n = document.getElementById('name-input').value.trim();
-      if (!n) return;
-      localStorage.setItem('ws_username', n);
-      username = n;
-      document.getElementById('overlay').style.display = 'none';
-    };
-
-    // Allow Enter key to save name
-    document.getElementById('name-input').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        document.getElementById('save-name').click();
-      }
-    });
-
-    // Post creation
-    document.getElementById('add-post').onclick = async () => {
-      if (!username) {
-        document.getElementById('overlay').style.display = 'flex';
-        return;
-      }
-      const t = document.getElementById('title').value.trim();
-      const f = document.getElementById('filename').value.trim();
-      const d = document.getElementById('description').value.trim();
-      if (!t || !f || !d) return;
-
-      // Add loading state
-      const button = document.getElementById('add-post');
-      const originalText = button.textContent;
-      button.textContent = '🔄 Adding...';
-      button.disabled = true;
-
-      try {
-        await window.addPostToFirestore({ title: t, filename: f, description: d, user: username });
-        ['title', 'filename', 'description'].forEach(id => document.getElementById(id).value = '');
-        button.textContent = '✅ Added!';
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-        }, 1000);
-      } catch (error) {
-        button.textContent = '❌ Error';
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-        }, 2000);
-      }
-    };
-
-    // Render posts function
-    window.renderPosts = posts => {
-      const c = document.getElementById('posts');
-      c.innerHTML = '';
-      
-      posts.forEach((p, index) => {
-        const card = document.createElement('div');
-        card.className = 'post';
-        if (p.read) card.classList.add('read');
-        
-        const userVote = p.votesMap?.[username] || 0;
-        if (userVote === 1) card.classList.add('voted-up');
-        if (userVote === -1) card.classList.add('voted-down');
-        
-        const disableOwn = p.user === username;
-        const titleText = p.read ? p.title : p.title;
-        
-        card.innerHTML = `
-          <div class="vote-container">
-            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',1)" title="Upvote">
-              <i class="fa-solid fa-chevron-up"></i>
-            </button>
-            <div class="vote-count">${p.votes}</div>
-            <button ${disableOwn ? 'disabled' : ''} onclick="votePost('${p.id}',-1)" title="Downvote">
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="content">
-            <div class="info">
-              <strong>${titleText}</strong>
-            </div>
-            <div class="meta">🧑‍💻 by ${p.user} • 📁 ${p.filename}</div>
-            <div class="description">${p.description}</div>
-            <div class="actions">
-              ${username === window.MASTER_USER ? `
-                <button class="mark-read" onclick="markAsRead('${p.id}')" title="Mark as resolved">
-                  ✅ Mark as Read
-                </button>
-                <button class="delete-btn" onclick="deletePost('${p.id}')" title="Delete this post">
-                  🗑️ Delete
-                </button>
-              ` : ''}
-            </div>
-          </div>
-        `;
-        
-        // Add staggered animation delay
-        card.style.animationDelay = `${index * 0.1}s`;
-        c.appendChild(card);
-      });
-
-      // Add empty state if no posts
-      if (posts.length === 0) {
-        c.innerHTML = `
-          <div style="text-align: center; padding: 4rem 2rem; color: rgba(255,255,255,0.6);">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
-            <h3 style="margin-bottom: 0.5rem; color: rgba(255,255,255,0.8);">No Posts yet</h3>
-            <p>Be the first one to spot a SwiftUI bug / optimisation and help all of us learn.</p>
-          </div>
-        `;
-      }
-    };
-  </script>
-</body>
+    <div class="modal" id="qr-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+      <div class="modal-backdrop" data-close-modal="true"></div>
+      <div class="modal-card">
+        <button class="modal-close" type="button" aria-label="Close QR panel" data-close-modal="true">&times;</button>
+        <h3 id="qr-title">Get WordFlux on iPhone</h3>
+        <p>Scan this QR code with your iPhone camera, or open the App Store directly.</p>
+        <img id="qr-image" src="" alt="QR code for WordFlux App Store download" width="240" height="240" loading="lazy" decoding="async" />
+        <a id="app-store-link" class="btn btn-primary full" href="#" target="_blank" rel="noopener noreferrer">Open App Store</a>
+      </div>
+    </div>
+  </body>
 </html>
