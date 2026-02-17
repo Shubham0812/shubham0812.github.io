@@ -1,0 +1,70 @@
+{
+   "version": 16,
+   "force": true,
+   "entries": [
+      {
+         "id":"word-2026-02-17",
+         "title":"Words Game",
+         "subtitle":"Make words with the characters",
+         "challengeNumber": 16,
+         "availableOn":{
+            "month": 2,
+            "day": 17
+         },
+         "gamePreset": {
+            "rounds": 1,
+            "timeLimit": 70,
+            "numberOfHints": 4,
+            "difficulty":"medium",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":3
+         },
+         "round":{
+  "characters": [
+    "f",
+    "l",
+    "o",
+    "w",
+    "e",
+    "r",
+    "s",
+    "t",
+    "a",
+    "n"
+  ],
+  "possibleWords": [
+    { "word": "far", "hint": "At a great distance" },
+    { "word": "fan", "hint": "Device that moves air" },
+    { "word": "war", "hint": "Armed conflict" },
+    { "word": "was", "hint": "Past form of is" },
+    { "word": "wet", "hint": "Covered with liquid" },
+    { "word": "own", "hint": "Belonging to oneself" },
+    { "word": "one", "hint": "The number after zero" },
+    { "word": "son", "hint": "Male child" },
+    { "word": "set", "hint": "Put in place" },
+    { "word": "ten", "hint": "Number after nine" },
+
+    { "word": "flow", "hint": "Move smoothly in a stream" },
+    { "word": "wolf", "hint": "Wild canine animal" },
+    { "word": "loan", "hint": "Borrowed money" },
+    { "word": "tone", "hint": "Quality of sound" },
+    { "word": "near", "hint": "Close in distance" },
+    { "word": "earn", "hint": "Receive for work" },
+    { "word": "seat", "hint": "Place to sit" },
+    { "word": "star", "hint": "Bright object in the sky" },
+    { "word": "slow", "hint": "Not fast" },
+    { "word": "warn", "hint": "Give notice of danger" },
+
+    { "word": "flower", "hint": "Blooming part of a plant" },
+    { "word": "forest", "hint": "Large area covered with trees" },
+    { "word": "owner", "hint": "Person who possesses something" },
+    { "word": "water", "hint": "Clear liquid essential for life" },
+    { "word": "answer", "hint": "Response to a question" },
+    { "word": "later", "hint": "After a period of time" }
+  ],
+  "requiredWordCount": 10
+}
+      }
+   ]
+}

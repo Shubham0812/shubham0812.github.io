@@ -1,0 +1,15 @@
+{
+  "appSettings": {
+    "appLaunchDate": 1768921266,
+    "limitedValentineDate": 1771503746
+  },
+  "leaderboard": {
+    "startDate": "2026-2-04",
+    "endDate": "2026-3-1",
+    "challengeNumber": 3,
+    "copy": "",
+    "force": true
+  },
+  "version": 8,
+  "force": true
+}
