@@ -1,15 +1,15 @@
 {
-   "version": 22,
+   "version": 23,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-16",
+         "id":"theme-2026-02-18",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":15,
+         "challengeNumber":17,
          "availableOn":{
             "month":2,
-            "day": 16,
+            "day": 18,
          },
          "theme":{
             "name":"Animal Names",
@@ -26,187 +26,78 @@
             "maximumHandHoldingCounter":0
          },
          "rounds":   [
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "King of the savanna.",
-                "characters": [
-                    "L",
-                    "I",
-                    "O",
-                    "N",
-                    "A",
-                    "L",
-                    "R",
-                    "T",
-                    "S",
-                    "E"
-                ],
-                "correctWord": "LION"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Howls at the moon",
-                "characters": [
-                    "W",
-                    "O",
-                    "L",
-                    "F",
-                    "A",
-                    "R",
-                    "T",
-                    "S",
-                    "N",
-                    "E"
-                ],
-                "correctWord": "WOLF"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Big furry forest dweller",
-                "characters": [
-                    "B",
-                    "E",
-                    "A",
-                    "R",
-                    "L",
-                    "S",
-                    "T",
-                    "N",
-                    "O",
-                    "I"
-                ],
-                "correctWord": "BEAR"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Slithers without legs",
-                "characters": [
-                    "S",
-                    "N",
-                    "A",
-                    "K",
-                    "E",
-                    "L",
-                    "R",
-                    "T",
-                    "O",
-                    "I"
-                ],
-                "correctWord": "SNAKE"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Largest mammal in the ocean",
-                "characters": [
-                    "W",
-                    "H",
-                    "A",
-                    "L",
-                    "E",
-                    "R",
-                    "T",
-                    "S",
-                    "N",
-                    "O"
-                ],
-                "correctWord": "WHALE"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Long ears and quick hops",
-                "characters": [
-                    "R",
-                    "A",
-                    "B",
-                    "B",
-                    "I",
-                    "T",
-                    "L",
-                    "S",
-                    "N",
-                    "O"
-                ],
-                "correctWord": "RABBIT"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Slow reptile with a shell",
-                "characters": [
-                    "T",
-                    "U",
-                    "R",
-                    "T",
-                    "L",
-                    "E",
-                    "S",
-                    "A",
-                    "N",
-                    "O"
-                ],
-                "correctWord": "TURTLE"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Banana loving primate",
-                "characters": [
-                    "M",
-                    "O",
-                    "N",
-                    "K",
-                    "E",
-                    "Y",
-                    "L",
-                    "S",
-                    "T",
-                    "R"
-                ],
-                "correctWord": "MONKEY"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Black and white bird in cold seas",
-                "characters": [
-                    "P",
-                    "E",
-                    "N",
-                    "G",
-                    "U",
-                    "I",
-                    "N",
-                    "L",
-                    "S",
-                    "T"
-                ],
-                "correctWord": "PENGUIN"
-            },
-            {
-                "theme": "animals",
-                "ageRange": "all",
-                "hint": "Wild canine of the plains",
-                "characters": [
-                    "C",
-                    "O",
-                    "Y",
-                    "O",
-                    "T",
-                    "E",
-                    "L",
-                    "S",
-                    "N",
-                    "R"
-                ],
-                "correctWord": "COYOTE"
-            }
-        ]
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Played with bat and ball on a pitch",
+        "characters": ["C","R","I","C","K","E","T","L","S","A"],
+        "correctWord": "CRICKET"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Kick the ball into the goal",
+        "characters": ["S","O","C","C","E","R","L","A","T","N"],
+        "correctWord": "SOCCER"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Shoot hoops to score points",
+        "characters": ["B","A","S","K","E","T","B","A","L","L"],
+        "correctWord": "BASKETBALL"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Grand slam on the court",
+        "characters": ["T","E","N","N","I","S","L","A","R","O"],
+        "correctWord": "TENNIS"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Hit a shuttle over the net",
+        "characters": ["B","A","D","M","I","N","T","O","N","L"],
+        "correctWord": "BADMINTON"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Strike and aim for a spare",
+        "characters": ["B","O","W","L","I","N","G","A","T","R"],
+        "correctWord": "BOWLING"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Sprint on a running track",
+        "characters": ["R","U","N","N","I","N","G","L","S","T"],
+        "correctWord": "RUNNING"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Swim laps in a pool",
+        "characters": ["S","W","I","M","M","I","N","G","L","A"],
+        "correctWord": "SWIMMING"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Hit a home run",
+        "characters": ["B","A","S","E","B","A","L","L","T","R"],
+        "correctWord": "BASEBALL"
+    },
+    {
+        "theme": "sports",
+        "ageRange": "all",
+        "hint": "Score a try in this contact sport",
+        "characters": ["R","U","G","B","Y","L","A","T","S","N"],
+        "correctWord": "RUGBY"
+    }
+]
+
       }
    ]
 }
