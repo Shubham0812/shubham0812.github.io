@@ -1,5 +1,5 @@
 {
-   "version": 23,
+   "version": 24,
    "force":true,
    "entries":[
       {
@@ -12,7 +12,7 @@
             "day": 18,
          },
          "theme":{
-            "name":"Animal Names",
+            "name":"Sport Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
