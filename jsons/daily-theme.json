@@ -3,16 +3,16 @@
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-18",
+         "id":"theme-2026-02-19",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":17,
+         "challengeNumber":18,
          "availableOn":{
             "month":2,
-            "day": 18,
+            "day": 19,
          },
          "theme":{
-            "name":"Sport Names",
+            "name":"TV Series",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -25,77 +25,77 @@
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds":   [
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Played with bat and ball on a pitch",
-        "characters": ["C","R","I","C","K","E","T","L","S","A"],
-        "correctWord": "CRICKET"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Kick the ball into the goal",
-        "characters": ["S","O","C","C","E","R","L","A","T","N"],
-        "correctWord": "SOCCER"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Shoot hoops to score points",
-        "characters": ["B","A","S","K","E","T","B","A","L","L"],
-        "correctWord": "BASKETBALL"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Grand slam on the court",
-        "characters": ["T","E","N","N","I","S","L","A","R","O"],
-        "correctWord": "TENNIS"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Hit a shuttle over the net",
-        "characters": ["B","A","D","M","I","N","T","O","N","L"],
-        "correctWord": "BADMINTON"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Strike and aim for a spare",
-        "characters": ["B","O","W","L","I","N","G","A","T","R"],
-        "correctWord": "BOWLING"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Sprint on a running track",
-        "characters": ["R","U","N","N","I","N","G","L","S","T"],
-        "correctWord": "RUNNING"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Swim laps in a pool",
-        "characters": ["S","W","I","M","M","I","N","G","L","A"],
-        "correctWord": "SWIMMING"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Hit a home run",
-        "characters": ["B","A","S","E","B","A","L","L","T","R"],
-        "correctWord": "BASEBALL"
-    },
-    {
-        "theme": "sports",
-        "ageRange": "all",
-        "hint": "Score a try in this contact sport",
-        "characters": ["R","U","G","B","Y","L","A","T","S","N"],
-        "correctWord": "RUGBY"
-    }
+         "rounds":  [
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "Six friends living in New York City",
+    "characters": ["F","R","I","E","N","D","S","L","A","T"],
+    "correctWord": "FRIENDS"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "Workplace comedy set in a paper company",
+    "characters": ["T","H","E","O","F","F","I","C","E","L"],
+    "correctWord": "THEOFFICE"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A modern detective series based on Sherlock Holmes",
+    "characters": ["S","H","E","R","L","O","C","K","A","T"],
+    "correctWord": "SHERLOCK"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A lawyer drama set in New York City",
+    "characters": ["S","U","I","T","S","L","A","R","T","N"],
+    "correctWord": "SUITS"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "Survivors struggle on a mysterious island",
+    "characters": ["L","O","S","T","W","A","R","E","N","D"],
+    "correctWord": "LOST"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A serial killer who works in a police department",
+    "characters": ["D","E","X","T","E","R","L","A","S","N"],
+    "correctWord": "DEXTER"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A devil moves to Los Angeles and helps solve crimes",
+    "characters": ["L","U","C","I","F","E","R","L","S","T"],
+    "correctWord": "LUCIFER"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A Spanish-language crime drama about cartels",
+    "characters": ["N","A","R","C","O","S","L","T","R","E"],
+    "correctWord": "NARCOS"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "Norse warriors exploring and conquering lands",
+    "characters": ["V","I","K","I","N","G","S","L","A","T"],
+    "correctWord": "VIKINGS"
+  },
+  {
+    "theme": "tv_series",
+    "ageRange": "all",
+    "hint": "A sitcom about everyday life, famously about nothing",
+    "characters": ["S","E","I","N","F","E","L","D","A","T"],
+    "correctWord": "SEINFELD"
+  }
 ]
 
       }
