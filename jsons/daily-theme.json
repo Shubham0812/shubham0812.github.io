@@ -1,18 +1,18 @@
 {
-   "version": 24,
+   "version": 25,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-19",
+         "id":"theme-2026-02-21",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":18,
+         "challengeNumber":20,
          "availableOn":{
             "month":2,
-            "day": 19,
+            "day": 21,
          },
          "theme":{
-            "name":"TV Series",
+            "name":"Video Games",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds":  [
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "Six friends living in New York City",
-    "characters": ["F","R","I","E","N","D","S","L","A","T"],
-    "correctWord": "FRIENDS"
+    "hint": "Battle royale where you build structures to survive",
+    "characters": ["F","O","R","T","N","I","T","E","L","S"],
+    "correctWord": "FORTNITE"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "Workplace comedy set in a paper company",
-    "characters": ["T","H","E","O","F","F","I","C","E","L"],
-    "correctWord": "THEOFFICE"
+    "hint": "Block-building sandbox survival game",
+    "characters": ["M","I","N","E","C","R","A","F","T","L"],
+    "correctWord": "MINECRAFT"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A modern detective series based on Sherlock Holmes",
-    "characters": ["S","H","E","R","L","O","C","K","A","T"],
-    "correctWord": "SHERLOCK"
+    "hint": "Legendary sci-fi shooter featuring Master Chief",
+    "characters": ["H","A","L","O","L","S","T","R","A","E"],
+    "correctWord": "HALO"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A lawyer drama set in New York City",
-    "characters": ["S","U","I","T","S","L","A","R","T","N"],
-    "correctWord": "SUITS"
+    "hint": "Open-world fantasy RPG set in the land of dragons",
+    "characters": ["S","K","Y","R","I","M","L","A","T","S"],
+    "correctWord": "SKYRIM"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "Survivors struggle on a mysterious island",
-    "characters": ["L","O","S","T","W","A","R","E","N","D"],
-    "correctWord": "LOST"
+    "hint": "Colorful team-based hero shooter",
+    "characters": ["O","V","E","R","W","A","T","C","H","L"],
+    "correctWord": "OVERWATCH"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A serial killer who works in a police department",
-    "characters": ["D","E","X","T","E","R","L","A","S","N"],
-    "correctWord": "DEXTER"
+    "hint": "Challenging gothic action RPG set in Yharnam",
+    "characters": ["B","L","O","O","D","B","O","R","N","E"],
+    "correctWord": "BLOODBORNE"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A devil moves to Los Angeles and helps solve crimes",
-    "characters": ["L","U","C","I","F","E","R","L","S","T"],
-    "correctWord": "LUCIFER"
+    "hint": "Soulslike fantasy adventure in the Lands Between",
+    "characters": ["E","L","D","E","N","R","I","N","G","S"],
+    "correctWord": "ELDENRING"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A Spanish-language crime drama about cartels",
-    "characters": ["N","A","R","C","O","S","L","T","R","E"],
-    "correctWord": "NARCOS"
+    "hint": "Battle royale survival shooter known as BGMI in India",
+    "characters": ["P","U","B","G","L","S","T","R","A","E"],
+    "correctWord": "PUBG"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "Norse warriors exploring and conquering lands",
-    "characters": ["V","I","K","I","N","G","S","L","A","T"],
-    "correctWord": "VIKINGS"
+    "hint": "Retro arcade classic featuring maze and ghosts",
+    "characters": ["P","A","C","M","A","N","L","S","T","R"],
+    "correctWord": "PACMAN"
   },
   {
-    "theme": "tv_series",
+    "theme": "video_games",
     "ageRange": "all",
-    "hint": "A sitcom about everyday life, famously about nothing",
-    "characters": ["S","E","I","N","F","E","L","D","A","T"],
-    "correctWord": "SEINFELD"
+    "hint": "Open-world sci-fi RPG set in space",
+    "characters": ["S","T","A","R","F","I","E","L","D","L"],
+    "correctWord": "STARFIELD"
   }
 ]
 
