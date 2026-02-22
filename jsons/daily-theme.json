@@ -3,16 +3,16 @@
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-21",
+         "id":"theme-2026-02-22",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":20,
+         "challengeNumber":21,
          "availableOn":{
             "month":2,
-            "day": 21,
+            "day": 22,
          },
          "theme":{
-            "name":"Video Games",
+            "name":"Sport Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds":  [
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Battle royale where you build structures to survive",
-    "characters": ["F","O","R","T","N","I","T","E","L","S"],
-    "correctWord": "FORTNITE"
+    "hint": "Game played with a bat and ball, huge in India and the UK",
+    "characters": ["C","R","I","C","K","E","T","L","S","A"],
+    "correctWord": "CRICKET"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Block-building sandbox survival game",
-    "characters": ["M","I","N","E","C","R","A","F","T","L"],
-    "correctWord": "MINECRAFT"
+    "hint": "Kick the ball into the goal to score",
+    "characters": ["F","O","O","T","B","A","L","L","S","R"],
+    "correctWord": "FOOTBALL"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Legendary sci-fi shooter featuring Master Chief",
-    "characters": ["H","A","L","O","L","S","T","R","A","E"],
-    "correctWord": "HALO"
+    "hint": "Shoot the ball into a hoop to score points",
+    "characters": ["B","A","S","K","E","T","B","A","L","L"],
+    "correctWord": "BASKETBALL"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Open-world fantasy RPG set in the land of dragons",
-    "characters": ["S","K","Y","R","I","M","L","A","T","S"],
-    "correctWord": "SKYRIM"
+    "hint": "Racket sport played on a court over a net",
+    "characters": ["T","E","N","N","I","S","L","A","R","O"],
+    "correctWord": "TENNIS"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Colorful team-based hero shooter",
-    "characters": ["O","V","E","R","W","A","T","C","H","L"],
-    "correctWord": "OVERWATCH"
+    "hint": "Strike and aim for a spare",
+    "characters": ["B","O","W","L","I","N","G","R","S","T"],
+    "correctWord": "BOWLING"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Challenging gothic action RPG set in Yharnam",
-    "characters": ["B","L","O","O","D","B","O","R","N","E"],
-    "correctWord": "BLOODBORNE"
+    "hint": "Race in water using different strokes",
+    "characters": ["S","W","I","M","M","I","N","G","L","A"],
+    "correctWord": "SWIMMING"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Soulslike fantasy adventure in the Lands Between",
-    "characters": ["E","L","D","E","N","R","I","N","G","S"],
-    "correctWord": "ELDENRING"
+    "hint": "Run fast on a track to win",
+    "characters": ["R","U","N","N","I","N","G","L","S","T"],
+    "correctWord": "RUNNING"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Battle royale survival shooter known as BGMI in India",
-    "characters": ["P","U","B","G","L","S","T","R","A","E"],
-    "correctWord": "PUBG"
+    "hint": "Fast-paced sport played with sticks and a puck",
+    "characters": ["H","O","C","K","E","Y","L","S","T","A"],
+    "correctWord": "HOCKEY"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Retro arcade classic featuring maze and ghosts",
-    "characters": ["P","A","C","M","A","N","L","S","T","R"],
-    "correctWord": "PACMAN"
+    "hint": "Combat sport fought with gloves inside a ring",
+    "characters": ["B","O","X","I","N","G","L","S","T","A"],
+    "correctWord": "BOXING"
   },
   {
-    "theme": "video_games",
+    "theme": "sports",
     "ageRange": "all",
-    "hint": "Open-world sci-fi RPG set in space",
-    "characters": ["S","T","A","R","F","I","E","L","D","L"],
-    "correctWord": "STARFIELD"
+    "hint": "Swing a club to hit a small white ball into a hole",
+    "characters": ["G","O","L","F","L","S","T","R","A","E"],
+    "correctWord": "GOLF"
   }
 ]
 
