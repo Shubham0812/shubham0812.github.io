@@ -1,118 +1,532 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — SF Catalog</title>
-<style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-  max-width: 820px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.6;
-}
-h1 { font-size: 28px; margin-bottom: 4px; }
-h2 { font-size: 18px; margin-top: 28px; }
-p, li { font-size: 14px; }
-ul { padding-left: 18px; }
-footer { margin-top: 40px; font-size: 13px; opacity: 0.7; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SF Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0f0f0f;
+      --surface-alt: #1a1a1a;
+      --ink: #ffffff;
+      --ink-muted: #a0a0a0;
+      --ink-faint: #555555;
+      --accent: #ffffff;
+      --accent-light: #141414;
+      --border: #222222;
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Noise texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      padding: 72px 40px 56px;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 15px;
+      box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(80, 160, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .app-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .app-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .app-tagline {
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    .meta {
+      color: var(--ink-muted);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    /* Divider line */
+    .header-rule {
+      max-width: 800px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Main content */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* Intro block */
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 40px 0;
+      font-size: 15px;
+      color: var(--ink-muted);
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+    .section:nth-child(5) { animation-delay: 0.20s; }
+    .section:nth-child(6) { animation-delay: 0.25s; }
+    .section:nth-child(7) { animation-delay: 0.30s; }
+    .section:nth-child(8) { animation-delay: 0.35s; }
+    .section:nth-child(9) { animation-delay: 0.40s; }
+    .section:nth-child(10) { animation-delay: 0.45s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 28px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .section-header:hover { background: var(--surface-alt); }
+
+    .section-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--ink-faint);
+      min-width: 24px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 500;
+      flex: 1;
+      color: var(--ink);
+    }
+
+    .chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--ink-faint);
+      transition: transform 0.3s ease;
+    }
+
+    .section.open .chevron { transform: rotate(180deg); }
+
+    .section-body {
+      display: none;
+      padding: 0 28px 24px;
+      padding-left: 68px;
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .section.open .section-body { display: block; }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 28px 22px;
+    }
+
+    /* Pill list */
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink-faint);
+    }
+
+    /* Highlighted block */
+    .highlight-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .highlight-box svg { min-width: 16px; margin-top: 2px; }
+
+    /* Providers */
+    .provider-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .provider-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+
+    .provider-name {
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .provider-role {
+      color: var(--ink-faint);
+      font-size: 12px;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: gap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+
+    footer a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header, main, footer { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 48px; }
+      .section-body { padding-left: 28px; }
+    }
+  </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
-<p>Effective Date: February 22, 2026</p>
+<header>
+  <div class="app-brand">
+    <img src="/mnt/user-data/uploads/sfcatalog-iOS-Dark-1024x1024_1x.png" alt="SF Catalog" class="app-icon" />
+    <div class="app-brand-text">
+      <span class="app-name">SF Catalog</span>
+      <span class="app-tagline">iOS Developer Tool</span>
+    </div>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="meta">Effective February 22, 2026</p>
+</header>
 
-<p>
-SF Catalog is a developer tool designed to help iOS developers explore and work with SF Symbols.
-Your privacy is important. This policy explains how information is handled when you use the app.
-</p>
+<hr class="header-rule" />
 
-<h2>1. No Account Required</h2>
-<p>
-SF Catalog does not require account creation. You are not required to provide personal information such as your name, email address, or phone number to use the app.
-</p>
+<main>
+  <div class="intro">
+    SF Catalog is a developer tool designed to help iOS developers explore and work with SF Symbols. Your privacy matters. This policy explains clearly how information is handled when you use the app — written to be read, not buried.
+  </div>
 
-<h2>2. Data Stored on Your Device</h2>
-<p>
-The following data is stored locally on your device:
-</p>
-<ul>
-<li>Bookmarks</li>
-<li>Custom collections</li>
-<li>App preferences and settings</li>
-</ul>
+  <!-- Section 1 -->
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">01</span>
+      <span class="section-title">No Account Required</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog does not require account creation. You are not required to provide personal information such as your name, email address, or phone number to use the app.
+      <div class="highlight-box">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 110 2 1 1 0 010-2zm0 3.5a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3A.75.75 0 018 7.5z" fill="currentColor"/></svg>
+        No sign-up. No email required. Just open the app and start exploring.
+      </div>
+    </div>
+  </div>
 
-<p>
-If iCloud sync is enabled on your device, this data may be synced securely using Apple’s iCloud services.
-</p>
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">02</span>
+      <span class="section-title">Data Stored on Your Device</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      The following data is stored locally on your device and is never transmitted to our servers:
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>Bookmarks</span>
+        <span class="pill"><span class="pill-dot"></span>Custom collections</span>
+        <span class="pill"><span class="pill-dot"></span>App preferences & settings</span>
+      </div>
+      <p style="margin-top:14px;">If iCloud sync is enabled on your device, this data may be synced securely using Apple's iCloud services.</p>
+    </div>
+  </div>
 
-<h2>3. In-App Purchases</h2>
-<p>
-SF Catalog offers optional in-app purchases processed by Apple through the App Store.
-Payment information is handled entirely by Apple.
-</p>
-<p>
-RevenueCat is used to validate and manage purchase status. RevenueCat may generate an anonymous identifier to manage subscriptions and purchase access. No personal information is attached by the app.
-</p>
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">03</span>
+      <span class="section-title">In-App Purchases</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog offers optional in-app purchases processed by Apple through the App Store. Payment information is handled entirely by Apple.<br/><br/>
+      RevenueCat is used to validate and manage purchase status. RevenueCat may generate an anonymous identifier to manage subscriptions and purchase access. No personal information is attached by the app.
+    </div>
+  </div>
 
-<h2>4. Analytics & Crash Reporting</h2>
-<p>
-SF Catalog uses Firebase Analytics and Firebase Crashlytics to understand feature usage and improve stability.
-</p>
-<ul>
-<li>Analytics data may include app interactions, device model, operating system version, and general usage patterns.</li>
-<li>Crash reports may include technical diagnostic information to help fix issues.</li>
-</ul>
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">04</span>
+      <span class="section-title">Analytics & Crash Reporting</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog uses Firebase Analytics and Firebase Crashlytics to understand feature usage and improve stability.
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>App interactions</span>
+        <span class="pill"><span class="pill-dot"></span>Device model</span>
+        <span class="pill"><span class="pill-dot"></span>OS version</span>
+        <span class="pill"><span class="pill-dot"></span>Usage patterns</span>
+        <span class="pill"><span class="pill-dot"></span>Crash diagnostics</span>
+      </div>
+      <p style="margin-top:14px;">This information is used solely to improve performance and functionality. The app does not use analytics for advertising or tracking across other apps.</p>
+    </div>
+  </div>
 
-<p>
-This information is used solely to improve the app’s performance and functionality. The app does not use analytics for advertising or tracking across other apps.
-</p>
+  <!-- Section 5 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">05</span>
+      <span class="section-title">No Advertising or Tracking</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog does not use advertising frameworks. The app does not track users across third-party apps or websites. App Tracking Transparency (ATT) permission is not requested.
+      <div class="highlight-box">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a.75.75 0 01.6.3l5.5 7a.75.75 0 01-.6 1.2H2.5a.75.75 0 01-.6-1.2l5.5-7a.75.75 0 01.6-.3zM8 4.5L4.25 9h7.5L8 4.5zM7.25 10.5v2h1.5v-2h-1.5z" fill="currentColor"/></svg>
+        Zero ad frameworks. Zero cross-app tracking. Your focus stays on your work.
+      </div>
+    </div>
+  </div>
 
-<h2>5. No Advertising or Tracking</h2>
-<p>
-SF Catalog does not use advertising frameworks.
-The app does not track users across third-party apps or websites.
-App Tracking Transparency (ATT) permission is not requested.
-</p>
+  <!-- Section 6 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">06</span>
+      <span class="section-title">Data Sharing</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      We do not sell personal information. Limited technical data may be processed by the following service providers:
+      <div class="provider-grid">
+        <div class="provider-card">
+          <div class="provider-name">Apple</div>
+          <div class="provider-role">Purchases & iCloud sync</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">Google Firebase</div>
+          <div class="provider-role">Analytics & crash reporting</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">RevenueCat</div>
+          <div class="provider-role">Purchase validation</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<h2>6. Data Sharing</h2>
-<p>
-We do not sell personal information.
-Limited technical data may be processed by:
-</p>
-<ul>
-<li>Apple (for in-app purchases and iCloud sync)</li>
-<li>Google Firebase (for analytics and crash reporting)</li>
-<li>RevenueCat (for purchase validation)</li>
-</ul>
+  <!-- Section 7 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">07</span>
+      <span class="section-title">Children's Privacy</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog is intended for developers and is not directed toward children under 13 years of age.
+    </div>
+  </div>
 
-<h2>7. Children’s Privacy</h2>
-<p>
-SF Catalog is intended for developers and is not directed toward children under 13 years of age.
-</p>
+  <!-- Section 8 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">08</span>
+      <span class="section-title">Data Retention</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Local app data remains on your device until you delete the app. Analytics and diagnostic data retention is governed by the respective service providers (Google Firebase, RevenueCat).
+    </div>
+  </div>
 
-<h2>8. Data Retention</h2>
-<p>
-Local app data remains on your device until you delete the app.
-Analytics and diagnostic data retention is governed by the respective service providers.
-</p>
+  <!-- Section 9 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">09</span>
+      <span class="section-title">Changes to This Policy</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      This policy may be updated as features evolve. Updates will be reflected by revising the effective date shown at the top of the page.
+    </div>
+  </div>
 
-<h2>9. Changes to This Policy</h2>
-<p>
-This policy may be updated as features evolve. Updates will be reflected by revising the effective date.
-</p>
-
-<h2>10. Contact</h2>
-<p>
-If you have questions about this Privacy Policy, contact:<br>
-<strong>support@yourdomain.com</strong>
-</p>
+  <!-- Section 10 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">10</span>
+      <span class="section-title">Contact</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      If you have questions about this Privacy Policy, please reach out:
+      <div style="margin-top:12px;">
+        <a href="mailto:shubham_iosdev@outlook.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#000;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l5 3.334 5-3.334V4a1 1 0 00-1-1H4zm9 2.383l-4.472 2.981a1 1 0 01-1.056 0L3 5.383V12a1 1 0 001 1h8a1 1 0 001-1V5.383z" fill="currentColor"/></svg>
+          support@yourdomain.com
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
 
 <footer>
-© 2026 SF Catalog. All rights reserved.
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="/mnt/user-data/uploads/sfcatalog-iOS-Dark-1024x1024_1x.png" alt="SF Catalog" style="width:28px;height:28px;border-radius:7px;opacity:0.7;" />
+    <span>© 2026 SF Catalog. All rights reserved.</span>
+  </div>
+  <a href="mailto:shubham_iosdev@outlook.com">
+    Contact us
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </footer>
 
+<script>
+  function toggle(header) {
+    const section = header.closest('.section');
+    section.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
