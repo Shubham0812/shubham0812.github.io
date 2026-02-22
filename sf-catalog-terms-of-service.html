@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — SF Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0f0f0f;
+      --surface-alt: #1a1a1a;
+      --ink: #ffffff;
+      --ink-muted: #a0a0a0;
+      --ink-faint: #555555;
+      --border: #222222;
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    header {
+      position: relative;
+      padding: 72px 40px 56px;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 15px;
+      box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(80, 160, 255, 0.12);
+      flex-shrink: 0;
+    }
+
+    .app-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .app-name {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .app-tagline {
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    .meta {
+      color: var(--ink-muted);
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .header-rule {
+      max-width: 800px;
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 40px 0;
+      font-size: 15px;
+      color: var(--ink-muted);
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .section {
+      margin-bottom: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+    .section:nth-child(5) { animation-delay: 0.20s; }
+    .section:nth-child(6) { animation-delay: 0.25s; }
+    .section:nth-child(7) { animation-delay: 0.30s; }
+    .section:nth-child(8) { animation-delay: 0.35s; }
+    .section:nth-child(9) { animation-delay: 0.40s; }
+    .section:nth-child(10) { animation-delay: 0.45s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 28px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .section-header:hover { background: var(--surface-alt); }
+
+    .section-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 13px;
+      color: var(--ink-faint);
+      min-width: 24px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 500;
+      flex: 1;
+      color: var(--ink);
+    }
+
+    .chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--ink-faint);
+      transition: transform 0.3s ease;
+    }
+
+    .section.open .chevron { transform: rotate(180deg); }
+
+    .section-body {
+      display: none;
+      padding: 0 28px 24px;
+      padding-left: 68px;
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .section.open .section-body { display: block; }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 28px 22px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ink-faint);
+    }
+
+    .highlight-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .highlight-box svg { min-width: 16px; margin-top: 2px; }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+
+    footer a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 100px;
+      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: 36px;
+    }
+
+    .nav-link:hover { color: var(--ink); border-color: var(--ink-faint); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header, main, footer { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 48px; }
+      .section-body { padding-left: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-brand">
+    <img src="sfcatalog-iOS-Dark-1024x1024@1x.png" alt="SF Catalog" class="app-icon" />
+    <div class="app-brand-text">
+      <span class="app-name">SF Catalog</span>
+      <span class="app-tagline">iOS Developer Tool</span>
+    </div>
+  </div>
+  <h1>Terms of <em>Service</em></h1>
+  <p class="meta">Effective February 22, 2026</p>
+</header>
+
+<hr class="header-rule" />
+
+<main>
+  <div class="intro">
+    By downloading or using SF Catalog, you agree to these terms. Please read them — they're written to be clear, not to bury important details in legalese.
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">01</span>
+      <span class="section-title">Acceptance of Terms</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      By accessing or using SF Catalog ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App. These terms apply to all users of the App, including visitors, registered users, and others who access the App.
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">02</span>
+      <span class="section-title">Description of Service</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog is an iOS developer tool that allows users to explore, search, and work with Apple's SF Symbols library. The App provides features including symbol browsing, bookmarking, custom collections, and related developer utilities.
+      <div class="highlight-box" style="margin-top:14px;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 110 2 1 1 0 010-2zm0 3.5a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3A.75.75 0 018 7.5z" fill="currentColor"/></svg>
+        SF Catalog is an independent app and is not affiliated with, endorsed by, or sponsored by Apple Inc.
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">03</span>
+      <span class="section-title">License & Permitted Use</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for your personal and professional development purposes. You may not:
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>Copy or redistribute the App</span>
+        <span class="pill"><span class="pill-dot"></span>Modify or create derivative works</span>
+        <span class="pill"><span class="pill-dot"></span>Reverse engineer or decompile</span>
+        <span class="pill"><span class="pill-dot"></span>Use for unlawful purposes</span>
+        <span class="pill"><span class="pill-dot"></span>Sublicense or sell access</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">04</span>
+      <span class="section-title">In-App Purchases & Subscriptions</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      SF Catalog may offer optional in-app purchases or subscriptions to unlock premium features. All purchases are processed by Apple through the App Store and are subject to Apple's payment terms.<br/><br/>
+      Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period. You can manage or cancel subscriptions at any time through your Apple ID account settings.<br/><br/>
+      We do not offer refunds outside of Apple's standard refund policies.
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">05</span>
+      <span class="section-title">Intellectual Property</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      The App, including its design, code, graphics, and all content created by SF Catalog, is owned by us and protected by applicable intellectual property laws. SF Symbols themselves are owned by Apple Inc. and are subject to Apple's usage guidelines and licensing terms.<br/><br/>
+      Nothing in these Terms grants you ownership of any intellectual property in the App.
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">06</span>
+      <span class="section-title">Third-Party Services</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      The App integrates with the following third-party services, each governed by their own terms and privacy policies:
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>Apple App Store</span>
+        <span class="pill"><span class="pill-dot"></span>iCloud</span>
+        <span class="pill"><span class="pill-dot"></span>Google Firebase</span>
+        <span class="pill"><span class="pill-dot"></span>RevenueCat</span>
+      </div>
+      <p style="margin-top:14px;">We are not responsible for the practices of these third-party services. We encourage you to review their respective terms and privacy policies.</p>
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">07</span>
+      <span class="section-title">Disclaimer of Warranties</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      The App is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of viruses or other harmful components.<br/><br/>
+      We do not warrant the accuracy, completeness, or usefulness of any information provided through the App, including SF Symbol metadata.
+    </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">08</span>
+      <span class="section-title">Limitation of Liability</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      To the fullest extent permitted by law, SF Catalog and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App — even if we have been advised of the possibility of such damages.<br/><br/>
+      Our total liability to you for any claim arising out of or relating to these Terms or the App shall not exceed the amount you paid for the App in the twelve months preceding the claim.
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">09</span>
+      <span class="section-title">Changes to Terms</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      We reserve the right to modify these Terms at any time. Changes will be effective upon posting the updated Terms within the App or on our website, indicated by a revised effective date. Continued use of the App after such changes constitutes your acceptance of the new Terms.
+    </div>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">10</span>
+      <span class="section-title">Governing Law</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law principles. Any disputes arising from these Terms or your use of the App shall be resolved through good-faith negotiation, and if unresolved, through binding arbitration.
+    </div>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">11</span>
+      <span class="section-title">Contact</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      If you have questions about these Terms of Service, please reach out:
+      <div style="margin-top:12px;">
+        <a href="mailto:support@yourdomain.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#000;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l5 3.334 5-3.334V4a1 1 0 00-1-1H4zm9 2.383l-4.472 2.981a1 1 0 01-1.056 0L3 5.383V12a1 1 0 001 1h8a1 1 0 001-1V5.383z" fill="currentColor"/></svg>
+          support@yourdomain.com
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="sfcatalog-iOS-Dark-1024x1024@1x.png" alt="SF Catalog" style="width:28px;height:28px;border-radius:7px;opacity:0.7;" />
+    <span>© 2026 SF Catalog. All rights reserved.</span>
+  </div>
+  <a href="privacy.html">
+    Privacy Policy
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</footer>
+
+<script>
+  function toggle(header) {
+    const section = header.closest('.section');
+    section.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
