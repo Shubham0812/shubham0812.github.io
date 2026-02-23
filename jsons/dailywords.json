@@ -1,15 +1,15 @@
 {
-   "version": 17,
+   "version": 18,
    "force": true,
    "entries": [
       {
-         "id":"word-2026-02-20",
+         "id":"word-2026-02-23",
          "title":"Words Game",
          "subtitle":"Make words with the characters",
-         "challengeNumber": 19,
+         "challengeNumber": 22,
          "availableOn":{
             "month": 2,
-            "day": 20
+            "day": 23
          },
          "gamePreset": {
             "rounds": 1,
