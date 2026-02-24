@@ -1,18 +1,18 @@
 {
-   "version": 26,
+   "version": 27,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-22",
+         "id":"theme-2026-02-24",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":21,
+         "challengeNumber":23,
          "availableOn":{
             "month":2,
-            "day": 22,
+            "day": 24,
          },
          "theme":{
-            "name":"Sport Names",
+            "name":"Country Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds":  [
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Game played with a bat and ball, huge in India and the UK",
-    "characters": ["C","R","I","C","K","E","T","L","S","A"],
-    "correctWord": "CRICKET"
+    "hint": "Home to the Taj Mahal",
+    "characters": ["I","N","D","I","A","L","S","T","R","A"],
+    "correctWord": "INDIA"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Kick the ball into the goal to score",
-    "characters": ["F","O","O","T","B","A","L","L","S","R"],
-    "correctWord": "FOOTBALL"
+    "hint": "Land of the Eiffel Tower",
+    "characters": ["F","R","A","N","C","E","L","S","T","O"],
+    "correctWord": "FRANCE"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Shoot the ball into a hoop to score points",
-    "characters": ["B","A","S","K","E","T","B","A","L","L"],
-    "correctWord": "BASKETBALL"
+    "hint": "Famous for sushi and Mount Fuji",
+    "characters": ["J","A","P","A","N","L","S","T","R","O"],
+    "correctWord": "JAPAN"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Racket sport played on a court over a net",
-    "characters": ["T","E","N","N","I","S","L","A","R","O"],
-    "correctWord": "TENNIS"
+    "hint": "Known for maple syrup and vast forests",
+    "characters": ["C","A","N","A","D","A","L","S","T","R"],
+    "correctWord": "CANADA"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Strike and aim for a spare",
-    "characters": ["B","O","W","L","I","N","G","R","S","T"],
-    "correctWord": "BOWLING"
+    "hint": "Largest country in South America",
+    "characters": ["B","R","A","Z","I","L","S","T","R","O"],
+    "correctWord": "BRAZIL"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Race in water using different strokes",
-    "characters": ["S","W","I","M","M","I","N","G","L","A"],
-    "correctWord": "SWIMMING"
+    "hint": "Home to the Great Wall",
+    "characters": ["C","H","I","N","A","L","S","T","R","O"],
+    "correctWord": "CHINA"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Run fast on a track to win",
-    "characters": ["R","U","N","N","I","N","G","L","S","T"],
-    "correctWord": "RUNNING"
+    "hint": "Famous for pyramids and the Nile River",
+    "characters": ["E","G","Y","P","T","L","S","T","R","A"],
+    "correctWord": "EGYPT"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Fast-paced sport played with sticks and a puck",
-    "characters": ["H","O","C","K","E","Y","L","S","T","A"],
-    "correctWord": "HOCKEY"
+    "hint": "Island nation known for kangaroos",
+    "characters": ["A","U","S","T","R","A","L","I","A","L"],
+    "correctWord": "AUSTRALIA"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Combat sport fought with gloves inside a ring",
-    "characters": ["B","O","X","I","N","G","L","S","T","A"],
-    "correctWord": "BOXING"
+    "hint": "European country known for pasta and pizza",
+    "characters": ["I","T","A","L","Y","S","T","R","O","N"],
+    "correctWord": "ITALY"
   },
   {
-    "theme": "sports",
+    "theme": "countries",
     "ageRange": "all",
-    "hint": "Swing a club to hit a small white ball into a hole",
-    "characters": ["G","O","L","F","L","S","T","R","A","E"],
-    "correctWord": "GOLF"
+    "hint": "Country with the Statue of Liberty",
+    "characters": ["U","S","A","L","T","R","O","N","E","S"],
+    "correctWord": "USA"
   }
 ]
 
