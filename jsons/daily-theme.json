@@ -1,18 +1,18 @@
 {
-   "version": 28,
+   "version": 29,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-26",
+         "id":"theme-2026-02-27",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":25,
+         "challengeNumber":26,
          "availableOn":{
             "month":2,
-            "day": 26,
+            "day": 27,
          },
          "theme":{
-            "name":"Food Names",
+            "name":"TV Series",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -25,76 +25,76 @@
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds":  [
+         "rounds": [
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Italian dish with tomato sauce and cheese",
-    "characters": ["P","I","Z","Z","A","L","S","T","R","E"],
-    "correctWord": "PIZZA"
+    "hint": "Classic sitcom set in New York, often called a show about nothing",
+    "characters": ["S","E","I","N","F","E","L","D","A","T"],
+    "correctWord": "SEINFELD"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Japanese dish made with rice and fish",
-    "characters": ["S","U","S","H","I","L","A","T","R","N"],
-    "correctWord": "SUSHI"
+    "hint": "The Devil moves to Los Angeles and helps solve crimes",
+    "characters": ["L","U","C","I","F","E","R","L","S","T"],
+    "correctWord": "LUCIFER"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Flat Indian bread served with curry",
-    "characters": ["N","A","A","N","L","S","T","R","O","P"],
-    "correctWord": "NAAN"
+    "hint": "Crime drama centered around drug cartels",
+    "characters": ["N","A","R","C","O","S","L","T","R","E"],
+    "correctWord": "NARCOS"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Sweet treat made from cocoa and sugar",
-    "characters": ["C","H","O","C","O","L","A","T","E","S"],
-    "correctWord": "CHOCOLATE"
+    "hint": "German sci-fi mystery involving time and families",
+    "characters": ["D","A","R","K","L","S","T","R","O","N"],
+    "correctWord": "DARK"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Long pasta often served with sauce",
-    "characters": ["S","P","A","G","H","E","T","T","I","L"],
-    "correctWord": "SPAGHETTI"
+    "hint": "Comedy series set in a hospital with doctors in training",
+    "characters": ["S","C","R","U","B","S","L","A","T","N"],
+    "correctWord": "SCRUBS"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Popular fast food with bun and patty",
-    "characters": ["B","U","R","G","E","R","L","S","T","A"],
-    "correctWord": "BURGER"
+    "hint": "Crime procedural starring a forensic anthropologist",
+    "characters": ["B","O","N","E","S","L","A","T","R","I"],
+    "correctWord": "BONES"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Grilled sandwich with melted cheese",
-    "characters": ["S","A","N","D","W","I","C","H","L","T"],
-    "correctWord": "SANDWICH"
+    "hint": "DC series set in Batman’s city before he appears",
+    "characters": ["G","O","T","H","A","M","L","S","T","R"],
+    "correctWord": "GOTHAM"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Cold sweet dessert served in scoops",
-    "characters": ["I","C","E","C","R","E","A","M","L","T"],
-    "correctWord": "ICECREAM"
+    "hint": "DC series about a billionaire who becomes a vigilante",
+    "characters": ["A","R","R","O","W","L","S","T","A","N"],
+    "correctWord": "ARROW"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Mexican dish wrapped in a tortilla",
-    "characters": ["B","U","R","R","I","T","O","L","S","A"],
-    "correctWord": "BURRITO"
+    "hint": "Marvel series about the god of mischief",
+    "characters": ["L","O","K","I","L","S","T","R","A","E"],
+    "correctWord": "LOKI"
   },
   {
-    "theme": "food",
+    "theme": "tv_series",
     "ageRange": "all",
-    "hint": "Healthy green vegetable often used in salads",
-    "characters": ["L","E","T","T","U","C","E","L","S","A"],
-    "correctWord": "LETTUCE"
+    "hint": "Marvel series blending sitcom style with superpowers",
+    "characters": ["W","A","N","D","A","V","I","S","I","O"],
+    "correctWord": "WANDAVISION"
   }
 ]
 
