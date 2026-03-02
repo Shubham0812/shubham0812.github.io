@@ -1,15 +1,15 @@
 {
-   "version": 29,
+   "version": 31,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-02-27",
+         "id":"theme-2026-03-02",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":26,
+         "challengeNumber":29,
          "availableOn":{
-            "month":2,
-            "day": 27,
+            "month":3,
+            "day": 02,
          },
          "theme":{
             "name":"TV Series",
