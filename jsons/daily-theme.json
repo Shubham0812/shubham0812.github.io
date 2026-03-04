@@ -1,18 +1,18 @@
 {
-   "version": 32,
+   "version": 34,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-03-02",
+         "id":"theme-2026-03-04",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":29,
+         "challengeNumber":31,
          "availableOn":{
             "month":3,
-            "day": 2,
+            "day": 4,
          },
          "theme":{
-            "name":"TV Series",
+            "name":"Games",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -25,76 +25,76 @@
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds": [
+         "rounds":[
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Classic sitcom set in New York, often called a show about nothing",
-    "characters": ["S","E","I","N","F","E","L","D","A","T"],
-    "correctWord": "SEINFELD"
+    "hint": "Strategy board game with kings and queens",
+    "characters": ["C","H","E","S","S","L","T","A","R","S"],
+    "correctWord": "CHESS"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "The Devil moves to Los Angeles and helps solve crimes",
-    "characters": ["L","U","C","I","F","E","R","L","S","T"],
-    "correctWord": "LUCIFER"
+    "hint": "Word game played with letter tiles",
+    "characters": ["S","C","R","A","B","B","L","E","L","T"],
+    "correctWord": "SCRABBLE"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Crime drama centered around drug cartels",
-    "characters": ["N","A","R","C","O","S","L","T","R","E"],
-    "correctWord": "NARCOS"
+    "hint": "Property trading board game",
+    "characters": ["M","O","N","O","P","O","L","Y","S","T"],
+    "correctWord": "MONOPOLY"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "German sci-fi mystery involving time and families",
-    "characters": ["D","A","R","K","L","S","T","R","O","N"],
-    "correctWord": "DARK"
+    "hint": "Card game where players shout when one card remains",
+    "characters": ["U","N","O","L","T","S","R","A","E","D"],
+    "correctWord": "UNO"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Comedy series set in a hospital with doctors in training",
-    "characters": ["S","C","R","U","B","S","L","A","T","N"],
-    "correctWord": "SCRUBS"
+    "hint": "Tile game where players match numbers",
+    "characters": ["D","O","M","I","N","O","E","S","L","T"],
+    "correctWord": "DOMINOES"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Crime procedural starring a forensic anthropologist",
-    "characters": ["B","O","N","E","S","L","A","T","R","I"],
-    "correctWord": "BONES"
+    "hint": "Classic card game played in casinos",
+    "characters": ["P","O","K","E","R","L","T","A","S","N"],
+    "correctWord": "POKER"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "DC series set in Batman’s city before he appears",
-    "characters": ["G","O","T","H","A","M","L","S","T","R"],
-    "correctWord": "GOTHAM"
+    "hint": "Simple grid game with Xs and Os",
+    "characters": ["T","I","C","T","A","C","T","O","E","S"],
+    "correctWord": "TICTACTOE"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "DC series about a billionaire who becomes a vigilante",
-    "characters": ["A","R","R","O","W","L","S","T","A","N"],
-    "correctWord": "ARROW"
+    "hint": "Classic board game where ladders help you climb",
+    "characters": ["L","A","D","D","E","R","S","L","T","O"],
+    "correctWord": "LADDERS"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Marvel series about the god of mischief",
-    "characters": ["L","O","K","I","L","S","T","R","A","E"],
-    "correctWord": "LOKI"
+    "hint": "Guess the hidden word with letters",
+    "characters": ["H","A","N","G","M","A","N","L","T","S"],
+    "correctWord": "HANGMAN"
   },
   {
-    "theme": "tv_series",
+    "theme": "games",
     "ageRange": "all",
-    "hint": "Marvel series blending sitcom style with superpowers",
-    "characters": ["W","A","N","D","A","V","I","S","I","O"],
-    "correctWord": "WANDAVISION"
+    "hint": "Tile-based number puzzle played on a grid",
+    "characters": ["S","U","D","O","K","U","L","T","A","R"],
+    "correctWord": "SUDOKU"
   }
 ]
 
