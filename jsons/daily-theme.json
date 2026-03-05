@@ -1,18 +1,18 @@
 {
-   "version": 34,
+   "version": 35,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-03-04",
+         "id":"theme-2026-03-05",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
          "challengeNumber":31,
          "availableOn":{
             "month":3,
-            "day": 4,
+            "day": 5,
          },
          "theme":{
-            "name":"Games",
+            "name":"Movie Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,77 +27,76 @@
          },
          "rounds":[
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Strategy board game with kings and queens",
-    "characters": ["C","H","E","S","S","L","T","A","R","S"],
-    "correctWord": "CHESS"
+    "hint": "A giant ship sinks after hitting an iceberg",
+    "characters": ["T","I","T","A","N","I","C","L","S","R"],
+    "correctWord": "TITANIC"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Word game played with letter tiles",
-    "characters": ["S","C","R","A","B","B","L","E","L","T"],
-    "correctWord": "SCRABBLE"
+    "hint": "A failed comedian becomes a criminal icon",
+    "characters": ["J","O","K","E","R","L","S","T","A","N"],
+    "correctWord": "JOKER"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Property trading board game",
-    "characters": ["M","O","N","O","P","O","L","Y","S","T"],
-    "correctWord": "MONOPOLY"
+    "hint": "A thief enters dreams to plant an idea",
+    "characters": ["I","N","C","E","P","T","I","O","N","L"],
+    "correctWord": "INCEPTION"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Card game where players shout when one card remains",
-    "characters": ["U","N","O","L","T","S","R","A","E","D"],
-    "correctWord": "UNO"
+    "hint": "A Roman general fights in the arena",
+    "characters": ["G","L","A","D","I","A","T","O","R","S"],
+    "correctWord": "GLADIATOR"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Tile game where players match numbers",
-    "characters": ["D","O","M","I","N","O","E","S","L","T"],
-    "correctWord": "DOMINOES"
+    "hint": "A deadly creature hunts a spaceship crew",
+    "characters": ["A","L","I","E","N","L","S","T","R","A"],
+    "correctWord": "ALIEN"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Classic card game played in casinos",
-    "characters": ["P","O","K","E","R","L","T","A","S","N"],
-    "correctWord": "POKER"
+    "hint": "A former assassin seeks revenge after losing his dog",
+    "characters": ["J","O","H","N","W","I","C","K","L","S"],
+    "correctWord": "JOHNWICK"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Simple grid game with Xs and Os",
-    "characters": ["T","I","C","T","A","C","T","O","E","S"],
-    "correctWord": "TICTACTOE"
+    "hint": "A boxer rises from his father's shadow",
+    "characters": ["C","R","E","E","D","L","S","T","A","R"],
+    "correctWord": "CREED"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Classic board game where ladders help you climb",
-    "characters": ["L","A","D","D","E","R","S","L","T","O"],
-    "correctWord": "LADDERS"
+    "hint": "A James Bond mission turns personal",
+    "characters": ["S","K","Y","F","A","L","L","T","R","A"],
+    "correctWord": "SKYFALL"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Guess the hidden word with letters",
-    "characters": ["H","A","N","G","M","A","N","L","T","S"],
-    "correctWord": "HANGMAN"
+    "hint": "A man with memory loss searches for the truth",
+    "characters": ["M","E","M","E","N","T","O","L","S","A"],
+    "correctWord": "MEMENTO"
   },
   {
-    "theme": "games",
+    "theme": "movies",
     "ageRange": "all",
-    "hint": "Tile-based number puzzle played on a grid",
-    "characters": ["S","U","D","O","K","U","L","T","A","R"],
-    "correctWord": "SUDOKU"
+    "hint": "An underground club spirals out of control",
+    "characters": ["F","I","G","H","T","C","L","U","B","S"],
+    "correctWord": "FIGHTCLUB"
   }
 ]
-
       }
    ]
 }
