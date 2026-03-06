@@ -1,18 +1,18 @@
 {
-   "version": 35,
+   "version": 36,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-03-05",
+         "id":"theme-2026-03-06",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":31,
+         "challengeNumber":32,
          "availableOn":{
             "month":3,
-            "day": 5,
+            "day": 6,
          },
          "theme":{
-            "name":"Movie Names",
+            "name":"Programming Languages",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds":[
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A giant ship sinks after hitting an iceberg",
-    "characters": ["T","I","T","A","N","I","C","L","S","R"],
-    "correctWord": "TITANIC"
+    "hint": "Popular language used for web apps and data science",
+    "characters": ["P","Y","T","H","O","N","L","S","T","A"],
+    "correctWord": "PYTHON"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A failed comedian becomes a criminal icon",
-    "characters": ["J","O","K","E","R","L","S","T","A","N"],
-    "correctWord": "JOKER"
+    "hint": "Language used for building Android apps",
+    "characters": ["K","O","T","L","I","N","L","S","T","A"],
+    "correctWord": "KOTLIN"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A thief enters dreams to plant an idea",
-    "characters": ["I","N","C","E","P","T","I","O","N","L"],
-    "correctWord": "INCEPTION"
+    "hint": "Language used heavily for web development",
+    "characters": ["J","A","V","A","S","C","R","I","P","T"],
+    "correctWord": "JAVASCRIPT"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A Roman general fights in the arena",
-    "characters": ["G","L","A","D","I","A","T","O","R","S"],
-    "correctWord": "GLADIATOR"
+    "hint": "Language used for iOS and macOS development",
+    "characters": ["S","W","I","F","T","L","S","T","A","R"],
+    "correctWord": "SWIFT"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A deadly creature hunts a spaceship crew",
-    "characters": ["A","L","I","E","N","L","S","T","R","A"],
-    "correctWord": "ALIEN"
+    "hint": "Object-oriented language widely used in enterprise apps",
+    "characters": ["J","A","V","A","L","S","T","A","R","N"],
+    "correctWord": "JAVA"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A former assassin seeks revenge after losing his dog",
-    "characters": ["J","O","H","N","W","I","C","K","L","S"],
-    "correctWord": "JOHNWICK"
+    "hint": "Language used to style web pages",
+    "characters": ["C","S","S","L","T","A","R","N","E","S"],
+    "correctWord": "CSS"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A boxer rises from his father's shadow",
-    "characters": ["C","R","E","E","D","L","S","T","A","R"],
-    "correctWord": "CREED"
+    "hint": "Microsoft language often used with .NET",
+    "characters": ["C","S","H","A","R","P","L","T","S","A"],
+    "correctWord": "CSHARP"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A James Bond mission turns personal",
-    "characters": ["S","K","Y","F","A","L","L","T","R","A"],
-    "correctWord": "SKYFALL"
+    "hint": "System programming language created by Mozilla",
+    "characters": ["R","U","S","T","L","A","T","S","R","E"],
+    "correctWord": "RUST"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "A man with memory loss searches for the truth",
-    "characters": ["M","E","M","E","N","T","O","L","S","A"],
-    "correctWord": "MEMENTO"
+    "hint": "Language widely used for statistical computing",
+    "characters": ["R","L","T","S","A","N","E","R","O","P"],
+    "correctWord": "R"
   },
   {
-    "theme": "movies",
+    "theme": "programming_languages",
     "ageRange": "all",
-    "hint": "An underground club spirals out of control",
-    "characters": ["F","I","G","H","T","C","L","U","B","S"],
-    "correctWord": "FIGHTCLUB"
+    "hint": "Language designed by Google for scalable systems",
+    "characters": ["G","O","L","A","N","G","L","S","T","A"],
+    "correctWord": "GOLANG"
   }
 ]
       }
