@@ -4,12 +4,12 @@
     "limitedValentineDate": 1771503746
   },
   "leaderboard": {
-    "startDate": "2026-2-04",
-    "endDate": "2026-3-1",
-    "challengeNumber": 3,
+    "startDate": "2026-3-1",
+    "endDate": "2026-3-30",
+    "challengeNumber": 4,
     "copy": "",
     "force": true
   },
-  "version": 8,
+  "version": 9,
   "force": true
 }
