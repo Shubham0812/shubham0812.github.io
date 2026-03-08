@@ -1,18 +1,18 @@
 {
-   "version": 36,
+   "version": 34,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-03-06",
+         "id":"theme-2026-08-03",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":32,
+         "challengeNumber":34,
          "availableOn":{
             "month":3,
-            "day": 6,
+            "day": 8,
          },
          "theme":{
-            "name":"Programming Languages",
+            "name":"Food Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -25,78 +25,79 @@
             "handHoldingMode":false,
             "maximumHandHoldingCounter":0
          },
-         "rounds":[
+         "rounds": [
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Popular language used for web apps and data science",
-    "characters": ["P","Y","T","H","O","N","L","S","T","A"],
-    "correctWord": "PYTHON"
+    "hint": "Italian dish with tomato sauce and cheese",
+    "characters": ["P","I","Z","Z","A","L","S","T","R","A"],
+    "correctWord": "PIZZA"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language used for building Android apps",
-    "characters": ["K","O","T","L","I","N","L","S","T","A"],
-    "correctWord": "KOTLIN"
+    "hint": "Japanese dish made with rice and raw fish",
+    "characters": ["S","U","S","H","I","L","S","T","R","A"],
+    "correctWord": "SUSHI"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language used heavily for web development",
-    "characters": ["J","A","V","A","S","C","R","I","P","T"],
-    "correctWord": "JAVASCRIPT"
+    "hint": "Popular fast food with a bun and patty",
+    "characters": ["B","U","R","G","E","R","L","S","T","A"],
+    "correctWord": "BURGER"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language used for iOS and macOS development",
-    "characters": ["S","W","I","F","T","L","S","T","A","R"],
-    "correctWord": "SWIFT"
+    "hint": "Cold sweet dessert served in scoops",
+    "characters": ["I","C","E","C","R","E","A","M","L","T"],
+    "correctWord": "ICECREAM"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Object-oriented language widely used in enterprise apps",
-    "characters": ["J","A","V","A","L","S","T","A","R","N"],
-    "correctWord": "JAVA"
+    "hint": "Italian pasta often served with tomato sauce",
+    "characters": ["P","A","S","T","A","L","S","T","R","N"],
+    "correctWord": "PASTA"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language used to style web pages",
-    "characters": ["C","S","S","L","T","A","R","N","E","S"],
-    "correctWord": "CSS"
+    "hint": "Long thin pasta commonly eaten with meatballs",
+    "characters": ["S","P","A","G","H","E","T","T","I","L"],
+    "correctWord": "SPAGHETTI"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Microsoft language often used with .NET",
-    "characters": ["C","S","H","A","R","P","L","T","S","A"],
-    "correctWord": "CSHARP"
+    "hint": "Mexican dish wrapped in a tortilla",
+    "characters": ["B","U","R","R","I","T","O","L","S","A"],
+    "correctWord": "BURRITO"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "System programming language created by Mozilla",
-    "characters": ["R","U","S","T","L","A","T","S","R","E"],
-    "correctWord": "RUST"
+    "hint": "Sweet food made from cocoa and sugar",
+    "characters": ["C","H","O","C","O","L","A","T","E","S"],
+    "correctWord": "CHOCOLATE"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language widely used for statistical computing",
-    "characters": ["R","L","T","S","A","N","E","R","O","P"],
-    "correctWord": "R"
+    "hint": "Toasted bread often served for breakfast",
+    "characters": ["T","O","A","S","T","L","S","T","R","A"],
+    "correctWord": "TOAST"
   },
   {
-    "theme": "programming_languages",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Language designed by Google for scalable systems",
-    "characters": ["G","O","L","A","N","G","L","S","T","A"],
-    "correctWord": "GOLANG"
+    "hint": "Flat bread widely eaten in India",
+    "characters": ["N","A","A","N","L","S","T","R","A","E"],
+    "correctWord": "NAAN"
   }
 ]
+
       }
    ]
 }
