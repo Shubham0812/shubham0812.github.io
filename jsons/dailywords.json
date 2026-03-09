@@ -1,15 +1,15 @@
 {
-   "version": 24,
+   "version": 25,
    "force": true,
    "entries": [
       {
-         "id":"word-2026-03-07",
+         "id":"word-2026-03-09",
          "title":"Words Game",
          "subtitle":"Make words with the characters",
-         "challengeNumber": 33,
+         "challengeNumber": 35,
          "availableOn":{
             "month": 3,
-            "day": 7
+            "day": 9
          },
          "gamePreset": {
             "rounds": 1,
@@ -22,46 +22,48 @@
          },
          "round":{
   "characters": [
-    "d",
-    "e",
-    "c",
-    "l",
-    "a",
+    "b",
     "r",
-    "t",
     "i",
+    "g",
+    "h",
+    "t",
+    "e",
+    "n",
     "o",
-    "n"
+    "s"
   ],
   "possibleWords": [
-    { "word": "red", "hint": "Color of fire trucks" },
-    { "word": "ear", "hint": "Organ for hearing" },
-    { "word": "end", "hint": "Final part" },
-    { "word": "ice", "hint": "Frozen water" },
-    { "word": "one", "hint": "Number after zero" },
-    { "word": "tin", "hint": "Soft metal element" },
+    { "word": "bin", "hint": "Container for storing items" },
+    { "word": "bit", "hint": "Small piece of something" },
     { "word": "net", "hint": "Mesh used to catch things" },
-    { "word": "car", "hint": "Road vehicle" },
-    { "word": "rod", "hint": "Straight thin bar" },
-    { "word": "oil", "hint": "Liquid used in cooking" },
+    { "word": "son", "hint": "Male child" },
+    { "word": "ton", "hint": "Unit of heavy weight" },
+    { "word": "hen", "hint": "Female chicken" },
+    { "word": "hot", "hint": "Having a high temperature" },
+    { "word": "toe", "hint": "Digit on the foot" },
+    { "word": "one", "hint": "Number after zero" },
+    { "word": "orb", "hint": "Spherical object" },
 
-    { "word": "deal", "hint": "Agreement or bargain" },
-    { "word": "lion", "hint": "Large wild cat" },
-    { "word": "road", "hint": "Paved path for vehicles" },
-    { "word": "note", "hint": "Written message" },
-    { "word": "tale", "hint": "Story" },
-    { "word": "coal", "hint": "Black rock used as fuel" },
-    { "word": "iron", "hint": "Strong metal" },
-    { "word": "rain", "hint": "Water from clouds" },
+    { "word": "bone", "hint": "Hard structure in the body" },
+    { "word": "born", "hint": "Brought into life" },
+    { "word": "ring", "hint": "Circular band worn on a finger" },
     { "word": "tone", "hint": "Quality of sound" },
-    { "word": "real", "hint": "Actually existing" },
+    { "word": "rise", "hint": "Move upward" },
+    { "word": "shoe", "hint": "Footwear item" },
+    { "word": "host", "hint": "Person who receives guests" },
+    { "word": "nest", "hint": "Bird's home" },
+    { "word": "hero", "hint": "Person admired for bravery" },
+    { "word": "iron", "hint": "Strong metal element" },
 
-    { "word": "train", "hint": "Connected railway vehicles" },
-    { "word": "trail", "hint": "Path through nature" },
-    { "word": "ratio", "hint": "Relationship between numbers" },
-    { "word": "retail", "hint": "Sell goods to customers" },
-    { "word": "reason", "hint": "Cause or explanation" },
-    { "word": "creation", "hint": "Something that has been made" }
+    { "word": "bring", "hint": "Carry something to a place" },
+    { "word": "bright", "hint": "Giving off a lot of light" },
+    { "word": "noise", "hint": "Loud or unwanted sound" },
+    { "word": "stone", "hint": "Hard natural rock" },
+    { "word": "shore", "hint": "Land beside water" },
+
+    { "word": "region", "hint": "Large area of land" },
+    { "word": "shorten", "hint": "Make something shorter" }
   ],
   "requiredWordCount": 10
 }
