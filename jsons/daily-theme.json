@@ -1,18 +1,18 @@
 {
-   "version": 36,
+   "version": 37,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-11-03",
+         "id":"theme-2026-13-03",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":37,
+         "challengeNumber":39,
          "availableOn":{
             "month":3,
-            "day": 11,
+            "day": 13,
          },
          "theme":{
-            "name":"Anime Characters",
+            "name":"Food Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,77 +27,76 @@
          },
          "rounds": [
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Rubber-powered pirate captain searching for the One Piece",
-    "characters": ["L","U","F","F","Y","L","S","T","A","R"],
-    "correctWord": "LUFFY"
+    "hint": "Breakfast dish made by frying eggs in a pan",
+    "characters": ["O","M","E","L","E","T","L","S","T","A"],
+    "correctWord": "OMELET"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Ninja who dreams of becoming Hokage",
-    "characters": ["N","A","R","U","T","O","L","S","T","R"],
-    "correctWord": "NARUTO"
+    "hint": "Sweet baked dessert with frosting",
+    "characters": ["C","U","P","C","A","K","E","L","S","T"],
+    "correctWord": "CUPCAKE"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Saiyan warrior raised on Earth",
-    "characters": ["G","O","K","U","L","S","T","A","R","N"],
-    "correctWord": "GOKU"
+    "hint": "Flat Mexican tortilla filled with meat or beans",
+    "characters": ["T","A","C","O","S","L","T","R","A","N"],
+    "correctWord": "TACOS"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Straw Hat pirate swordsman with three swords",
-    "characters": ["Z","O","R","O","L","S","T","A","R","N"],
-    "correctWord": "ZORO"
+    "hint": "Sweet round fried dough often glazed",
+    "characters": ["D","O","N","U","T","S","L","T","R","A"],
+    "correctWord": "DONUTS"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Young hero born without powers in My Hero Academia",
-    "characters": ["I","Z","U","K","U","L","S","T","A","R"],
-    "correctWord": "IZUKU"
+    "hint": "Breakfast cakes served with syrup",
+    "characters": ["P","A","N","C","A","K","E","S","L","T"],
+    "correctWord": "PANCAKES"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Powerful Saiyan prince",
-    "characters": ["V","E","G","E","T","A","L","S","T","R"],
-    "correctWord": "VEGETA"
+    "hint": "Popular grilled sandwich with melted cheese",
+    "characters": ["S","A","N","D","W","I","C","H","L","T"],
+    "correctWord": "SANDWICH"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Titan-fighting soldier from Attack on Titan",
-    "characters": ["L","E","V","I","L","S","T","A","R","N"],
-    "correctWord": "LEVI"
+    "hint": "Boiled noodles often served in broth",
+    "characters": ["N","O","O","D","L","E","S","L","T","A"],
+    "correctWord": "NOODLES"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Notebook-wielding genius who hunts criminals",
-    "characters": ["L","I","G","H","T","L","S","T","R","A"],
-    "correctWord": "LIGHT"
+    "hint": "Fresh dish made with vegetables and dressing",
+    "characters": ["S","A","L","A","D","L","T","R","S","N"],
+    "correctWord": "SALAD"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Energetic ninja known for shouting about youth",
-    "characters": ["G","U","Y","L","S","T","A","R","N","E"],
-    "correctWord": "GUY"
+    "hint": "Sweet dessert made from baked batter",
+    "characters": ["C","A","K","E","L","S","T","R","A","N"],
+    "correctWord": "CAKE"
   },
   {
-    "theme": "anime_characters",
+    "theme": "food",
     "ageRange": "all",
-    "hint": "Alchemist searching for the Philosopher's Stone",
-    "characters": ["E","D","W","A","R","D","L","S","T","A"],
-    "correctWord": "EDWARD"
+    "hint": "Sweet baked treat with chocolate chips",
+    "characters": ["C","O","O","K","I","E","S","L","T","R"],
+    "correctWord": "COOKIES"
   }
 ]
-
       }
    ]
 }
