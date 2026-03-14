@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "force": false,
+    "force": true,
     "appLaunchDate": 1773548608,
-    "showRedeemCode": true
+    "showRedeemCode": false
 }
