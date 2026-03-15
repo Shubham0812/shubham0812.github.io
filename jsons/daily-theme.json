@@ -1,18 +1,18 @@
 {
-   "version": 37,
+   "version": 38,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-13-03",
+         "id":"theme-2026-15-03",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":39,
+         "challengeNumber":40,
          "availableOn":{
             "month":3,
-            "day": 13,
+            "day": 15,
          },
          "theme":{
-            "name":"Food Names",
+            "name":"Capital Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Breakfast dish made by frying eggs in a pan",
-    "characters": ["O","M","E","L","E","T","L","S","T","A"],
-    "correctWord": "OMELET"
+    "hint": "Capital city with the Eiffel Tower",
+    "characters": ["F","R","A","N","C","E","L","S","T","A"],
+    "correctWord": "FRANCE"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Sweet baked dessert with frosting",
-    "characters": ["C","U","P","C","A","K","E","L","S","T"],
-    "correctWord": "CUPCAKE"
+    "hint": "Capital city with the Colosseum",
+    "characters": ["I","T","A","L","Y","L","S","T","R","A"],
+    "correctWord": "ITALY"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Flat Mexican tortilla filled with meat or beans",
-    "characters": ["T","A","C","O","S","L","T","R","A","N"],
-    "correctWord": "TACOS"
+    "hint": "Capital city with the Statue of Liberty",
+    "characters": ["U","N","I","T","E","D","S","T","A","S"],
+    "correctWord": "USA"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Sweet round fried dough often glazed",
-    "characters": ["D","O","N","U","T","S","L","T","R","A"],
-    "correctWord": "DONUTS"
+    "hint": "Capital city famous for the Brandenburg Gate",
+    "characters": ["G","E","R","M","A","N","Y","L","S","T"],
+    "correctWord": "GERMANY"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Breakfast cakes served with syrup",
-    "characters": ["P","A","N","C","A","K","E","S","L","T"],
-    "correctWord": "PANCAKES"
+    "hint": "Capital city known for the Sagrada Familia",
+    "characters": ["S","P","A","I","N","L","S","T","R","A"],
+    "correctWord": "SPAIN"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Popular grilled sandwich with melted cheese",
-    "characters": ["S","A","N","D","W","I","C","H","L","T"],
-    "correctWord": "SANDWICH"
+    "hint": "Capital city known for the CN Tower",
+    "characters": ["C","A","N","A","D","A","L","S","T","R"],
+    "correctWord": "CANADA"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Boiled noodles often served in broth",
-    "characters": ["N","O","O","D","L","E","S","L","T","A"],
-    "correctWord": "NOODLES"
+    "hint": "Capital city with the Kremlin and Red Square",
+    "characters": ["R","U","S","S","I","A","L","S","T","R"],
+    "correctWord": "RUSSIA"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Fresh dish made with vegetables and dressing",
-    "characters": ["S","A","L","A","D","L","T","R","S","N"],
-    "correctWord": "SALAD"
+    "hint": "Capital city famous for the Opera House",
+    "characters": ["A","U","S","T","R","A","L","I","A","S"],
+    "correctWord": "AUSTRALIA"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Sweet dessert made from baked batter",
-    "characters": ["C","A","K","E","L","S","T","R","A","N"],
-    "correctWord": "CAKE"
+    "hint": "Capital city with the Christ the Redeemer statue",
+    "characters": ["B","R","A","Z","I","L","L","S","T","R"],
+    "correctWord": "BRAZIL"
   },
   {
-    "theme": "food",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Sweet baked treat with chocolate chips",
-    "characters": ["C","O","O","K","I","E","S","L","T","R"],
-    "correctWord": "COOKIES"
+    "hint": "Capital city famous for the Acropolis",
+    "characters": ["G","R","E","E","C","E","L","S","T","A"],
+    "correctWord": "GREECE"
   }
 ]
       }
