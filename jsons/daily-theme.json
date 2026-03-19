@@ -1,18 +1,18 @@
 {
-   "version": 39,
+   "version": 40,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-17-03",
+         "id":"theme-2026-19-03",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":41,
+         "challengeNumber":42,
          "availableOn":{
             "month":3,
-            "day": 17,
+            "day": 19,
          },
          "theme":{
-            "name":"Sport Names",
+            "name":"Anime Characters",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport played with a bat and ball popular in India",
-    "characters": ["C","R","I","C","K","E","T","L","S","A"],
-    "correctWord": "CRICKET"
+    "hint": "Shinigami who hunts hollows with a large sword",
+    "characters": ["I","C","H","I","G","O","L","S","T","R"],
+    "correctWord": "ICHIGO"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport where players kick a ball into a goal",
-    "characters": ["F","O","O","T","B","A","L","L","S","T"],
-    "correctWord": "FOOTBALL"
+    "hint": "Pirate captain with red hair and immense power",
+    "characters": ["S","H","A","N","K","S","L","T","R","A"],
+    "correctWord": "SHANKS"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport played with a racket and a yellow ball",
-    "characters": ["T","E","N","N","I","S","L","S","T","A"],
-    "correctWord": "TENNIS"
+    "hint": "Electric Pokémon known for saying its own name",
+    "characters": ["P","I","K","A","C","H","U","L","S","T"],
+    "correctWord": "PIKACHU"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport where players shoot hoops",
-    "characters": ["B","A","S","K","E","T","B","A","L","L"],
-    "correctWord": "BASKETBALL"
+    "hint": "Saiyan who is Goku's son",
+    "characters": ["G","O","H","A","N","L","S","T","R","A"],
+    "correctWord": "GOHAN"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport played on ice with sticks and a puck",
-    "characters": ["H","O","C","K","E","Y","L","S","T","R"],
-    "correctWord": "HOCKEY"
+    "hint": "Hot-headed hero from My Hero Academia",
+    "characters": ["B","A","K","U","G","O","L","S","T","R"],
+    "correctWord": "BAKUGO"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Combat sport fought inside a ring with gloves",
-    "characters": ["B","O","X","I","N","G","L","S","T","A"],
-    "correctWord": "BOXING"
+    "hint": "Strongest sorcerer with a blindfold",
+    "characters": ["G","O","J","O","L","S","T","R","A","N"],
+    "correctWord": "GOJO"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport played in water where teams score goals",
-    "characters": ["W","A","T","E","R","P","O","L","O","S"],
-    "correctWord": "WATERPOLO"
+    "hint": "Demon slayer with a kind heart and a scar",
+    "characters": ["T","A","N","J","I","R","O","L","S","T"],
+    "correctWord": "TANJIRO"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport where players hit a shuttlecock over a net",
-    "characters": ["B","A","D","M","I","N","T","O","N","L"],
-    "correctWord": "BADMINTON"
+    "hint": "Princess of the Hyuga clan with Byakugan eyes",
+    "characters": ["H","I","N","A","T","A","L","S","T","R"],
+    "correctWord": "HINATA"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport played with a cue stick and balls on a table",
-    "characters": ["B","I","L","L","I","A","R","D","S","L"],
-    "correctWord": "BILLIARDS"
+    "hint": "Captain with ice powers in Bleach",
+    "characters": ["T","O","S","H","I","R","O","L","S","T"],
+    "correctWord": "TOSHIRO"
   },
   {
-    "theme": "sports",
+    "theme": "anime_characters",
     "ageRange": "all",
-    "hint": "Sport where players race in water",
-    "characters": ["S","W","I","M","M","I","N","G","L","T"],
-    "correctWord": "SWIMMING"
+    "hint": "Spiky-haired ninja rival known for his sharingan",
+    "characters": ["S","A","S","U","K","E","L","S","T","R"],
+    "correctWord": "SASUKE"
   }
 ]
       }
