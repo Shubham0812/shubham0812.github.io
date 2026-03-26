@@ -1,5 +1,5 @@
 {
-   "version": 44
+   "version": 45
    "force":true,
    "entries":[
       {
@@ -50,13 +50,6 @@
   {
     "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Capital city Seoul",
-    "characters": ["K","O","R","E","A","L","S","T","R","N"],
-    "correctWord": "KOREA"
-  },
-  {
-    "theme": "capital_countries",
-    "ageRange": "all",
     "hint": "Capital city Bangkok",
     "characters": ["T","H","A","I","L","A","N","D","L","S"],
     "correctWord": "THAILAND"
@@ -67,13 +60,6 @@
     "hint": "Capital city Jakarta",
     "characters": ["I","N","D","O","N","E","S","I","A","L"],
     "correctWord": "INDONESIA"
-  },
-  {
-    "theme": "capital_countries",
-    "ageRange": "all",
-    "hint": "Capital city Riyadh",
-    "characters": ["S","A","U","D","I","L","S","T","R","A"],
-    "correctWord": "SAUDI"
   },
   {
     "theme": "capital_countries",
@@ -95,6 +81,20 @@
     "hint": "Capital city Oslo",
     "characters": ["N","O","R","W","A","Y","L","S","T","R"],
     "correctWord": "NORWAY"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Lima",
+    "characters": ["P","E","R","U","L","S","T","R","A","N"],
+    "correctWord": "PERU"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Dublin",
+    "characters": ["I","R","E","L","A","N","D","L","S","T"],
+    "correctWord": "IRELAND"
   }
 ]
       }
