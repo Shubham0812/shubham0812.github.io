@@ -1,15 +1,15 @@
 {
-   "version": 42
+   "version": 44
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-23-03",
+         "id":"theme-2026-26-03",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
          "challengeNumber":44,
          "availableOn":{
             "month":3,
-            "day": 23,
+            "day": 26,
          },
          "theme":{
             "name":"Country Names",
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "countries",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Country known for Mount Everest",
-    "characters": ["N","E","P","A","L","L","S","T","R","A"],
-    "correctWord": "NEPAL"
+    "hint": "Capital city Tokyo",
+    "characters": ["J","A","P","A","N","L","S","T","R","A"],
+    "correctWord": "JAPAN"
   },
   {
-    "theme": "countries",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Island country famous for tea and beaches",
-    "characters": ["S","R","I","L","A","N","K","A","L","S"],
-    "correctWord": "SRILANKA"
+    "hint": "Capital city New Delhi",
+    "characters": ["I","N","D","I","A","L","S","T","R","A"],
+    "correctWord": "INDIA"
   },
   {
-    "theme": "countries",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Country known for tulips and windmills",
-    "characters": ["N","E","T","H","E","R","L","A","N","D"],
-    "correctWord": "NETHERLANDS"
+    "hint": "Capital city Beijing",
+    "characters": ["C","H","I","N","A","L","S","T","R","A"],
+    "correctWord": "CHINA"
   },
   {
-    "theme": "countries",
+    "theme": "capital_countries",
     "ageRange": "all",
-    "hint": "Country famous for Vikings and fjords",
+    "hint": "Capital city Seoul",
+    "characters": ["K","O","R","E","A","L","S","T","R","N"],
+    "correctWord": "KOREA"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Bangkok",
+    "characters": ["T","H","A","I","L","A","N","D","L","S"],
+    "correctWord": "THAILAND"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Jakarta",
+    "characters": ["I","N","D","O","N","E","S","I","A","L"],
+    "correctWord": "INDONESIA"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Riyadh",
+    "characters": ["S","A","U","D","I","L","S","T","R","A"],
+    "correctWord": "SAUDI"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Ankara",
+    "characters": ["T","U","R","K","E","Y","L","S","T","R"],
+    "correctWord": "TURKEY"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Nairobi",
+    "characters": ["K","E","N","Y","A","L","S","T","R","A"],
+    "correctWord": "KENYA"
+  },
+  {
+    "theme": "capital_countries",
+    "ageRange": "all",
+    "hint": "Capital city Oslo",
     "characters": ["N","O","R","W","A","Y","L","S","T","R"],
     "correctWord": "NORWAY"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country known for the Alps and chocolate",
-    "characters": ["S","W","I","T","Z","E","R","L","A","N"],
-    "correctWord": "SWITZERLAND"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country famous for ancient ruins like Machu Picchu",
-    "characters": ["P","E","R","U","L","S","T","R","A","N"],
-    "correctWord": "PERU"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country known for maple syrup and hockey",
-    "characters": ["C","A","N","A","D","A","L","S","T","R"],
-    "correctWord": "CANADA"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country known for pyramids and deserts",
-    "characters": ["E","G","Y","P","T","L","S","T","R","A"],
-    "correctWord": "EGYPT"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country famous for samba and football",
-    "characters": ["B","R","A","Z","I","L","L","S","T","R"],
-    "correctWord": "BRAZIL"
-  },
-  {
-    "theme": "countries",
-    "ageRange": "all",
-    "hint": "Country known for its kangaroos and outback",
-    "characters": ["A","U","S","T","R","A","L","I","A","S"],
-    "correctWord": "AUSTRALIA"
   }
 ]
       }
