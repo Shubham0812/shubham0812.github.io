@@ -1,0 +1,102 @@
+{
+   "version": 57,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-12-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":57,
+         "availableOn":{
+            "month":4,
+            "day": 12
+         },
+         "theme":{
+            "name":"Sport Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Bat and ball game with wickets",
+    "characters": ["C","R","I","C","K","E","T","L","S","N"],
+    "correctWord": "CRICKET"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Sword fighting Olympic sport",
+    "characters": ["F","E","N","C","I","N","G","L","S","T"],
+    "correctWord": "FENCING"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Shooting arrows at a target",
+    "characters": ["A","R","C","H","E","R","Y","L","S","T"],
+    "correctWord": "ARCHERY"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Oval ball sport with tackles",
+    "characters": ["R","U","G","B","Y","L","S","T","A","N"],
+    "correctWord": "RUGBY"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Ice or field sport with a puck",
+    "characters": ["H","O","C","K","E","Y","L","S","T","R"],
+    "correctWord": "HOCKEY"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Horse riding sport with mallets",
+    "characters": ["P","O","L","O","S","T","R","A","K","N"],
+    "correctWord": "POLO"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Combat sport with gloves in a ring",
+    "characters": ["B","O","X","I","N","G","L","S","T","R"],
+    "correctWord": "BOXING"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Riding ocean waves on a board",
+    "characters": ["S","U","R","F","I","N","G","L","T","K"],
+    "correctWord": "SURFING"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Racquet sport played in a court",
+    "characters": ["S","Q","U","A","S","H","L","T","R","N"],
+    "correctWord": "SQUASH"
+  },
+  {
+    "theme": "sport_names",
+    "ageRange": "all",
+    "hint": "Japanese martial art with kicks",
+    "characters": ["K","A","R","A","T","E","L","S","N","O"],
+    "correctWord": "KARATE"
+  }
+]
+      }
+   ]
+}

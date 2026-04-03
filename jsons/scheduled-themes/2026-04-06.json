@@ -1,0 +1,102 @@
+{
+   "version": 51,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-06-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":51,
+         "availableOn":{
+            "month":4,
+            "day": 6
+         },
+         "theme":{
+            "name":"Anime Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Ninja dreaming of becoming Hokage",
+    "characters": ["N","A","R","U","T","O","L","S","K","E"],
+    "correctWord": "NARUTO"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Saiyan warrior from Dragon Ball",
+    "characters": ["G","O","K","U","L","S","T","R","A","N"],
+    "correctWord": "GOKU"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Rubber pirate captain of Straw Hats",
+    "characters": ["L","U","F","F","Y","S","T","R","A","N"],
+    "correctWord": "LUFFY"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Proud Saiyan prince from Dragon Ball",
+    "characters": ["V","E","G","E","T","A","L","S","R","N"],
+    "correctWord": "VEGETA"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Soul Reaper with orange hair",
+    "characters": ["I","C","H","I","G","O","L","S","T","R"],
+    "correctWord": "ICHIGO"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Skilled soldier fighting Titans",
+    "characters": ["M","I","K","A","S","A","L","T","R","N"],
+    "correctWord": "MIKASA"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Demon slayer with checkered earrings",
+    "characters": ["T","A","N","J","I","R","O","L","S","K"],
+    "correctWord": "TANJIRO"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Sharingan user from Leaf Village",
+    "characters": ["I","T","A","C","H","I","L","S","R","N"],
+    "correctWord": "ITACHI"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Requip mage from Fairy Tail",
+    "characters": ["E","R","Z","A","L","S","T","N","K","O"],
+    "correctWord": "ERZA"
+  },
+  {
+    "theme": "anime_names",
+    "ageRange": "all",
+    "hint": "Cyborg hero from One Punch Man",
+    "characters": ["G","E","N","O","S","L","T","R","A","K"],
+    "correctWord": "GENOS"
+  }
+]
+      }
+   ]
+}

@@ -1,0 +1,102 @@
+{
+   "version": 55,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-10-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":55,
+         "availableOn":{
+            "month":4,
+            "day": 10
+         },
+         "theme":{
+            "name":"Tech Device Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Amazon e-book reading device",
+    "characters": ["K","I","N","D","L","E","S","T","R","A"],
+    "correctWord": "KINDLE"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Google smartphone with best camera",
+    "characters": ["P","I","X","E","L","S","T","R","A","N"],
+    "correctWord": "PIXEL"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Apple wireless earbuds in a case",
+    "characters": ["A","I","R","P","O","D","S","L","T","N"],
+    "correctWord": "AIRPODS"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Samsung flagship smartphone series",
+    "characters": ["G","A","L","A","X","Y","S","T","R","N"],
+    "correctWord": "GALAXY"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Amazon voice assistant smart speaker",
+    "characters": ["A","L","E","X","A","S","T","R","K","N"],
+    "correctWord": "ALEXA"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Streaming device for your TV",
+    "characters": ["R","O","K","U","L","S","T","A","N","E"],
+    "correctWord": "ROKU"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Action camera for extreme sports",
+    "characters": ["G","O","P","R","O","L","S","T","K","N"],
+    "correctWord": "GOPRO"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Microsoft tablet and laptop hybrid",
+    "characters": ["S","U","R","F","A","C","E","L","T","N"],
+    "correctWord": "SURFACE"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Wearable fitness tracker on your wrist",
+    "characters": ["F","I","T","B","I","T","L","S","R","N"],
+    "correctWord": "FITBIT"
+  },
+  {
+    "theme": "tech_device_names",
+    "ageRange": "all",
+    "hint": "Amazon smart speaker with Alexa inside",
+    "characters": ["E","C","H","O","L","S","T","R","A","N"],
+    "correctWord": "ECHO"
+  }
+]
+      }
+   ]
+}

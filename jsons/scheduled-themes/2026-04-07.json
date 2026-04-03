@@ -1,0 +1,102 @@
+{
+   "version": 52,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-07-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":52,
+         "availableOn":{
+            "month":4,
+            "day": 7
+         },
+         "theme":{
+            "name":"Movie Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Disney movie about ice queen sisters",
+    "characters": ["F","R","O","Z","E","N","L","S","T","K"],
+    "correctWord": "FROZEN"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Spielberg film about a giant shark",
+    "characters": ["J","A","W","S","L","T","R","K","N","E"],
+    "correctWord": "JAWS"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Boxing underdog from Philadelphia",
+    "characters": ["R","O","C","K","Y","L","S","T","A","N"],
+    "correctWord": "ROCKY"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Blue aliens living on planet Pandora",
+    "characters": ["A","V","A","T","A","R","L","S","K","N"],
+    "correctWord": "AVATAR"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Love story on a sinking ship",
+    "characters": ["T","I","T","A","N","I","C","L","S","R"],
+    "correctWord": "TITANIC"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Green ogre living in a swamp",
+    "characters": ["S","H","R","E","K","L","T","A","N","O"],
+    "correctWord": "SHREK"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Pixar film about Mexican Day of Dead",
+    "characters": ["C","O","C","O","L","S","T","R","A","N"],
+    "correctWord": "COCO"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Red pill or blue pill sci-fi film",
+    "characters": ["M","A","T","R","I","X","L","S","K","N"],
+    "correctWord": "MATRIX"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Pixar film about talking race cars",
+    "characters": ["C","A","R","S","L","T","K","N","E","O"],
+    "correctWord": "CARS"
+  },
+  {
+    "theme": "movie_names",
+    "ageRange": "all",
+    "hint": "Disney film about Polynesian ocean voyage",
+    "characters": ["M","O","A","N","A","L","S","T","R","K"],
+    "correctWord": "MOANA"
+  }
+]
+      }
+   ]
+}

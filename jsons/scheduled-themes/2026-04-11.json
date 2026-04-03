@@ -1,0 +1,102 @@
+{
+   "version": 56,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-11-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":56,
+         "availableOn":{
+            "month":4,
+            "day": 11
+         },
+         "theme":{
+            "name":"Footballer Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Argentine legend with eight Ballon d'Or",
+    "characters": ["M","E","S","S","I","L","T","R","A","N"],
+    "correctWord": "MESSI"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Portuguese goal machine from Madeira",
+    "characters": ["R","O","N","A","L","D","O","L","S","T"],
+    "correctWord": "RONALDO"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Brazilian forward with flashy skills",
+    "characters": ["N","E","Y","M","A","R","L","S","T","K"],
+    "correctWord": "NEYMAR"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "French speedster from Paris",
+    "characters": ["M","B","A","P","P","E","L","S","T","R"],
+    "correctWord": "MBAPPE"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "French midfielder famous for headbutt",
+    "characters": ["Z","I","D","A","N","E","L","S","T","R"],
+    "correctWord": "ZIDANE"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Brazilian king of football",
+    "characters": ["P","E","L","E","S","T","R","A","K","N"],
+    "correctWord": "PELE"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Egyptian winger plays for Liverpool",
+    "characters": ["S","A","L","A","H","L","T","R","K","N"],
+    "correctWord": "SALAH"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "French striker Ballon d'Or winner",
+    "characters": ["B","E","N","Z","E","M","A","L","S","T"],
+    "correctWord": "BENZEMA"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Spanish midfield maestro from Barcelona",
+    "characters": ["X","A","V","I","L","S","T","R","K","N"],
+    "correctWord": "XAVI"
+  },
+  {
+    "theme": "footballer_names",
+    "ageRange": "all",
+    "hint": "Croatian playmaker at Real Madrid",
+    "characters": ["M","O","D","R","I","C","L","S","T","N"],
+    "correctWord": "MODRIC"
+  }
+]
+      }
+   ]
+}

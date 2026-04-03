@@ -1,0 +1,102 @@
+{
+   "version": 58,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-13-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":58,
+         "availableOn":{
+            "month":4,
+            "day": 13
+         },
+         "theme":{
+            "name":"F1 Team Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "Italian team with prancing horse logo",
+    "characters": ["F","E","R","R","A","R","I","L","S","N"],
+    "correctWord": "FERRARI"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "British team founded by Bruce McLaren",
+    "characters": ["M","C","L","A","R","E","N","S","T","K"],
+    "correctWord": "MCLAREN"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "German team known as silver arrows",
+    "characters": ["M","E","R","C","E","D","E","S","L","T"],
+    "correctWord": "MERCEDES"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "French team based in Enstone",
+    "characters": ["A","L","P","I","N","E","S","T","R","K"],
+    "correctWord": "ALPINE"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "American team founded by Gene Haas",
+    "characters": ["H","A","A","S","L","T","R","K","N","E"],
+    "correctWord": "HAAS"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "Swiss team based in Hinwil",
+    "characters": ["S","A","U","B","E","R","L","T","K","N"],
+    "correctWord": "SAUBER"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "Historic British team from Grove",
+    "characters": ["W","I","L","L","I","A","M","S","T","N"],
+    "correctWord": "WILLIAMS"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "French manufacturer team in F1",
+    "characters": ["R","E","N","A","U","L","T","S","K","O"],
+    "correctWord": "RENAULT"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "Legendary British team by Colin Chapman",
+    "characters": ["L","O","T","U","S","R","A","K","N","E"],
+    "correctWord": "LOTUS"
+  },
+  {
+    "theme": "f1_team_names",
+    "ageRange": "all",
+    "hint": "Team founded by Sir Jack Brabham",
+    "characters": ["B","R","A","B","H","A","M","L","S","T"],
+    "correctWord": "BRABHAM"
+  }
+]
+      }
+   ]
+}

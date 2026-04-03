@@ -1,0 +1,102 @@
+{
+   "version": 50,
+   "force":true,
+   "entries":[
+      {
+         "id":"theme-2026-05-04",
+         "title":"Theme Game",
+         "subtitle":"Find the correct word that fits the hint",
+         "challengeNumber":50,
+         "availableOn":{
+            "month":4,
+            "day": 5
+         },
+         "theme":{
+            "name":"Animal Names",
+            "icon":"lightbulb.max",
+            "cardColor":"#4EC5FF"
+         },
+         "gamePreset":{
+            "rounds":10,
+            "timeLimit": 180,
+            "numberOfHints": 10,
+            "difficulty":"easy",
+            "showIntro":false,
+            "handHoldingMode":false,
+            "maximumHandHoldingCounter":0
+         },
+         "rounds": [
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Flightless bird living in cold regions",
+    "characters": ["P","E","N","G","U","I","N","L","S","T"],
+    "correctWord": "PENGUIN"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Fastest land animal on Earth",
+    "characters": ["C","H","E","E","T","A","H","L","S","N"],
+    "correctWord": "CHEETAH"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Intelligent marine mammal that jumps",
+    "characters": ["D","O","L","P","H","I","N","S","T","R"],
+    "correctWord": "DOLPHIN"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Large primate found in African forests",
+    "characters": ["G","O","R","I","L","L","A","S","T","N"],
+    "correctWord": "GORILLA"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Bird of prey known for speed",
+    "characters": ["F","A","L","C","O","N","S","T","R","K"],
+    "correctWord": "FALCON"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Big cat with spotted coat",
+    "characters": ["J","A","G","U","A","R","L","S","T","N"],
+    "correctWord": "JAGUAR"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Sea creature with eight tentacles",
+    "characters": ["O","C","T","O","P","U","S","L","R","N"],
+    "correctWord": "OCTOPUS"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Australian marsupial eating eucalyptus",
+    "characters": ["K","O","A","L","A","S","T","R","N","E"],
+    "correctWord": "KOALA"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Stealthy big cat in black fur",
+    "characters": ["P","A","N","T","H","E","R","L","S","K"],
+    "correctWord": "PANTHER"
+  },
+  {
+    "theme": "animal_names",
+    "ageRange": "all",
+    "hint": "Tropical bird with a colorful beak",
+    "characters": ["T","O","U","C","A","N","L","S","R","K"],
+    "correctWord": "TOUCAN"
+  }
+]
+      }
+   ]
+}
