@@ -1,18 +1,18 @@
 {
-   "version": 48,
+   "version": 49,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-03-04",
+         "id":"theme-2026-04-04",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":48,
+         "challengeNumber":49,
          "availableOn":{
             "month":4,
-            "day": 3
+            "day": 4
          },
          "theme":{
-            "name":"Food Names",
+            "name":"Country Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Fermented soybean cake",
-    "characters": ["T","E","M","P","E","H","L","S","R","N"],
-    "correctWord": "TEMPEH"
+    "hint": "Largest country in South America",
+    "characters": ["B","R","A","Z","I","L","S","T","K","N"],
+    "correctWord": "BRAZIL"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Italian rice dish cooked in broth",
-    "characters": ["R","I","S","O","T","T","O","L","K","N"],
-    "correctWord": "RISOTTO"
+    "hint": "Home to the ancient pyramids",
+    "characters": ["E","G","Y","P","T","L","S","R","A","N"],
+    "correctWord": "EGYPT"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Middle Eastern chickpea fritter",
-    "characters": ["F","A","L","A","F","E","L","S","T","N"],
-    "correctWord": "FALAFEL"
+    "hint": "Second largest country by area",
+    "characters": ["C","A","N","A","D","A","L","S","T","R"],
+    "correctWord": "CANADA"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Korean spicy fermented cabbage",
-    "characters": ["K","I","M","C","H","I","L","S","T","R"],
-    "correctWord": "KIMCHI"
+    "hint": "Nordic country known for IKEA",
+    "characters": ["S","W","E","D","E","N","L","T","R","K"],
+    "correctWord": "SWEDEN"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Japanese pan fried dumpling",
-    "characters": ["G","Y","O","Z","A","L","S","T","R","N"],
-    "correctWord": "GYOZA"
+    "hint": "Country south of the United States",
+    "characters": ["M","E","X","I","C","O","L","S","T","R"],
+    "correctWord": "MEXICO"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Indian yogurt side dish",
-    "characters": ["R","A","I","T","A","L","S","K","N","E"],
-    "correctWord": "RAITA"
+    "hint": "Himalayan country with Mount Everest",
+    "characters": ["N","E","P","A","L","S","T","R","K","O"],
+    "correctWord": "NEPAL"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Tortilla chips with melted cheese toppings",
-    "characters": ["N","A","C","H","O","S","L","T","R","K"],
-    "correctWord": "NACHOS"
+    "hint": "Birthplace of the Olympic Games",
+    "characters": ["G","R","E","E","C","E","L","S","T","N"],
+    "correctWord": "GREECE"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Chickpea dip from Middle East",
-    "characters": ["H","U","M","M","U","S","L","T","R","N"],
-    "correctWord": "HUMMUS"
+    "hint": "Southeast Asian country shaped like S",
+    "characters": ["V","I","E","T","N","A","M","L","S","K"],
+    "correctWord": "VIETNAM"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Layered dessert in a glass",
-    "characters": ["P","A","R","F","A","I","T","L","S","N"],
-    "correctWord": "PARFAIT"
+    "hint": "Caribbean island nation near Florida",
+    "characters": ["C","U","B","A","L","S","T","R","K","N"],
+    "correctWord": "CUBA"
   },
   {
-    "theme": "food_names",
+    "theme": "country_names",
     "ageRange": "all",
-    "hint": "Frozen fruit based dessert",
-    "characters": ["S","O","R","B","E","T","L","K","N","A"],
-    "correctWord": "SORBET"
+    "hint": "European country west of Spain",
+    "characters": ["P","O","R","T","U","G","A","L","S","N"],
+    "correctWord": "PORTUGAL"
   }
 ]
       }
