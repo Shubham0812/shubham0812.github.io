@@ -1,18 +1,18 @@
 {
-   "version": 50,
+   "version": 53,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-05-04",
+         "id":"theme-2026-08-04",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":50,
+         "challengeNumber":53,
          "availableOn":{
             "month":4,
-            "day": 5
+            "day": 8
          },
          "theme":{
-            "name":"Animal Names",
+            "name":"Artist Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Flightless bird living in cold regions",
-    "characters": ["P","E","N","G","U","I","N","L","S","T"],
-    "correctWord": "PENGUIN"
+    "hint": "Canadian rapper Started From the Bottom",
+    "characters": ["D","R","A","K","E","L","S","T","N","O"],
+    "correctWord": "DRAKE"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Fastest land animal on Earth",
-    "characters": ["C","H","E","E","T","A","H","L","S","N"],
-    "correctWord": "CHEETAH"
+    "hint": "British singer known for Hello",
+    "characters": ["A","D","E","L","E","S","T","R","K","N"],
+    "correctWord": "ADELE"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Intelligent marine mammal that jumps",
-    "characters": ["D","O","L","P","H","I","N","S","T","R"],
-    "correctWord": "DOLPHIN"
+    "hint": "Queen Bey known for Lemonade album",
+    "characters": ["B","E","Y","O","N","C","E","L","S","T"],
+    "correctWord": "BEYONCE"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Large primate found in African forests",
-    "characters": ["G","O","R","I","L","L","A","S","T","N"],
-    "correctWord": "GORILLA"
+    "hint": "Rap god from Detroit Michigan",
+    "characters": ["E","M","I","N","E","M","L","S","T","R"],
+    "correctWord": "EMINEM"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Bird of prey known for speed",
-    "characters": ["F","A","L","C","O","N","S","T","R","K"],
-    "correctWord": "FALCON"
+    "hint": "Barbadian singer of Umbrella hit",
+    "characters": ["R","I","H","A","N","N","A","L","S","T"],
+    "correctWord": "RIHANNA"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Big cat with spotted coat",
-    "characters": ["J","A","G","U","A","R","L","S","T","N"],
-    "correctWord": "JAGUAR"
+    "hint": "Colombian singer with famous hip moves",
+    "characters": ["S","H","A","K","I","R","A","L","T","N"],
+    "correctWord": "SHAKIRA"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Sea creature with eight tentacles",
-    "characters": ["O","C","T","O","P","U","S","L","R","N"],
-    "correctWord": "OCTOPUS"
+    "hint": "Purple Rain pop legend from Minneapolis",
+    "characters": ["P","R","I","N","C","E","L","S","T","K"],
+    "correctWord": "PRINCE"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Australian marsupial eating eucalyptus",
-    "characters": ["K","O","A","L","A","S","T","R","N","E"],
-    "correctWord": "KOALA"
+    "hint": "Queen of Pop Material Girl singer",
+    "characters": ["M","A","D","O","N","N","A","L","S","T"],
+    "correctWord": "MADONNA"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Stealthy big cat in black fur",
-    "characters": ["P","A","N","T","H","E","R","L","S","K"],
-    "correctWord": "PANTHER"
+    "hint": "R and B singer known for Yeah hit",
+    "characters": ["U","S","H","E","R","L","T","K","N","A"],
+    "correctWord": "USHER"
   },
   {
-    "theme": "animal_names",
+    "theme": "artist_names",
     "ageRange": "all",
-    "hint": "Tropical bird with a colorful beak",
-    "characters": ["T","O","U","C","A","N","L","S","R","K"],
-    "correctWord": "TOUCAN"
+    "hint": "Australian singer who hides her face",
+    "characters": ["S","I","A","L","T","R","K","N","E","O"],
+    "correctWord": "SIA"
   }
 ]
       }
