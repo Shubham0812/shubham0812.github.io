@@ -1,18 +1,18 @@
 {
-   "version": 54,
+   "version": 55,
    "force":true,
    "entries":[
       {
-         "id":"theme-2026-09-04",
+         "id":"theme-2026-10-04",
          "title":"Theme Game",
          "subtitle":"Find the correct word that fits the hint",
-         "challengeNumber":54,
+         "challengeNumber":55,
          "availableOn":{
             "month":4,
-            "day": 9
+            "day": 10
          },
          "theme":{
-            "name":"Food Names",
+            "name":"Tech Device Names",
             "icon":"lightbulb.max",
             "cardColor":"#4EC5FF"
          },
@@ -27,74 +27,74 @@
          },
          "rounds": [
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Fermented soybean cake",
-    "characters": ["T","E","M","P","E","H","L","S","R","N"],
-    "correctWord": "TEMPEH"
+    "hint": "Amazon e-book reading device",
+    "characters": ["K","I","N","D","L","E","S","T","R","A"],
+    "correctWord": "KINDLE"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Italian rice dish cooked in broth",
-    "characters": ["R","I","S","O","T","T","O","L","K","N"],
-    "correctWord": "RISOTTO"
+    "hint": "Google smartphone with best camera",
+    "characters": ["P","I","X","E","L","S","T","R","A","N"],
+    "correctWord": "PIXEL"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Middle Eastern chickpea fritter",
-    "characters": ["F","A","L","A","F","E","L","S","T","N"],
-    "correctWord": "FALAFEL"
+    "hint": "Apple wireless earbuds in a case",
+    "characters": ["A","I","R","P","O","D","S","L","T","N"],
+    "correctWord": "AIRPODS"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Korean spicy fermented cabbage",
-    "characters": ["K","I","M","C","H","I","L","S","T","R"],
-    "correctWord": "KIMCHI"
+    "hint": "Samsung flagship smartphone series",
+    "characters": ["G","A","L","A","X","Y","S","T","R","N"],
+    "correctWord": "GALAXY"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Japanese pan fried dumpling",
-    "characters": ["G","Y","O","Z","A","L","S","T","R","N"],
-    "correctWord": "GYOZA"
+    "hint": "Amazon voice assistant smart speaker",
+    "characters": ["A","L","E","X","A","S","T","R","K","N"],
+    "correctWord": "ALEXA"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Indian yogurt side dish",
-    "characters": ["R","A","I","T","A","L","S","K","N","E"],
-    "correctWord": "RAITA"
+    "hint": "Streaming device for your TV",
+    "characters": ["R","O","K","U","L","S","T","A","N","E"],
+    "correctWord": "ROKU"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Tortilla chips with melted cheese toppings",
-    "characters": ["N","A","C","H","O","S","L","T","R","K"],
-    "correctWord": "NACHOS"
+    "hint": "Action camera for extreme sports",
+    "characters": ["G","O","P","R","O","L","S","T","K","N"],
+    "correctWord": "GOPRO"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Chickpea dip from Middle East",
-    "characters": ["H","U","M","M","U","S","L","T","R","N"],
-    "correctWord": "HUMMUS"
+    "hint": "Microsoft tablet and laptop hybrid",
+    "characters": ["S","U","R","F","A","C","E","L","T","N"],
+    "correctWord": "SURFACE"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Layered dessert in a glass",
-    "characters": ["P","A","R","F","A","I","T","L","S","N"],
-    "correctWord": "PARFAIT"
+    "hint": "Wearable fitness tracker on your wrist",
+    "characters": ["F","I","T","B","I","T","L","S","R","N"],
+    "correctWord": "FITBIT"
   },
   {
-    "theme": "food_names",
+    "theme": "tech_device_names",
     "ageRange": "all",
-    "hint": "Frozen fruit based dessert",
-    "characters": ["S","O","R","B","E","T","L","K","N","A"],
-    "correctWord": "SORBET"
+    "hint": "Amazon smart speaker with Alexa inside",
+    "characters": ["E","C","H","O","L","S","T","R","A","N"],
+    "correctWord": "ECHO"
   }
 ]
       }
