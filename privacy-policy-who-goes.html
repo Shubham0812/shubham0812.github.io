@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Who Goes?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000000;
+      --surface: #0f0f0f;
+      --surface-alt: #1a1a1a;
+      --ink: #ffffff;
+      --ink-muted: #a0a0a0;
+      --ink-faint: #555555;
+      --border: #222222;
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    header {
+      position: relative;
+      padding: 72px 40px 56px;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .app-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 15px;
+      box-shadow: 0 0 0 1px var(--border), 0 8px 32px rgba(255, 147, 86, 0.16);
+      flex-shrink: 0;
+    }
+
+    .app-brand-text { display: flex; flex-direction: column; gap: 3px; }
+    .app-name { font-size: 18px; font-weight: 500; color: var(--ink); letter-spacing: 0; }
+    .app-tagline { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: 0;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    h1 em { font-style: italic; color: var(--ink-muted); }
+    .meta { color: var(--ink-muted); font-size: 14px; font-weight: 300; }
+    .header-rule { max-width: 800px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+    main { max-width: 800px; margin: 0 auto; padding: 0 40px 80px; }
+
+    .intro {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 40px 0;
+      font-size: 15px;
+      color: var(--ink-muted);
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .section {
+      margin-bottom: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+    .section:nth-child(5) { animation-delay: 0.20s; }
+    .section:nth-child(6) { animation-delay: 0.25s; }
+    .section:nth-child(7) { animation-delay: 0.30s; }
+    .section:nth-child(8) { animation-delay: 0.35s; }
+    .section:nth-child(9) { animation-delay: 0.40s; }
+    .section:nth-child(10) { animation-delay: 0.45s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 28px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+
+    .section-header:hover { background: var(--surface-alt); }
+    .section-num { font-family: 'DM Serif Display', serif; font-size: 13px; color: var(--ink-faint); min-width: 24px; }
+    .section-title { font-size: 15px; font-weight: 500; flex: 1; color: var(--ink); }
+    .chevron { width: 16px; height: 16px; color: var(--ink-faint); transition: transform 0.3s ease; }
+    .section.open .chevron { transform: rotate(180deg); }
+
+    .section-body {
+      display: none;
+      padding: 0 28px 24px;
+      padding-left: 68px;
+      font-size: 14.5px;
+      color: var(--ink-muted);
+      line-height: 1.75;
+    }
+
+    .section.open .section-body { display: block; }
+    .section-rule { border: none; border-top: 1px solid var(--border); margin: 0 28px 22px; }
+
+    .pill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-faint); }
+    .highlight-box {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .highlight-box svg { min-width: 16px; margin-top: 2px; }
+    .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-top: 14px; }
+    .provider-card { background: var(--surface-alt); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-size: 13px; }
+    .provider-name { font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+    .provider-role { color: var(--ink-faint); font-size: 12px; }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--ink-faint);
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+
+    footer a { color: var(--ink); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+    footer a:hover { text-decoration: underline; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header, main, footer { padding-left: 20px; padding-right: 20px; }
+      header { padding-top: 48px; }
+      .section-body { padding-left: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-brand">
+    <img src="whogoes-icon.png" alt="Who Goes?" class="app-icon" />
+    <div class="app-brand-text">
+      <span class="app-name">Who Goes?</span>
+      <span class="app-tagline">Truth or Dare &amp; Group Games</span>
+    </div>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="meta">Effective June 11, 2026</p>
+</header>
+
+<hr class="header-rule" />
+
+<main>
+  <div class="intro">
+    Who Goes? is a quick finger picker for group games, icebreakers, team choices, and truth-or-dare moments. This policy explains what information is handled when you use the app.
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">01</span>
+      <span class="section-title">No Account Required</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? does not require account creation. You do not need to provide your name, email address, phone number, or a profile to use the app.
+      <div class="highlight-box">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 110 2 1 1 0 010-2zm0 3.5a.75.75 0 01.75.75v3a.75.75 0 01-1.5 0v-3A.75.75 0 018 7.5z" fill="currentColor"/></svg>
+        No sign-up, no player profiles, and no contact list access.
+      </div>
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">02</span>
+      <span class="section-title">Finger Touches Stay on Your Device</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      The app detects touches on the screen so it can choose a player, build teams, order players, or run other local game modes. Touch positions, finger counts, and game results are processed on your device for the current round and are not sent to our servers.
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>Finger picker rounds</span>
+        <span class="pill"><span class="pill-dot"></span>Team assignments</span>
+        <span class="pill"><span class="pill-dot"></span>Elimination rounds</span>
+        <span class="pill"><span class="pill-dot"></span>Truth or Dare choices</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">03</span>
+      <span class="section-title">Data Stored Locally</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? stores app preferences on your device, such as sound and haptic settings, selected game mode, selected Truth or Dare pack, appearance choices, Plus unlock status cache, and limited usage counters used for feature access.
+      <div class="pill-list">
+        <span class="pill"><span class="pill-dot"></span>App settings</span>
+        <span class="pill"><span class="pill-dot"></span>Selected modes and packs</span>
+        <span class="pill"><span class="pill-dot"></span>Theme preferences</span>
+        <span class="pill"><span class="pill-dot"></span>Daily play counters</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">04</span>
+      <span class="section-title">iCloud Sync</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? may use Apple's iCloud and CloudKit services to sync a small rating-prompt state, such as when you last tapped to rate the app, so the same prompt is not repeatedly shown across your devices. This data is handled by Apple under your iCloud account settings.
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">05</span>
+      <span class="section-title">In-App Purchases</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? offers an optional lifetime Plus purchase. Purchases are processed by Apple through the App Store. We do not receive or store your payment card details.<br/><br/>
+      RevenueCat is used to validate purchases and manage access to Plus features. RevenueCat may use an anonymous app user identifier, purchase receipts, product identifiers, entitlement status, and related transaction information needed to confirm access.
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">06</span>
+      <span class="section-title">Analytics, Advertising, and Tracking</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? does not sell personal information and does not use third-party advertising frameworks. The app does not track you across other companies' apps or websites for advertising purposes, and it does not request App Tracking Transparency permission.
+      <div class="highlight-box">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5a.75.75 0 01.6.3l5.5 7a.75.75 0 01-.6 1.2H2.5a.75.75 0 01-.6-1.2l5.5-7a.75.75 0 01.6-.3zM8 4.5L4.25 9h7.5L8 4.5zM7.25 10.5v2h1.5v-2h-1.5z" fill="currentColor"/></svg>
+        No ads, no cross-app tracking, and no contact harvesting.
+      </div>
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">07</span>
+      <span class="section-title">Data Sharing</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Limited technical and purchase-related data may be processed by service providers that make the app work:
+      <div class="provider-grid">
+        <div class="provider-card">
+          <div class="provider-name">Apple</div>
+          <div class="provider-role">App Store purchases, refunds, iCloud, diagnostics</div>
+        </div>
+        <div class="provider-card">
+          <div class="provider-name">RevenueCat</div>
+          <div class="provider-role">Purchase validation and Plus access</div>
+        </div>
+      </div>
+      <p style="margin-top:14px;">We do not sell this information. Service providers process data according to their own privacy policies and only for the services they provide.</p>
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">08</span>
+      <span class="section-title">Children's Privacy</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Who Goes? is a general-audience group game utility and is not directed to children under 13. We do not knowingly collect personal information from children under 13.
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">09</span>
+      <span class="section-title">Data Retention</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      Local app preferences remain on your device until you change them or delete the app. iCloud data can be managed through your Apple ID and iCloud settings. Purchase records are retained by Apple and RevenueCat as needed to provide purchase access, restore purchases, comply with law, and prevent fraud.
+    </div>
+  </div>
+
+  <div class="section open">
+    <div class="section-header" onclick="toggle(this)">
+      <span class="section-num">10</span>
+      <span class="section-title">Contact</span>
+      <svg class="chevron" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <hr class="section-rule"/>
+    <div class="section-body">
+      If you have questions about this Privacy Policy, please reach out:
+      <div style="margin-top:12px;">
+        <a href="mailto:shubham_iosdev@outlook.com" style="display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#000;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 4a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.217l5 3.334 5-3.334V4a1 1 0 00-1-1H4zm9 2.383l-4.472 2.981a1 1 0 01-1.056 0L3 5.383V12a1 1 0 001 1h8a1 1 0 001-1V5.383z" fill="currentColor"/></svg>
+          shubham_iosdev@outlook.com
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <img src="whogoes-icon.png" alt="Who Goes?" style="width:28px;height:28px;border-radius:7px;opacity:0.7;" />
+    <span>&copy; 2026 Shubham Singh. All rights reserved.</span>
+  </div>
+  <a href="who-goes-terms-of-service.html">
+    Terms of Service
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</footer>
+
+<script>
+  function toggle(header) {
+    const section = header.closest('.section');
+    section.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
