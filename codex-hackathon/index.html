@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenAI Build Week — My Submission Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2a28;
+    --paper:#fdfcf7;
+    --paper2:#fff9ec;
+    --accent:#ff8a5c;
+    --accent2:#5cb8ff;
+    --green:#5bbf77;
+    --line:#2b2a28;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Patrick Hand', 'Comic Sans MS', cursive;
+    color:var(--ink);
+    background:var(--paper);
+    background-image:radial-gradient(#efe9d8 1.3px, transparent 1.3px);
+    background-size:26px 26px;
+    padding:32px 16px 80px;
+  }
+  .wrap{max-width:860px;margin:0 auto;}
+  header{text-align:center;margin-bottom:12px;}
+  .kicker{font-size:20px;letter-spacing:1px;color:var(--accent);transform:rotate(-1.5deg);display:inline-block;}
+  h1{
+    font-family:'Gochi Hand', cursive;
+    font-size:clamp(34px,6vw,58px);
+    margin:6px 0 0;
+    line-height:1;
+  }
+  .doodle-row{display:flex;justify-content:center;gap:10px;margin:14px 0 4px;flex-wrap:wrap;}
+  .doodle-row img{width:52px;height:52px;filter:drop-shadow(1px 2px 0 #e7dcc4);}
+  .doodle-row img:nth-child(even){transform:rotate(6deg);}
+  .doodle-row img:nth-child(odd){transform:rotate(-6deg);}
+
+  /* Countdown */
+  .count-card{
+    background:var(--paper2);
+    border:3px solid var(--line);
+    border-radius:22px;
+    padding:22px 20px 18px;
+    text-align:center;
+    box-shadow:6px 7px 0 rgba(43,42,40,.15);
+    position:relative;
+    margin:8px 0 34px;
+  }
+  .count-card::before{
+    content:"⏰ time left to submit";
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-2deg);
+    background:var(--accent);color:#fff;padding:3px 16px;border-radius:14px;font-size:18px;
+    border:2px solid var(--line);
+  }
+  .timer{display:flex;justify-content:center;gap:14px;margin-top:12px;flex-wrap:wrap;}
+  .unit{min-width:92px;}
+  .num{
+    font-family:'Gochi Hand', cursive;
+    font-size:clamp(40px,9vw,68px);
+    line-height:1;
+    background:#fff;
+    border:3px solid var(--line);
+    border-radius:16px;
+    padding:8px 6px 4px;
+    display:block;
+    box-shadow:3px 4px 0 rgba(43,42,40,.18);
+  }
+  .lbl{font-size:18px;margin-top:6px;color:#7a736a;letter-spacing:1px;}
+  .deadline{margin-top:16px;font-size:19px;color:#7a736a;}
+  .deadline b{color:var(--ink);}
+  .done-msg{font-family:'Gochi Hand';font-size:34px;color:var(--green);}
+
+  /* Checklist */
+  .section-title{
+    font-family:'Gochi Hand';font-size:30px;margin:0 0 4px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .section-title img{width:40px;height:40px;transform:rotate(-5deg);}
+  .progress-line{font-size:19px;color:#7a736a;margin:0 0 16px;}
+  ul.checklist{list-style:none;padding:0;margin:0;}
+  li.item{
+    background:#fff;
+    border:2.5px solid var(--line);
+    border-radius:16px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    cursor:pointer;
+    box-shadow:4px 5px 0 rgba(43,42,40,.10);
+    transition:transform .08s ease, box-shadow .08s ease;
+  }
+  li.item:hover{transform:translate(-1px,-1px);box-shadow:5px 6px 0 rgba(43,42,40,.14);}
+  li.item:active{transform:translate(2px,2px);box-shadow:2px 2px 0 rgba(43,42,40,.12);}
+  .box{
+    flex:0 0 auto;width:30px;height:30px;border:2.5px solid var(--line);border-radius:8px;
+    display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--green);
+    font-family:'Gochi Hand';margin-top:1px;background:#fffdf6;
+  }
+  .txt{flex:1;}
+  .txt .t{font-size:21px;line-height:1.15;}
+  .txt .d{font-size:16.5px;color:#8a8378;line-height:1.25;margin-top:3px;}
+  .txt .d a{color:var(--accent2);}
+  li.item.done .t{text-decoration:line-through;color:#a49d92;}
+  li.item.done{background:#f4fbf4;border-color:#bfe3c5;}
+  li.item.done .box{background:var(--green);color:#fff;border-color:var(--green);}
+  .tag{display:inline-block;font-size:14px;background:var(--accent);color:#fff;border-radius:10px;padding:1px 9px;margin-left:6px;transform:rotate(-1deg);vertical-align:middle;}
+  .tag.warn{background:#e05a4d;}
+  .footnote{text-align:center;color:#9a9384;font-size:16px;margin-top:26px;}
+  .reset{background:none;border:2px dashed #c9c0ac;border-radius:12px;color:#8a8378;font-family:inherit;font-size:16px;padding:6px 14px;cursor:pointer;}
+
+  /* ---- Phone ---- */
+  @media (max-width:560px){
+    body{padding:20px 12px 60px;background-size:20px 20px;}
+    .doodle-row{gap:6px;}
+    .doodle-row img{width:40px;height:40px;}
+    .count-card{padding:26px 12px 16px;border-radius:18px;margin:8px 0 28px;}
+    .count-card::before{font-size:15px;padding:2px 12px;white-space:nowrap;}
+    .timer{gap:8px;}
+    .unit{min-width:0;flex:1 1 20%;}
+    .num{padding:6px 2px 3px;border-radius:12px;border-width:2.5px;}
+    .lbl{font-size:14px;margin-top:4px;}
+    .deadline{font-size:16.5px;}
+    .section-title{font-size:25px;}
+    .section-title img{width:32px;height:32px;}
+    li.item{padding:12px 12px;gap:10px;border-radius:14px;}
+    .box{width:26px;height:26px;font-size:20px;}
+    .txt .t{font-size:19px;}
+    .txt .d{font-size:15px;}
+    .tag{display:inline-block;margin-left:0;margin-top:3px;}
+  }
+  @media (max-width:360px){
+    .num{font-size:40px;}
+    .lbl{font-size:12.5px;letter-spacing:0;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="kicker">OpenAI Build Week</span>
+    <h1>My Submission Checklist</h1>
+    <div class="doodle-row">
+      <img src="Frame 99.svg" alt="">
+      <img src="Frame 105.svg" alt="">
+      <img src="Frame 109.svg" alt="">
+      <img src="Frame 111.svg" alt="">
+      <img src="Frame 96.svg" alt="">
+      <img src="Frame 102.svg" alt="">
+    </div>
+  </header>
+
+  <div class="count-card">
+    <div class="timer" id="timer">
+      <div class="unit"><span class="num" id="d">–</span><div class="lbl">days</div></div>
+      <div class="unit"><span class="num" id="h">–</span><div class="lbl">hours</div></div>
+      <div class="unit"><span class="num" id="m">–</span><div class="lbl">mins</div></div>
+      <div class="unit"><span class="num" id="s">–</span><div class="lbl">secs</div></div>
+    </div>
+    <div class="deadline">Submissions close <b>Tue, July 21, 2026 · 5:00 PM PT</b></div>
+  </div>
+
+  <h2 class="section-title"><img src="Frame 100.svg" alt="">To-do before you submit</h2>
+  <p class="progress-line" id="progress">0 of 11 done — you've got this!</p>
+
+  <ul class="checklist" id="list">
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Register on Devpost</div><div class="d">Click "Join Hackathon" at <a href="https://openai.devpost.com" target="_blank">openai.devpost.com</a> and sign in with a Devpost account.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Set up OpenAI + Codex <span class="tag warn">credits deadline passed Jul 17</span></div><div class="d">Sign up for OpenAI and download Codex. Free-credit requests closed Jul 17, 12pm PT — use existing credits and mind extra charges.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Build the project with Codex + GPT-5.6</div><div class="d">Must be new, or a pre-existing project meaningfully extended during the submission period.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Pick your track</div><div class="d">Apps for Your Life · Work & Productivity · Developer Tools · Education. Choose the one that fits best.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Write the project description</div><div class="d">Explain the features and functionality of what you built.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Record & upload the demo video</div><div class="d">Under 3 min, public on YouTube, with audio covering what you built and how you used Codex AND GPT-5.6. No unlicensed music/trademarks.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Share the code repository</div><div class="d">Public with a license, or private and shared with <b>testing@devpost.com</b> and <b>build-week-event@openai.com</b>.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Write the README</div><div class="d">How you collaborated with Codex, where it accelerated you, key decisions, GPT-5.6 usage + setup/run instructions and sample data.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Grab your /feedback Codex Session ID</div><div class="d">From the thread where you built the core functionality — paste it into the submission form.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Make it testable <span class="tag">plugins / dev tools</span></div><div class="d">Give judges a demo instance, sandbox, or test account plus install steps & supported platforms — no rebuilding required.</div></div></li>
+
+    <li class="item"><div class="box"></div><div class="txt"><div class="t">Submit on the Hackathon Website</div><div class="d">Complete all fields on the "Enter a Submission" page before Jul 21, 5:00 PM PT.</div></div></li>
+  </ul>
+
+  <p class="footnote">
+    Progress is saved in this browser · <button class="reset" id="reset">reset checklist</button>
+  </p>
+</div>
+
+<script>
+(function(){
+  // Deadline: Jul 21 2026, 5:00 PM PT (PDT = UTC-7) -> Jul 22 2026 00:00 UTC
+  var deadline = new Date('2026-07-22T00:00:00Z').getTime();
+  var d=document.getElementById('d'),h=document.getElementById('h'),
+      m=document.getElementById('m'),s=document.getElementById('s'),
+      timer=document.getElementById('timer');
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var diff=deadline-Date.now();
+    if(diff<=0){timer.innerHTML='<div class="done-msg">⏳ Submissions are closed!</div>';return;}
+    var days=Math.floor(diff/864e5);
+    var hrs=Math.floor(diff%864e5/36e5);
+    var min=Math.floor(diff%36e5/6e4);
+    var sec=Math.floor(diff%6e4/1e3);
+    d.textContent=days; h.textContent=pad(hrs); m.textContent=pad(min); s.textContent=pad(sec);
+  }
+  tick(); setInterval(tick,1000);
+
+  // Checklist state
+  var items=[].slice.call(document.querySelectorAll('#list .item'));
+  var KEY='obw-checklist-v1';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  function render(){
+    var done=0;
+    items.forEach(function(it,i){
+      if(saved[i]){it.classList.add('done');it.querySelector('.box').textContent='✔';done++;}
+      else{it.classList.remove('done');it.querySelector('.box').textContent='';}
+    });
+    var total=items.length;
+    var p=document.getElementById('progress');
+    p.textContent = done+' of '+total+' done'+(done===total?' — 🎉 all set, go submit!':" — you've got this!");
+  }
+  items.forEach(function(it,i){
+    it.addEventListener('click',function(){
+      saved[i]=!saved[i];
+      try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+      render();
+    });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    saved={};try{localStorage.setItem(KEY,'{}');}catch(e){}render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
